@@ -11,7 +11,7 @@ lake_flooding=TRUE
 handmade=TRUE
 
 [savefile]
-options=" +version2"
+options=" +version2 specials"
 version=30
 reason=""
 revision="2.6.2"
@@ -67,7 +67,7 @@ timeoutinc=0
 timeoutincmult=1
 timeoutcounter=1
 turn=0
-year=-4000
+year=2030
 year_0_hack=FALSE
 globalwarming=0
 heating=0
@@ -75,7 +75,7 @@ warminglevel=8
 nuclearwinter=0
 cooling=0
 coolinglevel=8
-random_seed=1641034511
+random_seed=1642316870
 global_advances="1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
 save_players=FALSE
 save_known=FALSE
@@ -101,6 +101,7 @@ set={"name","value","gamestart"
 "startunits","ccx","ccwwx"
 "steepness",30,30
 "teamplacement","CLOSEST","CLOSEST"
+"techlevel",0,0
 "temperature",50,50
 "tilesperplayer",100,100
 "tinyisles",FALSE,FALSE
@@ -110,7 +111,7 @@ set={"name","value","gamestart"
 "xsize",100,64
 "ysize",50,64
 }
-set_count=24
+set_count=25
 gamestart_valid=FALSE
 
 [ruledata]
@@ -135,17 +136,17 @@ t0003="    tt      ggaa+hhma aa      ::::        pp   :::::::::::::::   aaaaaaaa
 t0004=": pp    g  mgpphppmmmmhgg     ::::::       p   :::::::::::::::      aaafgffpphpaa   f  p  ::::::::::"
 t0005=": f   g t   ppmmpppppppph g   ::::::          :::::::::::::::    a  fppffhpfhhf       pp   :::::::::"
 t0006=":    httm ffmmmmmmappmppfgg   ::::::::::    :: :::::::::::::      f fff   pp f pp f mmmmm  :::::::::"
-t0007=":  ggmttthfam+++mmmaammmfgf   :::::::     :::   ::::::::::::   ppgffpp   fp  fhf   mm+aafp :::::::::"
-t0008=":   fmtmmmmmf++   aammdmmfgg  :::::               ::::::::::     ghppp       ppp  mamaahmp :::::::::"
-t0009=":  ggtfmaaaf++     mmddddmf   :::::   gpp             ::::::      mm   ::    pmm mm+++aa+m  ::::::::"
-t0010=":  gmptppaf+++      jmmddp     :::   gjfjffj p dd       ::::    gmg   ::    dmff mm+aafatmm ::::::::"
-t0011=":   gpghp++++  dd    jmmddffpp :::    fsjjjjfmdmmd      ::::    g    ::    dfff   phf+++amm ::::::::"
+t0007=":  ggmttthfam+++mmmaammmfgf   :::::::     :::   ::::::::::::   ppgffpp   fp  fhf   mm+affp :::::::::"
+t0008=":   fmtmmmmmf++   aammdmmfgg  :::::               ::::::::::     ghppp       ppp  mamfahmp :::::::::"
+t0009=":  ggtfmaaaf++     mmddddmf   :::::   gpp             ::::::      mm   ::    pmm mm+++ga+m  ::::::::"
+t0010=":  gmptppaf+++      jmmddp     :::   gjfjffj p dd       ::::    gmg   ::    dmff mm+fffgtmm ::::::::"
+t0011=":   gpghp++++  dd    jmmddffpp :::    fsjjjjfmdmmd      ::::    g    ::    dfff   phf+++jmm ::::::::"
 t0012=":    gjp+++++   mm    mmdppf   ::::   gjsssfmmmmpm g    ::::  gmm  :::   d mmm    pf+++fmm  ::::::::"
-t0013=":  g  pjp++j+++  d    mmmmf   ::::   gjss+sjjsmmpmd     ::::: mmg ::    jmmfpf  mhf++f+stf   :::::::"
-t0014=":   g hhj+phj      p  jjmmh j   ::  gjjs+++++spppmd mm  :::::mmmg       d  hf   tt++++++mf    ::::::"
-t0015=":    fhjj+fpp   j  m        mmd  :   gfjf++++jjpmmhm   :::::: g     p      g   gfmmfstsm       :::::"
-t0016=":  gppg+jmpmm  jm m   p  :   j   ::   f pffjjssmmmf    ::::: gm   ppmp  :     hpghmmmff    gm   ::::"
-t0017=":   gpp+mapam     f m   ::   md :::   p     g+jttfmm  :::::: g    pmmmp  ::   gppffhhf   p mgg   :::"
+t0013=":  g  pjp++j+++  d    mmmmf   ::::   gjss+sjjsmmpmd     ::::: mmp ::    jmmfpf  mhf++f+stf   :::::::"
+t0014=":   g hhj+phj      p  jjmmh j   ::  gjjs+++++spppmd mm  :::::mmmp       d  hf   tt++++++mf    ::::::"
+t0015=":    fhjj+fpp   j  m        mmd  :   gfjf++++jjpmmhm   :::::: p     p      g   gfmmfstsm       :::::"
+t0016=":  gppg+jmpmm  jm m   p  :   j   ::   f pffjjssmmmf    ::::: pm   ppmp  :     hpghmmmff    gm   ::::"
+t0017=":   gpp+mapam     f m   ::   md :::   p     g+jttfmm  :::::: p    pmmmp  ::   gppffhhf   p mgg   :::"
 t0018=":    mmmjmgmm   +        :: jj   :   pm     ffftmmf   :::::::     fpmf   :::   ph     ffpp m      ::"
 t0019=":  gfffggjj+mg  ++p  m      mj  ::: mmm      fpdmmm    ::::::::    h     :        pjsjfgh  gm   m ::"
 t0020=":  pgf djpj+++++++         mmm::::  gmp   :   ddaamm   ::::::::::      g    dddpppjjjfj    jm  mm ::"
@@ -429,6 +430,56 @@ e04_0046="0000000000000000000000000000000000000000000000000000000000000000000000
 e04_0047="0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
 e04_0048="0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
 e04_0049="0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+res0000="     i                                x    i                                                        "
+res0001="  i                                    i    x                                                       "
+res0002="     e                                   $                                                          "
+res0003="               i                          j                               x    x                    "
+res0004="   j        r j         r                                           x      j c i       j            "
+res0005="     y   y  j   j  j                                             i       c            j             "
+res0006="        $    /   /      s                                                 j             $           "
+res0007=" y              $   i  $ r                                      j  p j              /               "
+res0008="      e    /py                                                               j j  $   i  j          "
+res0009="       $ i         $  o x p                                                           ri            "
+res0010="                      / o                                       r            $ p  /  s  u /         "
+res0011="  y r  w    y                          a f                                  p s                     "
+res0012="                /         j           r    s$ /               r              $     s                "
+res0013="    y  f  y                           f t  f a$ b               j         /sj   /                   "
+res0014="            g           /   f       r     y  tb  /   $                                              "
+res0015="                            $        r  py  y                 j     j               te $            "
+res0016="      r f j       /                     b  g t  /                 j                 $               "
+res0017="     j                                      r  u                  j//                      $        "
+res0018="                                      /                           p                   s             "
+res0019="      s   g       j  /       f      /            /$                                 af      $   /   "
+res0020="                            /                    x                     r    o   j   f               "
+res0021="           f  t         /                       o$                         b   x j           /  g   "
+res0022="         o          j                              j                       o               rg       "
+res0023="              f       / s           $ c          r                               j           $      "
+res0024="      j                r          w                    j               r                   j   /    "
+res0025="              j  i  $j  r                                              i       /                    "
+res0026="    o         s                                                      r                  j  j        "
+res0027="                  /             j/      c$                              $         $j      j         "
+res0028="   c                                    /                            s p           b          $     "
+res0029="            as $                s                                         s    /     p        j     "
+res0030="                      r         $      / s                               p   p s  b   o /           "
+res0031="                                  /                                              p    $             "
+res0032="                      p  r      /r      $                                              r            "
+res0033="                      o so               $                                           $              "
+res0034="                       $                                                                            "
+res0035="                     $   $                              f  /                                        "
+res0036="      c j               x                         j  f   / $               s                        "
+res0037="                     x                             f        /  r                  jp                "
+res0038="     x   r                      r                       /p                       j                  "
+res0039="      /                      p  j                 r      b                                  /  /    "
+res0040="        x                    s  /                       r s                                         "
+res0041="                             $                     g     b                    $             e   $   "
+res0042="                                                       b            /   j r  $$              u i    "
+res0043="                                             s      g s                     /             /e i j    "
+res0044="                                              j                                              j      "
+res0045="                                              x                                             $       "
+res0046="                                                                                                    "
+res0047="                                                                                       x  x         "
+res0048="                                                                                                    "
+res0049="                                                                                                    "
 
 [history]
 turn=-2
