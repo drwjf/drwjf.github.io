@@ -56,7 +56,7 @@ version=20602
 server_state="S_S_RUNNING"
 id="YZsWAQ_FoL3N-w0QPTwx7h-vbnFWXh5p"
 serverid=""
-level="Easy"
+level="Normal"
 phase_mode=0
 phase_mode_stored=0
 phase=0
@@ -771,7 +771,7 @@ ai={"love","spam","countdown","war_reason","patience","warn_space","ask_peace","
 1,0,-1,5,0,0,0,0,0
 1,1,-1,5,0,0,0,0,0
 }
-ai.level="Easy"
+ai.level="Normal"
 ai.barb_type="None"
 gold=50
 rates.tax=40
@@ -1554,7 +1554,7 @@ ai={"love","spam","countdown","war_reason","patience","warn_space","ask_peace","
 1,1,-1,5,0,0,0,0,0
 1,2,-1,5,0,0,0,0,0
 }
-ai.level="Easy"
+ai.level="Normal"
 ai.barb_type="None"
 gold=50
 rates.tax=40
