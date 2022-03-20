@@ -87,31 +87,17 @@ save=FALSE
 [settings]
 set={"name","value","gamestart"
 "aifill",15,15
-"alltemperate",FALSE,FALSE
-"flatpoles",100,100
+"barbarians","HORDES","NORMAL"
 "generator","SCENARIO","RANDOM"
-"landmass",30,30
-"mapseed",0,0
-"mapsize","FULLSIZE","FULLSIZE"
 "maxplayers",15,150
-"revolentype","RANDOM","RANDOM"
-"separatepoles",TRUE,TRUE
-"singlepole",FALSE,FALSE
-"size",4,4
-"startpos","DEFAULT","DEFAULT"
+"onsetbarbs",1,60
 "startunits","ccx","ccx"
-"steepness",30,30
-"teamplacement","CLOSEST","CLOSEST"
-"temperature",50,50
-"tilesperplayer",100,100
-"tinyisles",FALSE,FALSE
-"topology","WRAPX","WRAPX"
+"topology","","WRAPX"
 "victories","SPACERACE|ALLIED","SPACERACE|ALLIED"
-"wetness",50,50
 "xsize",100,64
 "ysize",100,64
 }
-set_count=24
+set_count=10
 gamestart_valid=FALSE
 
 [ruledata]
@@ -1444,7 +1430,7 @@ shuffled_player_5=5
 
 [player0]
 ai_type="classic"
-name="Mao Zedong"
+name="Zhu Yuanzhang"
 username="未分配"
 unassigned_user=TRUE
 color.r=255
@@ -1454,7 +1440,7 @@ orig_username=""
 ranked_username="未分配"
 unassigned_ranked=TRUE
 delegation_username=""
-nation="Chinese"
+nation="Ming"
 team_no=0
 government_name="Despotism"
 style_by_name="Asian"
