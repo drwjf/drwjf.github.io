@@ -85,32 +85,13 @@ save=FALSE
 
 [settings]
 set={"name","value","gamestart"
-"aifill",4,5
-"alltemperate",FALSE,FALSE
-"flatpoles",100,100
+"aifill",4,15
 "generator","SCENARIO","RANDOM"
-"landmass",30,30
-"mapseed",0,0
-"mapsize","FULLSIZE","FULLSIZE"
-"maxplayers",39,150
-"revolentype","RANDOM","RANDOM"
-"separatepoles",TRUE,TRUE
-"singlepole",FALSE,FALSE
-"size",4,4
-"startpos","DEFAULT","DEFAULT"
-"startunits","ccx","ccwwx"
-"steepness",30,30
-"teamplacement","CLOSEST","CLOSEST"
-"temperature",50,50
-"tilesperplayer",100,100
-"tinyisles",FALSE,FALSE
-"topology","WRAPX","WRAPX|ISO"
-"victories","SPACERACE|ALLIED","SPACERACE|ALLIED"
-"wetness",50,50
+"topology","WRAPX","WRAPX"
 "xsize",100,64
 "ysize",50,64
 }
-set_count=24
+set_count=5
 gamestart_valid=FALSE
 
 [ruledata]
