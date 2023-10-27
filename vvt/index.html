@@ -5,7 +5,8 @@
     <meta name=viewport content="width=device-width,initial-scale=1" />
     <meta name=title content="VoiceVista" />
     <meta name=description content="VoiceVista" />
-    <meta name=keywords content="VoiceVista, Jianfeng Wu, Microsoft, Soundscape, Audio, Acoustics, Human-computer interaction" />
+    <meta name=keywords
+        content="VoiceVista, Jianfeng Wu, Microsoft, Soundscape, Audio, Acoustics, Human-computer interaction" />
     <meta name=author content="Jianfeng Wu" />
     <meta name="apple-itunes-app" content="app-id=6450388413" />
     <meta property="og:image" content="https://drwjf.github.io/assets/jpg/vvt.jpg" />
@@ -14,39 +15,90 @@
 
 <body style="font: -apple-system-body; margin: 20px;">
     <h1>VoiceVista Blog</h1>
-    <hr>
 
-    <h2>Microsoft Soundscape Resurrection</h2>
-    <p><i>Jun, 29, 2023</i></p>
-    <p>Microsoft discontinued the project <a href="https://aka.ms/ossblog">Soundscape</a> and made it <a href="https://github.com/microsoft/soundscape">open-source</a>.</p>
-    <p>VoiceVista is licensed under <a href="https://github.com/microsoft/soundscape/blob/main/LICENSE.txt">the MIT
-            License</a> to continue providing the service to blind and vision impaired community.</p>
-    <p>Map data from <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> are licensed by <a
-        href="https://opendatacommons.org/licenses/odbl/">Open Database License (ODbL)</a>.</p>
-    <p>Translated text comes from the <a href="https://github.com/drwjf/VoiceVista">contributions of friends</a> around the world.</p>
+    <hr>
+    <h2>New Features After Resurrection</h2>
+    <p><i>Oct, 27, 2023</i></p>
+    <ul>
+        <li>Transitioned the user interface style from Windows Phone to iOS, including <a
+                href="https://developer.apple.com/design/human-interface-guidelines/tab-bars">avoiding the use of a tab
+                bar for providing actions</a>.</li>
+        <li>Integrated more place data from Apple Maps to provide users with additional location information and
+            options.</li>
+        <li>Introduced the ability to manually trigger the "Hear Intersection Ahead" command on the first tab or hear
+            about the next intersection while in a vehicle.</li>
+        <li>Enabled turn-by-turn navigation instructions for a single audio beacon or a route with numerous waypoints.
+        </li>
+        <li>Implemented street name callouts to help users become familiar with the region, even indicating the house
+            number they are located near.</li>
+        <li>Expanded the range of methods for creating or importing routes, including generating them using a navigation
+            algorithm or importing from a GPX file, with the most popular method being the Breadcrumb waypoints mode.
+        </li>
+        <li>Provided additional methods for creating or importing markers, such as pasting them from Apple Maps or
+            importing from a GPX file.</li>
+        <li>Introduced the option to add reverse waypoints for a new route or append reverse waypoints to make the route
+            circular.</li>
+        <li>Implemented adaptive callout frequency for the distance to the beacon, similar to a radar, resulting in more
+            frequent callouts when nearing the destination.</li>
+        <li>Added callouts for the distance and relative direction to points of interest or beacons, with the option to
+            use clock relative direction.</li>
+        <li>Expanded the availability of Siri shortcuts for the most commonly used commands, including "Start Route."
+        </li>
+        <li>Introduced more assistant commands for quick access to commonly used features, such as marking or sharing
+            the current location.</li>
+        <li>Published a list of <a href="faq.html">frequently asked questions</a> on the website for user convenience.
+        </li>
+    </ul>
+
+    <p>Translated text comes from the <a href="https://github.com/drwjf/VoiceVista">contributions of friends</a> around
+        the world.</p>
     <ul>
         <li>French translation contributed by Saladeuh.</li>
         <li>German translation contributed by Sandra Pilz.</li>
         <li>Italian translation contributed by <a href="https://nvapple.it">Simone Dal Maso @ nvApple</a>.</li>
         <li>Russian translation contributed by Danil Kostenkov.</li>
-        <li>Spanish translation contributed by Arturo Fernández Rivas and <a href="https://about.me/enriquevarela">Enrique Varela</a>.</li>
+        <li>Spanish translation contributed by Arturo Fernández Rivas and <a
+                href="https://about.me/enriquevarela">Enrique
+                Varela</a>.</li>
     </ul>
-    <p><a href="faq.html">Frequently Asked Question</a></p>
+
+    <hr>
+    <h2>Microsoft Soundscape Resurrection</h2>
+    <p><i>Jun, 29, 2023</i></p>
+    <p>Microsoft discontinued the project <a href="https://aka.ms/ossblog">Soundscape</a> and made it <a
+            href="https://github.com/microsoft/soundscape">open-source</a>.</p>
+    <p>VoiceVista is licensed under <a href="https://github.com/microsoft/soundscape/blob/main/LICENSE.txt">the MIT
+            License</a> to continue providing the service to blind and vision impaired community.</p>
+    <p>Map data from <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> are licensed by <a
+            href="https://opendatacommons.org/licenses/odbl/">Open Database License (ODbL)</a>.</p>
+
+    <hr>
+    <h2>Source of Ideas</h2>
     <p>Most ideas inspired by conversations in
-        <a href="https://www.applevis.com/apps/ios/navigation/voicevista">AppleVis</a>,
-        <a href="https://groups.google.com/g/voicevista">Google Groups</a>,
-        <a href="https://chat.whatsapp.com/GlDrOqVb4RnKLBQm3QFA4H">Whatsapp Group</a>,
-        <a href="https://github.com/soundscape-community/soundscape/issues">Soundscape community</a> and
-        <a href="https://github.com/soundscapeforeveryone/soundscape/issues">Soundscape for Everyone</a>.
-    </p>
-    <p>Interviews</p>
     <ul>
-        <li><a href="https://podcasts.apple.com/us/podcast/applevis-extra-95-an-interview-with-jianfeng-wu/id478403062?i=1000623944603">AppleVis Extra #95</a></li>
+        <li><a href="https://www.applevis.com/apps/ios/navigation/voicevista">AppleVis</a></li>
+        <li><a href="https://groups.google.com/g/voicevista">Google Groups</a></li>
+        <li><a href="https://chat.whatsapp.com/GlDrOqVb4RnKLBQm3QFA4H">Whatsapp Group</a></li>
+        <li><a href="https://github.com/soundscape-community/soundscape/issues">Soundscape community</a></li>
+        <li><a href="https://github.com/soundscapeforeveryone/soundscape/issues">Soundscape for Everyone</a></li>
+    </ul>
+    </p>
+
+    <hr>
+    <h2>Interviews</h2>
+    <ul>
+        <li><a
+                href="https://podcasts.apple.com/us/podcast/applevis-extra-95-an-interview-with-jianfeng-wu/id478403062?i=1000623944603">AppleVis
+                Extra #95</a></li>
         <li><a href="https://www.youtube.com/watch?v=btJX-8hsv-M">The Two Blind Mice Show</a></li>
     </ul>
-    <p>Others</p>
+
+    <hr>
+    <h2>Others Reference</h2>
     <ul>
-        <li><a href="https://aphconnectcenter.org/familyconnect/ideas-for-home-community/helpful-products/soundscape-for-leisure-activities/">VoiceVista for Leisure Activities</a></li>
+        <li><a
+                href="https://aphconnectcenter.org/familyconnect/ideas-for-home-community/helpful-products/soundscape-for-leisure-activities/">VoiceVista
+                for Leisure Activities</a></li>
     </ul>
     <hr>
     <table width="100%">
