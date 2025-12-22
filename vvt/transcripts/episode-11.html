@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>episode-11</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<p>Welcome back.</p>
+<p>In the beginner series—</p>
+<p>we learned how to use VoiceVista.</p>
+<p>Today—</p>
+<p>we’re going to explore—</p>
+<p>where VoiceVista gets its information.</p>
+<p>If you’ve ever wondered—</p>
+<p>why one business is announced—</p>
+<p>while another isn’t—</p>
+<p>this episode is for you.</p>
+<p>VoiceVista relies on—</p>
+<p>OpenStreetMap.</p>
+<p>OpenStreetMap—</p>
+<p>is a free—</p>
+<p>community-built map of the world.</p>
+<p>Instead of being maintained—</p>
+<p>by a single company—</p>
+<p>it is created—</p>
+<p>by millions of volunteers.</p>
+<p>People around the world—</p>
+<p>add roads.</p>
+<p>Buildings.</p>
+<p>Parks.</p>
+<p>Bus stops.</p>
+<p>Businesses.</p>
+<p>Walking paths.</p>
+<p>And countless other places.</p>
+<p>Every time someone improves the map—</p>
+<p>everyone benefits.</p>
+<p>This community approach—</p>
+<p>is one of OpenStreetMap’s—</p>
+<p>greatest strengths.</p>
+<p>It also explains—</p>
+<p>why information can vary—</p>
+<p>from place to place.</p>
+<p>Imagine two neighborhoods.</p>
+<p>In one neighborhood—</p>
+<p>many local volunteers—</p>
+<p>regularly update the map.</p>
+<p>Nearly every business—</p>
+<p>bus stop—</p>
+<p>and crossing—</p>
+<p>is included.</p>
+<p>In another neighborhood—</p>
+<p>few people—</p>
+<p>have contributed.</p>
+<p>Some businesses—</p>
+<p>may be missing.</p>
+<p>Others—</p>
+<p>may have moved.</p>
+<p>That doesn’t mean—</p>
+<p>VoiceVista isn’t working correctly.</p>
+<p>It simply means—</p>
+<p>the map itself—</p>
+<p>needs more information.</p>
+<p>You might also notice—</p>
+<p>that a newly opened café—</p>
+<p>isn’t announced yet.</p>
+<p>Or perhaps—</p>
+<p>a business that closed—</p>
+<p>is still listed.</p>
+<p>That’s because—</p>
+<p>maps are constantly changing.</p>
+<p>One wonderful aspect—</p>
+<p>of OpenStreetMap—</p>
+<p>is that anyone—</p>
+<p>can help improve it.</p>
+<p>People who are blind—</p>
+<p>low vision—</p>
+<p>or sighted—</p>
+<p>all contribute—</p>
+<p>to making the map better.</p>
+<p>By improving the map—</p>
+<p>you’re helping—</p>
+<p>future VoiceVista users—</p>
+<p>and many other applications—</p>
+<p>that also rely—</p>
+<p>on OpenStreetMap.</p>
+<p>Another question—</p>
+<p>people often ask—</p>
+<p>is whether VoiceVista—</p>
+<p>stores all map data—</p>
+<p>on the phone.</p>
+<p>The answer is—</p>
+<p>not entirely.</p>
+<p>VoiceVista downloads—</p>
+<p>the information it needs—</p>
+<p>as you explore.</p>
+<p>It also keeps—</p>
+<p>some recently used information—</p>
+<p>to improve performance—</p>
+<p>and support limited offline use.</p>
+<p>If you ever notice—</p>
+<p>that something important—</p>
+<p>is missing—</p>
+<p>don’t assume—</p>
+<p>you’re doing something wrong.</p>
+<p>Instead—</p>
+<p>remember—</p>
+<p>the quality of VoiceVista—</p>
+<p>depends partly—</p>
+<p>on the quality—</p>
+<p>of the underlying map.</p>
+<p>Fortunately—</p>
+<p>OpenStreetMap—</p>
+<p>continues improving—</p>
+<p>every single day.</p>
+<p>In the next episode—</p>
+<p>we’ll answer—</p>
+<p>some of the most common—</p>
+<p>technical questions—</p>
+<p>about VoiceVista—</p>
+<p>including permissions—</p>
+<p>GPS—</p>
+<p>and troubleshooting.</p>
+<p>Thanks for listening.</p>
+</body>
+</html>

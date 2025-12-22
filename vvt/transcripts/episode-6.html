@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>episode-6</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<p>Welcome back.</p>
+<p>So far—</p>
+<p>we’ve explored surroundings.</p>
+<p>The beacon.</p>
+<p>Markers.</p>
+<p>Routes.</p>
+<p>And everyday controls.</p>
+<p>Today—</p>
+<p>we’re going to answer a practical question.</p>
+<p>How do you actually find places—</p>
+<p>and travel to them—</p>
+<p>using VoiceVista?</p>
+<p>Let’s start with search.</p>
+<p>VoiceVista allows you to search for places—</p>
+<p>before you start moving.</p>
+<p>Open the search field.</p>
+<p>Enter a business.</p>
+<p>An address.</p>
+<p>A landmark.</p>
+<p>Or another destination.</p>
+<p>When results appear—</p>
+<p>select a location.</p>
+<p>VoiceVista opens the Location Details screen.</p>
+<p>From here—</p>
+<p>you have choices.</p>
+<p>Save the location as a marker.</p>
+<p>Start a beacon.</p>
+<p>Or simply explore information about the place.</p>
+<p>Let’s try an example.</p>
+<p>Imagine you want to visit a coffee shop.</p>
+<p>Open search.</p>
+<p>Type the name.</p>
+<p>Open the result.</p>
+<p>Then select—</p>
+<p>Start Beacon.</p>
+<p>Return to the main screen.</p>
+<p>Now—</p>
+<p>you’ll hear the beacon coming—</p>
+<p>from the direction of the destination.</p>
+<p>You’ll also see information—</p>
+<p>such as distance—</p>
+<p>and address—</p>
+<p>when available.</p>
+<p>One thing that surprises new users—</p>
+<p>is that the destination—</p>
+<p>does not need to already exist—</p>
+<p>as a marker.</p>
+<p>You can start a beacon—</p>
+<p>directly from search.</p>
+<p>You can also set a beacon—</p>
+<p>on an address.</p>
+<p>Search for your home.</p>
+<p>Search for a friend’s house.</p>
+<p>Search for a building entrance.</p>
+<p>Open the location—</p>
+<p>and start the beacon.</p>
+<p>This works even for places—</p>
+<p>that are not part of your saved markers.</p>
+<p>Now—</p>
+<p>here’s something important.</p>
+<p>The beacon tells you—</p>
+<p>where the destination is.</p>
+<p>Not—</p>
+<p>how to get there.</p>
+<p>You remain in control.</p>
+<p>Choose your sidewalks.</p>
+<p>Choose crossings.</p>
+<p>Choose your route.</p>
+<p>VoiceVista supports—</p>
+<p>your awareness.</p>
+<p>You may also notice—</p>
+<p>that sometimes VoiceVista does not announce every nearby
+business.</p>
+<p>This is normal.</p>
+<p>VoiceVista uses map data—</p>
+<p>and not every location—</p>
+<p>has complete information.</p>
+<p>Try focusing—</p>
+<p>not on hearing everything.</p>
+<p>But on building understanding.</p>
+<p>Here’s a useful exercise.</p>
+<p>Choose three destinations.</p>
+<p>One nearby.</p>
+<p>One familiar.</p>
+<p>And one completely new.</p>
+<p>Search.</p>
+<p>Start a beacon.</p>
+<p>Walk.</p>
+<p>Observe.</p>
+<p>Notice how your understanding changes—</p>
+<p>even before you arrive.</p>
+<p>In the next episode—</p>
+<p>we’ll learn how to personalize VoiceVista—</p>
+<p>and control exactly—</p>
+<p>what you hear—</p>
+<p>and when you hear it.</p>
+<p>Thanks for listening.</p>
+</body>
+</html>
