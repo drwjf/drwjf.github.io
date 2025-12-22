@@ -1,0 +1,2226 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" style="--color--primary-hue:240;--color--primary-saturation:100%;--color--primary-lightness:50">
+  <head>
+    <meta charset="utf-8" />
+<script>var _paq = _paq || [];(function(){var u=(("https:" == document.location.protocol) ? "https://matomo.applevis.com/" : "https://matomo.applevis.com/");_paq.push(["setSiteId", "1"]);_paq.push(["setTrackerUrl", u+"matomo.php"]);if (!window.matomo_search_results_active) {_paq.push(["trackPageView"]);}_paq.push(["setIgnoreClasses", ["no-tracking","colorbox"]]);_paq.push(["enableLinkTracking"]);var d=document,g=d.createElement("script"),s=d.getElementsByTagName("script")[0];g.type="text/javascript";g.defer=true;g.async=true;g.src=u+"matomo.js";s.parentNode.insertBefore(g,s);})();</script>
+<meta name="description" content="VoiceVista is an essential app for the blind and low vision users&#039; community. It is based on Microsoft&#039;s discontinued and open-source project Soundscape (https://aka.ms/ossblog) and is licensed under the MIT License (https://github.com/microsoft/soundscape/blob/main/LICENSE.txt). The app utilizes cutting-edge iOS audio technology and precise location services to enable people to develop a greater awareness of their surroundings." />
+<link rel="canonical" href="https://www.applevis.com/apps/ios/navigation/voicevista" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>var ct_check_js_val = 'ab56c3e943404e88368d3a69243de991';var drupal_ac_antibot_cookie_value = 'd77625ea8e0d66eb8e413c41f400da2bdff1bf48d9e07cec27f5b29fd1c9390d';var ct_use_cookies = 1;var ct_use_alt_cookies = 0;var ct_capture_buffer = 0;</script>
+<link rel="icon" href="/sites/default/files/logo64x64.ico" type="image/vnd.microsoft.icon" />
+
+    <title>VoiceVista | AppleVis</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_7X5Z7fQ_w6tQ4WNNAjUzLlMsau3Nj53YCkcws0bsAKo.css?delta=0&amp;language=en&amp;theme=applevis&amp;include=eJxtjksOwjAMRC8U6iNVTmKCqR1HcQj09lAW3cBmpPnoadwSo6xKmXEVrpuD_0TLuJFS8N0HKUR0Ctia0GSHIhZRLj72z7SEZCLYnKNY2iBZp2DCk7pBxckFB1u9OCWrGft-ls6ZIvbTJ1OlOjxMpqfDVxe1_JC_wNZZD9xVsMAhy3F8xTu-3mj6WJg" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_c5qBFU7QXMYOo7q-9fyXupCkq_cQ5_LdtNXwysNQTRI.css?delta=1&amp;language=en&amp;theme=applevis&amp;include=eJxtjksOwjAMRC8U6iNVTmKCqR1HcQj09lAW3cBmpPnoadwSo6xKmXEVrpuD_0TLuJFS8N0HKUR0Ctia0GSHIhZRLj72z7SEZCLYnKNY2iBZp2DCk7pBxckFB1u9OCWrGft-ls6ZIvbTJ1OlOjxMpqfDVxe1_JC_wNZZD9xVsMAhy3F8xTu-3mj6WJg" />
+
+    
+    
+<link rel="preload" href="/core/themes/olivero/fonts/metropolis/Metropolis-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/core/themes/olivero/fonts/metropolis/Metropolis-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/core/themes/olivero/fonts/metropolis/Metropolis-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/core/themes/olivero/fonts/lora/lora-v14-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <noscript><link rel="stylesheet" href="/core/themes/olivero/css/components/navigation/nav-primary-no-js.css?shaq11" />
+</noscript>
+  </head>
+  <body class="path-node page-node-type-ios-app-directory">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+<div id="page-wrapper" class="page-wrapper">
+  <div id="page">
+
+          <header id="header" class="site-header" data-drupal-selector="site-header" role="banner">
+
+                <div class="site-header__fixable" data-drupal-selector="site-header-fixable">
+          <div class="site-header__initial">
+            <button class="sticky-header-toggle" data-drupal-selector="sticky-header-toggle" role="switch" aria-controls="site-header__inner" aria-label="Sticky header" aria-checked="false">
+              <span class="sticky-header-toggle__icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </button>
+          </div>
+
+                    <div id="site-header__inner" class="site-header__inner" data-drupal-selector="site-header-inner">
+            <div class="container site-header__inner__container">
+
+              
+
+
+<div id="block-applevis-site-branding" role="banner" aria-label="Banner" class="site-branding--bg-white site-branding block block-system block-system-branding-block">
+  
+    
+    <div class="site-branding__inner">
+              <div class="site-branding__text">
+        <div class="site-branding__name">
+          <a href="/" title="Home" rel="home">AppleVis</a>
+        </div>
+      </div>
+      </div>
+</div>
+
+
+<div class="views-exposed-form form--inline my-search-block block block-views block-views-exposed-filter-blocksite-search-page-1" data-drupal-selector="views-exposed-form-site-search-page-1" id="block-applevis-exposedformsite-searchpage-1-3" role="search" aria-label="Site search">
+  <div id="collapsiblock-wrapper-applevis_exposedformsite_searchpage_1_3" class="collapsiblockTitle" data-collapsiblock-action="3">
+      <h2 class="block__title">Search</h2>
+    </div>
+      <div class="block__content">
+      <form action="/search" method="get" id="views-exposed-form-site-search-page-1" accept-charset="UTF-8">
+  <div class="js-form-item form-item js-form-type-textfield form-item-key js-form-item-key">
+      <label for="edit-key" class="form-item__label">Search</label>
+        <input data-drupal-selector="edit-key" type="text" id="edit-key" name="key" value="" size="30" maxlength="128" class="form-text form-element form-element--type-text form-element--api-textfield" />
+
+        </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input class="button--primary button js-form-submit form-submit" data-drupal-selector="edit-submit-site-search" type="submit" id="edit-submit-site-search" value="Search" />
+</div>
+
+
+</form>
+
+    </div>
+  </div>
+
+<div class="header-nav-overlay" data-drupal-selector="header-nav-overlay"></div>
+
+
+                              <div class="mobile-buttons" data-drupal-selector="mobile-buttons">
+                  <button class="mobile-nav-button" data-drupal-selector="mobile-nav-button" aria-label="Main Menu" aria-controls="header-nav" aria-expanded="false">
+                    <span class="mobile-nav-button__label">Menu</span>
+                    <span class="mobile-nav-button__icon"></span>
+                  </button>
+                </div>
+
+                <div id="header-nav" class="header-nav" data-drupal-selector="header-nav">
+                  
+<nav  id="block-applevis-main-menu" role="navigation" aria-label="Main menu" class="primary-nav block block-menu navigation menu--main" aria-labelledby="block-applevis-main-menu-menu">
+            
+  <h2 class="visually-hidden block__title" id="block-applevis-main-menu-menu">Main navigation</h2>
+  
+        
+
+
+          
+        
+    <ul  class="menu primary-nav__menu primary-nav__menu--level-1" data-drupal-selector="primary-nav-menu--level-1">
+            
+                          
+        
+        
+        <li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-1">
+                              
+                      <a href="/apps" title="Browse and search our App Directories" class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-1" data-drupal-selector="primary-nav-menu-link-has-children" data-drupal-link-system-path="node/27484">            <span class="primary-nav__menu-link-inner primary-nav__menu-link-inner--level-1">Apps</span>
+          </a>
+
+            
+                  </li>
+      
+                          
+        
+        
+        <li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-1">
+                              
+                      <a href="/forum" title="" class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-1" data-drupal-selector="primary-nav-menu-link-has-children" data-drupal-link-system-path="forum">            <span class="primary-nav__menu-link-inner primary-nav__menu-link-inner--level-1">Forum</span>
+          </a>
+
+            
+                  </li>
+      
+                          
+        
+        
+        <li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-1">
+                              
+                      <a href="/blog" class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-1" data-drupal-selector="primary-nav-menu-link-has-children" data-drupal-link-system-path="blog">            <span class="primary-nav__menu-link-inner primary-nav__menu-link-inner--level-1">Blog</span>
+          </a>
+
+            
+                  </li>
+      
+                          
+        
+        
+        <li class="primary-nav__menu-item primary-nav__menu-item--button primary-nav__menu-item--level-1 primary-nav__menu-item--has-children" data-drupal-selector="primary-nav-menu-item-has-children">
+                              
+          
+            <button title="More community resources" class="primary-nav__menu-link primary-nav__menu-link--button primary-nav__menu-link--level-1 primary-nav__menu-link--has-children" aria-controls="primary-menu-item-1234" aria-expanded="false" data-drupal-selector="primary-nav-submenu-toggle-button" type="button">            <span class="primary-nav__menu-link-inner primary-nav__menu-link-inner--level-1">More</span>
+          </button>
+
+                                  
+              <span data-drupal-selector="primary-nav-menu-🥕" class="primary-nav__menu-🥕"></span>
+    
+    <ul  class="menu primary-nav__menu primary-nav__menu--level-2" data-drupal-selector="primary-nav-menu--level-2" id="primary-menu-item-1234">
+            
+                          
+        
+        
+        <li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+                              
+                      <a href="/podcasts" class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="podcasts">            <span class="primary-nav__menu-link-inner primary-nav__menu-link-inner--level-2">Podcast</span>
+          </a>
+
+            
+                  </li>
+      
+                          
+        
+        
+        <li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+                              
+                      <a href="/guides" class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="guides">            <span class="primary-nav__menu-link-inner primary-nav__menu-link-inner--level-2">Guides</span>
+          </a>
+
+            
+                  </li>
+      
+                          
+        
+        
+        <li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+                              
+                      <a href="/reviews" class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="reviews">            <span class="primary-nav__menu-link-inner primary-nav__menu-link-inner--level-2">Hardware &amp; Accessory Reviews</span>
+          </a>
+
+            
+                  </li>
+      
+                          
+        
+        
+        <li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+                              
+                      <a href="/bugs" class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/12823">            <span class="primary-nav__menu-link-inner primary-nav__menu-link-inner--level-2">Bug Tracker</span>
+          </a>
+
+            
+                  </li>
+      
+                          
+        
+        
+        <li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+                              
+                      <a href="/developers" title="Information For App Developers" class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/22">            <span class="primary-nav__menu-link-inner primary-nav__menu-link-inner--level-2">Developer Resources</span>
+          </a>
+
+            
+                  </li>
+          </ul>
+  
+                  </li>
+      
+                          
+        
+        
+        <li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-1">
+                              
+                      <a href="/user/login" class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-1" data-drupal-selector="primary-nav-menu-link-has-children" data-drupal-link-system-path="user/login">            <span class="primary-nav__menu-link-inner primary-nav__menu-link-inner--level-1">Log in</span>
+          </a>
+
+            
+                  </li>
+          </ul>
+  
+
+
+  </nav>
+
+
+                  
+                </div>
+                          </div>
+          </div>
+        </div>
+      </header>
+    
+    <div id="main-wrapper" class="layout-main-wrapper layout-container">
+      <div id="main" class="layout-main">
+        <div class="main-content">
+          <a id="main-content" tabindex="-1"></a>
+          
+          <div class="main-content__container container">
+            
+
+  <div class="region region--highlighted grid-full layout--pass--content-medium">
+    <div data-drupal-messages-fallback class="hidden messages-list"></div>
+
+  </div>
+
+            
+
+  <div class="region region--breadcrumb grid-full layout--pass--content-medium">
+    
+
+<div id="block-applevis-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+      <div class="block__content">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <div class="breadcrumb__content">
+      <ol class="breadcrumb__list">
+                  <li class="breadcrumb__item">
+                          <a href="/" class="breadcrumb__link">Home</a>
+                      </li>
+                  <li class="breadcrumb__item">
+                          <a href="/apps" class="breadcrumb__link">Apps</a>
+                      </li>
+                  <li class="breadcrumb__item">
+                          <a href="/apps/ios/browse" class="breadcrumb__link">IOS &amp; IPadOS Apps</a>
+                      </li>
+                  <li class="breadcrumb__item">
+                          <a href="/apps/ios/navigation" class="breadcrumb__link">Navigation</a>
+                      </li>
+              </ol>
+    </div>
+  </nav>
+
+    </div>
+  </div>
+
+  </div>
+
+
+                          <div class="sidebar-grid grid-full">
+                <main role="main" class="site-main">
+                  
+
+  <div class="region region--content-above grid-full layout--pass--content-medium">
+    
+
+<div id="block-applevis-page-title" class="block block-core block-page-title-block">
+  
+  
+
+  <h1 class="title page-title">
+<span>VoiceVista</span>
+</h1>
+
+
+  
+</div>
+
+  </div>
+
+                  
+
+  <div class="region region--content grid-full layout--pass--content-medium" id="content">
+    
+
+<div id="block-applevis-content" class="block block-system block-system-main-block">
+  
+    
+      <div class="block__content">
+      
+
+<article data-history-node-id="34873" class="node node--type-ios-app-directory node--view-mode-full">
+  <header class="">
+    
+          
+      </header>
+  <div class="node__content">
+        
+<div class="field field--name-field-authoring-info field--type-viewfield field--label-hidden">
+  
+    
+        
+<div class="field__item field__item-label-hidden">
+  
+    
+      <div class="views-element-container"><div class="view view-node-author-block view-id-node_author_block view-display-id-block_1 js-view-dom-id-9d298b74b1e6afedd1ad6f81175abb2f91135dbd81878fe9bb9f471825230358">
+  
+    
+      
+      <div class="view-content">
+          <div class="views-row"><div class="views-field views-field-created"><span class="field-content">Submitted by <a href="/users/26118" hreflang="en">Panais</a>, <time datetime="2023-06-30T16:01:47+00:00">30  June,  2023</time>
+</span></div><div class="views-field views-field-user-picture"><div class="field-content"></div></div><div class="views-field views-field-changed"><span class="field-content">Last updated on <time datetime="2023-08-22T10:47:57+00:00">22  August,  2023</time>
+</span></div></div>
+
+    </div>
+  
+          </div>
+</div>
+
+  </div>
+
+    </div>
+
+  <div class="field field--name-taxonomy-vocabulary-1 field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Category</div>
+              <div class="field__item"><a href="/ios-ipados-app-directory/navigation" hreflang="en">Navigation</a></div>
+          </div>
+
+  <div class="text-content clearfix field field--name-body field--type-text-with-summary field--label-above">
+    <h3 class="field__label">Description of App</h3>
+              <div class="field__item"><p>VoiceVista is an essential app for the blind and low vision users&#039; community. It is based on Microsoft&#039;s discontinued and open-source project Soundscape (<a href="https://aka.ms/ossblog">https://aka.ms/ossblog</a>) and is licensed under the MIT License (<a href="https://github.com/microsoft/soundscape/blob/main/LICENSE.txt">https://github.com/microsoft/soundscape/blob/main/LICENSE.txt</a>). The app utilizes cutting-edge iOS audio technology and precise location services to enable people to develop a greater awareness of their surroundings. It provides comfort in unfamiliar spaces, supporting individuals in creating mental maps and making personal route choices.</p>
+</div>
+          </div>
+
+  <div class="field field--name-field-version field--type-string field--label-above">
+    <h3 class="field__label">Version</h3>
+              <div class="field__item">1.0.9</div>
+          </div>
+
+  <div class="field field--name-field-cost field--type-list-string field--label-above">
+    <h3 class="field__label">Free or Paid</h3>
+              <div class="field__item">Free</div>
+          </div>
+
+  <div class="field field--name-field-apple-watch-support field--type-list-string field--label-above">
+    <h3 class="field__label">Apple Watch Support</h3>
+              <div class="field__item">Not Known</div>
+          </div>
+
+  <div class="field field--name-field-device-used field--type-list-string field--label-above">
+    <h3 class="field__label">Device(s) App Was Tested On</h3>
+          <div class="field__items">
+              <div class="field__item">iPhone</div>
+              </div>
+      </div>
+
+  <div class="field field--name-field-ios-version field--type-string field--label-above">
+    <h3 class="field__label">iOS Version</h3>
+              <div class="field__item">16.4</div>
+          </div>
+
+  <div class="text-content clearfix field field--name-field-comments field--type-text-long field--label-above">
+    <h3 class="field__label">Accessibility Comments</h3>
+              <div class="field__item"><p>Unlike soundscape, this app is available around the world.<br />
+Supports the following features:<br />
+ - Siri shortcuts.<br />
+- Street preview.<br />
+- Direction tracking using headphones.<br />
+- Marker and route import and export.<br />
+- Apple maps and Google maps are available to choose from.<br />
+- Media controls from headphones.<br />
+- Turn-by-turn navigation<br />
+- Callout of mobility related places in the surroundings<br />
+- Generation of reversed routes for backward walking</p>
+</div>
+          </div>
+
+  <div class="field field--name-field-voiceover field--type-list-string field--label-above">
+    <h3 class="field__label">VoiceOver Performance</h3>
+              <div class="field__item">VoiceOver reads all page elements.</div>
+          </div>
+
+  <div class="field field--name-field-labelling field--type-list-string field--label-above">
+    <h3 class="field__label">Button Labeling</h3>
+              <div class="field__item">All buttons are clearly labeled.</div>
+          </div>
+
+  <div class="field field--name-field-usability field--type-list-string field--label-above">
+    <h3 class="field__label">Usability</h3>
+              <div class="field__item">The app is fully accessible with VoiceOver and is easy to navigate and use.</div>
+          </div>
+
+  <div class="text-content clearfix field field--name-field-other-comments field--type-text-long field--label-above">
+    <h3 class="field__label">Other Comments</h3>
+              <div class="field__item"><p>Dr. Jianfeng Wu, has been working on this application for the past month or so. Once again, this developer has done a fantastic job. I cannot overstate his skill, work ethic, and contribution to this community. I am truly amazed by the product of his work.</p>
+<p>Having said that, since the application is brand new, Dr. Jianfeng Wu is asking for any feedback we can provide to help improve the app.</p>
+</div>
+          </div>
+
+  <div class="field field--name-field-link2 field--type-link field--label-above">
+    <h3 class="field__label">App Store Link</h3>
+              <div class="field__item"><a href="https://itunes.apple.com/app/id6450388413">https://itunes.apple.com/app/id6450388413</a></div>
+          </div>
+
+  <div class="field field--name-field-link3 field--type-link field--label-above">
+    <h3 class="field__label">Developer&#039;s Website</h3>
+              <div class="field__item"><a href="https://drwjf.github.io/">https://drwjf.github.io/</a></div>
+          </div>
+
+  <div class="field field--name-field-podcast-link field--type-link field--label-above">
+    <h3 class="field__label">Related Podcast</h3>
+              <div class="field__item"><a href="https://www.applevis.com/sites/default/files/podcasts/AppleVisPodcast1553.mp3">https://www.applevis.com/sites/default/files/podcasts/AppleVisPodcast1553.mp3</a></div>
+          </div>
+
+<div class="field field--name-field-recommendations field--type-viewfield field--label-hidden">
+  
+    
+        
+<div class="field__item field__item-label-hidden">
+  
+    
+      <div class="views-element-container"><div class="view view-recommendations-count view-id-recommendations_count view-display-id-block_1 js-view-dom-id-3d093d1692a465f5fce07c994446e572c5d50283d453474f67cfeb7c7a814d56">
+  
+    
+      
+      <div class="view-content">
+          <div class="views-row"><div class="views-field views-field-count"><span class="field-content"><h3>Recommendations</h3>
+<p>11 people have recommended this app</p></span></div><div class="views-field views-field-last-updated"><span class="field-content">Most recently recommended by Peter Holdstock <em class="placeholder">3 weeks 2 days</em> ago</span></div></div>
+
+    </div>
+  
+          </div>
+</div>
+
+  </div>
+
+    </div>
+
+<div >
+    <h2>Options</h2>
+      <ul class="links inline">
+          <li></li>
+      </ul>
+  </div>
+
+
+<section data-drupal-selector="comments" class="comments">
+
+      
+    <h2 class="comments__title">Comments</h2>
+    
+  
+  
+<article  data-comment-user-id="28708" id="comment-160093" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/160093#comment-160093" class="permalink" rel="bookmark" hreflang="en">V1.2.7 Released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1703037304"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>BC4000</span> on Thursday, December 21, 2023 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- Alert distance setting for each marker individually<br />
+- Translation updates in Catalan, German, Italian, Russian and Spanish by Oriol Gómez, Sandra Pilz, Simone Dal Maso, Danil Kostenkov and Enrique Varela</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-160251" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/160251#comment-160251" class="permalink" rel="bookmark" hreflang="en">V. 1.2.8 released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1703347531"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Thursday, December 21, 2023 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- Nudge marker location<br />
+- Option for degree direction style<br />
+- Option to disable beacon sound effect<br />
+- Translation updates in Arabic, Catalan, German, Italian, Russian and Spanish by Hasan Tayem, Oriol Gómez, Sandra Pilz, Simone Dal Maso, Danil Kostenkov and Enrique Varela</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="21253" id="comment-160274" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/160274#comment-160274" class="permalink" rel="bookmark" hreflang="en">Temporarily silence locations </a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1703409093"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Cordelia</span> on Thursday, December 28, 2023 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>Hi,<br />
+While I am in the process of entering markers using my Braille display, I often get interrupted by audio announcements of locations around me, which make my Braille display jump. Is there a way to temporarily silence such announcements in order for me to smoothly complete my task(s)?<br />
+Thanks.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="28708" id="comment-160291" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/160291#comment-160291" class="permalink" rel="bookmark" hreflang="en">How to temporarily silence all callouts?</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1703433772"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>BC4000</span> on Thursday, December 28, 2023 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>VoiceVista provides several ways to control what you hear and when:</p>
+<p>1. Immediately stop all audio: Double tap the screen with two fingers to immediately turn off all audio, including any callout that is currently playing and the beacon if it is on. Callouts will resume automatically when you approach the next intersection or point of interest, but the audible beacon will not. Select the &quot;unmute beacon button&quot; on the main screen to resume hearing the beacon.</p>
+<p>2. Stop automatic callouts: You can select &quot;Settings&quot; from the tabs and choose to turn all callouts off in the &quot;Callouts Settings&quot; page.</p>
+<p>3. Stop the beacon: There are several scenarios for which you might set a destination, but not need the audible beacon on. For example, you may know exactly how to get to your destination but want to get automatic updates about how far away you are from your destination. Or, you may know roughly how to get to your destination, and only need the audio beacon as you near your destination. Whatever the case, you can choose when to hear the beacon by toggling the &quot;mute beacon&quot;/&quot;unmute beacon&quot; button on the main screen.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="21253" id="comment-160376" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/160376#comment-160376" class="permalink" rel="bookmark" hreflang="en">Thank you</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1703660759"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Cordelia</span> on Thursday, December 28, 2023 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>Thank you very much for describing the options for temporarily silencing callouts. I will try them and hope that at least one of these options will also stop the Braille display from jumping when entering destinations to be saved. I am a bit unclear about &quot;Markierungen&quot; (a label given in the German version) and &quot;beacons&quot;, however. Are they meant to be destinations?</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="23639" id="comment-160397" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/160397#comment-160397" class="permalink" rel="bookmark" hreflang="en">It would be nice if VV had a bus time table thing.</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1703740334"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Brad</span> on Thursday, December 28, 2023 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>I&#039;ve not walked outside with it yet but it should have a bus timetable thing like Blindsquare, you shake the phone and it will tell you the nearest busstops times.</p>
+<p>This is cool but I can&#039;t wait for a live feed AI thing like chat gpt but in real time.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="21253" id="comment-160650" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/160650#comment-160650" class="permalink" rel="bookmark" hreflang="en">presentation of distance</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1704359623"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Cordelia</span> on Sunday, January 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>Hi,<br />
+I very much enjoy using VoiceVista, and I would like to request changing the presentation of distances from letters (i.e., one point seven) to digits (1.7). This would the reading when using a Braille display for, e.g., inputting or modifying markers. Thanks.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="28708" id="comment-160888" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/160888#comment-160888" class="permalink" rel="bookmark" hreflang="en">1.2.9 and 1.3.0 releases</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1704818480"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>BC4000</span> on Sunday, January 14, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- GPS information callouts<br />
+- Remove marker prefix accessibility label in Markers tab<br />
+- Double-tap on accuracy to hear GPS information<br />
+- Sound effects illustration<br />
+- Translation updates in Polish and Russian by Przemyslaw Rogalski and Danil Kostenkov</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-161079" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/161079#comment-161079" class="permalink" rel="bookmark" hreflang="en">V. 1.3.1 released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1705241842"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Sunday, January 14, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- Creating a route to marker or place directly<br />
+- Translation updates in Italian, Polish, Russian and Spanish by Simone Dal Maso, Przemyslaw Rogalski, Danil Kostenkov and Enrique Varela</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-161365" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/161365#comment-161365" class="permalink" rel="bookmark" hreflang="en">V. 1.3.2 released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1705860066"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Sunday, January 21, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- Category information for Points of Interest<br />
+- Translation updates in Croatian, Italian, Polish and Spanish by Mario Markovina, Simone Dal Maso, Przemyslaw Rogalski and Enrique Varela</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="25168" id="comment-161382" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/161382#comment-161382" class="permalink" rel="bookmark" hreflang="en">Amazing GPS navigation app!!!</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1705900550"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Martin</span> on Sunday, January 21, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>Love how feature rich this app has become! A great tool to use out on my journeys . Keep up the great job! I would definitely recommend this!!! It&#039;s very hard to impress me btw so bravo! I love using this app with my new AirPods I got for Christmas.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="28708" id="comment-162069" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/162069#comment-162069" class="permalink" rel="bookmark" hreflang="en">V 1.3.3 Released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1706760833"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>BC4000</span> on Wednesday, February 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- Surrounding callouts triggering from Apple Watch<br />
+- Web and Telephone for Points of Interest<br />
+- Translation updates in German, Italian and Polish by Sandra Pilz, Simone Dal Maso and Przemyslaw Rogalski</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="28708" id="comment-162390" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/162390#comment-162390" class="permalink" rel="bookmark" hreflang="en">V 1.3.4 Released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1707275631"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>BC4000</span> on Wednesday, February 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- UI for reporting distance to monitoring location<br />
+- Additional rotor actions for a place or marker<br />
+- Stop beacon button on Apple Watch<br />
+- Translation updates in Italian, Polish, Russian and Spanish by Simone Dal Maso, Przemyslaw Rogalski, Danil Kostenkov and Enrique Varela</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="24667" id="comment-162619" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/162619#comment-162619" class="permalink" rel="bookmark" hreflang="en">Apple Watch</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1707661466"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>mr grieves</span> on Wednesday, February 14, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  
+            <div class="field field--name-user-picture field--type-image field--label-hidden field__item">  <img loading="lazy" src="/sites/default/files/badges/club_107.png" width="98" height="98" alt="Club AppleVis Member" />
+
+</div>
+      </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>I was really excited to see Apple Watch support has been added.  I didn&#039;t immediately find the app as it is called VVTWatch instead of Voice Vista, but anyway I know now.  Just one question - would it be possible for the Watch app to open when the Voice Vista app on the phone starts?  And then stay there?  It&#039;s possible that it is supposed to do this anyway.  Since WatchOS 10 I&#039;ve noticed a few quirks with this - usually it works as long as I&#039;m not air playing before I start media (which I wasn&#039;t when I tested voice vista).  If not, then I guess I can maybe make another watch face that makes it easier to get to via a complication.  But I think this feature will work best when it doesn&#039;t involving faffing about with the watch too much.</p>
+<p>The only other feature I miss from the old SoundScape is the ability to use my Bose Frames for head tracking.  I know Air Pods Pros can be used, but I feel a lot more confident going out in shades.  I don&#039;t own the Pros, just the Air Pods 3 and there&#039;s no way I&#039;d ever walk around outside with them.  They would fall out and be gone for good within seconds I think!  I know the Bose Frames are discontinued, so no point going there, but wonder if anything else in this form factor is doable.  I have the Meta Ray-ban smart glasses, but I&#039;m guessing that&#039;s too ring fenced to be used here?</p>
+<p>Anyway, I don&#039;t use this app very often, but it is just so useful when I do - I absolutely love it.  I also appreciate how unobtrusive, optional and affordable the subscription is.  I normally turn my nose up at such things, but I was happy to contribute to the project.  Please keep up the good work.  I love seeing all the updates.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="28708" id="comment-162695" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/162695#comment-162695" class="permalink" rel="bookmark" hreflang="en">V 1.3.5 Released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1707793339"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>BC4000</span> on Wednesday, February 14, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- Virtual Location Explorer by teleporting between intersections and places<br />
+- Intersections Nearby in the Surroundings tab<br />
+- Translation updates in German, Italian, Russian and Spanish by Sandra Pilz, Simone Dal Maso, Danil Kostenkov and Enrique Varela</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-163022" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/163022#comment-163022" class="permalink" rel="bookmark" hreflang="en">V. 1.3.6 released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1708365130"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Wednesday, February 21, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- Button to delete the last breadcrumb marker<br />
+- Button to list places ahead<br />
+- Translation updates in Danish and Russian by Claus Thøgersen and Danil Kostenkov</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-163366" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/163366#comment-163366" class="permalink" rel="bookmark" hreflang="en">V. 1.3.7 released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1708792330"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Wednesday, February 28, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- Location monitoring improvements<br />
+- Stop beacon after moving away is detected<br />
+- Exclude unnamed roads from intersections<br />
+- Wake up by pressing the play button on the headphone<br />
+- Translation updates in Danish, German, Portuguese and Spanish by Claus Thøgersen, Sandra Pilz, Sara von Glasenapp and Enrique Varela</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-163884" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/163884#comment-163884" class="permalink" rel="bookmark" hreflang="en">V. 1.3.8 released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1709659679"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Thursday, March 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- Enhancements to POI categories<br />
+- Improved dynamic wake-up monitoring<br />
+- Enhancements to GPS information callouts<br />
+- Translation updates in Danish, Polish, Portuguese and Spanish by Claus Thøgersen, Simone Dal Maso, Sara von Glasenapp and Enrique Varela</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-164296" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/164296#comment-164296" class="permalink" rel="bookmark" hreflang="en">V. 1.3.9 released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1710348618"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Thursday, March 14, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- Bulgarian translation<br />
+- Markers ahead exploration<br />
+- Mute all button on the home page<br />
+- Translation updates in Portuguese and Spanish by Sara von Glasenapp and Enrique Varela</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-164304" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/164304#comment-164304" class="permalink" rel="bookmark" hreflang="en">I am not optimistic</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1710362593"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Thursday, March 14, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>As far as I kno, Dr. Wu is an iOS only developer. Besides, this application is only a side project of his, which is developed on his free time.<br />
+One never knows though. I have seen Dr Wu perform what I believed to be impossible from time to time.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-164305" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/164305#comment-164305" class="permalink" rel="bookmark" hreflang="en">Nor am I crazy</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1710362791"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Thursday, March 14, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>I am sure there was a comment asking about android between the comment above this one, and the comment about 1.3.9 released.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-166087" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166087#comment-166087" class="permalink" rel="bookmark" hreflang="en">V. 1.4.1 released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712298135"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- Decouple routes from markers, eliminating the need to create markers and then add them to the route<br />
+- Backup and restore all markers and routes</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="3637" id="comment-166092" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166092#comment-166092" class="permalink" rel="bookmark" hreflang="en">Please stop Posting about every minor release note</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712311316"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Faruk</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>Panais, please stop posting the release notes of every minor update to this topic. Every time I see VoiceVista at the top, I get excited thinking there&#039;s a meaningful discussion about the different use of an existing feature or there&#039;s a new feature, but each time it&#039;s you posting the release notes of updates which we can all read on AppStore. Please only post if there&#039;s a major change, or collect all the notes and make a single post once a month. Thanks.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="24667" id="comment-166096" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166096#comment-166096" class="permalink" rel="bookmark" hreflang="en">Yes!</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712316558"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>mr grieves</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  
+            <div class="field field--name-user-picture field--type-image field--label-hidden field__item">  <img loading="lazy" src="/sites/default/files/badges/club_107.png" width="98" height="98" alt="Club AppleVis Member" />
+
+</div>
+      </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>Why does Voice Vista sometimes announce &quot;YEs!&quot; after a place? For example it might say &quot;Such and such a cafe, Yes!&quot;. I&#039;m wondering if it&#039;s some sort of thumbs-up rating type thing but not sure? I only notice it sometimes. Not a problem, just curious and it did make me laugh.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26202" id="comment-166111" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166111#comment-166111" class="permalink" rel="bookmark" hreflang="en">Please don&#039;t listen to Faruk</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712343366"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Holy Diver</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>I appreciate the changelog here. I just purchased a secondary iPhone SE partially because this app isn&#039;t on android and I like being able to track its trajectory over time. Plus it&#039;s refreshing to see how many suggestions from the forum here got implemented in those little releases.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-166113" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166113#comment-166113" class="permalink" rel="bookmark" hreflang="en">Motion denied 😉 </a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712345517"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>Since there is at least one person who finds the updates useful, updates it is…</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="3541" id="comment-166114" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166114#comment-166114" class="permalink" rel="bookmark" hreflang="en">Rerease Notes</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712346432"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Callum</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>I also quite like the release notes being posted here. I use VoiceVista on an almost daily basis for my commute to work, and only check the App Store for release notes of my apps every now and again, so it&#039;s really useful to have updates posted to this thread so I know if there are any new features and changes.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="2229" id="comment-166123" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166123#comment-166123" class="permalink" rel="bookmark" hreflang="en">Keep posting </a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712357578"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Dave Nason</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  
+            <div class="field field--name-user-picture field--type-image field--label-hidden field__item">  <img loading="lazy" src="/sites/default/files/badges/editorial_0.png" width="98" height="98" alt="Member of the AppleVis Editorial Team" />
+
+</div>
+      </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>I too would appreciate it if you keep posting the updates here. And it’s great too see you engage regularly with users. Keep up the good work.<br />
+Dave</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="3637" id="comment-166154" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166154#comment-166154" class="permalink" rel="bookmark" hreflang="en">I&#039;m glad to have been voted…</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712415593"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Faruk</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>I&#039;m glad to have been voted out in favor of posting the release notes here because it seems many people find it useful. So apologies for raising the issue, I wasn&#039;t aware it&#039;s helpful.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="30714" id="comment-166156" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166156#comment-166156" class="permalink" rel="bookmark" hreflang="en">Android</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712416855"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Joshua</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>Yes I was the one asking about android, I would really like to use this app but I’m on android so can’t</p>
+<p>It doesn’t seem like the dev is willing to bring it to android, really sad</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="3541" id="comment-166159" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166159#comment-166159" class="permalink" rel="bookmark" hreflang="en">Re: Android</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712419171"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Callum</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>My understanding is that the original Soundscape app was written in Swift, which is an Apple-specific programming language for iOS and other Apple platforms. Turning the open sourced components of Soundscape into what is now VoiceVista would&#039;ve obviously required some work, but would&#039;ve been reasonably straight forward for a developer who has the right knowledge, skill and is willing to find alternatives to the parts that Microsoft didn’t give us.</p>
+<p>On the other hand, bringing the app to Android would require a complete rewrite from scratch. I don’t think it&#039;s that the developer is not willing to do it, more that it&#039;s a hugely significant piece of work that is unreasonable to expect someone to do on their own, while still working on the existing iOS app to fix bugs, add new features, provide support etc. It would also mean maintaining two separate apps, they might require different infrastructure at the backend to host them, and there are probably other issues and considerations that I haven’t thought of.</p>
+<p>In short, bringing this app to Android would be amazing, but making that happen is no easy task unfortunately.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="21253" id="comment-166164" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166164#comment-166164" class="permalink" rel="bookmark" hreflang="en">Question re. listening ...</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712423121"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Cordelia</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>Hi,<br />
+Can anybody explain to me, please, how listening with Airpods Pro works as compared to none? I am using MFI hearing aids, which I have paired with my iPhone SE 2022. I can hear the &quot;shoutouts&quot; from their respective direction, which is great. So, how would listening to Airpod Pro or with MFI hearing aids differ? And might you, Dr. Wu, please consider adding an option for MFI hearing aids?<br />
+Thanks for reading, explaining, and/or considering.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="24667" id="comment-166166" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166166#comment-166166" class="permalink" rel="bookmark" hreflang="en">Re: air pods</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712424028"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>mr grieves</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  
+            <div class="field field--name-user-picture field--type-image field--label-hidden field__item">  <img loading="lazy" src="/sites/default/files/badges/club_107.png" width="98" height="98" alt="Club AppleVis Member" />
+
+</div>
+      </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>This is a bit of a guess as I don&#039;t have air pods pros and there&#039;s no way I&#039;m going outside with my air pods 3.</p>
+<p>However, I believe the difference is that you get head tracking. I used to have this with my Bose Frames in Soundscape but support was dropped before Voice Vista came along. So this means if you turn your head left or right, the directional sound would follow. Whereas with the phone in your pocket normally, Voice Vista can&#039;t tell exactly where you are facing only what direction you are travelling in.</p>
+<p>I would love to see head tracking support for the Meta Ray-bans but I&#039;ve no idea if that sort of thing is even possible. For the MFI hearing aids, do they have motion tracking type stuff built in?</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-166168" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166168#comment-166168" class="permalink" rel="bookmark" hreflang="en">@Faruk</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712425018"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>There is no apology needed for speaking your mind.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="3541" id="comment-166169" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166169#comment-166169" class="permalink" rel="bookmark" hreflang="en">Hearing Aids vs AirPods</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712425046"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Callum</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>As @Mr Grieves said above, the only difference when using VoiceVista with AirPods Pro is that the AirPods will allow support for head tracking. This basically means VoiceVista has more accurate information about which way your head is facing and can give more accurate call-outs and beacon direction information.</p>
+<p>I use MfI hearing aids as well, but prefer to use my AirPods as I find the head tracking does make quite a bit of difference. I also find it easier to hear the call-outs from my AirPods especially in noisy environments, but your experience with that would depend on how your hearing aids have been setup.</p>
+<p>I highly doubt most hearing aids would have the technology required for head tracking built in, so it wouldn&#039;t be possible for this kind of support to be added. It enhances the experience in my oppinion, but it&#039;s by no means an essential feature.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="30714" id="comment-166172" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166172#comment-166172" class="permalink" rel="bookmark" hreflang="en">Ah I understand</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712426528"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Joshua</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>I didn’t know the app was written in swift, that sucks</p>
+<p>Thanks for letting me know</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26202" id="comment-166194" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166194#comment-166194" class="permalink" rel="bookmark" hreflang="en">Re: Android</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712435513"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Holy Diver</span> on Sunday, April 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>This app and the soundscape community version were like half the reason I sprang for an SE, I&#039;ve only used voice vista a little bit so far but I&#039;m not regretting my decision. Carrying two phones around, one hotspotted to the other is a bit janky but it works well enough for my purposes.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-166360" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166360#comment-166360" class="permalink" rel="bookmark" hreflang="en">V. 1.4.2 released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712728797"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Sunday, April 14, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- Option to disable callouts for unnamed roads<br />
+- Ability to add current location to route waypoints<br />
+- Ability to add searched places to route waypoints<br />
+- Filter markers when adding them to route waypoints<br />
+- Separate data management from troubleshooting<br />
+- Command to reset iCloud storage<br />
+- Translation updates in German and Russian by Sandra Pilz and Danil Kostenkov</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="4919" id="comment-166366" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166366#comment-166366" class="permalink" rel="bookmark" hreflang="en">App Store Entry Says In-App Purchases</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712756548"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Ekaj</span> on Sunday, April 14, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>I just looked for this app in the store, and the entry specifically states &quot;free with in-app purchases&quot;. I&#039;m therefore wondering if this entry on here could be updated? I&#039;m thinking of getting this app and comparing/contrasting it with Soundscape, and eventually might not have enough on my card to do so.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-166367" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166367#comment-166367" class="permalink" rel="bookmark" hreflang="en">Optional subscription</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1712756960"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Sunday, April 14, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>The subscription is monthly and it’s 0.99 $. However, all features of the application can be accessed for free. The subscription  is only there for anyone who wants to further support the long-term development of the application.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-166607" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/166607#comment-166607" class="permalink" rel="bookmark" hreflang="en">V. 1.4.3 Released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1715065904"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Sunday, April 21, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>Select the nearest point to start a route.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-167489" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/167489#comment-167489" class="permalink" rel="bookmark" hreflang="en">V. 1.4.4 released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1714464835"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Tuesday, April 30, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- List intersections nearby/ahead for additional actions<br />
+- Put the app to sleep on iPhone from Apple Watch<br />
+- Translation updates in German, Russian and Spanish by Sandra Pilz, Danil Kostenkov and Enrique Varela</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-167928" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/167928#comment-167928" class="permalink" rel="bookmark" hreflang="en">V. 1.4.5 released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1715065854"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Tuesday, May 7, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- Display relative directions when listing places, markers, and intersections<br />
+- Sort places and markers by distance in surroundings and virtual location explorer<br />
+- Show a &quot;clear all&quot; button when editing marker name and annotation<br />
+- Fix issues with marker annotations<br />
+- Translation updates in German, Italian and Spanish by Sandra Pilz, Simone Dal Maso and Enrique Varela</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="29826" id="comment-168388" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/168388#comment-168388" class="permalink" rel="bookmark" hreflang="en">more detailed &quot;where am I&quot; information</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1715645333"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Michael</span> on Tuesday, May 14, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>I like this app but it can use a bit more refining, particularly when in vehicular mode. When I&#039;m travelling in a vehicle, I&#039;d like the &quot;where am I&quot; to announce the county I&#039;m in, in addition to the street, city and neighborhood. I&#039;d like to have all this information when in a large city with different neighborhoods. Nearby explore use to have this and it was very handy.<br />
+Moreover, when I&#039;m on a street, I can get the name of the street and even the block number when I manually select &quot;where am I&quot;. However, when my vehicle turns onto another street, I&#039;d like the name of the new street announced automatically. I think manually selecting the &quot;where M I&quot; is just a bit silly when other apps I know offer this.<br />
+Finally when travelling on freeways, selecting &quot;where am I&quot; tells me the name of the freeway, direction I&#039;m travelling in. However, when announcing up coming intersections, it keeps saying highway ramp. I&#039;m often commuting on a very busy freeway with many exit ramps. In the USA, each exit ramp is number for instance, exit 25, exit 30 etc. I&#039;d like voice vista to announce the exit number that&#039;s coming up, not just say highway ramp every single time.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="98" id="comment-168476" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/168476#comment-168476" class="permalink" rel="bookmark" hreflang="en">Holding Audio Connection of mFI Hearing Aids </a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1715704033"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Travis Roth</span> on Tuesday, May 14, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>I notice that even when I set VoiceVista to Sleep and lock the phone the audio connection to mFI hearing aids is being maintained which causes the aids to stay in streaming mode instead of switching to other programs they need too. I have to kill VoiceVista from the app swithcer to get it to release. Has anyone else noticed this? Any other workarounds?</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="26118" id="comment-168674" class="comment js-comment comment--level-1 by-node-author" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/168674#comment-168674" class="permalink" rel="bookmark" hreflang="en">V. 1.4.6 released</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1715840237"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Panais</span> on Tuesday, May 21, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>- Customization of automatic callouts tailored for walking, driving, and monitoring scenarios<br />
+- Standalone WatchOS App for providing callouts about the surrounding environment<br />
+- Restructured export/import and backup/restore functionalities<br />
+- Translation updates in Spanish by Enrique Varela</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="21253" id="comment-168678" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/168678#comment-168678" class="permalink" rel="bookmark" hreflang="en">MFI hearing aids</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1715845472"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Cordelia</span> on Tuesday, May 21, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>I do the same. This way I know that it, or any other app, is not interfering with another task I&#039;m doing.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="3541" id="comment-168753" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/168753#comment-168753" class="permalink" rel="bookmark" hreflang="en">Standalone Watch App?</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1715931955"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>Callum</span> on Tuesday, May 21, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>How does this work? Can you simply launch the app, start walking and receive callouts from the watch? I didn’t think WatchOS apps had the ability to run in that way.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="28708" id="comment-168781" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/168781#comment-168781" class="permalink" rel="bookmark" hreflang="en">Would you please check &quot;Enable Media Controls&quot; switch option?</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1715959555"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>BC4000</span> on Tuesday, May 21, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>The option can be found at Shortcuts Settings.</p>
+<p>If users enabled this option, to support wake up from sleep by tap play button on headphone, VoiceVista doesn&#039;t free audio session mode even on sleeping mode.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article  data-comment-user-id="28708" id="comment-168782" class="comment js-comment comment--level-1" role="article" data-drupal-selector="comment">
+     <div class="comment__title">
+               
+        <h3><a href="/comment/168782#comment-168782" class="permalink" rel="bookmark" hreflang="en">How Standalone Watch App Works for now?</a></h3>
+        
+          </div>
+  <span class="hidden" data-comment-timestamp="1715959478"></span>
+
+  <div class="comment__text-wrapper">
+    <footer class="comment__meta">
+      <p class="comment__author">By <span>BC4000</span> on Tuesday, May 21, 2024 - 02:15</p>
+  <div class="comment__picture-wrapper">
+    <div class="comment__picture">
+      <div>
+  </div>
+
+    </div>
+  </div>
+                </footer>
+    <div class="comment__title comment__content">
+      
+            <div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content"><p>Apple doesn&#039;t allow apps use built-in speaker to call out loudly. Then the VoiceVista supports users to tap buttons on watch to browse What&#039;s Around me, Intersections around results.</p>
+</div>
+      <ul class="links inline comment__links">
+          <li class="comment__links-item"></li>
+      </ul>
+    </div>
+  </div>
+</article>
+  <nav class="pager layout--content-medium" role="navigation" aria-labelledby="pagination-heading">
+    <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
+    <ul class="pager__items js-pager__items">
+                    <li class="pager__item pager__item--control pager__item--first"><a href="/apps/ios/navigation/voicevista?page=0" title="Go to first page" class="pager__link"><span class="visually-hidden">First page</span><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="16px" viewBox="0 0 15 16"><path d="M5.1,7.2l8.3-6C14.1,0.7,15,1.1,15,2V14c0,0.8-0.9,1.3-1.6,0.8l-8.3-6C4.6,8.4,4.6,7.6,5.1,7.2z M0,0h2v16H0V0z"/></svg></a></li>      
+                    <li class="pager__item pager__item--control pager__item--previous"><a href="/apps/ios/navigation/voicevista?page=0" title="Go to previous page" rel="prev" class="pager__link"><span class="visually-hidden">Previous page</span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="16" viewBox="0 0 11 16"><path d="M1.11201 7.19126L9.41183 1.15503C10.0728 0.674329 11 1.14648 11 1.96377V14.0362C11 14.8535 10.0728 15.3257 9.41183 14.845L1.11201 8.80874C0.562908 8.40939 0.562907 7.59061 1.11201 7.19126Z"/></svg></a></li>      
+            
+                    <li class="pager__item pager__item--number"><a href="/apps/ios/navigation/voicevista?page=0" title="Go to page 1" class="pager__link"><span class="visually-hidden">
+              Page
+            </span>
+            1
+                          </a></li>              <li class="pager__item pager__item--active pager__item--number"><span class="visually-hidden">
+              Page
+            </span>
+            2
+                      </li>              <li class="pager__item pager__item--number"><a href="/apps/ios/navigation/voicevista?page=2" title="Go to page 3" class="pager__link"><span class="visually-hidden">
+              Page
+            </span>
+            3
+                          </a></li>      
+            
+                    <li class="pager__item pager__item--control pager__item--next"><a href="/apps/ios/navigation/voicevista?page=2" title="Go to next page" rel="next" class="pager__link"><span class="visually-hidden">Next page</span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="16" viewBox="0 0 11 16"><path d="M1.11201 7.19126L9.41183 1.15503C10.0728 0.674329 11 1.14648 11 1.96377V14.0362C11 14.8535 10.0728 15.3257 9.41183 14.845L1.11201 8.80874C0.562908 8.40939 0.562907 7.59061 1.11201 7.19126Z"/></svg></a></li>      
+                    <li class="pager__item pager__item--control pager__item--last"><a href="/apps/ios/navigation/voicevista?page=2" title="Go to last page" class="pager__link"><span class="visually-hidden">Last page</span><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="16px" viewBox="0 0 15 16"><path d="M5.1,7.2l8.3-6C14.1,0.7,15,1.1,15,2V14c0,0.8-0.9,1.3-1.6,0.8l-8.3-6C4.6,8.4,4.6,7.6,5.1,7.2z M0,0h2v16H0V0z"/></svg></a></li>          </ul>
+  </nav>
+
+
+  
+</section>
+
+  </div>
+  </article>
+
+    </div>
+  </div>
+
+  </div>
+
+                </main>
+
+                
+
+
+  <aside class="region region--sidebar">
+    
+
+<div class="views-element-container block block-views block-views-blocksite-search-block-1" id="block-applevis-views-block-site-search-block-1-2">
+  
+      <h2 class="block__title">More Like This</h2>
+    
+      <div class="block__content">
+      <div><div class="view view-site-search view-id-site_search view-display-id-block_1 js-view-dom-id-900c3039bc3a632f00a1a99d7d0995fe62f60922ee07147ee3509ecfe9b9b790">
+  
+    
+      
+      <div class="view-content">
+          <div class="views-row"><div class="views-field views-field-title"><span class="field-content"><a href="/forum/ios-ipados/what-difference-between-sound-scape-sound-scape-community-voice-vista" hreflang="en">What is the difference between sound scape, sound Scape community and voice vista?</a> (Forum Topic)</span></div></div>
+    <div class="views-row"><div class="views-field views-field-title"><span class="field-content"><a href="/forum/ios-ipados/any-apps-navigate-college-campus" hreflang="en">any apps to navigate a college campus?</a> (Forum Topic)</span></div></div>
+    <div class="views-row"><div class="views-field views-field-title"><span class="field-content"><a href="/forum/ios-ipados/using-more-one-voiceover-language-creates-lot-bugs-issues" hreflang="en">Using more than one voiceover language creates a lot of bugs and issues.</a> (Forum Topic)</span></div></div>
+    <div class="views-row"><div class="views-field views-field-title"><span class="field-content"><a href="/blog/does-your-iphone-speak-your-language-tribulations-owning-idevice-without-persian-support-what" hreflang="en">Does Your iPhone Speak Your Language? Tribulations of Owning An iDevice Without Persian support, And What Apple Can Do About It</a> (Blog Post)</span></div></div>
+    <div class="views-row"><div class="views-field views-field-title"><span class="field-content"><a href="/forum/ios-ipados/my-positive-experiences-nearby-explorer" hreflang="en">My Positive Experiences With Nearby Explorer</a> (Forum Topic)</span></div></div>
+    <div class="views-row"><div class="views-field views-field-title"><span class="field-content"><a href="/forum/ios-ipados/seeking-different-kind-gps-app" hreflang="en">Seeking a different kind of GPS app</a> (Forum Topic)</span></div></div>
+    <div class="views-row"><div class="views-field views-field-title"><span class="field-content"><a href="/forum/ios-ipados/looking-apps-help-navigate-within-campground" hreflang="en">Looking for apps to help navigate within a campground</a> (Forum Topic)</span></div></div>
+    <div class="views-row"><div class="views-field views-field-title"><span class="field-content"><a href="/forum/ios-ipados/seeking-advice-selecting-best-navigation-app" hreflang="en">Seeking advice with selecting the best navigation app</a> (Forum Topic)</span></div></div>
+
+    </div>
+  
+          </div>
+</div>
+
+    </div>
+  </div>
+
+  </aside>
+
+              </div>
+                        
+          </div>
+        </div>
+        <div class="social-bar">
+          
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        
+
+  <div class="region region--footer-top grid-full layout--pass--content-medium">
+    <div class="region--footer_top__inner">
+      <nav  id="block-applevis-secondarymenu-2" role="navigation" aria-label="Secondary menu" class="block block-menu navigation menu--secondary-menu" aria-labelledby="block-applevis-secondarymenu-2-menu">
+            
+  <h2 class="visually-hidden block__title" id="block-applevis-secondarymenu-2-menu">Site Information</h2>
+  
+        
+
+
+          <ul class="menu secondary-nav__menu secondary-nav__menu--level-1">
+            
+                          
+        
+        
+        <li class="secondary-nav__menu-item secondary-nav__menu-item--link secondary-nav__menu-item--level-1">
+          <a href="/about" title="About" class="secondary-nav__menu-link secondary-nav__menu-link--link secondary-nav__menu-link--level-1" data-drupal-link-system-path="node/18">About</a>
+
+                  </li>
+      
+                          
+        
+        
+        <li class="secondary-nav__menu-item secondary-nav__menu-item--link secondary-nav__menu-item--level-1">
+          <a href="/help" title="Answers to some frequently asked questions about AppleVis" class="secondary-nav__menu-link secondary-nav__menu-link--link secondary-nav__menu-link--level-1" data-drupal-link-system-path="faq">FAQ</a>
+
+                  </li>
+          </ul>
+  
+
+
+  </nav>
+
+    </div>
+  </div>
+
+        
+
+  <div class="region region--footer-bottom grid-full layout--pass--content-medium">
+    
+
+<div id="block-applevis-copyright-2" class="block block-block-content block-block-contentd6b10b43-4ba8-4405-a2da-64cda88aecf2">
+  
+    
+      <div class="block__content">
+      
+            <div class="text-content clearfix field field--name-body field--type-text-with-summary field--label-hidden field__item"><center><p>Unless stated otherwise, all content is copyright AppleVis. All rights reserved. <a href="https://www.applevis.com/copyright">&copy; 2024</a> | <a href="https://www.applevis.com/accessibility">Accessibility</a> | <a href="https://www.applevis.com/terms">Terms</a> | <a href="https://www.applevis.com/privacy">Privacy</a>
+</p></center></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+      </div>
+    </footer>
+
+    <div class="overlay" data-drupal-selector="overlay"></div>
+
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/34873","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"page":"1"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"eJxtjlFuwzAMQy_kREcKaFvLtMiWYTnZcvs1XTEU3X4o6BEUhdaUD3Fa1SJ08tSlDQ945eNUqWtIyqgDuhFaTGNqe1RJIZkqmktUSxsl63xDpXAdlPveoPNjneI5HcKf3MObYqVL5tvlbcEHvkLBsGL0M4KpHNyNHln_BRWHrBhidWpdCvr5n-WcrOZn0yVzRA9uSaBL4SxYrnanv2ge71w4-OmDC0U4h-tzp7vOxfKu_A0pG3zw","theme":"applevis","theme_token":null},"ajaxTrustedUrl":{"\/search":true},"matomo":{"disableCookies":false,"trackMailto":true},"collapsiblock":{"active_pages":false,"slide_speed":200,"cookie_lifetime":-1},"field_group":{"html_element":{"mode":"full","context":"view","settings":{"classes":"","id":"","element":"div","show_label":true,"label_element":"h2","label_element_classes":"","attributes":"","effect":"none","speed":"fast"}}},"user":{"uid":0,"permissionsHash":"4ad4d22d5ddc453bd6be6ad324cf45373b6e36ecb0bf579aa2896601c1bc9e9c"}}</script>
+<script src="/sites/default/files/js/js_1b4M9J43OdBYSk5MM1THsn2xwGnkgllXVl9OyP5GSVw.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=applevis&amp;include=eJw9iUEOwjAMBD-U1E9CjjGVqRNbThro74Gq4rKjma04rBrUEwndlad0WNUKau4U4qMnUsY2UDdALzSy70WFEpkqepeiRhuQBX9TrdwG3GN31OXSXI48hV8cyVQmh8H19H9oOGXFIdayh1SMIz0UV_jNotK2Gz7x_QG2S0R-"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+<script src="/modules/contrib/collapsiblock/theme/dist/collapsiblock.js?shaq11" type="module"></script>
+<script src="/sites/default/files/js/js_EUfTIh8WU3jifxO7MD9Jmygh8hpryB1rUJpIfb4NN5s.js?scope=footer&amp;delta=3&amp;language=en&amp;theme=applevis&amp;include=eJw9iUEOwjAMBD-U1E9CjjGVqRNbThro74Gq4rKjma04rBrUEwndlad0WNUKau4U4qMnUsY2UDdALzSy70WFEpkqepeiRhuQBX9TrdwG3GN31OXSXI48hV8cyVQmh8H19H9oOGXFIdayh1SMIz0UV_jNotK2Gz7x_QG2S0R-"></script>
+
+  </body>
+</html>

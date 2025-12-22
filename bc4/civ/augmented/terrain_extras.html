@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8 />
+    <meta name=viewport content="width=device-width,initial-scale=1"/>
+    <meta name=title content="BC4000"/>
+    <meta name=description content=/>
+    <meta name=keywords content="Jianfeng Wu, Sid Meier, Civilization, BC4000"/>
+    <meta name=author content="Jianfeng Wu"/>
+</head>
+
+<title>BC4000</title>
+<body style="font: -apple-system-body; margin: 20px;">
+
+<h1>
+Terrain Extras
+</h1>
+
+<h2>
+Irrigation
+</h2>
+
+<p>
+Building an irrigation system on a suitable tile causes it to produce some extra food each turn. Most tiles yield one extra food; a desert with a river will yield two, if it is not already benefiting from an oasis. Requires knowldge of Agricultural Farming.
+<br>
+
+<br>
+Without knowledge of Electricity, irrigation requires a nearby source of fresh water: lake, river, or another tile with an already existing irrigation system, must share an edge (not just a corner) with the target tile. However, once irrigated, land remains so even if the water source is removed.  Swamp and Oasis can be irrigated without any adjacent water source. Once Electricity is known, sea tiles can also be a water source. Once Recycling is known, any suitable tile may be irrigated without a water source.
+<br>
+
+<br>
+Building irrigation on a tile with a mine or oil well will destroy it.
+<br>
+
+<br>
+City center tiles get their terrain's irrigation bonus automatically, if there is no conflicting mine or oil well on the tile; however, this does not make cities count as a water source for further irrigation. Irrigation can be built on the city tile simply to allow building further irrigation elsewhere, but will not give the tile any further bonus.
+<br>
+
+<br>
+Build by issuing an 'irrigate' order.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+Allows to build Aqueduct (with Construction but no River or Lake).
+<br>
+
+<br>
+
+</p>
+
+<h2>
+Mine
+</h2>
+
+<p>
+Mines can be built on some types of terrain, once Copper Working advance is known by player. Mines increases the number of production points produced by that tile if Bronze Working is known. Hills and Mountains get an extra 2 production points per tile; other terrains get 1 extra production point.
+<br>
+
+<br>
+You need to destroy the irrigation prior to building mine.
+<br>
+
+<br>
+Build by issuing a 'mine' order.
+<br>
+Requirements to build:
+<br>
+* Prevented by Irrigation on the tile.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+
+</p>
+
+<h2>
+Oil Well
+</h2>
+
+<p>
+Once Refining is known, mines on Desert and Glacier tiles can be upgraded to oil wells for an extra production point, if Refinery is builded.
+<br>
+
+<br>
+Build by issuing a 'mine' order.
+<br>
+Requirements to build:
+<br>
+* Requires knowledge of the technology Refining.
+<br>
+* Requires Mine on the tile.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+
+</p>
+
+<h2>
+Wind Turbine
+</h2>
+
+<p>
+Wind turbines can be builded on the hills with irrigation or farmland, such tile get 1 extra production point, while keeping current food production.
+<br>
+
+<br>
+Electricty knowledge is required to gain extra production from Wind Turbine.
+<br>
+
+<br>
+Building a mine will destroy both wind turbines and irrigation.
+<br>
+
+<br>
+Build by issuing a 'mine' order.
+<br>
+Requirements to build:
+<br>
+* Requires knowledge of the technology Environmentalism.
+<br>
+* Requires Hills on the tile.
+<br>
+* Prevented by Mine on the tile.
+<br>
+* Does not apply to city centers.
+<br>
+* Requires Irrigation on the tile.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+
+</p>
+
+<h2>
+Oil Platform
+</h2>
+
+<p>
+Oil platforms allow cities with Offshore Platforms to get an extra production point from Deep Ocean tiles.
+<br>
+
+<br>
+Oil platforms can be built by Workers and similar units on board ships, or directly by Transport units.
+<br>
+
+<br>
+Build by issuing a 'mine' order.
+<br>
+Requirements to build:
+<br>
+* Requires knowledge of the technology Offshore Exploration.
+<br>
+* Requires Oceanic terrain on the tile.
+<br>
+* Prevented by Fish on the tile.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+
+</p>
+
+<h2>
+Pollution
+</h2>
+
+<p>
+Pollution appears on tiles around cities with high production or population, or when a Mfg. Plant suffers an industrial accident. It halves all output from its tile, and contributes to the risk of global warming.
+<br>
+
+<br>
+The pollution can only be cleared by dispatching Workers, Migrants, Settlers, Engineers, or a Transport with the "clean pollution" order.
+<br>
+
+<br>
+Pollution from production is likely to start becoming important as your civilization becomes more industrialized, giving you buildings such as Factory and Power Plant which boost production. Replacing a Power Plant with cleaner forms of energy -- a Hydro Plant / Hoover Dam, Nuclear Plant, or Solar Plant -- will reduce pollution from production, as will a Recycling Center.
+<br>
+
+<br>
+The city's population starts adding to pollution with the Factory, Super Highways, Offshore Platform, and Mfg. Plant buildings; each building causes the population to add more to pollution. A Mass Transit will counteract the pollution from two buildings in a city, and the Eiffel Tower wonder will counteract the pollution from one building in all the owner's cities.
+<br>
+
+<br>
+The contribution of these factors can be seen in the city dialog; once it exceeds a threshold, the excess is the percent chance of pollution appearing each turn.
+<br>
+
+<br>
+When an unused tile becomes polluted, there is the temptation to avoid the effort of cleaning it; but the spread of pollution has far more terrible results than the immediate economic impact -- every polluted tile increases the chance of global warming. Each time global warming advances, the entire world loses coastal land to the sea and to jungles and swamps, and inland tiles are lost to desert. This tends to devastate cities and leads to global impoverishment.
+<br>
+
+<br>
+The risk of global warming is cumulative; the longer polluted tiles are left uncleaned, the higher the risk becomes, and the risk can linger for some time even after all pollution has been cleaned. If a long time passes with an elevated risk of warming, its effects will be all the more severe when it does occur.
+<br>
+
+<br>
+May randomly appear around polluting city.
+<br>
+
+<br>
+Can be cleaned by units (takes 6 turns).
+<br>
+
+<br>
+
+</p>
+
+<h2>
+Minor Tribe Village
+</h2>
+
+<p>
+Villages (also called "huts") are primitive communities spread across the world at the beginning of the game. Any land unit can enter a village, making the village disappear and deliver a random response. If the village proves hostile, it could produce barbarians or the unit entering may simply be destroyed. If they are friendly, the player could receive gold, a new technology, a military unit (occasionally a settler; and sometimes a unit that the player cannot yet create), or even a new city.
+<br>
+
+<br>
+Later in the game, helicopters may also enter villages, but overflight by other aircraft will cause the villagers to take fright and disband.
+<br>
+
+<br>
+Placed by map generator.
+<br>
+Requires Land terrain on the tile.
+<br>
+
+<br>
+
+</p>
+
+<h2>
+Farmland
+</h2>
+
+<p>
+Once Chemical Synthesis is known, irrigation systems can be upgraded to farmland by irrigating them a second time (except of Desert, Swamp and city center).
+<br>
+
+<br>
+Farmland on a tile prevents any trade bonus from Super Highways.
+<br>
+
+<br>
+Like irrigation, farmland is incompatible with mines and oil wells.
+<br>
+
+<br>
+Build by issuing an 'irrigate' order.
+<br>
+Requirements to build:
+<br>
+* Requires knowledge of the technology Chemical Synthesis.
+<br>
+* Requires Irrigation on the tile.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+
+</p>
+
+<h2>
+Fallout
+</h2>
+
+<p>
+Nuclear fallout can appear on tiles when a Nuclear unit is detonated, or when a city's Nuclear Plant has an accident. It halves all output from its tile.
+<br>
+
+<br>
+Every tile with nuclear fallout also increases the risk of global nuclear winter. If nuclear winter occurs, land across the globe changes into desert, tundra, and ice, and lakes and oceans freeze.
+<br>
+
+<br>
+Settlers, Workers, Migrants, Engineers, and Transport units can all clean up nuclear fallout.
+<br>
+
+<br>
+May randomly appear around nuclear blast.
+<br>
+
+<br>
+Can be cleaned by units (takes 6 turns).
+<br>
+
+<br>
+
+</p>
+
+<h2>
+Fort
+</h2>
+
+<p>
+Forts are rapidly-built fortifications providing some defense (+50%) against land units and boats. A fort is also necessary to start building a fortress.
+<br>
+
+<br>
+Build by issuing a 'Build Fort/Fortress/Buoy' order.
+<br>
+Requirements to build:
+<br>
+* Requires knowledge of the technology Carpentry.
+<br>
+* Requires Land terrain on the tile.
+<br>
+* Prevented by Mangrove on the tile.
+<br>
+* Requires Tribe or similar units.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+* Native to Infantry, Small Land, Light Cavalry, Heavy Cavalry, Big Land, and Merchant units.
+<br>
+  * Such units can move onto this tile even if it would not normally be suitable terrain.
+<br>
+  * Diplomatic units get a 25% defense bonus in diplomatic fights.
+<br>
+
+</p>
+
+<h2>
+Fortress
+</h2>
+
+<p>
+Fortresses are more permanent forts; construction on them can only begin once the underlying fort is complete. Forts on River tiles cannot be upgraded to Fortresses.
+<br>
+
+<br>
+Compared to a fort, units in a fortress receive extra defense (+50%) against all units (in total, their defense against land units and boats is doubled), and do not count as aggressive if near a friendly city. Any kind of land unit remaining in a fortress for a whole turn without moving recovers a quarter of its hit points.
+<br>
+
+<br>
+With Astronomy, fortresses gain watchtowers from which units can see further afield.
+<br>
+
+<br>
+Build by issuing a 'Build Fort/Fortress/Buoy' order.
+<br>
+Requirements to build:
+<br>
+* Requires Fort on the tile.
+<br>
+* Requires knowledge of the technology Construction.
+<br>
+* Requires Land terrain on the tile.
+<br>
+* Prevented by Mangrove on the tile.
+<br>
+* Requires Tribe or similar units.
+<br>
+* Prevented by River on the tile.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+* Native to Infantry, Small Land, Light Cavalry, Heavy Cavalry, Big Land, Merchant, Suicidal, Wheeled Unit, Turrets, and Torpedeos units.
+<br>
+  * Such units can move onto this tile even if it would not normally be suitable terrain.
+<br>
+  * Such units situated here are not considered aggressive if this tile is within 3 tiles of a friendly city.
+<br>
+  * Can be captured by such units if at war with the nation that currently owns it.
+<br>
+  * Diplomatic units get a 25% defense bonus in diplomatic fights.
+<br>
+* Defeat of one unit does not cause death of all other units on this tile.
+<br>
+* Extends national borders of the building nation.
+<br>
+
+</p>
+
+<h2>
+Airstrip
+</h2>
+
+<p>
+Airstrips are rapidly-built runways allowing air units to land, refuel, and recover outside cities; an aircraft remaining on an airstrip for a whole turn without moving recovers a tenth of its hit points (that is, the same amount it loses each turn while airborne). However, air units on an airstrip are vulnerable to attack by land units.
+<br>
+
+<br>
+Any units on an airstrip receive extra defense (+50%) against enemy aircraft.
+<br>
+
+<br>
+An airstrip is necessary to start building an airbase.
+<br>
+
+<br>
+Build by issuing a 'Build Airstrip/Airbase' order.
+<br>
+Requirements to build:
+<br>
+* Requires knowledge of the technology Radio.
+<br>
+* Requires Land terrain on the tile.
+<br>
+* Prevented by Mountains on the tile.
+<br>
+* Prevented by Mangrove on the tile.
+<br>
+* Requires Builders or Engineers.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+* Native to Missile, Helicopter, Air, Bomb, Turrets, and Torpedeos units.
+<br>
+* Units can paradrop from this tile.
+<br>
+
+</p>
+
+<h2>
+Airbase
+</h2>
+
+<p>
+Airbases are more permanent airstrips; construction on them can only begin once the underlying airstrip is complete. Airstrips on River tiles cannot be upgraded to Airbases.
+<br>
+
+<br>
+Compared to an airstrip, units in an airbase receive extra defense (+50%) against all units (in total, their defense against air units and missiles is doubled), do not count as aggressive if near a friendly city, and can see further afield. Also, air units recover more hit points (a third per turn, the same as in a city without an Airport).
+<br>
+
+<br>
+Build by issuing a 'Build Airstrip/Airbase' order.
+<br>
+Requirements to build:
+<br>
+* Requires Airstrip on the tile.
+<br>
+* Requires knowledge of the technology Radar.
+<br>
+* Requires Land terrain on the tile.
+<br>
+* Prevented by Mountains on the tile.
+<br>
+* Prevented by Mangrove on the tile.
+<br>
+* Requires Builders or Engineers.
+<br>
+* Prevented by River on the tile.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+* Native to Missile, Helicopter, Air, Bomb, Suicidal, Wheeled Unit, Turrets, and Torpedeos units.
+<br>
+  * Such units situated here are not considered aggressive if this tile is within 3 tiles of a friendly city.
+<br>
+  * Can be captured by such units if at war with the nation that currently owns it.
+<br>
+* Units can paradrop from this tile.
+<br>
+* Extends national borders of the building nation.
+<br>
+
+</p>
+
+<h2>
+Buoy
+</h2>
+
+<p>
+Buoys may be built in the ocean (by units on a sea-going vessel) to allow their owner to see the surrounding tiles.
+<br>
+
+<br>
+Build by issuing a 'Build Fort/Fortress/Buoy' order.
+<br>
+Requirements to build:
+<br>
+* Requires knowledge of the technology Radio.
+<br>
+* Requires Oceanic terrain on the tile.
+<br>
+* Requires Builders or Engineers.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+* Grants permanent vision of an area around the tile to its owner.
+<br>
+
+</p>
+
+<h2>
+Ruins
+</h2>
+
+<p>
+Ruins mark the former site of a city that was destroyed or abandoned. They have no significant effect on gameplay (except of small defense bonus for military Small Land units).
+<br>
+
+<br>
+Requires Land terrain on the tile.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+
+</p>
+
+<h2>
+Dirt Road
+</h2>
+
+<p>
+Dirt Roads allow accesibility of your infantry or cavalry units to move into mountains or swamps, but travel speed is only slightly increased (for full functionality, they need to be upgraded to the Paved Roads).
+<br>
+
+<br>
+On some terrains, Dirt Roads also provide a trade bonus.
+<br>
+
+<br>
+Building any roads on river tiles requires knowledge of Bridge Building. City center tiles automatically get roads (even on a river tile).
+<br>
+
+<br>
+Build by issuing a 'road' order.
+<br>
+Requirements to build:
+<br>
+* Requires Tribe or similar units.
+<br>
+* Requires Land terrain on the tile.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+* Can be traveled by Infantry, Small Land, Light Cavalry, Heavy Cavalry, and Merchant units.
+<br>
+  * Such units can move onto this tile even if it would not normally be suitable terrain.
+<br>
+* Movement changes to 1/2 Movement Point, if along Dirt Road.
+<br>
+
+<br>
+Time to build and output bonus depends on terrain:
+<br>
+
+<br>
+Terrain       Time     Bonus F/P/T
+<br>
+----------------------------------
+<br>
+Lake           8       -
+<br>
+Ocean         16       -
+<br>
+Glacier       16       -
+<br>
+Desert         4       0/0/+1
+<br>
+Forest         6       0/+1/0
+<br>
+Taiga          8       0/+1/0
+<br>
+Grassland      4       0/0/+1
+<br>
+Hills          8       0/+1/0
+<br>
+Jungle         8       0/+1/0
+<br>
+Mangrove      16       -
+<br>
+Mountains     12       0/+1/0
+<br>
+Volcano       12       -
+<br>
+Plains         4       0/0/+1
+<br>
+Swamp          8       -
+<br>
+Tundra         5       0/0/+1
+<br>
+Wooded Hills   8       0/+1/0
+<br>
+
+</p>
+
+<h2>
+Paved Road
+</h2>
+
+<p>
+Once you learn knowledge of Masonry, you can to upgrade Dirt Roads to regular Paved Roads (except of Mangrove).
+<br>
+
+<br>
+Roads allow your land units to move more quickly, and allow Wheeled Units to travel through otherwise difficult terrain (Mountains, Glacier, Swamp etc).Building any roads on river tiles requires knowledge of Bridge Building. City center tiles automatically get roads (even on a river tile).
+<br>
+
+<br>
+Build by issuing a 'road' order.
+<br>
+Requirements to build:
+<br>
+* Requires Tribe or similar units.
+<br>
+* Requires Land terrain on the tile.
+<br>
+* Requires Dirt Road on the tile.
+<br>
+* Prevented by Mangrove on the tile.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+* Can be traveled by Infantry, Small Land, Light Cavalry, Heavy Cavalry, Big Land, Merchant, Suicidal, and Wheeled Unit units.
+<br>
+  * Such units can move onto this tile even if it would not normally be suitable terrain.
+<br>
+* Movement changes to 1/3 Movement Point, if along Paved Road.
+<br>
+
+<br>
+Time to build depends on terrain:
+<br>
+
+<br>
+Terrain       Time
+<br>
+------------------
+<br>
+Lake           8      
+<br>
+Ocean         16      
+<br>
+Glacier       16      
+<br>
+Desert         4      
+<br>
+Forest         6      
+<br>
+Taiga          8      
+<br>
+Grassland      4      
+<br>
+Hills          8      
+<br>
+Jungle         8      
+<br>
+Mangrove      16      
+<br>
+Mountains     12      
+<br>
+Volcano       12      
+<br>
+Plains         4      
+<br>
+Swamp          8      
+<br>
+Tundra         5      
+<br>
+Wooded Hills   8      
+<br>
+
+</p>
+
+<h2>
+HighWay
+</h2>
+
+<p>
+Once you learn the Automobile technology, you may use Engineers to build highways, paralell to roads or railroads.  All land units travel considerably faster along highways than along roads.
+<br>
+
+<br>
+A highway also increases shield resources produced by a tile by 25% (together with paralell railroad, 50%).
+<br>
+
+<br>
+City center tiles with roads are automatically upgraded to highways when you learn the Automobile technology.
+<br>
+
+<br>
+Build by issuing a 'road' order.
+<br>
+Requirements to build:
+<br>
+* Requires knowledge of the technology Automobile.
+<br>
+* Requires Engineers, Steam Barge, Diesel Barge, or Train.
+<br>
+* Requires Paved Road on the tile.
+<br>
+* Requires Land terrain on the tile.
+<br>
+* Prevented by Mangrove on the tile.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+* Can be traveled by Infantry, Small Land, Light Cavalry, Heavy Cavalry, Big Land, Merchant, Suicidal, and Wheeled Unit units.
+<br>
+  * Such units can move onto this tile even if it would not normally be suitable terrain.
+<br>
+* Movement changes to 1/6 Movement Point, if along HighWay.
+<br>
+
+</p>
+
+<h2>
+Railroad
+</h2>
+
+<p>
+Once you learn the Railroad technology, you may upgrade your roads to railroads. Any land units can  be loaded into train, which travel very fast along the railway line. Small Land and Infantry units can also utilise railroad speed by themselves, without train.
+<br>
+
+<br>
+A railroad also increases shield resources produced by a tile by 25%, and together with Railway Station grant some food tile bonuses.
+<br>
+
+<br>
+City center tiles with roads are automatically upgraded to railroads when you learn the Railroad technology.
+<br>
+
+<br>
+Build by issuing a 'road' order.
+<br>
+Requirements to build:
+<br>
+* Requires knowledge of the technology Railroad.
+<br>
+* Requires Dirt Road on the tile.
+<br>
+* Requires Tribe or similar units.
+<br>
+* Requires Land terrain on the tile.
+<br>
+
+<br>
+Can be pillaged by units (time is terrain-dependent).
+<br>
+
+<br>
+* Can be traveled by Small Land, Merchant, and Train units.
+<br>
+  * Such units can move onto this tile even if it would not normally be suitable terrain.
+<br>
+* Movement changes to 1/6 Movement Point, if along Railroad.
+<br>
+
+</p>
+
+<h2>
+River
+</h2>
+
+<p>
+Any land terrain type may have a River on it. A River adds 1 trade to the resources produced by that tile. It also increases a tile's defense factor by 25%.
+<br>
+
+<br>
+Land units may move along rivers for faster travel (but not diagonally). Coasters may also travel up rivers.
+<br>
+
+<br>
+Roads and railroads can only be built on River tiles if your civilization has learned Bridge Building technology. Fortresses and Airbases cannot be built on River tiles.
+<br>
+
+<br>
+Cities built on or next to rivers incur a small risk of flooding, which will destroy stored food - this can be prevented by River Embankments.
+<br>
+
+<br>
+Placed by map generator.
+<br>
+
+<br>
+Prevents to build Aqueduct.
+<br>
+Allows to build Aqueduct, River (with Carpentry but no Lake).
+<br>
+Allows to build Hydro Plant (with Turbine and Factory).
+<br>
+Allows to build River Embankments (with Concrete and Sewer System).
+<br>
+Allows to build Textille Mill (with Machinery).
+<br>
+Allows to build Watermill (with The Wheel but no Windmill).
+<br>
+Allows to build Hoover Dam (with Offshore Exploration and Factory).
+<br>
+
+<br>
+* Can be traveled by Small Land, Merchant, Coaster, Hovercraft, and Riverboat units.
+<br>
+  * Such units can move onto this tile even if it would not normally be suitable terrain.
+<br>
+  * Such units get a 25% defense bonus on this tile.
+<br>
+* Movement changes to 1/2 Movement Point, if along River.
+<br>
+
+</p>
+
+<h2>
+Water Lock
+</h2>
+
+<p>
+Allow ships to enter inland.
+<br>
+
+<br>
+Building Water Lock requires ocean tile adjacent to this facility.
+<br>
+
+<br>
+Build by issuing a 'Build Fort/Fortress/Buoy' order.
+<br>
+Requirements to build:
+<br>
+* Requires Tribe or similar units.
+<br>
+* Requires Land terrain on the tile.
+<br>
+* Requires Oceanic terrain on the tile or a cardinally adjacent tile.
+<br>
+* Requires knowledge of the technology Steam Engine.
+<br>
+* Prevented by Mountains on the tile.
+<br>
+* Prevented by Hills on the tile.
+<br>
+* Prevented by Wooded Hills on the tile.
+<br>
+* Prevented by Mangrove on the tile.
+<br>
+
+<br>
+Can be pillaged by units (takes 4 turns).
+<br>
+
+<br>
+* Native to Small Land, Merchant, Sea, Coaster, Hovercraft, and Riverboat units.
+<br>
+  * Such units can move onto this tile even if it would not normally be suitable terrain.
+<br>
+  * Can be captured by such units if at war with the nation that currently owns it.
+<br>
+* Extends national borders of the building nation.
+<br>
+
+</p>
+
+</body>
+</html>

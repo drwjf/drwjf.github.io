@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8 />
+    <meta name=viewport content="width=device-width,initial-scale=1"/>
+    <meta name=title content="BC4000"/>
+    <meta name=description content=/>
+    <meta name=keywords content="Jianfeng Wu, Sid Meier, Civilization, BC4000"/>
+    <meta name=author content="Jianfeng Wu"/>
+</head>
+
+<title>BC4000</title>
+<body style="font: -apple-system-body; margin: 20px;">
+
+<h1>
+Combat Rules
+</h1>
+
+<h2>
+Combat
+</h2>
+
+<p>
+In standard combat, when one unit attacks another unit, either the attacker will be destroyed, or the defender will be destroyed -- never both (unless the attacker was a missile).
+<br>
+
+<br>
+The outcome of combat depends on several factors, including chance.
+<br>
+
+<br>
+Notice that many bonuses are possible for defenders, but few for attackers, aside from veteran status; an attacking unit can mostly expect circumstance to work against it.
+<br>
+
+<br>
+First, the attacker's strength is modified.
+<br>
+
+<br>
+ - If the attacker is a veteran, its strength is multiplied by the bonus associated with its veteran level.
+<br>
+
+<br>
+Next, the defender's strength is modified.
+<br>
+
+<br>
+ - If the defender is a veteran, then its strength is multiplied by the bonus associated with its veteran level.
+<br>
+
+<br>
+ - Then the defender's strength is multiplied by the defense factor of the terrain it occupies.
+<br>
+
+<br>
+ - If the defender is fortified, or is of a type that could fortify and is inside a city, its strength is multiplied by 1.5.
+<br>
+
+<br>
+   - The defender's strength is doubled if it is a Pikeman unit defending against a mounted unit.
+<br>
+
+<br>
+   - If the defender is an AEGIS Cruiser defending against airborne units (including missiles and Helicopters), the defense is quintupled.
+<br>
+
+<br>
+   - The defender's strength is doubled again if it is in a city with a SAM Battery and the attacker is an air unit (other than a Helicopter or a missile).
+<br>
+
+<br>
+   - An SDI Defense doubles the defender's strength against missile attacks.
+<br>
+
+<br>
+   - If the attacker is a ship and the defender is in a city with a Coastal Defense, the defender's strength is doubled.
+<br>
+
+<br>
+   - Against land units (other than Howitzers) and Helicopters, defending units in a city with City Walls have their strength tripled.
+<br>
+
+<br>
+   - If the defender is in a fortress (and not a city), its strength is doubled.
+<br>
+
+<br>
+   - Finally, if the attacker is a fighter and the defender is a helicopter, the defender's strength is halved.
+<br>
+
+<br>
+If, after these modifications, the attacker has a strength of 0, it automatically loses. Otherwise, if the defender has a strength of 0, the defender loses.
+<br>
+
+<br>
+The firepower of the attacker and defender are also modified.
+<br>
+
+<br>
+ - If the defender is a ship and is inside a city the firepower of the attacker is doubled and the firepower of the ship is set to 1.
+<br>
+
+<br>
+ - If a fighter is attacking a helicopter the firepower of the helicopter is set to 1.
+<br>
+
+<br>
+ - If neither unit could move to where the other is, such as a ship attacking a land unit on land, the firepower of both is set to 1.
+<br>
+
+<br>
+After these preliminaries, combat occurs, as long as both units are still alive (i.e., hit points are greater than 0). Each round, a random number between 1 and the sum of the attacker's and defender's strengths is generated. If this number is greater than the defender's strength, the defender loses hit points equal to the attacker's firepower. Otherwise, the attacker loses hit points equal to the defender's firepower. The first unit to reach 0 hit points (or negative hit points) loses.
+<br>
+
+<br>
+Whichever unit survives the fight has a chance of being promoted a veteran level. If the winner's civilization has the Sun Tzu's War Academy (and if it isn't obsolete), the chance is increased by half in case of land units.
+<br>
+
+<br>
+If the attacker is a land unit and wins, and the defender is in a city without City Walls, the city is reduced in size by 1.
+<br>
+
+<br>
+If the defender loses, and is not inside a city, fortress, or airbase, all other units at the defender's location may be destroyed along with the defender.
+<br>
+
+<br>
+ - Combat example 1 
+<br>
+
+<br>
+Suppose a Cannon (A:8, D:1, HP:20, FP:1) attacks a Musketeer (A:3, D:3, HP:20, FP:1) inside a city with City Walls built on a Forest tile.  Neither are veteran.
+<br>
+
+<br>
+The defender's base strength is 3.  Because it is on a Forest tile, its strength becomes 4.5.  It is behind City Walls, so its strength is tripled, to 13.5.  It is a ground unit inside a city, so its strength is increased to 20.25.
+<br>
+
+<br>
+Strength values inside the game are actually multiplied by 10, with fractions dropped, so the attacker's strength is 80, and the defender's strength is 202.
+<br>
+
+<br>
+Both units keep their firepower of 1 unchanged.
+<br>
+
+<br>
+Each round of combat, a random number between 1 and 282 is generated.  If the number is greater than 202 (about a 28% chance), the defender loses 1 hit point.  Otherwise (about a 72% chance), the attacker loses 1 point.
+<br>
+
+<br>
+Since both units have 20 hit points, the odds favor a victory for the defender.  The defender will probably lose somewhere around 40% of its hit points during the fight.  But the outcome is never certain as long as both units have non-zero strengths; the defender might emerge untouched, or it might lose most of its hit points, or it might even lose the battle.
+<br>
+
+<br>
+ - Combat example 2
+<br>
+
+<br>
+Suppose a veteran Battleship (A:12, D:12, HP:40, FP:2) with 3 movement points attacks a veteran Alpine Troops (A:5, D:5, HP:20, FP:1) inside a city built on a Grassland tile, with City Walls and a Coastal Defense.
+<br>
+
+<br>
+The attacker's strength is 12, raised to 18 because of veteran status.
+<br>
+
+<br>
+The defender's strength is 5, raised to 7.5 due to veteran status. The terrain's defense factor is 1 (no effect).  The Coastal Defense doubles the defender's strength to 15. (The City Walls have no effect against attacking sea units.) The defender is a ground unit inside a city, so its total strength is 22.5.
+<br>
+
+<br>
+Internally, the values used for attacker and defender strength are 180 and 225, respectively.
+<br>
+
+<br>
+The firepower of the Battleship is set from 2 to 1.
+<br>
+
+<br>
+Each round, a random number from 1 to 405 is generated.  If it is greater than 225 (about a 44% chance) the defender loses 1 hit point.  Otherwise, the attacker loses 1 hit point.
+<br>
+
+<br>
+In this case, the odds greatly favor the attacker winning.  The Battleship is 25% less likely to score a hit in any given round, but the Battleship has twice as many hit points. The Battleship should expect to lose about 60% of its hit points during the fight, and should expect to have no movement points left.
+</p>
+
+</body>
+</html>
