@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>governments</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="government-types">Government Types</h1>
+<h2 id="overview">Overview</h2>
+<p>Your government type influences your cities' productivity and
+commerce, your citizens' happiness, and many other game factors.</p>
+<p>You start out ruling your civilization through Despotism. As your
+technology improves, you can select other forms of government (listed
+below). In order to change your form of government, you must start a
+revolution. This will cause your civilization to undergo a period of
+Anarchy (lasting 1-5 turns); at the end of this time, you will be able
+to choose your new government.</p>
+<p>TIP 1: Offensive military campaigns are difficult under Republican
+and Democratic governments unless you give your citizens lots of
+luxuries to keep them happy. When conquering other civilizations, it may
+be helpful to switch to one of the more militant styles of
+government.</p>
+<p>TIP 2: Scientific advancement requires high levels of trade, which
+are much easier to achieve under Republican and Democratic governments.
+Consider switching to the Republic as soon as you can; gaining advanced
+technology early in the game puts you at an advantage.</p>
+<h2 id="anarchy">Anarchy</h2>
+<p>Anarchy is simply the absence of any recognizable government.
+Citizens are disorganized and unproductive, and will spend all income as
+quickly as possible, rather than paying taxes or conducting
+research.</p>
+<ul>
+<li><p>Buildings and technologies do not require any upkeep.</p></li>
+<li><p>Without Pyramids, each worked tile that gives more than 2 Food,
+Shield, or Trade will suffer a -1 penalty, unless the city working it is
+celebrating. (Cities below size 3 will not celebrate.)</p></li>
+<li><p>Each city can support up to 2 shield unit payment for free;
+further units each cost 1 (or more, in case of upgrade) shield per
+turn.</p></li>
+<li><p>Military units do not cause unhappiness even when deployed
+aggressively.</p></li>
+<li><p>Military units impose martial law. Up to 3 military units inside
+a city will each force 1 unhappy citizen to become satisfying.</p></li>
+<li><p>You have no control over tax rates. Half of the trade income is
+simply lost to your economy (less if you have luxury-promoting
+buildings), and the remainder all goes to luxuries.</p></li>
+<li><p>Base production and food waste is 30%.</p></li>
+<li><p>Luxury science outcome are halved, tax and science specialists'
+output is halved.</p></li>
+<li><p>The only Policy setting, which is taken into account is National
+Pride.</p></li>
+</ul>
+<p>Features:</p>
+<ul>
+<li>If you lose your capital, the base chance of civil war is 99%.</li>
+<li>You can have up to 10 cities before an additional unhappy citizen
+appears in each city due to civilization size.</li>
+<li>After the first unhappy citizen due to civilization size, for each 5
+additional cities another unhappy citizen will appear.\</li>
+</ul>
+<h2 id="tribal">Tribal</h2>
+<p>Under a Tribal government, you are part ruler of your people. Your
+control over your citizens is maintained largely by spiritual
+counsel.</p>
+<p>Compared to Despotism, a Tribal economy is more shield-oriented,
+without government centre. Its bonuses to veterancy can be an advantage
+in wartime, but it lacks the martial law of other early governments.</p>
+<ul>
+<li><p>Increases by half the chance of small land, infantry and cavalry
+units getting the next veteran level after a battle.</p></li>
+<li><p>Without Pyramids, each worked tile that gives more than 2 Food,
+Shield, or Trade will suffer a -1 penalty, unless the city working it is
+celebrating or Tribe Hut exist. (Cities below size 3 will not
+celebrate.)</p></li>
+<li><p>With Pyramids, celebrating cities with Granary and size 3 or
+above are subject of Rapture Growth (this effect is cancelled by
+Monotheism)</p></li>
+<li><p>Each city can support up to 2 units shield payment for free;
+further units each cost shields per turn (more than 6, also
+food).</p></li>
+<li><p>Unlike later governments, military units do not cause unhappiness
+even when deployed aggressively.</p></li>
+<li><p>Base corruption and waste is 30% (the highest under any
+government) (half of base corruption with knowledge of
+Banking).</p></li>
+<li><p>Base food waste is 10% for all cities.</p></li>
+<li><p>Tribe loyality make inciting revolt 2x more expensive than
+Despotism or Monarchy.</p></li>
+<li><p>Science and gold outcome is decreased 25%, tax specialists'
+output is halved</p></li>
+<li><p>Policies settings, which are taken into account: Welfare Policy,
+Religious Orthodoxy, National Pride.</p></li>
+</ul>
+<p>Features:</p>
+<ul>
+<li>Each of your cities will avoid paying 6 upkeep for your units.
+(type: 🌾)</li>
+<li>If you lose your capital, the base chance of civil war is 20%.</li>
+<li>You can have up to 8 cities before an additional unhappy citizen
+appears in each city due to civilization size.</li>
+<li>After the first unhappy citizen due to civilization size, for each 4
+additional cities another unhappy citizen will appear.</li>
+<li>The maximum rate you can set for science, gold, or luxuries is
+60%.</li>
+<li>Unhappiness from foreign citizens due to war with their home state
+is 75% the usual value.\</li>
+</ul>
+<h2 id="thalassocracy">Thalassocracy</h2>
+<p>Thalassocracy is a system of 'empire at sea', which gain power from
+naval and sea trade supremacy.</p>
+<p>This decentralised state of selfdom cities have moderate corruption
+and increased money income from sea, albeit decreased inland
+productivity.</p>
+<p>Due to long traditions of its maritime supremacy, all new sea
+warships have already deckhand level (veteran with Harbour).</p>
+<ul>
+<li><p>Each city gets extra 2 luxury points.</p></li>
+<li><p>Each city can support up to 1 gold and 4 shield unit payments for
+free;</p></li>
+<li><p>Martial law is limited to 2 units.</p></li>
+<li><p>Each city tolerates up to 1 peacemaker unit outside of state
+boundaries; each further unit causes 1..3 unhappy citizens (depend on
+Enlightening Policy, decreased with Hollywood).</p></li>
+<li><p>There is 10% base level of corruption, not affected by distance
+to the capital.</p></li>
+<li><p>Base production waste is 20%, and is not affected by distance to
+the capital.</p></li>
+<li><p>Production penalty is applied for inland tiles, except if Marco
+Polo Embassy is on the same continent.</p></li>
+<li><p>Additional trade point from each Lake, Ocean or Deep Ocean tile
+for celebrating cities.</p></li>
+<li><p>City with the Lighthouse and Harbor harvest additional food from
+Deep Ocean tiles.</p></li>
+<li><p>Low chance of Civil War, however citizens are happy, when limited
+number of cities participate within this sea-trade federation.</p></li>
+<li><p>Thalassocracy is very tolerant of mixed nationalities in your
+cities.</p></li>
+<li><p>Science outcome depend on Enlightening Policy.</p></li>
+<li><p>Policies settings, which are taken into account: Liberal Economy,
+Enlightening Policy, Welfare Policy, Religious Orthodoxy, National
+Pride.</p></li>
+</ul>
+<p>Requires knowledge of the technology Thalassocracy.</p>
+<p>Features:</p>
+<ul>
+<li>Unhappiness from foreign citizens due to war with their home state
+is 40% the usual value.</li>
+<li>If you lose your capital, the base chance of civil war is 30%.</li>
+<li>You can have up to 14 cities before an additional unhappy citizen
+appears in each city due to civilization size.</li>
+<li>After the first unhappy citizen due to civilization size, for each 8
+additional cities another unhappy citizen will appear.</li>
+<li>The maximum rate you can set for science, gold, or luxuries is
+70%.</li>
+<li>Allows you to build Cog.\</li>
+</ul>
+<h2 id="federation">Federation</h2>
+<p>Federalism is a system in which the power to govern is shared between
+national and provincial governments. This decentralization minimizes the
+corruption and waste caused by distance to capital, and avoids
+separatist movements.</p>
+<ul>
+<li><p>Each city gets 2 extra luxury points.</p></li>
+<li><p>Cities which belong to the nation with Women Suffrage small
+wonder, produce one extra trade point for every tile which is already
+producing trade. (Cities below size 3 will not celebrate.)</p></li>
+<li><p>Each city can support up to 2 gold/shield unit payment for free;
+gold payment is doubled).</p></li>
+<li><p>Each city tolerates one aggressively deployed military unit; each
+further unit causes 1..3 unhappy citizens (depend on Enlightening
+Policy).</p></li>
+<li><p>There is no base level of corruption, but an increasing amount
+with distance from the capital (half as much as with most other
+governments). Knowledge of The Corporation eliminates this
+corruption.</p></li>
+<li><p>Base production waste is 30%, but is not affected by distance to
+the capital.</p></li>
+<li><p>Base food waste is 30% for all cities.</p></li>
+<li><p>Has a senate that may prevent declaration of war.</p></li>
+<li><p>Federation is relatively tolerant of cosmopolitan
+cities.</p></li>
+<li><p>Diplomats and Spies gain additional veterancy level
+(secretary).</p></li>
+<li><p>Inciting revolt is 2x more expensive than Despotism or
+Monarchy.</p></li>
+<li><p>Gold outcome is increased 25%, science outcome increase depend on
+Enlightening Policy.</p></li>
+<li><p>Policies settings, which are taken into account: Liberal Economy,
+Enlightening Policy, Welfare Policy, Religious Orthodoxy, National
+Pride.</p></li>
+</ul>
+<p>Requires knowledge of the technology Federation.</p>
+<p>Features:</p>
+<ul>
+<li>You can have up to 24 cities before an additional unhappy citizen
+appears in each city due to civilization size.</li>
+<li>After the first unhappy citizen due to civilization size, for each
+16 additional cities another unhappy citizen will appear.</li>
+<li>The maximum rate you can set for science, gold, or luxuries is
+70%.</li>
+<li>New Diplomat units will be veteran.</li>
+<li>Unhappiness from foreign citizens due to war with their home state
+is 80% the usual value.\</li>
+</ul>
+<h2 id="communism">Communism</h2>
+<p>A Communist government is based on the ideal that all people are
+equal. All goods are owned by the state, rather than by private
+citizens. Communism gives a balance between military and commercial
+styles of government.</p>
+<p>Communism is a good government for maximizing shield production, and
+for large empires.</p>
+<ul>
+<li><p>Celebrating cities produce a further shield point for every
+worked tile (land or water) which is already producing shields. (Cities
+below size 3 will not celebrate). 5 Year Plan required.</p></li>
+<li><p>City improvements which would normally have an upkeep of 1 gold
+are free of upkeep (except of cities with Trade Union).</p></li>
+<li><p>Each city can support up to 3 shield and 8 gold/food unit
+payments for free; food payment is doubled.</p></li>
+<li><p>Each city tolerates up to 3 aggressively deployed military units
+(cities size 8 or above support more of them); each further unit causes
+1 unhappy citizen.</p></li>
+<li><p>Military units impose martial law. Up to 3 military units inside
+a city will each force 2 unhappy citizens to become satisfying (the
+maximum possible).</p></li>
+<li><p>Base corruption is 30%, but is not affected by distance to the
+capital.</p></li>
+<li><p>There is small 10% production waste.* Base food waste is 20% for
+all cities and increase with Collective Economy policy
+settings.</p></li>
+<li><p>Communism is relatively tolerant of cosmopolitan cities.</p></li>
+<li><p>Partisans gain additional veterancy level (recruits without
+Barracks, hardened with Barracks).</p></li>
+<li><p>If United Nation wonder was built by any player, inciting
+communistic cities is 4x more expensive.</p></li>
+<li><p>Gold outcome is decreased twice, luxury outcome is substantially
+supressed by 60% (except for cities with Trade Union improvement:
+30%).</p></li>
+<li><p>Policies settings, which are taken into account: Collective
+Economy, Welfare Policy, National Pride.</p></li>
+</ul>
+<p>Requires knowledge of the technology Communism.</p>
+<p>Features:</p>
+<ul>
+<li>Allows to build 5 Years Plan (with Factory and Culture 5200).</li>
+<li>You pay 2 times normal upkeep for your units. (type: 🌾)</li>
+<li>Each of your cities will avoid paying 8 upkeep for your units.
+(type: 🌾)</li>
+<li>If you lose your capital, the base chance of civil war is 60%.</li>
+<li>You can have up to 28 cities before an additional unhappy citizen
+appears in each city due to civilization size.</li>
+<li>After the first unhappy citizen due to civilization size, for each
+12 additional cities another unhappy citizen will appear.</li>
+<li>New Partisan units will be veteran. The rank of verteran is
+recruit.</li>
+<li>Unhappiness from foreign citizens due to war with their home state
+is 70% the usual value.\</li>
+</ul>
+<h2 id="despotism">Despotism</h2>
+<p>Under Despotism, you are the absolute ruler of your people. Your
+control over your citizens is maintained largely by martial law.</p>
+<p>Compared to Tribalism, a Despotic economy is more trade-oriented.</p>
+<ul>
+<li><p>Your centers of government (cities with Palace and Ecclesiastical
+Palace) get a +75% bonus to gold production.</p></li>
+<li><p>Without Pyramids, each worked tile that gives more than 2 Food,
+Shield, or Trade will suffer a -1 penalty, unless the city working it is
+celebrating. (Cities below size 3 will not celebrate.)</p></li>
+<li><p>With Pyramids, celebrating cities with Granary and size 3 or
+above are subject of Rapture Growth (this effect is cancelled by
+Monotheism)</p></li>
+<li><p>Each city can support up to 2 gold and 4 shield unit payments for
+free.</p></li>
+<li><p>Unlike later governments, military units do not cause unhappiness
+even when deployed aggressively.</p></li>
+<li><p>Military units impose martial law. Up to 3 military units inside
+a city will each force 1 unhappy citizen to become satisfying.</p></li>
+<li><p>Base corruption is 20%. This increases with distance from the
+capital (half as fast with knowledge of The Corporation).</p></li>
+<li><p>Base production waste is 10%. This increases with distance from
+the capital (half as fast with knowledge of Banking).</p></li>
+<li><p>Chariots gain Veteran level if built in city with Stable
+Barracks), all other Wheeled Units recruit level (not cumulaltive with
+Leonardo Workshop or Ecole Speciale Militaire).</p></li>
+<li><p>Science outcome is decreased twice.</p></li>
+<li><p>Policies settings, which are taken into account: Welfare Policy,
+Religious Orthodoxy, National Pride.</p></li>
+</ul>
+<p>Requires knowledge of the technology Absolutism.<br />
+Requires you to own Palace.</p>
+<p>Features:</p>
+<ul>
+<li>If you lose your capital, the base chance of civil war is 80%.</li>
+<li>You can have up to 12 cities before an additional unhappy citizen
+appears in each city due to civilization size.</li>
+<li>After the first unhappy citizen due to civilization size, for each 8
+additional cities another unhappy citizen will appear.\</li>
+</ul>
+<h2 id="monarchy">Monarchy</h2>
+<p>Under Monarchy, a king or queen serves as a hereditary figurehead for
+your government.</p>
+<p>Monarchy gives low unit upkeep costs.</p>
+<ul>
+<li><p>Your centers of government (cities with Palace and Ecclesiastical
+Palace) get a +50% bonus to gold production.</p></li>
+<li><p>Celebrating capital produce one extra food for every tile which
+is already producing food. (Capital below size 3 will not celebrate,
+celebration in other cities has no effects.)</p></li>
+<li><p>Each city can support up to 3 gold payments for units for free,
+and 5 shield payments (additional payment free for city size 8 and
+above)</p></li>
+<li><p>Each city tolerates up to 3 aggressively deployed military units;
+each further unit causes 1 unhappy citizen.</p></li>
+<li><p>Military units impose martial law. Up to 2 military units inside
+a city will each force 1 unhappy citizen to become satisfying.</p></li>
+<li><p>Base corruption is 10%. This increases with distance from the
+capital (half as fast with knowledge of The Corporation).</p></li>
+<li><p>Base production waste is 20%. This increases with distance from
+the capital (half as fast with knowledge of Banking).</p></li>
+<li><p>Pikemen and Arbalests gain additional veterancy level (recruits
+without Barracks, hardened with Barracks).</p></li>
+<li><p>Science and luxury outcome are decreased by 25%</p></li>
+<li><p>Policies settings, which are taken into account: Liberal Economy,
+Welfare Policy, Religious Orthodoxy, National Pride.</p></li>
+</ul>
+<p>Requires knowledge of the technology Monarchy.<br />
+Requires you to own Palace.</p>
+<p>Features:</p>
+<ul>
+<li>If you lose your capital, the base chance of civil war is 70%.</li>
+<li>You can have up to 14 cities before an additional unhappy citizen
+appears in each city due to civilization size.</li>
+<li>After the first unhappy citizen due to civilization size, for each 8
+additional cities another unhappy citizen will appear.</li>
+<li>New Pikemen units will be veteran. The rank of verteran is
+recruit.</li>
+<li>New Arbalest units will be veteran. The rank of verteran is
+recruit.</li>
+<li>Allows you to build Streltsy.\</li>
+</ul>
+<h2 id="legalism">Legalism</h2>
+<p>Legalism is a political philosophy based on the idea, that a highly
+efficient and powerful government is the key to social order. Army of
+skilled officials is able to maintain even huge empire, but such highly
+bureaucratized state is affected by relatively high corruption.</p>
+<ul>
+<li><p>Celebrating cities with granary, temple and size 3 or above are
+subject of Rapture Growth (this effect is cancelled by
+Monotheism)</p></li>
+<li><p>Each city can support 1 gold and 5 shield unit payment for
+free.</p></li>
+<li><p>Each city tolerates a single aggressively deployed military unit;
+each further unit causes unhappy citizens.</p></li>
+<li><p>Military units impose limited martial law: 1 military unit inside
+a city will force 2 unhappy citizen to become satisfying.</p></li>
+<li><p>Base corruption is 20%. This increases slowly with distance from
+the capital</p></li>
+<li><p>Base production waste is 30%, regardless of distance from
+capital.</p></li>
+<li><p>Base food waste is 20% for all cities.</p></li>
+<li><p>Halberdiers gain additional veterancy level (recruits without
+Barracks, hardened with Barracks).</p></li>
+<li><p>Science outcome is decreased 25%</p></li>
+<li><p>Policies settings, which are taken into account: Liberal Economy,
+Welfare Policy, Religious Orthodoxy, National Pride.</p></li>
+</ul>
+<p>Requires knowledge of the technology Legalism.<br />
+Requires you to own Forbidden City.</p>
+<p>Features:</p>
+<ul>
+<li>🌾 production will suffer some losses.</li>
+<li>If you lose your capital, the base chance of civil war is 70%.</li>
+<li>You can have up to 24 cities before an additional unhappy citizen
+appears in each city due to civilization size.</li>
+<li>After the first unhappy citizen due to civilization size, for each
+10 additional cities another unhappy citizen will appear.</li>
+<li>The maximum rate you can set for science, gold, or luxuries is
+70%.</li>
+<li>A maximum of 1 unit in each city can enforce martial law.</li>
+<li>New Halberdier units will be veteran. The rank of verteran is
+recruit.\</li>
+</ul>
+<h2 id="fundamentalism">Fundamentalism</h2>
+<p>Fundamentalism is a form of government organized around a central set
+of beliefs. The beliefs, usually religious in nature, form a rigid
+guideline for actions and reactions of both the rulers and the
+people.</p>
+<p>In a fundamentalist society, the people and the rulers are entirely
+devoted to their beliefs, and are usually willing to die to preserve
+them.</p>
+<p>If Sultan Palace is founded, improvements that normally convert
+unhappy citizens to satisfying citizens, produce `tithes` (gold)
+equivalent to the number of people they would convert, and require no
+maintenance.</p>
+<p>Fundamentalism is a good government for maximizing gold, and its
+Fanatics are useful in wartime, but it has a heavy penalty to
+technological progress.</p>
+<ul>
+<li><p>Base science production is half that of other governments. (A
+Fundamentalist city with a Library produces as much science as a city
+under another government does alone.)</p></li>
+<li><p>Each city can support up to 4 gold and 6 shield unit payments for
+free;</p></li>
+<li><p>Each city tolerates up to 2 aggressively deployed military units;
+each further unit causes 1 unhappy citizen.</p></li>
+<li><p>Base corruption is 15%. This increases with distance from the
+capital (half as fast with knowledge of The Corporation).</p></li>
+<li><p>Base production waste is 15%. This increases with distance from
+the capital (half as fast with knowledge of Banking).</p></li>
+<li><p>Due to high loyality of indoctrinated warriors, inciting revolt
+is very expensive.</p></li>
+<li><p>Science outcome is decreased twice.</p></li>
+<li><p>Universities outcome is is one third of normal yield, but Madrasa
+increase science by 25%</p></li>
+<li><p>Policies settings, which are taken into account: Religious
+Orthodoxy, National Pride.</p></li>
+</ul>
+<p>Requires knowledge of the technology Fundamentalism.<br />
+Requires you to own Palace.</p>
+<p>Features:</p>
+<ul>
+<li>If you lose your capital, the base chance of civil war is 60%.</li>
+<li>You can have up to 14 cities before an additional unhappy citizen
+appears in each city due to civilization size.</li>
+<li>After the first unhappy citizen due to civilization size, for each 5
+additional cities another unhappy citizen will appear.</li>
+<li>The maximum rate you can set for science, gold, or luxuries is
+40%.</li>
+<li>Pays no upkeep for Janissaries, Streltsy, Fanatics, Technical,
+Crusaders, Wagenburg, or Cog.</li>
+<li>Allows you to build Janissaries.</li>
+<li>Allows you to build Fanatics.</li>
+<li>Allows you to build Technical.</li>
+<li>Allows you to build Wagenburg.\</li>
+</ul>
+<h2 id="fascism">Fascism</h2>
+<p>Fascism is an authoritarian goverment based on totalitarian one-party
+state controlling industry and commerce. Fascism allow private property
+but suppress it by state interventionist policies. However socialism was
+a root of this goverment system, Fascism is focused on militarism and
+nationalism. Due to pervasive power of the secret police, opposition
+usually have no chance to incite revolt. Beside of the additional
+veteran levels of Small Land units, fascist regime support veteran
+paratroopers.</p>
+<p>Fascism is a government suitable for maximizing shield production and
+military power, but rather for medium size empires.</p>
+<ul>
+<li><p>Each city can support up to 4 shield and 6 gold unit payment for
+free (shield payment are doubled); further units each cost 2 shields per
+turn (more than 6, also gold).</p></li>
+<li><p>Celebrating cities produce a further shield point for every
+worked tile (land or water) which is already producing shield. (Cities
+below size 3 will not celebrate). Police Station required.</p></li>
+<li><p>Base corruption is 20%, this increases with distance from the
+capital.</p></li>
+<li><p>There is no base production waste, but this increase with
+distance from the capital.</p></li>
+<li><p>Each factory production is increased twice.</p></li>
+<li><p>Newly produced Paratroopers are already elite if Barracks tier 3
+are present.</p></li>
+<li><p>Military units impose martial law. Up to 2 military units inside
+a city will each force 2 unhappy citizen to become satisfying.</p></li>
+<li><p>It is not possible to incite revolt, if fascist ruled nation
+<em>doesn't</em> posses Statue of Liberty.</p></li>
+<li><p>Fascism is not tolerant of another nationality of citisens - they
+unlikely will be angry.</p></li>
+<li><p>Luxury and science outcome are decreased 25%</p></li>
+<li><p>Policies settings, which are taken into account: Welfare Policy,
+Religious Orthodoxy, National Pride.</p></li>
+</ul>
+<p>Requires knowledge of the technology Imperialism.<br />
+Requires you to own Palace.</p>
+<p>Features:</p>
+<ul>
+<li>You pay 2 times normal upkeep for your units. (type: 🔨)</li>
+<li>Each of your cities will avoid 4 unhappiness caused by units.</li>
+<li>You can have up to 18 cities before an additional unhappy citizen
+appears in each city due to civilization size.</li>
+<li>After the first unhappy citizen due to civilization size, for each 4
+additional cities another unhappy citizen will appear.</li>
+<li>New Paratroopers units will be veteran. The rank of verteran is
+veteran.</li>
+<li>Unhappiness from foreign citizens due to war with their home state
+is 150% the usual value.</li>
+<li>If you lose your capital, the base chance of civil war is 90%.</li>
+<li>Makes it impossible to do the action 'Incite a Revolt' -&gt;
+individual cities\</li>
+</ul>
+<h2 id="first-republic">First Republic</h2>
+<p>Under a Ancient Republican government, citizens hold an election to
+select a members of Senate, who will govern them; since elected Senators
+must remain popular to remain in control, citizens are given a greater
+degree of freedom. Citizens under the First Republic become unhappy
+easily, but the self-sufficiency of your citizens allows high levels of
+trade.</p>
+<ul>
+<li><p>Celebrating cities with granary and size 3 or above are subject
+of Rapture Growth (this effect is cancelled by Monotheism)</p></li>
+<li><p>Each city can support 1 shield and 6 gold unit payment for
+free.</p></li>
+<li><p>Each city tolerates two aggressively deployed military units;
+each further unit causes 1 unhappy citizen.</p></li>
+<li><p>Military units impose limited martial law: 1 military unit inside
+a city will force 1 unhappy citizen to become satisfying.</p></li>
+<li><p>Base corruption is 20%. This increases with distance from the
+capital (half as fast with knowledge of The Corporation).</p></li>
+<li><p>Base production waste is 10%. This increases with distance from
+the capital (half as fast with knowledge of Banking).</p></li>
+<li><p>If Colosseum was build by player, Legions or Swordsmen gain
+additional veterancy level (recruits without Barracks, hardened with
+Barracks).</p></li>
+<li><p>Inciting revolt is 2x more expensive than Despotism or
+Monarchy.</p></li>
+<li><p>Luxury outcome is increased 25%</p></li>
+<li><p>Policies settings, which are taken into account: Liberal Economy,
+Welfare Policy, Religious Orthodoxy, National Pride.</p></li>
+</ul>
+<p>Requires knowledge of the technology First Republic.<br />
+Requires you to own Palace.</p>
+<p>Features:</p>
+<ul>
+<li>You can have up to 16 cities before an additional unhappy citizen
+appears in each city due to civilization size.</li>
+<li>After the first unhappy citizen due to civilization size, for each
+10 additional cities another unhappy citizen will appear.</li>
+<li>A maximum of 1 unit in each city can enforce martial law.</li>
+<li>If you lose your capital, the base chance of civil war is 60%.\</li>
+</ul>
+<h2 id="direct-democracy">Direct Democracy</h2>
+<p>Under Direct Democracy, citizens govern directly by voting on issues.
+Direct Democracy offers high boost of science, but also offers the most
+potential for unhappiness; citizens become very upset during wars.
+Limited possibility of tax rates change.</p>
+<ul>
+<li><p>Celebrating cities with granary and size 3 or above are subject
+of Rapture Growth (this effect is cancelled by Monotheism)</p></li>
+<li><p>Each city can support 4 gold and 5 shield unit payment for free;
+gold payment is doubled.</p></li>
+<li><p>Each city tolerates a single aggressively deployed military unit;
+each further unit causes 2 unhappy citizens.</p></li>
+<li><p>Base corruption is 10%. This increases with distance from the
+capital (half as fast with knowledge of The Corporation).</p></li>
+<li><p>Base production waste is 20%. This increases with distance from
+the capital.</p></li>
+<li><p>Base food waste is 10% and increase slowly with the distance to
+the capital.</p></li>
+<li><p>Has a senate that may prevent declaration of war.</p></li>
+<li><p>Direct Democracy is relatively tolerant of foreigners metics in
+cities.</p></li>
+<li><p>Phalanx and Archers gain additional veterancy level (cumulative
+with Barracks).</p></li>
+<li><p>Inciting revolt is 3x more expensive than Despotism or
+Monarchy.</p></li>
+<li><p>Science outcome is increased 20%</p></li>
+<li><p>Policies settings, which are taken into account: Liberal Economy,
+Welfare Policy, Religious Orthodoxy, National Pride.</p></li>
+</ul>
+<p>Requires knowledge of the technology Direct Democracy.<br />
+Requires you to own Palace.</p>
+<p>Features:</p>
+<ul>
+<li>You can have up to 22 cities before an additional unhappy citizen
+appears in each city due to civilization size.</li>
+<li>After the first unhappy citizen due to civilization size, for each
+12 additional cities another unhappy citizen will appear.</li>
+<li>The maximum rate you can set for science, gold, or luxuries is
+50%.</li>
+<li>New Phalanx units will be veteran. The rank of verteran is
+recruit.</li>
+<li>New Archers units will be veteran. The rank of verteran is
+recruit.</li>
+<li>Unhappiness from foreign citizens due to war with their home state
+is 60% the usual value.</li>
+<li>If you lose your capital, the base chance of civil war is 40%.\</li>
+</ul>
+<h2 id="republic">Republic</h2>
+<p>Under a Republican government, citizens hold an election to select a
+representative who will govern them; since elected leaders must remain
+popular to remain in control, citizens are given a greater degree of
+freedom. Citizens under the Republic become unhappy easily, but the
+self-sufficiency of your citizens allows high levels of trade.</p>
+<ul>
+<li><p>Celebrating cities which belong to the nation with Women Suffrage
+small wonder, produce an extra shield point for every worked land tile
+that is already producing shields (Cities below size 3 will not
+celebrate).</p></li>
+<li><p>Each city with size 8 and above can support one shield unit
+payment for free; additionally 6 gold unit payment are free.</p></li>
+<li><p>Each city tolerates one aggressively deployed military unit; each
+further unit causes 1..3 unhappy citizens (depend on Enlightening
+Policy).</p></li>
+<li><p>Base corruption is 25%. This increases with distance from the
+capital (half as fast with knowledge of The Corporation).</p></li>
+<li><p>Base production waste is 5%. This increases slowly with distance
+from the capital.</p></li>
+<li><p>Republic is relatively tolerant of cosmopolitan cities.</p></li>
+<li><p>Builders and freight Trains gain additional veterancy
+level.</p></li>
+<li><p>Bribing units is possible, but with Slavery Abolition wonder, is
+very expensive.</p></li>
+<li><p>Inciting revolt is 2x more expensive than Despotism or
+Monarchy.</p></li>
+<li><p>Gold and luxury outcome are increased 25%, science outcome
+increase depend on Enlightening Policy.</p></li>
+<li><p>Policies settings, which are taken into account: Liberal Economy,
+Enlightening Policy, Welfare Policy, Religious Orthodoxy, National
+Pride.</p></li>
+</ul>
+<p>Requires knowledge of the technology The Republic.<br />
+Requires you to own Palace.</p>
+<p>Features:</p>
+<ul>
+<li>You can have up to 18 cities before an additional unhappy citizen
+appears in each city due to civilization size.</li>
+<li>After the first unhappy citizen due to civilization size, for each
+12 additional cities another unhappy citizen will appear.</li>
+<li>The maximum rate you can set for science, gold, or luxuries is
+60%.</li>
+<li>If a city is in disorder for more than 2 turns in a row, government
+will fall into anarchy.</li>
+<li>New Builders units will be veteran. The rank of verteran is
+seasoned.</li>
+<li>New Train units will be veteran. The rank of verteran is steam
+locomotive.</li>
+<li>Unhappiness from foreign citizens due to war with their home state
+is 50% the usual value.\</li>
+</ul>
+<h2 id="democracy">Democracy</h2>
+<p>Under Democracy, citizens govern indirectly by electing
+representatives. Democracy offers the high level of trade and science
+boost, but also offers the most potential for unhappiness; citizens
+become very upset during wars. Tax rates must please most of voters,
+thus can't be changed freely.</p>
+<ul>
+<li><p>Celebrating cities which belong to the nation with Women Suffrage
+small wonder, produce an extra trade point for every worked land tile
+that is already producing trade. (Cities below size 3 will not
+celebrate)</p></li>
+<li><p>Each city with size 8 and above can support 2 gold unit payments
+for free; gold payments are doubled. Additionally 3 shield payments are
+free.</p></li>
+<li><p>Each city tolerates a single aggressively deployed military unit;
+each further unit causes 1 unhappy citizens.</p></li>
+<li><p>Old units far from city center have 2% chance to be
+retired.</p></li>
+<li><p>Base corruption is 5%. This increases with distance from the
+capital (half as fast with knowledge of The Corporation).</p></li>
+<li><p>Base production waste is 25%. This increases slightly with
+distance from the capital.</p></li>
+<li><p>Base food waste is 20% for all cities.</p></li>
+<li><p>Has a senate that may prevent declaration of war.</p></li>
+<li><p>Democracy is very tolerant of multicultural cities.</p></li>
+<li><p>Riflemen and Snipers gain additional veterancy level (cumulative
+with Barracks).</p></li>
+<li><p>Revolt inciting is possible, but with Slavery Abolition wonder,
+is very expensive.</p></li>
+<li><p>Science and luxury outcome are increased by 30% and 25%
+respectively.</p></li>
+<li><p>Policies settings, which are taken into account: Liberal Economy,
+Welfare Policy, Religious Orthodoxy, National Pride.</p></li>
+</ul>
+<p>Requires knowledge of the technology Democracy.<br />
+Requires you to own Palace.</p>
+<p>Features:</p>
+<ul>
+<li>You can have up to 32 cities before an additional unhappy citizen
+appears in each city due to civilization size.</li>
+<li>After the first unhappy citizen due to civilization size, for each
+16 additional cities another unhappy citizen will appear.</li>
+<li>The maximum rate you can set for science, gold, or luxuries is
+40%.</li>
+<li>If a city is in disorder for more than 2 turns in a row, government
+will fall into anarchy.</li>
+<li>New Riflemen units will be veteran. The rank of verteran is
+recruit.</li>
+<li>New Sniper units will be veteran. The rank of verteran is
+recruit.</li>
+<li>Unhappiness from foreign citizens due to war with their home state
+is 33% the usual value.\</li>
+</ul>
+</body>
+</html>

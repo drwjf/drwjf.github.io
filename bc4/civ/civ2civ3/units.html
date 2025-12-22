@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>units</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="military-units">Military Units</h1>
+<h2 id="overview">Overview</h2>
+<p>Units provide both the mobility your civilization needs, and the
+violence with which it will survive and expand. The available units may
+be classified as military units, whose talents are those of defense and
+aggression, and a few noncombatants which support expansion, diplomacy,
+and trade.</p>
+<p>Units are usually built in cities using production points. Once
+built, units are owned by the city that built them (although they can
+later be re-homed while visiting a different city) and demand support
+from that city; this will be one of your major expenses. Most units
+require upkeep such as production points from their home city every
+turn, although some autocratic styles of government can force cities to
+support several units for free. If the upkeep of a unit outweighs its
+benefit, you can disband it; see the section on Production. A few units,
+particularly those that you start the game with, have no home city and
+thus require no upkeep.</p>
+<p>Most units begin every turn with one or more movement points. Every
+action undertaken by a unit consumes movement points.</p>
+<p>The most basic action is movement; units can move into any of the
+tiles surrounding their current location, subject to restrictions
+imposed by their physical nature (the terrain they are 'native' to), by
+diplomatic obligations (see the section on Diplomacy), and by enemy
+units (see the section on Zones of Control). The number of movement
+points consumed may depend on the type of terrain; see the Terrain
+help.</p>
+<p>A unit cannot move onto a tile occupied by an enemy unit, and when
+directed to do so will attack instead (if capable of attack), locking
+the two units in combat until one is destroyed. The outcome depends on
+the attributes of the units in question (hit points, attack and defense
+strength, and firepower); the Combat section describes the process in
+detail, and the following sections list specific units' attributes.</p>
+<p>Units' attributes can be further boosted by being veteran. Units may
+be built as veteran by means of certain city improvements or other
+influences; once built, units can also become veteran through experience
+(such as surviving combat), which may provide further levels of bonuses
+beyond those available from their initial training.</p>
+<p>In this ruleset, the following veteran levels are defined:</p>
+<p>Veteran level Power factor Move bonus<br />
+--------------------------------------------<br />
+green 100% -<br />
+veteran 150% -<br />
+hardened 175% -<br />
+elite 200% -</p>
+<p>Units which have been damaged in combat will regain hit points each
+turn in which they are not moved. Normally, a unit which has not moved
+will regain one hit point per turn. Units which are fortified gain an
+extra hit point. A unit which spends a turn in a city regains one third
+of its base hit points, and city improvements appropriate to the unit
+type can improve this further. In the field, bases on tiles can improve
+the recovery rate (for instance, fortresses have this effect); units
+must stay on the tile for a whole turn to get this recovery bonus.
+Wonders can also boost recovery (such as the United Nations). Damaged
+units in Sentry mode will wake up when they have regained all of their
+hit points.</p>
+<p>As technology advances, new types of units become available which
+obsolete existing types. When you discover such a new technology, your
+existing units remain intact, but you can no longer build new units of
+the obsolete type. While an obsolete unit is in one of your cities, you
+can choose to upgrade it to the latest equivalent by spending gold, with
+the cost increasing with the difference in production point cost between
+the two types. When a unit is upgraded, its hit points and movement
+points are preserved as a fraction of the total.</p>
+<h2 id="settlers">Settlers</h2>
+<p>Attack/Defense/Movement: ⚔️0/🛡1/🛣1</p>
+<ul>
+<li>Belongs to Small Land unit class.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>Costs 2 population to build.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Can build new cities (initial population 1).</li>
+<li>Can add on 2 population to cities City size is no more than 6.</li>
+<li>Can build Road, Railroad, and Maglev on tiles.</li>
+<li>Can build Mine, Oil Well, and Oil Platform on tiles.</li>
+<li>Can convert terrain to another type by mining.</li>
+<li>Can build Irrigation and Farmland on tiles.</li>
+<li>Can convert terrain to another type by irrigation.</li>
+<li>Can build Fort and Fortress on tiles.</li>
+<li>Can clean Pollution from tiles.</li>
+<li>Can clean Fallout from tiles.</li>
+<li>Never imposes a zone of control.</li>
+<li>A non-military unit:</li>
+<li>Cannot attack.</li>
+<li>Doesn't impose martial law.</li>
+<li>Can enter foreign territory regardless of peace treaty.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Will never achieve veteran status.</li>
+</ul>
+<p>Settlers are one of the key units in the game, as they are your main
+means of founding new cities.</p>
+<p>Settlers can also perform some of the same terrain alterations as
+Workers (but cannot build airstrips, airbases, or buoys).</p>
+<p>TIP: optimal production of Settlers occurs in cities of at most size
+4, or cities with a Granary of at most size 6.</p>
+<h2 id="migrants">Migrants</h2>
+<p>Attack/Defense/Movement: ⚔️0/🛡1/🛣1</p>
+<ul>
+<li>Belongs to Small Land unit class.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>Costs 1 population to build.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Can add on 1 population to cities City size is no more than 7.</li>
+<li>Can build Road, Railroad, and Maglev on tiles.</li>
+<li>Can build Mine, Oil Well, and Oil Platform on tiles.</li>
+<li>Can convert terrain to another type by mining.</li>
+<li>Can build Irrigation and Farmland on tiles.</li>
+<li>Can convert terrain to another type by irrigation.</li>
+<li>Can build Fort and Fortress on tiles.</li>
+<li>Can clean Pollution from tiles.</li>
+<li>Can clean Fallout from tiles.</li>
+<li>Never imposes a zone of control.</li>
+<li>A non-military unit:</li>
+<li>Cannot attack.</li>
+<li>Doesn't impose martial law.</li>
+<li>Can enter foreign territory regardless of peace treaty.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Can be captured by some enemy units.</li>
+<li>Will never achieve veteran status.</li>
+</ul>
+<p>Migrants can be used to transfer population to other cities, but may
+not found new cities. They can also perform some of the same terrain
+alterations as Workers (but cannot build airstrips, airbases, or
+buoys).</p>
+<p>TIP: Migrants can be a good alternative to Workers in overpopulated
+cities, as they benefit from free food upkeep.</p>
+<p>Required technology: Pottery</p>
+<h2 id="workers">Workers</h2>
+<p>Attack/Defense/Movement: ⚔️0/🛡1/🛣1</p>
+<ul>
+<li>Belongs to Small Land unit class.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Can build Road, Railroad, and Maglev on tiles.</li>
+<li>Can build Mine, Oil Well, and Oil Platform on tiles.</li>
+<li>Can convert terrain to another type by mining.</li>
+<li>Can build Irrigation and Farmland on tiles.</li>
+<li>Can convert terrain to another type by irrigation.</li>
+<li>Can build Fort, Fortress, Airstrip, Airbase, and Buoy on tiles.</li>
+<li>Can clean Pollution from tiles.</li>
+<li>Can clean Fallout from tiles.</li>
+<li>Never imposes a zone of control.</li>
+<li>A non-military unit:</li>
+<li>Cannot attack.</li>
+<li>Doesn't impose martial law.</li>
+<li>Can enter foreign territory regardless of peace treaty.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Will never achieve veteran status.</li>
+</ul>
+<p>Workers have the ability to improve terrain tiles. See the help on
+Terrain and Terrain Alterations for the effects of their actions.</p>
+<p>Workers can build airstrips, airbases, and buoys, which Settlers and
+Migrants cannot. Workers must be on board a ship to build buoys.</p>
+<h2 id="engineers">Engineers</h2>
+<p>Attack/Defense/Movement: ⚔️0/🛡2/🛣2</p>
+<ul>
+<li>Belongs to Small Land unit class.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Can build Road, Railroad, and Maglev on tiles.</li>
+<li>Can build Mine, Oil Well, and Oil Platform on tiles.</li>
+<li>Can convert terrain to another type by mining.</li>
+<li>Can build Irrigation and Farmland on tiles.</li>
+<li>Can convert terrain to another type by irrigation.</li>
+<li>Can transform terrain to another type.</li>
+<li>Can build Fort, Fortress, Airstrip, Airbase, and Buoy on tiles.</li>
+<li>Can clean Pollution from tiles.</li>
+<li>Can clean Fallout from tiles.</li>
+<li>Never imposes a zone of control.</li>
+<li>A non-military unit:</li>
+<li>Cannot attack.</li>
+<li>Doesn't impose martial law.</li>
+<li>Can enter foreign territory regardless of peace treaty.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+<li>Veterans work faster.</li>
+</ul>
+<p>This type of unit has its own veteran levels:</p>
+<p>Veteran level Power factor Move bonus<br />
+--------------------------------------------<br />
+beginner 100% -<br />
+seasoned 150% -<br />
+senior 175% -<br />
+expert 200% -</p>
+<p>Engineers are similar to Workers, but they work twice as fast, move
+twice as fast, and may gain experience from work enabling them to work
+even faster.</p>
+<p>With knowledge of Fusion Power, Engineers may also perform more
+radical terrain transformations than Workers, Settlers, or Migrants,
+with the "transform" order. Examples include conversion of Tundra into
+Plains, or even Ocean into Swamp in some circumstances (when on board an
+ocean-going vessel, on a tile surrounded by sufficient existing land).
+See the Terrain Alterations section for more details.</p>
+<p>Required technology: Explosives</p>
+<h2 id="warriors">Warriors</h2>
+<p>Attack/Defense/Movement: ⚔️1/🛡1/🛣1</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>This unit may be built from the start of the game. It is the weakest
+offensive unit.</p>
+<h2 id="phalanx">Phalanx</h2>
+<p>Attack/Defense/Movement: ⚔️1/🛡2/🛣1</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>The Phalanx is armored infantry, suitable for defending your
+cities.</p>
+<p>Required technology: Bronze Working</p>
+<h2 id="archers">Archers</h2>
+<p>Attack/Defense/Movement: ⚔️3/🛡1/🛣1</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Archers fight with bows and arrows and have a good offensive
+value.</p>
+<p>Required technology: Warrior Code</p>
+<h2 id="legion">Legion</h2>
+<p>Attack/Defense/Movement: ⚔️4/🛡2/🛣1</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Can launch attack from non-native tiles.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Legions are heavily armed and well disciplined infantry units with an
+excellent offensive value.</p>
+<p>Required technology: Iron Working</p>
+<h2 id="pikemen">Pikemen</h2>
+<p>Attack/Defense/Movement: ⚔️2/🛡3/🛣1</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Equipped with long pikes, Pikemen replaces Phalanx as the preferred
+city defender.</p>
+<p>Required technology: Feudalism</p>
+<h2 id="musketeers">Musketeers</h2>
+<p>Attack/Defense/Movement: ⚔️3/🛡3/🛣1</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Can launch attack from non-native tiles.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Musketeers are infantry equipped with early firearms and replace
+Pikemen as the preferred city defender.</p>
+<p>Required technology: Gunpowder</p>
+<h2 id="riflemen">Riflemen</h2>
+<p>Attack/Defense/Movement: ⚔️5/🛡4/🛣1</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Can launch attack from non-native tiles.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Riflemen are World War-era infantry, very good at defending your
+cities.</p>
+<p>Required technology: Conscription</p>
+<h2 id="alpine-troops">Alpine Troops</h2>
+<p>Attack/Defense/Movement: ⚔️7/🛡4/🛣1</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May load onto and unload from Helicopter transports even when
+underway.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Ignores terrain effects (moving costs at most 1/3 Movement Point per
+tile).</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Alpine Troops are highly mobile units as well as excellent
+defenders.</p>
+<p>Required technology: Tactics</p>
+<h2 id="partisan">Partisan</h2>
+<p>Attack/Defense/Movement: ⚔️4/🛡5/🛣1</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May load onto and unload from Helicopter transports even when
+underway.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Ignores terrain effects (moving costs at most 1/3 Movement Point per
+tile).</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Not subject to zones of control imposed by other units.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Partisans are guerilla fighters who are experts at using the terrain
+to their advantage.</p>
+<p>A number of Partisans are granted free when an enemy conquers your
+city -- they automatically assume defensive positions in the surrounding
+countryside -- but only under these conditions:</p>
+<ul>
+<li><p>Guerilla Warfare must be known by at least one player.</p></li>
+<li><p>At least three quarters of the citizens must have your
+nationality.</p></li>
+<li><p>You must know about Communism and Gunpowder.</p></li>
+<li><p>You must run either a Democracy or a Communist
+government.</p></li>
+</ul>
+<p>Required technology: Guerilla Warfare</p>
+<h2 id="fanatics">Fanatics</h2>
+<p>Attack/Defense/Movement: ⚔️5/🛡5/🛣1</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>Can only be built with Fundamentalism as government.</li>
+<li>Costs 1 population to build.</li>
+<li>May load onto and unload from Helicopter transports even when
+underway.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Can add on 1 population to cities City size is no more than 7.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Fanatics are warriors extremely devoted to a higher cause.</p>
+<p>Fundamentalist nations can maintain Fanatic units without having to
+pay any upkeep nor causing military unhappiness. Instead, each unit
+reduces the population by 1.</p>
+<p>Required technology: Guerilla Warfare</p>
+<h2 id="marines">Marines</h2>
+<p>Attack/Defense/Movement: ⚔️8/🛡5/🛣1</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May load onto and unload from Helicopter transports even when
+underway.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Can launch attack from non-native tiles.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Marines are infantry who are experts at marine warfare.</p>
+<p>Required technology: Amphibious Warfare</p>
+<h2 id="paratroopers">Paratroopers</h2>
+<p>Attack/Defense/Movement: ⚔️6/🛡4/🛣1</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May load onto and unload from Helicopter transports even when
+underway.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Can be paradropped from a friendly city or suitable base (range: 10
+tiles).</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Paratroopers are experts at airborne attacks. From a friendly city,
+airbase, or airstrip, Paratroopers who have not expended any movement
+points can paradrop directly to any tile in range, and be immediately
+ready to act there. (Beware dropping into unseen territory, as
+Paratroopers landing on a tile occupied by enemy units are easy
+targets!)</p>
+<p>Required technology: Combined Arms</p>
+<h2 id="mech-inf">Mech. Inf.</h2>
+<p>Attack/Defense/Movement: ⚔️6/🛡6/🛣3</p>
+<ul>
+<li>Belongs to Big Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>The Mechanized Infantry has the strongest inherent defensive strength
+of any land unit, and is very fast on roads and easy terrain, but it is
+hindered rather than helped by rough terrain (it cannot move into
+mountains, swamps, or jungles), and it is only available near the end of
+the technology tree.</p>
+<p>Required technology: Labor Union</p>
+<h2 id="horsemen">Horsemen</h2>
+<p>Attack/Defense/Movement: ⚔️2/🛡1/🛣2</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Horsemen are mounted warriors and an early shock-troop that can
+penetrate deep into enemy territory.</p>
+<p>Required technology: Horseback Riding</p>
+<h2 id="chariot">Chariot</h2>
+<p>Attack/Defense/Movement: ⚔️4/🛡1/🛣2</p>
+<ul>
+<li>Belongs to Big Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Chariots are horse-pulled war wagons. They have a stronger attack
+than Horsemen, but their speed comes at a cost: they are more expensive
+to build, they cannot take advantage of terrain to defend themselves,
+they cannot move in rough terrain (mountains, swamps, and jungles)
+without roads, and they cannot be transported by sea using early ships
+(Triremes and Caravels).</p>
+<p>Required technology: The Wheel</p>
+<h2 id="elephants">Elephants</h2>
+<p>Attack/Defense/Movement: ⚔️3/🛡2/🛣2</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Elephants are towering animals trained for war that are often used as
+powerful shock troops.</p>
+<p>Required technology: Polytheism</p>
+<h2 id="crusaders">Crusaders</h2>
+<p>Attack/Defense/Movement: ⚔️5/🛡1/🛣2</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Crusaders are highly disciplined mounted warriors driven by a higher
+cause.</p>
+<p>Required technology: Monotheism</p>
+<h2 id="knights">Knights</h2>
+<p>Attack/Defense/Movement: ⚔️4/🛡3/🛣2</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Knights are mounted and heavily armored warriors.</p>
+<p>Required technology: Chivalry</p>
+<h2 id="dragoons">Dragoons</h2>
+<p>Attack/Defense/Movement: ⚔️5/🛡2/🛣2</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Dragoons are mounted warriors carrying early firearms.</p>
+<p>Required technology: Leadership</p>
+<h2 id="cavalry">Cavalry</h2>
+<p>Attack/Defense/Movement: ⚔️8/🛡3/🛣2</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Can capture some enemy units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Cavalry are mounted and highly trained soldiers.</p>
+<p>Required technology: Tactics</p>
+<h2 id="armor">Armor</h2>
+<p>Attack/Defense/Movement: ⚔️10/🛡5/🛣3</p>
+<ul>
+<li>Belongs to Big Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Armors are motorized war wagons that are faster, stronger, and can
+take more damage than any mounted unit. However, they are less adaptable
+to very rough terrain (they cannot move into mountains, swamps, or
+jungles without roads), and unable to use less rough terrain to improve
+their defense.</p>
+<p>Required technology: Mobile Warfare</p>
+<h2 id="catapult">Catapult</h2>
+<p>Attack/Defense/Movement: ⚔️6/🛡1/🛣1</p>
+<ul>
+<li>Belongs to Big Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Catapults are large rock-throwing machines of war. They are very
+strong attackers but equally weak defenders and will need an escort to
+be effective.</p>
+<p>While powerful, Catapults (and their successors) are bulky and
+awkward; they require roads to move in rough terrain (mountains, swamps,
+and jungles), are difficult to defend, and are too big for early ships
+(Triremes and Caravels).</p>
+<p>Required technology: Mathematics</p>
+<h2 id="cannon">Cannon</h2>
+<p>Attack/Defense/Movement: ⚔️8/🛡1/🛣1</p>
+<ul>
+<li>Belongs to Big Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Cannons are large firearms that can fire heavy projectiles over long
+distances. As with the catapults they replace, they are very strong
+attackers but equally weak defenders and will need an escort to be
+effective, and have limited mobility.</p>
+<p>Required technology: Metallurgy</p>
+<h2 id="artillery">Artillery</h2>
+<p>Attack/Defense/Movement: ⚔️10/🛡2/🛣1</p>
+<ul>
+<li>Belongs to Big Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Gets double firepower when attacking cities.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>The artillery is an upgraded cannon. As with its predecessors, it is
+a very strong attacker but equally weak defender and will need an escort
+to be effective, and has limited mobility.</p>
+<p>Required technology: Machine Tools</p>
+<h2 id="howitzer">Howitzer</h2>
+<p>Attack/Defense/Movement: ⚔️12/🛡2/🛣1</p>
+<ul>
+<li>Belongs to Big Land unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Gets double firepower when attacking cities.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Howitzers are upgraded artillery with improved defensive as well as
+offensive capabilities. However, they still have the limited mobility of
+their predecessors.</p>
+<p>Required technology: Robotics</p>
+<h2 id="fighter">Fighter</h2>
+<p>Attack/Defense/Movement: ⚔️4/🛡4/🛣10(20)</p>
+<ul>
+<li>Belongs to Air unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Is unreachable. Most units cannot attack this one.</li>
+<li>Can pillage tile improvements.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>Very bad at attacking AEGIS.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Never imposes a zone of control.</li>
+<li>Can attack against Missile units, which are usually not
+reachable.</li>
+<li>Can attack against Helicopter units, which are usually not
+reachable.</li>
+<li>Can attack against Air units, which are usually not reachable.</li>
+<li>Unit has to be in a city, a base, or on a carrier unit after 2
+turns.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Fighters are your first airborne units. They can move anywhere and
+attack any unit.</p>
+<p>Fighters and other aircraft lose 10% of their hitpoints for every
+turn not spent in a city, airstrip, or airbase, or on a Carrier.</p>
+<p>Required technology: Flight</p>
+<h2 id="bomber">Bomber</h2>
+<p>Attack/Defense/Movement: ⚔️6/🛡2/🛣8(24)</p>
+<ul>
+<li>Belongs to Air unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Is unreachable. Most units cannot attack this one.</li>
+<li>Can pillage tile improvements.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>Very bad at attacking AEGIS.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Making an attack ends this unit's turn.</li>
+<li>Does bombard attacks (3 per turn). These attacks will only damage
+(never kill) defenders, but damage all defenders on a tile, and have no
+risk for the attacker.</li>
+<li>Never imposes a zone of control.</li>
+<li>A field unit: one unhappiness applies even when non-aggressive.</li>
+<li>Unit has to be in a city, a base, or on a carrier unit after 3
+turns.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Bombers are specialized airborne units that may only attack ground
+targets, not other airborne units.</p>
+<p>A Bomber's attack against units on land is a bombard attack; against
+units on water it has a regular attack.</p>
+<p>As with other aircraft, Bombers lose 10% of their hitpoints for every
+turn not spent in a city, airstrip, or airbase, or on a Carrier.</p>
+<p>Required technology: Advanced Flight</p>
+<h2 id="helicopter">Helicopter</h2>
+<p>Attack/Defense/Movement: ⚔️5/🛡3/🛣6</p>
+<ul>
+<li>Belongs to Helicopter unit class.</li>
+<li>Can occupy empty enemy cities.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Is unreachable. Most units cannot attack this one.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>Very bad at attacking AEGIS.</li>
+<li>Can carry and refuel 1 unit. (Unit type: Land)</li>
+<li>Some cargo cannot be loaded except in a city or a base native to
+this transport.</li>
+<li>Some cargo cannot be unloaded except in a city or a base native to
+this transport.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Making an attack ends this unit's turn.</li>
+<li>Does bombard attacks (2 per turn). These attacks will only damage
+(never kill) defenders, but damage all defenders on a tile, and have no
+risk for the attacker.</li>
+<li>Never imposes a zone of control.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>A Helicopter's attack against units on land is a bombard attack;
+against units on water it has a regular attack.</p>
+<p>Helicopters can also transport one military land unit; while most
+troops must load or unload in a city, airstrip, or airbase (and not in
+the field or onboard a Carrier), units specializing in mobility
+(Paratroopers, Alpine Troops, Marines, Partisans, and Fanatics) can
+embark or disembark at any time.</p>
+<p>Unlike other aircraft, Helicopters are not required to return to a
+city, base, or Carrier to refuel after a set number of turns; however,
+care must be exercised, due to the health they lose every turn.</p>
+<p>Required technology: Combined Arms</p>
+<h2 id="stealth-fighter">Stealth Fighter</h2>
+<p>Attack/Defense/Movement: ⚔️8/🛡8/🛣14(28)</p>
+<ul>
+<li>Belongs to Air unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Is unreachable. Most units cannot attack this one.</li>
+<li>Can pillage tile improvements.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>Very bad at attacking AEGIS.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Is invisible except when next to an enemy unit or city.</li>
+<li>Never imposes a zone of control.</li>
+<li>Can attack against Missile units, which are usually not
+reachable.</li>
+<li>Can attack against Helicopter units, which are usually not
+reachable.</li>
+<li>Can attack against Air units, which are usually not reachable.</li>
+<li>Unit has to be in a city, a base, or on a carrier unit after 2
+turns.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>An improved Fighter, with improved attack and a higher movement
+radius.</p>
+<p>Required technology: Stealth</p>
+<h2 id="stealth-bomber">Stealth Bomber</h2>
+<p>Attack/Defense/Movement: ⚔️9/🛡5/🛣12(36)</p>
+<ul>
+<li>Belongs to Air unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Is unreachable. Most units cannot attack this one.</li>
+<li>Can pillage tile improvements.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>Very bad at attacking AEGIS.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Is invisible except when next to an enemy unit or city.</li>
+<li>Making an attack ends this unit's turn.</li>
+<li>Does bombard attacks (4 per turn). These attacks will only damage
+(never kill) defenders, but damage all defenders on a tile, and have no
+risk for the attacker.</li>
+<li>Never imposes a zone of control.</li>
+<li>A field unit: one unhappiness applies even when non-aggressive.</li>
+<li>Unit has to be in a city, a base, or on a carrier unit after 3
+turns.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>An improved Bomber, with improved attack and a higher movement
+radius.</p>
+<p>Required technology: Stealth</p>
+<h2 id="trireme">Trireme</h2>
+<p>Attack/Defense/Movement: ⚔️1/🛡1/🛣3</p>
+<ul>
+<li>Belongs to Trireme unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can launch attack from non-native tiles.</li>
+<li>Can carry and refuel up to 2 units. (Unit type: Land, Small Land, or
+Merchant)</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Never imposes a zone of control.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>The Trireme is your first boat unit. It can act as a transport ship
+and has rudimentary offensive capabilities, and unlike later boats can
+travel on rivers, but it may not enter deep ocean tiles.</p>
+<p>Required technology: Map Making</p>
+<h2 id="caravel">Caravel</h2>
+<p>Attack/Defense/Movement: ⚔️1/🛡2/🛣3</p>
+<ul>
+<li>Belongs to Sea unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can launch attack from non-native tiles.</li>
+<li>Can carry and refuel up to 3 units. (Unit type: Land, Small Land, or
+Merchant)</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Can only attack units on native tiles.</li>
+<li>Never imposes a zone of control.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>The Caravel is a sailing ship that can enter any ocean tile.</p>
+<p>Required technology: Magnetism</p>
+<h2 id="galleon">Galleon</h2>
+<p>Attack/Defense/Movement: ⚔️0/🛡2/🛣4</p>
+<ul>
+<li>Belongs to Sea unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can carry and refuel up to 4 units. (Unit type: Land, Small Land,
+Big Land, or Merchant)</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Never imposes a zone of control.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>The Galleon is a pure transport ship, the first which can transport
+large wheeled units. It cannot attack other ships, though it may still
+defend itself when attacked.</p>
+<p>Required technology: Navigation</p>
+<h2 id="frigate">Frigate</h2>
+<p>Attack/Defense/Movement: ⚔️3/🛡2/🛣4</p>
+<ul>
+<li>Belongs to Sea unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can attack units on non-native tiles.</li>
+<li>Can launch attack from non-native tiles.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>The Frigate is a specialized ship with a strong offensive value, and
+can attack units on land, but it cannot transport units.</p>
+<p>Required technology: Navigation</p>
+<h2 id="ironclad">Ironclad</h2>
+<p>Attack/Defense/Movement: ⚔️4/🛡3/🛣4</p>
+<ul>
+<li>Belongs to Sea unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can attack units on non-native tiles.</li>
+<li>Can launch attack from non-native tiles.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>The Ironclad is an armored ship, more sturdy than the Frigate.</p>
+<p>Required technology: Steam Engine</p>
+<h2 id="destroyer">Destroyer</h2>
+<p>Attack/Defense/Movement: ⚔️4/🛡4/🛣6</p>
+<ul>
+<li>Belongs to Sea unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can attack units on non-native tiles.</li>
+<li>Can launch attack from non-native tiles.</li>
+<li>2x defense bonus, if attacked by Submarine.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>An improved Ironclad, with better move rate and vision.
+Anti-submarine weapons double its defense against Submarines.</p>
+<p>TIP: A very fast unit, which is very useful for hunting down enemy
+Transports and Submarines.</p>
+<p>Required technology: Engineering</p>
+<h2 id="cruiser">Cruiser</h2>
+<p>Attack/Defense/Movement: ⚔️6/🛡6/🛣5</p>
+<ul>
+<li>Belongs to Sea unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can attack units on non-native tiles.</li>
+<li>Can launch attack from non-native tiles.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>The Cruiser is a strong offensive boat unit.</p>
+<p>Required technology: Steel</p>
+<h2 id="aegis-cruiser">AEGIS Cruiser</h2>
+<p>Attack/Defense/Movement: ⚔️8/🛡8/🛣5</p>
+<ul>
+<li>Belongs to Sea unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can attack units on non-native tiles.</li>
+<li>Can launch attack from non-native tiles.</li>
+<li>5x defense bonus, if attacked by Fighter, Bomber, Helicopter,
+Stealth Fighter, Stealth Bomber, or Cruise Missile.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>The AEGIS Cruiser is equipped with an advanced defensive missile
+system.</p>
+<p>Required technology: Rocketry</p>
+<h2 id="battleship">Battleship</h2>
+<p>Attack/Defense/Movement: ⚔️12/🛡12/🛣4</p>
+<ul>
+<li>Belongs to Sea unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can attack units on non-native tiles.</li>
+<li>Can launch attack from non-native tiles.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>The Battleship is the supreme naval unit with excellent offensive and
+defensive values.</p>
+<p>Required technology: Mass Production</p>
+<h2 id="submarine">Submarine</h2>
+<p>Attack/Defense/Movement: ⚔️12/🛡5/🛣5</p>
+<ul>
+<li>Belongs to Sea unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can launch attack from non-native tiles.</li>
+<li>Attack value halved when attacking Destroyer.</li>
+<li>Can carry and refuel up to 8 units. (Unit type: Missile)</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Is invisible except when next to an enemy unit or city.</li>
+<li>Can only attack units on native tiles.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Traveling under the surface of the ocean, Submarines have a very high
+strategic value, but a weak defense if caught off guard.</p>
+<p>Required technology: Combustion</p>
+<h2 id="carrier">Carrier</h2>
+<p>Attack/Defense/Movement: ⚔️0/🛡9/🛣5</p>
+<ul>
+<li>Belongs to Sea unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can carry and refuel up to 8 units. (Unit type: Missile, Land,
+Helicopter, or Air)</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Never imposes a zone of control.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>The Carrier is a mobile airport.</p>
+<p>It can transport aircraft and military land units (not wheeled),
+although land units cannot always be transferred to and from Helicopters
+while onboard (see Helicopter help).</p>
+<p>TIP: Guard Carriers with a handful of fast-moving ships and a
+battleship, as losing a fully-equipped Carrier is VERY painful and
+expensive.</p>
+<p>Required technology: Advanced Flight</p>
+<h2 id="transport">Transport</h2>
+<p>Attack/Defense/Movement: ⚔️0/🛡3/🛣5</p>
+<ul>
+<li>Belongs to Sea unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Slowed down while damaged.</li>
+<li>Can carry and refuel up to 8 units. (Unit type: Land, Small Land,
+Big Land, or Merchant)</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Can build Oil Platform on tiles.</li>
+<li>Can clean Pollution from tiles.</li>
+<li>Can clean Fallout from tiles.</li>
+<li>Never imposes a zone of control.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+<li>Veterans work faster.</li>
+</ul>
+<p>This type of unit has its own veteran levels:</p>
+<p>Veteran level Power factor Move bonus<br />
+--------------------------------------------<br />
+green 100% -<br />
+veteran 150% -<br />
+hardened 175% -<br />
+elite 200% -</p>
+<p>The Transport cannot attack on its own but may defend itself when
+under attack.</p>
+<p>Transports can also clean pollution and fallout on water tiles, and
+with knowledge of Miniaturization, may build oil platforms on deep ocean
+tiles (for use by Offshore Platforms).</p>
+<p>Required technology: Engineering</p>
+<h2 id="cruise-missile">Cruise Missile</h2>
+<p>Attack/Defense/Movement: ⚔️18/🛡0/🛣16(16)</p>
+<ul>
+<li>Belongs to Missile unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Gets used up in making an attack.</li>
+<li>Is unreachable. Most units cannot attack this one.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>Very bad at attacking AEGIS.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Gets double firepower when attacking cities.</li>
+<li>Never imposes a zone of control.</li>
+<li>Can attack against Missile units, which are usually not
+reachable.</li>
+<li>Can attack against Helicopter units, which are usually not
+reachable.</li>
+<li>Can attack against Air units, which are usually not reachable.</li>
+<li>Unit has to be in a city, a base, or on a carrier unit after 1 turn.
+A carrier unit is Submarine or Carrier.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>The Cruise Missile is a long-distance missile that can strike deep
+into enemy territory.</p>
+<p>TIP: A handful of these can successfully keep the waters around your
+treasured homeland free of enemy ships.</p>
+<p>Required technology: Rocketry</p>
+<h2 id="nuclear">Nuclear</h2>
+<p>Attack/Defense/Movement: ⚔️99/🛡0/🛣0(0)</p>
+<ul>
+<li>Belongs to Missile unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Gets used up in making an attack.</li>
+<li>Is unreachable. Most units cannot attack this one.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>This unit's attack causes a nuclear explosion!</li>
+<li>Never imposes a zone of control.</li>
+<li>A field unit: one unhappiness applies even when non-aggressive.</li>
+<li>Unit has to be in a city, a base, or on a carrier unit after 1 turn.
+A carrier unit is Submarine or Carrier.</li>
+<li>Will never achieve veteran status.</li>
+</ul>
+<p>You can build Nuclear units when you have the required advance, and
+the Manhattan Project wonder has been built by any player. However,
+without further technology they cannot move on their own.</p>
+<p>With Advanced Flight, all Nuclear units (including those already
+built) gain a range of 8 movement points, and Rocketry increases this to
+16.</p>
+<p>On impact, the blast will destroy any unit in an area 3 tiles wide
+(3x3 squares for rectangular grids), including friendly units. Any city
+within the blast area loses half its population, and land tiles within
+the blast area are subject to nuclear fallout.</p>
+<p>Nuclear fallout reduces tile output and increases the risk of global
+nuclear winter; see the help on Fallout.</p>
+<p>TIP: You may be involved in a situation where you've invaded an enemy
+country en masse, but the enemy cities are too strong. Before using a
+Nuclear unit, assemble a gang of cleanup units next to the city and have
+them ready to fix the fallout on the same turn it occurs! This minimizes
+the chance of nuclear winter. Eco-friendly nukes!</p>
+<p>Required technology: Nuclear Fission</p>
+<h2 id="diplomat">Diplomat</h2>
+<p>Attack/Defense/Movement: ⚔️0/🛡0/🛣2</p>
+<ul>
+<li>Belongs to Small Land unit class.</li>
+<li>Slowed down while damaged.</li>
+<li>May fortify to stay put.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Defends cities against diplomatic actions.</li>
+<li>Is invisible except when next to an enemy unit or city.</li>
+<li>Never imposes a zone of control.</li>
+<li>Not subject to zones of control imposed by other units.</li>
+<li>A non-military unit:</li>
+<li>Cannot attack.</li>
+<li>Doesn't impose martial law.</li>
+<li>Can enter foreign territory regardless of peace treaty.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Can do the action 'Establish Embassy', targets are some individual
+cities.</li>
+<li>Can do the action 'Investigate City', targets are some individual
+cities.</li>
+<li>Can do the action 'Sabotage City', targets are some individual
+cities.</li>
+<li>Can do the action 'Steal Technology', targets are some individual
+cities.</li>
+<li>Can do the action 'Incite a Revolt', targets are some individual
+cities.</li>
+<li>Can do the action 'Bribe Enemy Unit', targets are some individual
+units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have improved chances in diplomatic contests.</li>
+</ul>
+<p>This type of unit has its own veteran levels:</p>
+<p>Veteran level Power factor Move bonus<br />
+--------------------------------------------<br />
+attaché 100% -<br />
+secretary 105% -<br />
+envoy 110% -<br />
+ambassador 115% -</p>
+<p>A Diplomat is an official that carries your dispatches and is
+authorized to deal with foreign dignitaries. He may also undertake
+various covert operations with the intent of harming your opponents;
+Diplomats in your own cities defend them against such actions.</p>
+<p>Many covert actions may be attempted even in peacetime, but the more
+aggressive actions will be discovered and cause diplomatic incidents,
+giving an excuse for the breaking of treaties by a Federation or
+Democracy, or a nuclear-armed regime otherwise restrained by the United
+Nations.</p>
+<p>If a foreign unit is alone on a tile, you may attempt to bribe it
+with your Diplomat. By paying a sum of gold the unit will immediately
+become yours; the exact sum depends on the status of the unit and that
+of the civilization owning it. However, units belonging to Republican or
+Democratic governments cannot be bribed. Bribery when not at war will
+cause a diplomatic incident.</p>
+<p>Diplomats can also perform a number of actions in another player's
+city, although each Diplomat may attempt only one action. Most of these
+actions have a chance of failure. Also, any enemy Diplomats or Spies in
+the city will oppose hostile actions, as will the enemy Leader in games
+with leaders; in this case, either your unit or the defending unit will
+die (if you go up against the Leader you will always die). If the
+defending unit dies, you lose one movement point and may try again.</p>
+<p>The actions available to Diplomats in a city are:</p>
+<ul>
+<li><p>"Establish Embassy": This action always succeeds, and gives
+permanent contact with the city's owner, as well as intelligence on
+their tax rates and technology. Each player you have an embassy with
+that knows a technology reduces that technology's research cost to
+you.</p></li>
+<li><p>"Investigate City": Your unit attempts to report detailed
+information about the city: its status, what buildings and units are
+within, and what it is currently producing.</p></li>
+<li><p>"Sabotage City": Your unit attempts either to disrupt all the
+city's work so far towards its current project, or to destroy an
+existing building in the city, at random. Once built, Palaces and
+Wonders cannot be sabotaged, and attempts to sabotage City Walls or any
+building in a capital each halve the chance of success. Sabotage may
+only be attempted when openly at war.</p></li>
+<li><p>"Steal Technology": Your unit attempts to learn the secrets of a
+random technology known to the city's owner but not to you. Technology
+may only be stolen once from a given enemy city by Diplomats. This
+action may be attempted even when not at war, but will cause a
+diplomatic incident.</p></li>
+<li><p>"Incite a Revolt": In return for gold a foreign city will change
+allegiance and join your empire, bringing along all nearby units that
+call it home, but reducing its size by 1. Units in other cities remain
+in the enemy's control, but units outside cities are lost to both
+players. The exact sum depends on the status of the city and that of the
+civilization that owns it. It is not possible to incite a rebellion in a
+capital, or in any city governed by a Federation or Democracy.
+Incitement may be attempted in peacetime, but will cause a diplomatic
+incident.</p></li>
+</ul>
+<p>In some game strategies, hordes of Diplomats can be used to wreak
+havoc on the enemy. Little wonder that Diplomats are often viewed with
+suspicion and fear!</p>
+<p>Diplomats built under Communist or Federation governments will start
+at the first veteran level (secretary).</p>
+<p>Required technology: Alphabet</p>
+<h2 id="spy">Spy</h2>
+<p>Attack/Defense/Movement: ⚔️0/🛡0/🛣3</p>
+<ul>
+<li>Belongs to Small Land unit class.</li>
+<li>Slowed down while damaged.</li>
+<li>May fortify to stay put.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Performs better diplomatic actions.</li>
+<li>Defends cities against diplomatic actions.</li>
+<li>Is invisible except when next to an enemy unit or city.</li>
+<li>Never imposes a zone of control.</li>
+<li>Not subject to zones of control imposed by other units.</li>
+<li>A non-military unit:</li>
+<li>Cannot attack.</li>
+<li>Doesn't impose martial law.</li>
+<li>Can enter foreign territory regardless of peace treaty.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Can do the action 'Establish Embassy', targets are some individual
+cities.</li>
+<li>Can do the action 'Investigate City', targets are some individual
+cities.</li>
+<li>Can do the action 'Poison City', targets are some individual
+cities.</li>
+<li>Can do the action 'Sabotage City', targets are some individual
+cities.</li>
+<li>Can do the action 'Industrial Sabotage', targets are some individual
+cities.</li>
+<li>Can do the action 'Steal Technology', targets are some individual
+cities.</li>
+<li>Can do the action 'Industrial Espionage', targets are some
+individual cities.</li>
+<li>Can do the action 'Incite a Revolt', targets are some individual
+cities.</li>
+<li>Can do the action 'Bribe Enemy Unit', targets are some individual
+units.</li>
+<li>Can do the action 'Sabotage Enemy Unit', targets are some individual
+units.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have improved chances in diplomatic contests.</li>
+<li>Veterans are more likely to survive missions.</li>
+</ul>
+<p>This type of unit has its own veteran levels:</p>
+<p>Veteran level Power factor Move bonus<br />
+--------------------------------------------<br />
+informant 100% -<br />
+handler 105% -<br />
+agent 110% -<br />
+spymaster 115% -</p>
+<p>A Spy is more skilled in the arts of espionage than her Diplomat
+predecessor.</p>
+<p>She can perform all the functions of the Diplomat; refer to the
+Diplomat entry for more details. Unlike a Diplomat, a Spy may also
+survive an operation in a foreign city and become more experienced as a
+result. Spies are also more effective than Diplomats at defending cities
+against foreign Diplomats and Spies.</p>
+<p>A Spy can also be used to:</p>
+<ul>
+<li><p>sabotage an enemy unit (reducing its hit points to half), if it
+is alone on a tile and the players are at war;</p></li>
+<li><p>poison the water supply of an enemy city (reducing the population
+by one);</p></li>
+<li><p>steal specific technology (with a reduced chance of
+success);</p></li>
+<li><p>steal further technologies from a city which has already been
+stolen from (although cities become more resistant each time they are
+stolen from);</p></li>
+<li><p>sabotage predetermined city targets (with a reduced chance of
+success).</p></li>
+</ul>
+<p>A Spy that survives the more aggressive actions (sabotage, theft,
+inciting rebellion, and poisoning) escapes to the safety of the nearest
+friendly city.</p>
+<p>Spies built under Communist or Federation governments will start at
+the first veteran level (handler).</p>
+<p>Required technology: Espionage</p>
+<h2 id="caravan">Caravan</h2>
+<p>Attack/Defense/Movement: ⚔️0/🛡1/🛣1</p>
+<ul>
+<li>Belongs to Merchant unit class.</li>
+<li>Subject to zones of control.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>Can establish trade routes (must travel to target city).</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Never imposes a zone of control.</li>
+<li>A non-military unit:</li>
+<li>Cannot attack.</li>
+<li>Doesn't impose martial law.</li>
+<li>Can enter foreign territory regardless of peace treaty.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Can be captured by some enemy units.</li>
+<li>Can do the action 'Establish Trade Route', targets are some
+individual cities.</li>
+<li>Can do the action 'Help build Wonder', targets are some individual
+cities, adds 50 production.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>A Caravan carries goods or material for trading with other nations,
+or to help build wonders in your own cities.</p>
+<p>Caravans cannot take advantage of maglevs, but may travel on the
+railroads that accompany them.</p>
+<p>A Caravan sent to a foreign city (one not owned by an enemy) can
+establish a trade route. The route's ongoing revenue is doubled if the
+two cities involved are on different continents. Each city can support a
+maximum of two trade routes.</p>
+<p>A Caravan sent to one of your own cities that is building a wonder
+can add 50 shields towards its production. If your city is not building
+a wonder, the Caravan can take no special action.</p>
+<p>TIP: You can stockpile a stack of Caravans in advance and bring them
+all into a city where you have started to build a wonder, and finish it
+in only one turn!</p>
+<p>Required technology: Trade</p>
+<h2 id="freight">Freight</h2>
+<p>Attack/Defense/Movement: ⚔️0/🛡1/🛣2</p>
+<ul>
+<li>Belongs to Merchant unit class.</li>
+<li>Subject to zones of control.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>Can establish trade routes (must travel to target city).</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Never imposes a zone of control.</li>
+<li>A non-military unit:</li>
+<li>Cannot attack.</li>
+<li>Doesn't impose martial law.</li>
+<li>Can enter foreign territory regardless of peace treaty.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Can be captured by some enemy units.</li>
+<li>Can do the action 'Establish Trade Route', targets are some
+individual cities.</li>
+<li>Can do the action 'Help build Wonder', targets are some individual
+cities, adds 50 production.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>The Freight unit replaces the Caravan, and moves at twice the speed.
+It has the same behavior and movement restrictions.</p>
+<p>Required technology: The Corporation</p>
+<h2 id="explorer">Explorer</h2>
+<p>Attack/Defense/Movement: ⚔️0/🛡1/🛣1</p>
+<ul>
+<li>Belongs to Small Land unit class.</li>
+<li>Slowed down while damaged.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Ignores terrain effects (moving costs at most 1/3 Movement Point per
+tile).</li>
+<li>Never imposes a zone of control.</li>
+<li>Not subject to zones of control imposed by other units.</li>
+<li>A non-military unit:</li>
+<li>Cannot attack.</li>
+<li>Doesn't impose martial law.</li>
+<li>Can enter foreign territory regardless of peace treaty.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Can do the action 'Establish Embassy', targets are some individual
+cities.</li>
+<li>Can do the action 'Investigate City', targets are some individual
+cities.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>Explorers are brave individuals that are very useful for mapping
+unknown territory.</p>
+<p>Explorers can also perform some actions in another player's city,
+although the unit disappears after the action is complete.</p>
+<ul>
+<li><p>"Establish Embassy": This action always succeeds, and gives
+permanent contact with the city's owner, as well as intelligence on
+their tax rates and technology. Each player you have an embassy with
+that knows a technology reduces that technology's research cost to
+you.</p></li>
+<li><p>"Investigate City": Your unit attempts to report detailed
+information about the city: its status, what buildings and units are
+within, and what it is currently producing.</p></li>
+</ul>
+<p>Required technology: Seafaring</p>
+<h2 id="leader">Leader</h2>
+<p>Attack/Defense/Movement: ⚔️0/🛡2/🛣2</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Slowed down while damaged.</li>
+<li>Gets a 50% defensive bonus while in cities.</li>
+<li>May fortify, granting a 50% defensive bonus when not in a city.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May not be built in cities.</li>
+<li>Never has a home city.</li>
+<li>Losing this unit will lose you the game!</li>
+<li>Each player may only have one of this type of unit.</li>
+<li>May not be disbanded.</li>
+<li>Defends cities against diplomatic actions.</li>
+<li>Will never lose a diplomat-versus-diplomat fight.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Not subject to zones of control imposed by other units.</li>
+<li>A non-military unit:</li>
+<li>Cannot attack.</li>
+<li>Doesn't impose martial law.</li>
+<li>Can enter foreign territory regardless of peace treaty.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Doing the action 'Bribe Enemy Unit' to this unit is impossible.</li>
+<li>Will never achieve veteran status.</li>
+</ul>
+<p>This is you. If you lose this unit, you lose the game. So don't.</p>
+<p>Won't unleash barbarians from huts.</p>
+<h2 id="barbarian-leader">Barbarian Leader</h2>
+<p>Attack/Defense/Movement: ⚔️0/🛡0/🛣2</p>
+<ul>
+<li>Belongs to Land unit class.</li>
+<li>Slowed down while damaged.</li>
+<li>May fortify to stay put.</li>
+<li>Can pillage tile improvements.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May not be built in cities.</li>
+<li>Never has a home city.</li>
+<li>May not be disbanded.</li>
+<li>Defends cities against diplomatic actions.</li>
+<li>Will never lose a diplomat-versus-diplomat fight.</li>
+<li>May impose a zone of control on its adjacent tiles.</li>
+<li>Not subject to zones of control imposed by other units.</li>
+<li>A non-military unit:</li>
+<li>Cannot attack.</li>
+<li>Doesn't impose martial law.</li>
+<li>Can enter foreign territory regardless of peace treaty.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Doing the action 'Bribe Enemy Unit' to this unit is impossible.</li>
+<li>Will never achieve veteran status.</li>
+</ul>
+<p>One Barbarian Leader appears every time there is a barbarian uprising
+somewhere in the world.</p>
+<p>When a Barbarian Leader is killed on a tile without any defending
+units, the 100 gold ransom is paid, but only to land units and
+helicopters.</p>
+<h2 id="awacs">AWACS</h2>
+<p>Attack/Defense/Movement: ⚔️0/🛡1/🛣16(48)</p>
+<ul>
+<li>Belongs to Air unit class.</li>
+<li>Speed is not affected by terrain.</li>
+<li>Does not get defense bonuses from terrain.</li>
+<li>Not subject to zones of control.</li>
+<li>Is unreachable. Most units cannot attack this one.</li>
+<li>Can pillage tile improvements.</li>
+<li>Doesn't prevent enemy cities from working the tile it's on.</li>
+<li>Can be airlifted from a suitable city.</li>
+<li>May be disbanded in a city to recover 50% of the production
+cost.</li>
+<li>Never imposes a zone of control.</li>
+<li>Unit has to be in a city, a base, or on a carrier unit after 3
+turns.</li>
+<li>May acquire veteran status.</li>
+<li>Veterans have increased strength in combat.</li>
+</ul>
+<p>The AWACS (Airborne Warning and Control System) is an airplane with
+an advanced radar that can determine the location of enemy units over a
+wide area.</p>
+<p>Required technology: Advanced Flight</p>
+</body>
+</html>

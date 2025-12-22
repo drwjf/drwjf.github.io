@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>galaxy</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="galaxy">Galaxy</h1>
+<p>A galaxy is randomly generated to play in. Four sizes are available,
+determining the number of star systems:</p>
+<ul>
+<li>Small – 24 stars. A quick game, and contact with other races is
+almost immediate. This is actually more difficult than playing in larger
+galaxies.</li>
+<li>Medium – 48 stars. Long enough to develop most technologies.</li>
+<li>Large – 70 star systems.</li>
+<li>Huge – 108 stars. For epic games with huge empires and massive star
+fleets.</li>
+</ul>
+<p>Star systems need to be explored by a scout ship before a colony ship
+can be sent there. Ships travel freely between star systems but the
+distance they can travel is limited; they have to stay within fueling
+distance of one of your colonies. Scout ships have fuel reserves
+allowing them to travel further away to explore distant systems.</p>
+<ul>
+<li>Yellow - The best. These are the most likely to produce habitable
+worlds. The habitability of a star system increases slowly till it peaks
+and then declines slowly again. These stars are the ones that happen to
+be in the perfect conditions for habitability in the millenia during
+which the game takes place.</li>
+<li>Orange - Second best. These are either just short of their prime or
+just past it. They are close to optimal, but just not quite optimal. If
+the game had taken place in a different millenia these might have been
+yellows.</li>
+<li>Red - One of the worst. These are well beyond their prime and are
+very often on the bad side of the spectrum in terms of habitability.
+Don't hope for too much when scouting these systems early or at
+all.</li>
+<li>Blue - Another one of the worst at the beginning. These are way too
+young, generally, to have conditions conductive to habitability. They
+usually have very hostile environments and require very advanced
+technology to colonize. They do, however, tend to have higher chances of
+better mineral deposits which increases factory production on the world
+if it can be colonized.</li>
+<li>White - Another one of the worst. These planets tend to be too close
+to the sun and are very hostile, being far too hot (inferno
+environments) or receiving too much radiation (radiated environments).
+It is highly unlikely these can be colonized early and usually require
+the highest colonization technology to colonize at all. They tend to
+offer no advantages over other better stars to offset this advantage as
+well.</li>
+<li>Purple - The rarest type, only a few per galaxy will be this color.
+They have very good chances for mineral richness although the
+environments still usually require technology to allow their
+colonization. At best 4 or 5 worlds will be of this type per galaxy and
+they are highly coveted in the stages of the game where most of the easy
+worlds are taken and civilizations are trying to research the technology
+to gain access to the hostile planet environments.</li>
+</ul>
+</body>
+</html>

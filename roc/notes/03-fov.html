@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>03-fov</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="field-of-view-how-the-dungeon-becomes-visible">Field of View:
+How the Dungeon Becomes Visible</h1>
+<p>One of the most defining features of a roguelike is <strong>limited
+visibility</strong>. You can only see what your character could
+realistically observe from their current position. Everything else
+remains hidden in darkness.</p>
+<p>This mechanic is called <strong>Field of View (FOV)</strong>, and it
+is essential for creating tension and exploration in games like Brogue
+and Sil-Q.</p>
+<p>When reimplementing the engine in Swift, rebuilding the FOV system
+was one of the most important tasks.</p>
+<hr />
+<h1 id="why-field-of-view-matters">Why Field of View Matters</h1>
+<p>Without FOV, a dungeon would behave more like a strategy map where
+everything is visible at all times.</p>
+<p>Limiting visibility introduces several gameplay dynamics:</p>
+<ul>
+<li>enemies can surprise the player</li>
+<li>exploration becomes meaningful</li>
+<li>stealth and positioning matter</li>
+<li>the dungeon feels larger and more mysterious</li>
+</ul>
+<p>FOV is therefore not just a rendering detail—it is a <strong>core
+gameplay mechanic</strong>.</p>
+<hr />
+<h1 id="the-basic-problem">The Basic Problem</h1>
+<p>The challenge is simple to describe:</p>
+<blockquote>
+<p>From the player’s position, determine which tiles are visible.</p>
+</blockquote>
+<p>However, walls complicate the problem. A tile behind a wall should
+not be visible, even if it is nearby.</p>
+<p>So the algorithm must account for <strong>line-of-sight
+blocking</strong>.</p>
+<hr />
+<h1 id="common-approaches">Common Approaches</h1>
+<p>Roguelikes historically use several FOV techniques:</p>
+<ul>
+<li>ray casting</li>
+<li>recursive shadowcasting</li>
+<li>permissive FOV</li>
+<li>digital FOV</li>
+</ul>
+<p>Each method has different trade-offs in accuracy and performance.</p>
+<p>For this Swift reimplementation, the engine uses a
+<strong>shadowcasting approach</strong>, which is widely used in
+roguelikes because it is both fast and visually natural.</p>
+<hr />
+<h1 id="the-idea-behind-shadowcasting">The Idea Behind
+Shadowcasting</h1>
+<p>Shadowcasting works by scanning outward from the player in multiple
+directions and tracking where shadows appear.</p>
+<p>Imagine the player standing in the center of the map. The algorithm
+examines the surrounding space in eight directional sectors.</p>
+<p>As it scans outward, walls cast <strong>shadows</strong> that block
+visibility behind them.</p>
+<p>For example:</p>
+<pre><code>Player -&gt; . . . #
+                #
+                X</code></pre>
+<p>The wall blocks visibility behind it, so tile <code>X</code> is
+hidden.</p>
+<p>Instead of testing every tile individually with expensive
+line-of-sight checks, shadowcasting tracks <strong>angular shadow
+ranges</strong>. Once a region is fully shadowed, the algorithm stops
+exploring that area.</p>
+<p>This makes the algorithm both efficient and elegant.</p>
+<hr />
+<h1 id="advantages-of-shadowcasting">Advantages of Shadowcasting</h1>
+<p>Shadowcasting has several properties that make it well suited for
+roguelikes:</p>
+<h3 id="efficient">Efficient</h3>
+<p>The algorithm explores only visible regions and avoids unnecessary
+checks.</p>
+<h3 id="symmetrical">Symmetrical</h3>
+<p>Visibility behaves consistently in all directions.</p>
+<h3 id="natural-looking">Natural Looking</h3>
+<p>Walls create realistic shadows rather than jagged visibility
+artifacts.</p>
+<h3 id="scales-well">Scales Well</h3>
+<p>Even when recalculated every turn, the cost remains small on modern
+devices.</p>
+<hr />
+<h1 id="swift-implementation-design">Swift Implementation Design</h1>
+<p>In the Swift reimplementation, FOV is implemented as a
+<strong>separate system</strong> rather than being embedded inside the
+rendering code.</p>
+<p>This separation allows visibility to be reused by other gameplay
+systems, such as:</p>
+<ul>
+<li>monster awareness</li>
+<li>stealth mechanics</li>
+<li>lighting effects</li>
+<li>exploration tracking</li>
+</ul>
+<p>The core interface is conceptually simple:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> <span class="fu">computeFOV</span><span class="op">(</span><span class="va">from</span> <span class="va">origin</span><span class="op">:</span> <span class="dt">Pos</span><span class="op">,</span> <span class="va">radius</span><span class="op">:</span> <span class="dt">Int</span><span class="op">)</span></span></code></pre></div>
+<p>The function fills a visibility grid marking which tiles are
+currently visible.</p>
+<hr />
+<h1 id="visibility-vs-memory">Visibility vs Memory</h1>
+<p>Roguelikes usually distinguish between two different concepts:</p>
+<h3 id="currently-visible">Currently Visible</h3>
+<p>Tiles the player can see <strong>right now</strong>.</p>
+<h3 id="previously-seen">Previously Seen</h3>
+<p>Tiles the player saw earlier but cannot currently see.</p>
+<p>These are typically rendered differently:</p>
+<ul>
+<li>visible tiles appear bright</li>
+<li>previously seen tiles appear dim</li>
+<li>unseen tiles remain black</li>
+</ul>
+<p>The Swift engine stores this information in separate grids so the UI
+can render them appropriately.</p>
+<hr />
+<h1 id="lighting-and-fov">Lighting and FOV</h1>
+<p>Another advantage of separating FOV from rendering is that it allows
+more advanced lighting systems.</p>
+<p>For example, light sources such as:</p>
+<ul>
+<li>torches</li>
+<li>glowing creatures</li>
+<li>magical effects</li>
+</ul>
+<p>can modify visibility dynamically.</p>
+<p>Instead of computing only a binary visible/not-visible state, the
+system can support <strong>light intensity values</strong> for each
+tile.</p>
+<p>This allows the dungeon to feel more atmospheric without
+significantly complicating the core algorithm.</p>
+<hr />
+<h1 id="interaction-with-gameplay-systems">Interaction with Gameplay
+Systems</h1>
+<p>FOV also interacts with many other mechanics.</p>
+<p>For example:</p>
+<h3 id="monster-awareness">Monster Awareness</h3>
+<p>Creatures usually only react to the player if they can see them.</p>
+<h3 id="stealth">Stealth</h3>
+<p>The player may be hidden if outside an enemy’s FOV.</p>
+<h3 id="traps">Traps</h3>
+<p>Some traps remain hidden until they enter the player’s visible
+area.</p>
+<h3 id="exploration-tracking">Exploration Tracking</h3>
+<p>The game can record which tiles have been discovered.</p>
+<p>Because of these interactions, the FOV system is recalculated
+frequently—often every time the player moves.</p>
+<p>Fortunately, shadowcasting is fast enough that this remains
+inexpensive.</p>
+<hr />
+<h1 id="performance-considerations">Performance Considerations</h1>
+<p>Although dungeon maps are not large, the FOV algorithm runs many
+times during gameplay.</p>
+<p>The Swift implementation keeps performance high by:</p>
+<ul>
+<li>using contiguous grid storage</li>
+<li>minimizing heap allocation</li>
+<li>avoiding recursion where possible</li>
+<li>stopping scanning when regions become fully shadowed</li>
+</ul>
+<p>On modern iPhones, the computation takes a fraction of a
+millisecond.</p>
+<hr />
+<h1 id="reimplementing-the-system-from-scratch">Reimplementing the
+System from Scratch</h1>
+<p>The Swift version does not port the original implementation directly.
+Instead, the algorithm is implemented from first principles using modern
+data structures.</p>
+<p>This ensures:</p>
+<ul>
+<li>clearer code structure</li>
+<li>easier debugging</li>
+<li>independence from the original codebase</li>
+</ul>
+<p>The behavior remains familiar to players, but the implementation is
+entirely new.</p>
+<hr />
+<h1 id="final-thoughts">Final Thoughts</h1>
+<p>Field of View is one of the systems that quietly defines the feel of
+a roguelike. It controls what the player knows, what remains hidden, and
+how the dungeon reveals itself over time.</p>
+<p>Rebuilding the FOV system in Swift ensured that the new engine
+preserves the tension and exploration that make roguelikes so
+compelling, while fitting naturally into a modern architecture.</p>
+<hr />
+<p>⬅️ <a href="02-dijkstra.html">Previous</a> | 🏠 <a
+href="../index.html">Index</a> | <a href="04-scent.html">Next</a> ➡️</p>
+<hr />
+</body>
+</html>

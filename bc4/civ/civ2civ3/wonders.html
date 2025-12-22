@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>wonders</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="world-wonders">World Wonders</h1>
+<h2 id="overview">Overview</h2>
+<p>Wonders are special buildings which can each be completed by only one
+player each game, and which often enhance their entire civilization.
+Unlike ordinary city improvements, which must be built with local
+production points, certain special units built in one city (Caravans and
+Freight) can contribute their full cost in production points towards the
+construction of a wonder in another city.</p>
+<p>Once built, a wonder is placed in the city that constructed it, and
+cannot be sold or destroyed (unless the entire city is destroyed).
+However, some wonders are made obsolete under certain circumstances, and
+lose their effect. Note the asymmetry: while you must personally achieve
+the advance required by each wonder to build it, it will be disabled
+when any player achieves the obsoleting advance.</p>
+<h2 id="apollo-program">Apollo Program</h2>
+<p>The entire map becomes permanently visible to the player who owns it
+-- the player always has up-to-date knowledge of all terrain and cities
+(but not units) despite fog-of-war. It allows all players to start
+building spaceship parts (assuming they have researched the necessary
+technologies).</p>
+<p>Completion of the Apollo Program also allows nuclear-armed powers to
+declare war without provocation, regardless of the existence of the
+United Nations, and AI players will no longer be friendly towards the
+owner of the United Nations or the Eiffel Tower.</p>
+<p>Requires knowledge of the technology Space Flight.</p>
+<h2 id="asmiths-trading-co">A.Smith's Trading Co.</h2>
+<p>In every city with a Stock Exchange, city improvements which would
+normally have an upkeep of 1 become free of upkeep. (Communist
+governments inherently give this benefit, so there is no bonus under
+Communism.)</p>
+<p>Upon completion of this wonder, tax collector specialists' gold
+output increases to 3 permanently for every nation.</p>
+<p>Requires knowledge of the technology Economics.<br />
+Requires Stock Exchange in the city.</p>
+<h2 id="colossus">Colossus</h2>
+<p>Each tile around the city where this wonder is built that is already
+generating some trade produces one extra trade resource.</p>
+<p>Requires knowledge of the technology Bronze Working.</p>
+<ul>
+<li>The discovery of Automobile will make it obsolete.\</li>
+</ul>
+<h2 id="copernicus-observatory">Copernicus' Observatory</h2>
+<p>Each tile worked by the city where this wonder is built produces one
+extra research point.</p>
+<p>Requires knowledge of the technology Astronomy.</p>
+<ul>
+<li>The discovery of Computers will make it obsolete.\</li>
+</ul>
+<h2 id="cure-for-cancer">Cure For Cancer</h2>
+<p>This stunning technological achievement makes one content citizen
+happy in each of your cities (2 extra luxury per city). It further
+reduces your risk of plague (by 10% of the base chance); with knowledge
+of Medicine, any of your cities with an Aqueduct and a Sewer System will
+be entirely free of plague.</p>
+<p>Requires knowledge of the technology Genetic Engineering.</p>
+<h2 id="darwins-voyage">Darwin's Voyage</h2>
+<p>Charles Darwin's voyage sparked the discovery of the evolution of the
+species, which inspired greater confidence in science. All your cities
+generate 1 extra science bulb.</p>
+<p>Upon completion of this wonder, scientist specialists' research
+output increases to 3 permanently for every nation.</p>
+<p>Requires knowledge of the technology Steam Engine.</p>
+<h2 id="eiffel-tower">Eiffel Tower</h2>
+<p>AI nations are more inclined to be friendly and forgiving toward the
+owner of this wonder (until the Apollo Program is completed). It also
+reduces the pollution caused by the population; it counteracts the
+pollution associated with a single building in each of your cities.</p>
+<p>Requires knowledge of the technology Railroad.</p>
+<h2 id="great-library">Great Library</h2>
+<p>Gives an immediate technology advance to the player that builds it,
+and thereafter 4 extra research points every turn to its city.</p>
+<p>Completion of this wonder permanently doubles the effect of Libraries
+for every player.</p>
+<p>Requires knowledge of the technology Literacy.<br />
+Requires Library in the city.</p>
+<h2 id="great-wall">Great Wall</h2>
+<p>Increases the defense of all your cities by adding a +50% bonus to
+its units' intrinsic defense strength against land units (this is
+cumulative with any City Walls), and preventing the loss of population
+which occurs when a defending unit is defeated by a land unit.</p>
+<p>Requires knowledge of the technology Construction.</p>
+<ul>
+<li>The discovery of Machine Tools will make it obsolete.\</li>
+</ul>
+<h2 id="hanging-gardens">Hanging Gardens</h2>
+<p>Makes one unhappy citizen content in every city of the player that
+owns it (not including citizens unhappy about aggression). This wonder
+also makes two content citizens happy in the city where it is located (4
+extra luxury points).</p>
+<p>Requires knowledge of the technology Pottery.</p>
+<ul>
+<li>The discovery of Electricity will make it obsolete.\</li>
+</ul>
+<h2 id="hoover-dam">Hoover Dam</h2>
+<p>Acts as a Hydro Plant in the city where it is built, and reduces
+pollution from shield production by a further 25% in all cities with
+Hydro Plants, making them equivalent to Solar Plants.</p>
+<p>Requires knowledge of the technology Electronics.<br />
+Requires River on the tile or an adjacent tile.<br />
+Requires Factory in the city.</p>
+<h2 id="isaac-newtons-college">Isaac Newton's College</h2>
+<p>Gives an immediate technology advance to the player that builds it,
+and thereafter 6 extra research points every turn to its city.</p>
+<p>Completion of this wonder permanently doubles the effect of
+Universities for every player.</p>
+<p>Requires knowledge of the technology Theory of Gravity.<br />
+Requires University in the city.</p>
+<h2 id="js-bachs-cathedral">J.S. Bach's Cathedral</h2>
+<p>Makes one content citizen happy in every city of the player that owns
+it (2 extra luxury points per city).</p>
+<p>Requires knowledge of the technology Theology.</p>
+<h2 id="king-richards-crusade">King Richard's Crusade</h2>
+<p>Reduces the unhappiness caused by aggressively deployed military
+units owned by the city by 1 -- in other words, it neutralizes the
+unhappiness caused by a single military unit (except under Democracy,
+where a single unit makes two citizens unhappy). Under governments where
+unit upkeep is paid in gold, it gives two free gold per city towards
+upkeep every turn.</p>
+<p>Requires knowledge of the technology Chivalry.</p>
+<ul>
+<li>The discovery of Communism will make it obsolete.\</li>
+</ul>
+<h2 id="leonardos-workshop">Leonardo's Workshop</h2>
+<p>Upgrades one obsolete unit per game turn.</p>
+<p>Requires knowledge of the technology Invention.</p>
+<ul>
+<li>The discovery of Combustion will make it obsolete.\</li>
+</ul>
+<h2 id="lighthouse">Lighthouse</h2>
+<p>Gives all your sea units 1 additional movement point (except Triremes
+while moving on rivers). Makes all your new sea units veterans (for all
+your cities).</p>
+<p>Requires knowledge of the technology Map Making.<br />
+Requires terrain with the 'Sea' flag on the tile or an adjacent
+tile.</p>
+<ul>
+<li>The discovery of Engineering will make it obsolete.\</li>
+</ul>
+<h2 id="magellans-expedition">Magellan's Expedition</h2>
+<p>Gives all your sea units 1 additional movement point. The chance of a
+sea unit getting the next veteran level after a battle increases by
+half.</p>
+<p>Requires knowledge of the technology Magnetism.<br />
+Requires terrain with the 'Sea' flag on the tile or an adjacent
+tile.</p>
+<ul>
+<li>The discovery of Nuclear Power will make it obsolete.\</li>
+</ul>
+<h2 id="manhattan-project">Manhattan Project</h2>
+<p>Requires knowledge of the technology Nuclear Fission.</p>
+<ul>
+<li>Allows all players with knowledge of Nuclear Fission to build units:
+Nuclear\</li>
+</ul>
+<h2 id="marco-polos-embassy">Marco Polo's Embassy</h2>
+<p>The player who owns it gets an embassy with all players.</p>
+<p>TIP: if you're behind in research, this can help you catch up, by
+reducing the cost of technologies that other players already know.</p>
+<p>Requires knowledge of the technology Trade.</p>
+<ul>
+<li>The discovery of Democracy will make it obsolete.\</li>
+</ul>
+<h2 id="michelangelos-chapel">Michelangelo's Chapel</h2>
+<p>Doubles the base effect of Cathedrals. This makes 3 additional
+unhappy citizens content in each city with a Cathedral; however, it does
+not affect citizens made unhappy by aggression.</p>
+<p>Requires knowledge of the technology Monotheism.<br />
+Requires Cathedral in the city.</p>
+<h2 id="mausoleum-of-mausolos">Mausoleum of Mausolos</h2>
+<p>With this wonder, City Walls and Courthouses each make one unhappy
+citizen content in their city, unless that citizen is unhappy about
+aggression. Also, none of the owner's cities can be incited to
+revolt.</p>
+<p>Requires knowledge of the technology Ceremonial Burial.</p>
+<ul>
+<li>The discovery of Sanitation will make it obsolete.\</li>
+</ul>
+<h2 id="statue-of-zeus">Statue of Zeus</h2>
+<p>Reduces by 1 the unhappiness caused by one aggressively deployed
+military unit per city -- in other words, in each city it neutralizes
+the unhappiness caused by a single military unit (except under
+Democracy, where it just halves the unhappiness from that unit). Each
+city also avoids one shield of upkeep for units.</p>
+<p>Requires knowledge of the technology Polytheism.</p>
+<ul>
+<li>The discovery of Conscription will make it obsolete.\</li>
+</ul>
+<h2 id="temple-of-artemis">Temple of Artemis</h2>
+<p>Makes 2 additional unhappy citizens content in every city with a
+Temple. Does not affect citizens made unhappy by aggression.</p>
+<p>Requires knowledge of the technology Mysticism.<br />
+Requires Temple in the city.</p>
+<ul>
+<li>The discovery of Theology will make it obsolete.\</li>
+</ul>
+<h2 id="pyramids">Pyramids</h2>
+<p>Each tile around the city where this wonder is built that is already
+generating some shield output produces one extra shield resource. Under
+Despotism or Tribal governments, the Pyramids cancel the penalty to
+worked tiles with output greater than 2 (for all kinds of output), as if
+all your cities were always celebrating.</p>
+<p>Requires knowledge of the technology Masonry.</p>
+<ul>
+<li>The discovery of Railroad will make it obsolete.\</li>
+</ul>
+<h2 id="internet">Internet</h2>
+<p>Gives an immediate technology advance to the player that builds it,
+and thereafter all cities on the map are continuously visible to its
+owner despite fog-of-war.</p>
+<p>Completion of this wonder permanently doubles the effect of Research
+Labs for every player.</p>
+<p>Requires knowledge of the technology Computers.<br />
+Requires Research Lab in the city.</p>
+<h2 id="shakespeares-theater">Shakespeare's Theater</h2>
+<p>Gives 1 additional luxury to every city, and 6 luxuries to the city
+where it is located.</p>
+<p>Upon completion of this wonder, entertainer specialists' luxury
+output increases to 3 permanently for every nation.</p>
+<p>Requires knowledge of the technology Sanitation.</p>
+<h2 id="statue-of-liberty">Statue of Liberty</h2>
+<p>Allows you to choose any government, including those that have not
+yet been researched by your civilization, and without the transition
+period of Anarchy. It also allows unprovoked declaration of war
+regardless of any senate instituted by a Democracy or Federation
+government or by the United Nations.</p>
+<p>Requires knowledge of the technology Democracy.</p>
+<h2 id="sun-tzus-war-academy">Sun Tzu's War Academy</h2>
+<p>All your new military land units start with an additional veteran
+level (this is cumulative with any Barracks building in a city; with
+both, units are created as Hardened).</p>
+<p>Requires knowledge of the technology Feudalism.</p>
+<ul>
+<li>The discovery of Mobile Warfare will make it obsolete.\</li>
+</ul>
+<h2 id="united-nations">United Nations</h2>
+<p>Creates a world senate that prevents unprovoked declaration of war by
+any nuclear-capable nation (that is, any nation with knowledge of
+Nuclear Fission, once the Manhattan Project has been built). AI players
+are more inclined to be friendly and forgiving toward the owner of this
+wonder. These effects last until the Apollo Program is completed.</p>
+<p>Also, if any player's city is in disorder for more than two turns in
+a row, that player's government falls (even for governments other than
+Republic and Democracy).</p>
+<p>Requires knowledge of the technology Communism.</p>
+<h2 id="womens-suffrage">Women's Suffrage</h2>
+<p>Neutralizes the unhappiness caused by one aggressively deployed
+military unit per city. Under Democracy, it additionally halves the
+unhappiness caused by military units (reducing it to the same level as a
+Republic).</p>
+<p>Requires knowledge of the technology Conscription.</p>
+</body>
+</html>

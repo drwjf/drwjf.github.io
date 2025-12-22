@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>10-zoomable</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1
+id="how-zoomable-and-draggable-dungeon-maps-change-exploration-behavior">How
+Zoomable and Draggable Dungeon Maps Change Exploration Behavior</h1>
+<p>Classic roguelikes were designed for fixed terminal screens. The
+player could only see a limited window of the dungeon—often something
+like an <strong>80×25 grid</strong>—and the camera was always centered
+on the player.</p>
+<p>Exploration in those games was shaped by that constraint. Players
+moved step by step, revealing the dungeon gradually as new tiles entered
+the visible region.</p>
+<p>In the Swift reimplementation of the roguelike engine inspired by
+Brogue, the dungeon map is no longer tied to a fixed screen grid.
+Instead, the player can <strong>zoom and drag the map
+freely</strong>.</p>
+<p>This small interface change has a surprisingly large effect on how
+players explore the dungeon.</p>
+<hr />
+<h1 id="from-fixed-view-to-movable-camera">From Fixed View to Movable
+Camera</h1>
+<p>In traditional roguelikes:</p>
+<ul>
+<li>the camera is fixed</li>
+<li>the player stays at the center</li>
+<li>the map scrolls as the player moves</li>
+</ul>
+<p>This design works well for keyboard navigation but limits how the
+player can observe the environment.</p>
+<p>With a <strong>zoomable and draggable map</strong>, the player can
+move the camera independently of their character.</p>
+<p>This allows the player to:</p>
+<ul>
+<li>inspect distant corridors</li>
+<li>examine room layouts before entering</li>
+<li>plan routes through complex areas</li>
+</ul>
+<p>Exploration becomes more deliberate and spatial.</p>
+<hr />
+<h1 id="strategic-planning">Strategic Planning</h1>
+<p>When players can view a larger portion of the dungeon, they naturally
+begin to think more strategically.</p>
+<p>Instead of reacting to what appears immediately around them, players
+can evaluate:</p>
+<ul>
+<li>possible escape routes</li>
+<li>choke points in corridors</li>
+<li>monster positions</li>
+<li>unexplored areas worth investigating</li>
+</ul>
+<p>This encourages planning rather than purely reactive play.</p>
+<hr />
+<h1 id="reduced-screen-limitations">Reduced Screen Limitations</h1>
+<p>On a terminal screen, the visible dungeon area is fixed. If the
+dungeon is larger than the screen, players must walk around to
+understand its structure.</p>
+<p>Zoomable maps remove this limitation.</p>
+<p>Players can zoom out to see the broader layout of the dungeon, then
+zoom in to focus on tactical details.</p>
+<p>This flexibility allows the dungeon to feel larger and more coherent
+without overwhelming the player.</p>
+<hr />
+<h1 id="improved-situational-awareness">Improved Situational
+Awareness</h1>
+<p>Being able to drag the map also improves situational awareness.</p>
+<p>For example, a player may notice:</p>
+<ul>
+<li>a corridor branching behind them</li>
+<li>an unexplored room nearby</li>
+<li>environmental hazards in adjacent areas</li>
+</ul>
+<p>Instead of discovering these features only by moving, players can
+visually scan the dungeon before committing to a direction.</p>
+<hr />
+<h1 id="maintaining-roguelike-tension">Maintaining Roguelike
+Tension</h1>
+<p>One risk of allowing free camera movement is that it might reduce the
+tension of exploration.</p>
+<p>To preserve the classic roguelike experience, the engine still
+restricts visibility through the <strong>Field of View
+system</strong>.</p>
+<p>Even if players drag the camera to another part of the map, they only
+see tiles that have been:</p>
+<ul>
+<li>previously explored</li>
+<li>currently visible</li>
+</ul>
+<p>Unseen areas remain hidden.</p>
+<p>This keeps the sense of discovery intact.</p>
+<hr />
+<h1 id="supporting-touch-interaction">Supporting Touch Interaction</h1>
+<p>Zooming and dragging also feel natural on touchscreens.</p>
+<p>Players can:</p>
+<ul>
+<li>pinch to zoom</li>
+<li>drag the map to pan</li>
+<li>tap tiles to move</li>
+<li>long press to view details</li>
+</ul>
+<p>These gestures are intuitive and require no on-screen control
+buttons.</p>
+<p>As a result, the dungeon interface remains uncluttered while still
+offering powerful navigation tools.</p>
+<hr />
+<h1 id="encouraging-exploration">Encouraging Exploration</h1>
+<p>Interestingly, allowing players to inspect the dungeon more easily
+can actually <strong>encourage exploration</strong>.</p>
+<p>When players can quickly identify unexplored regions, they are more
+likely to investigate them.</p>
+<p>This reduces frustration while still preserving the risk and
+uncertainty that make roguelikes compelling.</p>
+<hr />
+<h1 id="a-modern-take-on-a-classic-interface">A Modern Take on a Classic
+Interface</h1>
+<p>Zoomable dungeon maps are not strictly necessary for roguelikes, but
+they fit naturally with modern touch devices.</p>
+<p>By combining:</p>
+<ul>
+<li>a flexible camera system</li>
+<li>a clear tile-based map</li>
+<li>traditional visibility mechanics</li>
+</ul>
+<p>the Swift reimplementation preserves the core gameplay while adapting
+the interface to modern hardware.</p>
+<p>The result is an exploration experience that feels both familiar and
+refreshed—retaining the strategic depth of classic roguelikes while
+benefiting from modern interaction design.</p>
+<hr />
+<p>⬅️ <a href="09-tile.html">Previous</a> | 🏠 <a
+href="../index.html">Index</a> | <a href="11-oos">Next</a> ➡️</p>
+<hr />
+</body>
+</html>

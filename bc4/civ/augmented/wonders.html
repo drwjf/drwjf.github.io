@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>wonders</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="world-wonders">World Wonders</h1>
+<h2 id="overview">Overview</h2>
+<p>Wonders are special buildings which can each be completed by only one
+player each game, and which often enhance their entire civilization.
+Unlike ordinary city improvements, which must be built with local
+production points, certain special units built in one city (Caravans and
+Freight) can contribute their full cost in production points towards the
+construction of a wonder in another city.</p>
+<p>Once built, a wonder is placed in the city that constructed it, and
+cannot be sold or destroyed (unless the entire city is destroyed).
+However, some wonders are made obsolete under certain circumstances, and
+lose their effect. Note the asymmetry: while you must personally achieve
+the advance required by each wonder to build it, it will be disabled
+when any player achieves the obsoleting advance.</p>
+<h2 id="angkor-wat">Angkor Wat</h2>
+<p>Giant complex of temples, which makes a city a second center of
+government.</p>
+<p>Additionally, produces extra 4 luxury points in this city.</p>
+<p>Waste in other cities (corruption, production waste, and food waste)
+is related to how far away from the nearest capital they are. On top of
+this, corruption and production waste in the capital itself 30% of what
+it would otherwise be.</p>
+<p>The city where this palace is located cannot be incited to revolt,
+and enjoys a bonus when enemy agents try to evade your own agents
+stationed in the city, or sabotage your buildings.</p>
+<p>Under Despotism the city containing the palace gains a +75% gold
+bonus, and under Monarchy a +50% gold bonus.</p>
+<p>+3 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Hinduism.<br />
+Requires Temple in the city (and not yet obsolete).<br />
+Requires your nation to have culture of at least 2800.<br />
+Prevented if you own Ecclesiastical Palace.<br />
+Prevented if you own Forbidden City.<br />
+Prevented if you own Sultan Palace.<br />
+Prevented if you own Osaka Castle.<br />
+Prevented by Palace in the city.</p>
+<ul>
+<li>Prevents to build Ecclesiastical Palace.</li>
+<li>Prevents to build Forbidden City.</li>
+<li>Prevents to build Sultan Palace.</li>
+<li>Prevents to build Osaka Castle.\</li>
+</ul>
+<h2 id="osaka-castle">Osaka Castle</h2>
+<p>Giant temple, which makes a city a second center of government.</p>
+<p>Additionally, produces extra 4 luxury points in this city.</p>
+<p>Waste in other cities (corruption, production waste, and food waste)
+is related to how far away from the nearest capital they are. On top of
+this, corruption and production waste in the capital itself is 30% of
+what it would otherwise be.</p>
+<p>The city where this palace is located cannot be incited to revolt,
+and enjoys a bonus when enemy agents try to evade your own agents
+stationed in the city, or sabotage your buildings.</p>
+<p>Osaka Castle will also make satisfying two citizens unhappy due to
+aggression in the city where is founded.</p>
+<p>+3 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Shogunate.<br />
+Requires Temple in the city (and not yet obsolete).<br />
+Requires Shrine Torii in the city.<br />
+Requires your nation to have culture of at least 2900.<br />
+Prevented if you own Ecclesiastical Palace.<br />
+Prevented if you own Angkor Wat.<br />
+Prevented if you own Forbidden City.<br />
+Prevented if you own Sultan Palace.<br />
+Prevented by Palace in the city.</p>
+<ul>
+<li>Prevents to build Ecclesiastical Palace.</li>
+<li>Prevents to build Forbidden City.</li>
+<li>Prevents to build Sultan Palace.</li>
+<li>Prevents to build Angkor Wat.\</li>
+</ul>
+<h2 id="statue-of-liberty">Statue of Liberty</h2>
+<p>Allows you to choose any government, including those that have not
+yet been researched by your civilization, and without the transition
+period of Anarchy. It also allows unprovoked declaration of war
+regardless of any senate instituted by a Democracy or Federation
+government or by the United Nations.</p>
+<p>The side effect of this wonder is, that inciting revolts is possible
+under Fascism.</p>
+<p>+4 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Democracy.<br />
+Requires your nation to have culture of at least 9800.</p>
+<h2 id="united-nations">United Nations</h2>
+<p>Creates a world senate.</p>
+<p>United Nations quadruple cost of inciting revolt in any cities
+belonging to that player, or for any player's cities ruled by a
+communistic system.</p>
+<p>Also, for all players, if any city is in disorder for more than two
+turns in a row, that player's government falls (even for governments
+other than Republic and Democracy). On the other hand, chance of Civil
+War is 4x less in case of Republic, Democracy or Federation.</p>
+<p>+8 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Communism.<br />
+Requires your nation to have culture of at least 12500.</p>
+<h2 id="apollo-program">Apollo Program</h2>
+<p>Apollo Program allows all players to start building spaceship parts
+(assuming they have researched the necessary technologies and have Space
+Lift small wonder finished).</p>
+<p>Existing of Apollo Program is also necessary to build Global
+Positioning System.</p>
+<p>+5 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Space Flight.<br />
+Requires Research Lab in the city.<br />
+Requires your nation to have culture of at least 12000.</p>
+<ul>
+<li>Allows to build Global Positioning System (with Satellite System,
+Research Lab, and Culture 16500).</li>
+<li>Allows to build Space Lift (with Nanotechnology, Research Lab, and
+Culture 18500).\</li>
+</ul>
+<h2 id="asmiths-trading-co">A.Smith's Trading Co.</h2>
+<p>In every city with a Stock Exchange, city improvements which would
+normally have an upkeep of 1 become free of upkeep. (Communist
+governments inherently give this benefit, so there is no bonus under
+Communism.)</p>
+<p>Upon completion of this wonder, tax collector specialists' gold
+output increases by 1 permanently for every nation.</p>
+<p>+2 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Economics.<br />
+Requires Stock Exchange in the city.<br />
+Requires your nation to have culture of at least 5000.</p>
+<h2 id="cure-for-cancer">Cure For Cancer</h2>
+<p>This stunning technological achievement makes one satisfying citizen
+happy in each of cities of any player who knows Genetic Engineering (2
+extra luxury per city).</p>
+<p>Together with an Aqueduct, a Sewer System, Hospital, Pasteur
+Institute and maximum of Welfare Policy, it entirely eliminates the risk
+of plague.</p>
+<p>+4 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Genetic Engineering.<br />
+Requires your nation to have culture of at least 19000.</p>
+<h2 id="darwins-voyage">Darwin's Voyage</h2>
+<p>Charles Darwin's voyage sparked the discovery of the evolution of the
+species, which inspired greater confidence in science. All your cities
+generate 1 extra science bulb and immediate technology advance is
+achieved.</p>
+<p>Upon completion of this wonder, scientist specialists' research
+output increases by 1 permanently for every nation.</p>
+<p>+5 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Steam Engine.<br />
+Requires your nation to have culture of at least 7800.</p>
+<h2 id="great-library">Great Library</h2>
+<p>Gives an immediate technology advance to the player that builds it,
+and thereafter 4 extra research points every turn to its city.</p>
+<p>Completion of this wonder doubles the effect of Libraries for every
+player.</p>
+<p>+4 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Paper Making.<br />
+Requires Library in the city.<br />
+Requires your nation to have culture of at least 2500.</p>
+<ul>
+<li>The discovery of Computers will make it obsolete.\</li>
+</ul>
+<h2 id="internet">Internet</h2>
+<p>All cities on the map are continuously visible to its owner despite
+fog-of-war.</p>
+<p>Upon completion of this wonder, for each nation which know Computers
+advance, entertainer specialists' luxury output increases by 1.</p>
+<p>Completion of this wonder permanently doubles the effect of
+Universities for allied players.</p>
+<p>+1 National Culture Points/turn/city if Computers tech is known.</p>
+<p>Requires knowledge of the technology Robotics.<br />
+Requires Research Lab in the city.<br />
+Requires you to own DARPA.<br />
+Requires your nation to have culture of at least 13500.</p>
+<h2 id="isaac-newtons-college">Isaac Newton's College</h2>
+<p>Gives an immediate technology advance to the player that builds it,
+and thereafter 6 extra research points every turn to its city.</p>
+<p>Completion of this wonder permanently doubles the effect of
+Universities for every player as well as add 1 culture point to any city
+with University.</p>
+<p>Requires knowledge of the technology Theory of Gravity.<br />
+Requires University in the city.<br />
+Requires your nation to have culture of at least 6700.</p>
+<h2 id="large-hadron-collider">Large Hadron Collider</h2>
+<p>Large Hadron Collider reveal two new advances, when finished. It is
+the best way to gain Great Unification Theory.</p>
+<p>Upon completion of this wonder, scientist specialists' research
+output increases by 1 for every nation (except those ruled by Anarchy or
+Fundamental government).</p>
+<p>Each player's city with Research Center would gain 1 culture
+point.</p>
+<p>Requires knowledge of the technology Superconductors.<br />
+Requires your nation to have culture of at least 25000.</p>
+<h2 id="manhattan-project">Manhattan Project</h2>
+<p>Requires knowledge of the technology Nuclear Fission.<br />
+Requires your nation to have culture of at least 11800.<br />
+Requires Uranium on a tile within the city radius.</p>
+<ul>
+<li>Allows all players with knowledge of Nuclear Fission to build units:
+Atomic Bomb\</li>
+</ul>
+<h2 id="pasteur-institute">Pasteur Institute</h2>
+<p>Pasteur Institute reduce risk of plague in all player's cities with
+Hospital by additional 10%-20% depending on Welfare Policy settings.</p>
+<p>It would also reveal one new advance, once completed.</p>
+<p>On each turn, 1 culture point is added to each player's city with
+University, instead of just this city.</p>
+<p>Requires knowledge of the technology Biology.<br />
+Requires University in the city.<br />
+Requires your nation to have culture of at least 5300.</p>
+<h2 id="shakespeares-theater">Shakespeare's Theater</h2>
+<p>Gives 1 additional luxury to every player's city, and 6 luxuries to
+the city where it is located.</p>
+<p>Upon completion of this wonder, entertainer specialists' luxury
+output increases by 1 for every nation.</p>
+<p>Any city with Amphitheater gain additional Culture Point.</p>
+<p>Unlike most other wonders, entertainment wonders need gold
+upkeep.</p>
+<p>Requires knowledge of the technology Theatre.<br />
+Requires your nation to have culture of at least 7500.</p>
+<ul>
+<li>The discovery of Computers will make it obsolete.\</li>
+</ul>
+<h2 id="golden-temple">Golden Temple</h2>
+<p>Golden Temple is the important Sikhism pilgrimage site.</p>
+<p>Thanks to the ecumenic spirit of Golden Temple, any city with Temple,
+Church or Mosque, which belong to the players allied with owner of this
+building,would additionaly make 1 unhappy citizens satisfying.</p>
+<p>+3 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Sikhism.<br />
+Requires Temple in the city (and not yet obsolete).<br />
+Requires your nation to have culture of at least 4500.</p>
+<ul>
+<li>Prevents to build J.S. Bach's Cathedral.</li>
+<li>Prevents to build Michelangelo's Chapel.\</li>
+</ul>
+<h2 id="great-wall">Great Wall</h2>
+<p>Increases the defense of all your cities by adding a +50% bonus to
+its units' intrinsic defense strength against straight attacking land
+units (this is cumulative with any City Walls), and any allied city is
+protected against the loss of population which occurs when a defending
+unit is defeated by a land unit.</p>
+<p>Great Wall increases also defense of any allied land units in
+Fortress (but not in Fort) by 50%.</p>
+<p>+2 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Legalism.<br />
+Requires your nation to have culture of at least 1500.</p>
+<ul>
+<li>The discovery of Mobile Warfare will make it obsolete.</li>
+<li>The discovery of Rocketry will make it obsolete.\</li>
+</ul>
+<h2 id="kaaba">Kaaba</h2>
+<p>This sacred site is a focal point of the pilgrimages. It can be
+founded if there is desert adjacent to the city.</p>
+<p>Each tile with (paved) road around the city produce additional trade
+point.</p>
+<p>Additionally, each Mosque which belongs to any allied player,
+neutralizes unhappiness caused by 0...2 military units (depending on
+Religious Orthodoxy policy settings).</p>
+<p>+3 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Islam.<br />
+Requires Mosque in the city.<br />
+Requires Desert on the tile or an adjacent tile.<br />
+Prevented by Temple in the city (unless it is obsolete).<br />
+Prevented by Church in the city.<br />
+Prevented by Cathedral in the city.<br />
+Prevented if you own Michelangelo's Chapel.<br />
+Prevented if you own J.S. Bach's Cathedral.<br />
+Prevented if you own King Richard's Crusade, unless it is
+obsolete.<br />
+Prevented if you own Kyoto Fushimi Inari.<br />
+Prevented by Colossus in the city (unless it is obsolete).<br />
+Prevented by Western Wall in the city (unless it is obsolete).</p>
+<ul>
+<li>Prevents to build J.S. Bach's Cathedral.</li>
+<li>Prevents to build Khajuraho Temple.</li>
+<li>Prevents to build King Richard's Crusade.</li>
+<li>Prevents to build Statue of Zeus.</li>
+<li>Prevents to build Western Wall.</li>
+<li>Prevents to build Kyoto Fushimi Inari.</li>
+<li>Prevents to build Michelangelo's Chapel.\</li>
+</ul>
+<h2 id="kyoto-fushimi-inari">Kyoto Fushimi Inari</h2>
+<p>Pilgrimages to this giant Shrine makes additional 0..2 (depending on
+Religious Orthodoxy policy settings) satisfying citizens happy for every
+allied player's Temple with Shrine Torii and 4 extra luxury points for
+city with Fushimi Inari wonder.</p>
+<p>Each player's city with Shrine Torii and Temple gain 1 culture
+point.</p>
+<p>Requires knowledge of the technology Bushido.<br />
+Requires Temple in the city (and not yet obsolete).<br />
+Requires Shrine Torii in the city.<br />
+Requires your nation to have culture of at least 3800.<br />
+Prevented by Church in the city.<br />
+Prevented by Cathedral in the city.<br />
+Prevented by Mosque in the city.<br />
+Prevented if you own Kaaba.<br />
+Prevented if you own King Richard's Crusade, unless it is
+obsolete.<br />
+Prevented if you own Michelangelo's Chapel.<br />
+Prevented if you own J.S. Bach's Cathedral.<br />
+Prevented if you own Temple of City God.<br />
+Prevented if you own Taj Mahal.</p>
+<ul>
+<li>Prevents to build J.S. Bach's Cathedral.</li>
+<li>Prevents to build King Richard's Crusade.</li>
+<li>Prevents to build Kaaba.</li>
+<li>Prevents to build Michelangelo's Chapel.\</li>
+</ul>
+<h2 id="mausoleum-of-mausolos">Mausoleum of Mausolos</h2>
+<p>If allied player posses this wonder, City Walls and Courthouses each
+make one unhappy citizen satisfying in their city, unless that citizen
+is unhappy about aggression. Also, city where Mausoleum of Mausolos is
+founded can't be incited to revolt.</p>
+<p>+2 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Ceremonial Burial.<br />
+Requires Temple in the city (and not yet obsolete).<br />
+Prevented by Church in the city.<br />
+Prevented by Cathedral in the city.<br />
+Prevented by Mosque in the city.</p>
+<ul>
+<li>The discovery of Socialism will make it obsolete.</li>
+<li>The presence of King Richard's Crusade in the city will make it
+obsolete.\</li>
+</ul>
+<h2 id="michelangelos-chapel">Michelangelo's Chapel</h2>
+<p>Doubles the base effect of Cathedrals which belong to the players
+allied with owner of this building.</p>
+<p>This makes 3 additional unhappy citizens satisfying in each allied
+city with a Cathedral; however, it does not affect citizens made unhappy
+by aggression.</p>
+<p>Any city with Cathedral would also gain 1 additional culture
+point.</p>
+<p>Requires knowledge of the technology Christianity.<br />
+Requires Church in the city.<br />
+Requires your nation to have culture of at least 3800.<br />
+Prevented by Temple in the city (unless it is obsolete).<br />
+Prevented by Mosque in the city.<br />
+Prevented if you own Kaaba.<br />
+Prevented if you own Leshan Buddha Statue.<br />
+Prevented if you own Golden Temple.<br />
+Prevented if you own Temple of City God.<br />
+Prevented if you own Taj Mahal.<br />
+Prevented if you own Kyoto Fushimi Inari.</p>
+<ul>
+<li>Prevents to build Khajuraho Temple.</li>
+<li>Prevents to build Kaaba.</li>
+<li>Prevents to build Kyoto Fushimi Inari.</li>
+<li>Prevents to build Taj Mahal.\</li>
+</ul>
+<h2 id="taj-mahal">Taj Mahal</h2>
+<p>Increase luxury output of a city by 50%, additionally each Madrasa
+will make one unhappy citizen satisfying in any city which belong to
+allied players.</p>
+<p>Unlike most other wonders, entertainment wonders need gold
+upkeep.</p>
+<p>+3 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Shiism.<br />
+Requires Mosque in the city.<br />
+Requires your nation to have culture of at least 2800.<br />
+Prevented by Temple in the city (unless it is obsolete).<br />
+Prevented by Church in the city.<br />
+Prevented if you own Michelangelo's Chapel.<br />
+Prevented if you own King Richard's Crusade, unless it is
+obsolete.<br />
+Prevented if you own Temple of City God.</p>
+<ul>
+<li>Prevents to build King Richard's Crusade.</li>
+<li>Prevents to build Kyoto Fushimi Inari.</li>
+<li>Prevents to build Michelangelo's Chapel.\</li>
+</ul>
+<h2 id="colossus">Colossus</h2>
+<p>Each tile around the city where this wonder is built that is already
+generating some trade produces one extra trade resource.</p>
+<p>Moreover, tax collector specialists' gold output in cities on
+continent with Colossus is increased by 1 for any nation.</p>
+<p>+2 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Bronze Working.</p>
+<ul>
+<li>The discovery of Railroad will make it obsolete.</li>
+<li>Prevents to build Western Wall.</li>
+<li>Prevents to build Kaaba.\</li>
+</ul>
+<h2 id="hoover-dam">Hoover Dam</h2>
+<p>Acts as a Hydro Plant in the city where it is built, and reduces
+pollution from shield production by a further 25% in all cities with
+Hydro Plants on same continent, making them equivalent to Solar
+Plants.</p>
+<p>+2 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Offshore Exploration.<br />
+Requires River on the tile or an adjacent tile.<br />
+Requires Factory in the city.</p>
+<h2 id="leshan-buddha-statue">Leshan Buddha Statue</h2>
+<p>There is belief, that this giant statue calm turbulent river waters.
+City with this Wonder would gain additional food from each river
+tile.</p>
+<p>Additionally, thanks to the Buddha The Wise ideas, any Monk Monastery
+would make 1 unhappy citizen satisfying, for any city on same
+continent.</p>
+<p>+3 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Buddhism.<br />
+Requires Temple in the city (and not yet obsolete).<br />
+Requires your nation to have culture of at least 2200.</p>
+<ul>
+<li>Prevents to build J.S. Bach's Cathedral.</li>
+<li>Prevents to build Michelangelo's Chapel.\</li>
+</ul>
+<h2 id="marco-polos-embassy">Marco Polo's Embassy</h2>
+<p>The player who owns it gets an embassy with all players.</p>
+<p>TIP: if you're behind in research, this can help you catch up, by
+reducing the cost of technologies that other players already know.</p>
+<p>In case of Thalassocracy government system, celebration would give
+boost of shield production, if Marco Polo Embassy exist on the same
+continent.</p>
+<p>+6 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Trade.<br />
+Requires your nation to have culture of at least 1900.</p>
+<ul>
+<li>The discovery of Radio will make it obsolete.\</li>
+</ul>
+<h2 id="stonehenge">Stonehenge</h2>
+<p>This megalithic structure act like giant astronomical calendar. Each
+tile worked by the city where this wonder is built produces one extra
+research point.</p>
+<p>Additionally, each city on the continent where Stonehenge is located
+is not affected by Tribal government science penalty, if Palace is not
+present in such city.</p>
+<p>+2 National Culture Points/turn.</p>
+<p>Requires knowledge of the technology Alphabet.</p>
+<ul>
+<li>The discovery of Christianity will make it obsolete.</li>
+<li>The presence of Isaac Newton's College in the city will make it
+obsolete.\</li>
+</ul>
+</body>
+</html>

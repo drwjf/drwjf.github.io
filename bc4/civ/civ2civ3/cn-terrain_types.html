@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>cn-terrain_types</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="地形类型">地形类型</h1>
+<h2 id="总览">总览</h2>
+<p>地形扮演着三个角色：您的部队与敌对文明作战的战区，部队穿越的地形以及城市为物品而工作的媒介。不同类型的地形各有优缺点。有关详细信息，请参见有关每种地形类型的部分。</p>
+<p>地形对战斗的影响非常简单：当一个部队受到攻击时，其防御力乘以其下方地形的防御因子（“加成”）。
+（但是，某些类型的部队无法享受此加成；）有关更多详细信息，请参阅“战斗”帮助部分。</p>
+<p>地形会使部队的移动复杂化。例如，陆地部队移动到崎岖不平的地形（如山脉）可能比平地（如平原）花费更多的移动点，而海上和空中部队总是花费一个移动点来移动一块地块。</p>
+<p>城市范围内的地块可以由该城市使用以生成食品，物品和贸易，每种产品的的数量取决于地形。这三种产品非常重要，我们通过在中间用斜线列出它们来指定地块的输出：例如，“
+1/2/0”描述的地块在工作时每回合会产生一个食品点，两个物品点，没有贸易点。除了地形的特征输出外，某些地块还具有额外的特殊资源，可以增加一个或两个产出。有关使用这些产品的更多信息，请参见经济部分。</p>
+<p>地块为您的城市带来的净收益取决于您的政府类型以及城市的发展和奇迹。</p>
+<p>您的部队有可能更改地形及其效果。有关更多详细信息，请参见“地形变更”部分。</p>
+<h2 id="无法进入">无法进入</h2>
+<p>*您无法在此地形上建造城市。 *无法在此地形上构建路径。
+*无法在此地形上建立基地。 *此地形的海岸线不安全。
+*在此地形上的部队可能会施加控制区域，或受到区域控制的限制。
+*可以驻防的部队可以在此地形上进行驻防。 *这里没有污染或辐射。</p>
+<p>任何部队都不能进入该地形，任何城市都不能对其地块进行加工。</p>
+<h2 id="湖">湖</h2>
+<p>*阻止建立渡槽。 *允许建立湖水渡槽 。 *阻止建立河水渡槽 。
+*您无法在此地形上建造城市。 *无法在此地形上构建路径。 *可以供导弹, 海军,
+Trireme , 直升机, 和 空军部队行驶。
+*在此地形上的部队既不施加区域控制，也不受区域控制限制。
+*没有部队可以在此地形上进行驻防。 *这里没有污染或辐射。</p>
+<p>湖泊是大量淡水。</p>
+<h2 id="海洋">海洋</h2>
+<p>*您无法在此地形上建造城市。 *无法在此地形上构建路径。 *可以供导弹,
+海军, Trireme , 直升机, 和 空军部队行驶。
+*在此地形上的部队既不施加区域控制，也不受区域控制限制。
+*没有部队可以在此地形上进行驻防。 *允许城市建造港口和沿海奇迹。</p>
+<p>浅海大多位于海岸线附近，通常是丰富的食品和其他资源来源。</p>
+<h2 id="深海">深海</h2>
+<p>*您无法在此地形上建造城市。 *无法在此地形上构建路径。 *可以供导弹,
+海军, 直升机, 和 空军部队行驶。
+*在此地形上的部队既不施加区域控制，也不受区域控制限制。
+*没有部队可以在此地形上进行驻防。 *允许城市建造港口和沿海奇迹。
+*这里没有污染或辐射。</p>
+<p>深海覆盖了远离海岸线的世界大部分地区，只有适航部队（不包括Triremes）才能在其上旅行。</p>
+<h2 id="冰川">冰川</h2>
+<p>*您无法在此地形上建造城市。 *可以供导弹, 陆军, 小陆军 , 大陆军 , 商人
+, 直升机, 和 空军部队行驶。
+*在此地形上的部队可能会施加控制区域，或受到区域控制的限制。
+*可以驻防的部队可以在此地形上进行驻防。 *矿山可以升级到油井。</p>
+<p>冰川仅出现在世界最北端或最南端。它们很冷，因此很难使用。</p>
+<h2 id="沙漠">沙漠</h2>
+<p>*可以供导弹, 陆军, 小陆军 , 大陆军 , 商人 , 直升机, 和 空军部队行驶。
+*在此地形上的部队可能会施加控制区域，或受到区域控制的限制。
+*可以驻防的部队可以在此地形上进行驻防。 *矿山可以升级到油井。</p>
+<p>沙漠是极端干旱的地区，使农业和贸易非常困难。</p>
+<p>可以灌溉沙漠以获取少量额外的食物，但是如果没有绿洲或河流，光秃秃的沙漠无法通过耕地得到进一步改善。</p>
+<p>河流把肥沃的土壤带到沙漠。
+在尚未从绿洲中受益的沙漠河流上，建筑灌溉将产生两个额外的粮食产出，而不是通常的一个。</p>
+<h2 id="森林">森林</h2>
+<p>*可以供导弹, 陆军, 小陆军 , 大陆军 , 商人 , 直升机, 和 空军部队行驶。
+*在此地形上的部队可能会施加控制区域，或受到区域控制的限制。
+*可以驻防的部队可以在此地形上进行驻防。</p>
+<p>森林茂密，林木繁茂。</p>
+<h2 id="草原">草原</h2>
+<p>*可以供导弹, 陆军, 小陆军 , 大陆军 , 商人 , 直升机, 和 空军部队行驶。
+*在此地形上的部队可能会施加控制区域，或受到区域控制的限制。
+*可以驻防的部队可以在此地形上进行驻防。</p>
+<p>草原提供了特殊的农业机会。</p>
+<h2 id="丘陵">丘陵</h2>
+<p>*可以供导弹, 陆军, 小陆军 , 大陆军 , 商人 , 直升机, 和 空军部队行驶。
+*在此地形上的部队可能会施加控制区域，或受到区域控制的限制。
+*可以驻防的部队可以在此地形上进行驻防。</p>
+<p>除了适合农业生产，丘陵还经常拥有丰富的资源。</p>
+<p>建在丘陵中的城市有地震危险，可能会中断该城市的现有项目。</p>
+<h2 id="丛林">丛林</h2>
+<p>*可以供导弹, 陆军, 小陆军 , 商人 , 直升机, 和 空军部队行驶。
+*在此地形上的部队可能会施加控制区域，或受到区域控制的限制。
+*可以驻防的部队可以在此地形上进行驻防。</p>
+<p>丛林茂密的杂草丛生，使农业有些问题。
+如果没有道路，大陆地部队可能不会进入丛林。</p>
+<h2 id="山脉">山脉</h2>
+<p>*您无法在此地形上建造城市。 *可以供导弹, 陆军, 小陆军 , 商人 ,
+直升机, 和 空军部队行驶。
+*在此地形上的部队可能会施加控制区域，或受到区域控制的限制。
+*可以驻防的部队可以在此地形上进行驻防。</p>
+<p>山区是海拔极高的地区，因此农业和贸易非常困难。</p>
+<p>进入山区的陆地部队可以看到一个额外的空间，但是快速的陆军部队在没有道路的情况下结束在山中的回合，兵将以较少的移动点开始下一回合。
+如果没有道路，大陆军部队可能无法进入山区。</p>
+<h2 id="平原">平原</h2>
+<p>*可以供导弹, 陆军, 小陆军 , 大陆军 , 商人 , 直升机, 和 空军部队行驶。
+*在此地形上的部队可能会施加控制区域，或受到区域控制的限制。
+*可以驻防的部队可以在此地形上进行驻防。</p>
+<p>平原非常广阔，稀疏，这给贸易带来了一些不便。</p>
+<h2 id="沼泽">沼泽</h2>
+<p>*可以供导弹, 陆军, 小陆军 , 商人 , 直升机, 和 空军部队行驶。
+*在此地形上的部队可能会施加控制区域，或受到区域控制的限制。
+*可以驻防的部队可以在此地形上进行驻防。</p>
+<p>沼泽地水过多，使农业有些问题。
+如果没有道路，大陆地部队可能不会在沼泽中移动。</p>
+<h2 id="苔原">苔原</h2>
+<p>*可以供导弹, 陆军, 小陆军 , 大陆军 , 商人 , 直升机, 和 空军部队行驶。
+*在此地形上的部队可能会施加控制区域，或受到区域控制的限制。
+*可以驻防的部队可以在此地形上进行驻防。</p>
+<p>苔原是广阔的寒冷地区，适合某些农业和其他农业。</p>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>strategy</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h2 id="strategy-and-tactics">Strategy and Tactics</h2>
+<p>While every game is different, there's a basic strategy which most
+players follow, especially at the start of the game.</p>
+<p>In general, the steps are:</p>
+<p><a href="#strategy-0">0. Choosing the first city site.</a></p>
+<p><a href="#strategy-1">1. Mapping the countryside.</a></p>
+<p><a href="#strategy-2">2. Defending the cities.</a></p>
+<p><a href="#strategy-3">3. Deciding which units to build first.</a></p>
+<p><a href="#strategy-4">4. Improving the land.</a></p>
+<p><a href="#strategy-5">5. Deciding where to build cities.</a></p>
+<p><a href="#strategy-6">6. Taking care of the cities.</a></p>
+<p><a href="#strategy-7">7. Interacting with other players
+(diplomacy).</a></p>
+<p><a href="#strategy-8">8. Exploring the world.</a></p>
+<p><a href="#strategy-9">9. Things to keep in mind.</a></p>
+<p><a href="#strategy-10">10. Making your own strategy for the
+game.</a></p>
+<h3 id="0-choosing-the-first-city-site">0. Choosing the first city
+site.</h3>
+<p>Start the game by wandering around BRIEFLY to find a good place to
+build the first city. Don't feel tempted to investigate any
+yellow-roofed villages yet - they might contain barbarian tribes. Build
+the city close to resources and perhaps close to the sea. Keep in mind
+that the city you build first will be your capital! The idea is to
+balance the quality of the site you find against getting your first city
+established as early as possible.</p>
+<h3 id="1-mapping-the-countryside">1. Mapping the countryside.</h3>
+<p>After the capital city has been founded, it will start producing a
+warrior unit. These units can be used to rove around exploring the
+countryside. Remember, it is risky to leave a city undefended, so
+perhaps keep the first warrior in the city, and use the following one to
+explore. If you started the game with an explorer unit, use that to
+explore, obviously!</p>
+<h3 id="2-defending-the-cities">2. Defending the cities.</h3>
+<p>At this point, defend your cities by always leaving a warrior unit in
+them. As your civilization develops units with a greater defense
+strength, replace the obsolete units with new ones to ensure your cities
+have maximum defense. The units most often used for defense are (in
+order of strength): Warrior, Phalanx, Pikemen, Musketeers, and Riflemen.
+Keep in mind that with some types of government, military units inside
+or outside cities can reduce or create unhappiness. Also remember that
+when a land unit is inside a city, it gets a 50% defensive bonus, as if
+fortified. When a new city is built, the city starts to build the best
+available defensive unit from the above list.</p>
+<h3 id="3-deciding-which-units-to-build-first">3. Deciding which units
+to build first.</h3>
+<p>After building one or two Warrior units, start building Settlers.
+Settlers take city population, but if you picked a good city site, your
+city should be big enough by now. Settlers are best put to use founding
+new cities; while they can also build agricultural improvements (see the
+next section), it is better to use Workers for this when available, as
+unlike Settlers, Workers do not consume food from their parent city.
+Keep in mind that a large population increases both the amount of
+productivity and your civilization's research rate, not to mention that
+cities secure land for your empire, so founding new cities should be a
+high priority initially.</p>
+<h3 id="4-improving-the-land">4. Improving the land.</h3>
+<p>Each city has an area of land around it that can be used for growing
+food, producing goods, and generating trade. This output can be
+increased by using Workers (or Settlers) to improve the land close to
+your cities. The land can be improved with irrigation (increasing food),
+roads (allowing units to move faster and increasing trade), and mines
+(increasing production), among other improvements.</p>
+<h3 id="5-deciding-where-to-build-cities">5. Deciding where to build
+cities.</h3>
+<p>The best location for a city is a matter of taste. A city which is
+placed near the sea is easier to spot by opponents, but can also serve
+as a port for sea-going units. (They also usually need a coastal defense
+later on.) The best strategy is to build a few of both, but keep in mind
+that your opponents will find it harder to locate your city if you don't
+build it by the sea.</p>
+<h3 id="6-taking-care-of-the-cities">6. Taking care of the cities.</h3>
+<p>Every city has a band of citizens. The number of citizens depends on
+the city's population. When you tap on a city, you can see how the land
+around the city is being used. You can assign your citizens to the land,
+or they can be specialists that contribute to your civilization in other
+ways. Especially at the start of the game, care should be taken to
+ensure that the citizens are employed so that they maximize growth,
+trade and production.</p>
+<p>If too much food is being generated, a citizen can be taken off the
+land by tapping on the occupied land tile. This citizen can then be
+transferred to the other duties mentioned previously.</p>
+<p>If you tap on the central tile of the land, the citizens will be
+rearranged to maximize food output.</p>
+<p>The golden rule of taking care of a city is that there should be at
+least as many happy citizens as unhappy citizens. A city where this is
+not so falls into disorder; such cities are labeled with a raised fist
+or a lightning bolt (depending on the tileset). Take care not to let
+this happen to any of your cities, as cities in disorder produce
+nothing, and are prone to revolt.</p>
+<h3 id="7-interacting-with-other-players-diplomacy">7. Interacting with
+other players (diplomacy).</h3>
+<p>When one of your units first meets a unit of another nation, or finds
+one of their cities (or equally if they find you), a basic contact is
+established between the two nations. This provides each with basic
+intelligence about the other, which can be accessed from the 'Nations'
+report.</p>
+<p>This communication will lapse after a set number of turns with no
+contact. Establishing an embassy will give a more permanent
+communication channel, as well as more advanced intelligence such as
+details of technology. Embassies are one-way - the nation hosting the
+embassy receives no benefit - and once established, cannot be
+revoked.</p>
+<p>If you are in contact with another player, then you can arrange a
+diplomatic meeting. From the 'World/Diplomacy/Status' report, this is
+done by tapping on the nation with whom you wish to meet and selecting
+'Meet'. A treaty dialog will pop up.</p>
+<p>In this dialog you can negotiate an exchange of assets (maps, vision,
+advances, cities, or gold), embassies, or binding pacts such as a
+cease-fire or peace. There is no need to trade like for like; you can
+trade, say, an advance or city for gold - you can consider this buying
+and selling. Each player builds a list of offered items. To remove an
+item from the list, tap on it. When both players indicate satisfaction,
+the pact is concluded.</p>
+<p>Pacts affect where your units can go and what they can do, and a pact
+with one nation can affect your relations with others. Under
+authoritarian governments such as Monarchy you can break a pact at any
+time, but the representative governments (Republic and Democracy) have a
+senate which will block the unprovoked cancelation of a treaty; unless a
+foreign Diplomat or Spy sparks a diplomatic incident, the only way to
+dissolve a pact in this situation is to dissolve your government. The
+details of pacts are described in the Diplomacy section.</p>
+<p>A couple of notes:</p>
+<ul>
+<li><p>You can't give away your capital.</p></li>
+<li><p>You can only request property that you know about; so you can't
+request technology unless you have an embassy, and if you can't see a
+city on your map, then you can't request it. Of course, the owner of
+that city can still offer it to you, in which case the area around the
+city is shown on your map before you accept the treaty.</p></li>
+<li><p>One important thing to note: when a city is transferred, any
+units in the field and supported by that city are also transferred (but
+not those sitting in other cities). So make sure the other player isn't
+getting a better deal than you expect.</p></li>
+</ul>
+<h3 id="8-exploring-the-world">8. Exploring the world.</h3>
+<p>After you have fortified your cities with troops, build Triremes in
+the cities near the sea. Use the Triremes to map the world in search of
+opponents and new lands. If you are on an island, you should spend less
+on military and more on expansion. Or if you are located close to an
+opponent, it is truly a good idea to make a peace treaty and share the
+advances you have made. Diplomatic units are very useful here, and WILL
+pay off later.</p>
+<h3 id="9-things-to-keep-in-mind">9. Things to keep in mind.</h3>
+<ul>
+<li><p>What the next advance you'll need is.</p></li>
+<li><p>What your tax, luxury and research rates are currently set
+to.</p></li>
+<li><p>Treaties are often broken, so don't neglect defense...</p></li>
+<li><p>Some wonders can be made obsolete.</p></li>
+</ul>
+<h3 id="10-making-your-own-strategy-for-the-game">10. Making your own
+strategy for the game.</h3>
+<p>These basic concepts will allow you to play the game pretty well,
+especially in the beginning of the game. But to improve, you need to
+study the various units and advances, and PRACTICE, PRACTICE,
+PRACTICE!</p>
+</body>
+</html>
