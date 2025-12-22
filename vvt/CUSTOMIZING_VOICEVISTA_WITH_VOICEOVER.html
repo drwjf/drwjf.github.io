@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>CUSTOMIZING_VOICEVISTA_WITH_VOICEOVER</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="customizing-voicevista-with-voiceover">Customizing VoiceVista
+with VoiceOver</h1>
+<p>This guide explains how to change VoiceVista's settings while iPhone
+VoiceOver is on. It also explains what each change means during walking,
+riding in a vehicle, exploring, and following a route.</p>
+<p>VoiceVista provides location information but does not identify every
+obstacle or guarantee a safe route. Continue to use a cane, guide dog,
+orientation and mobility skills, and your own judgment.</p>
+<h2 id="voiceover-and-voicevista-use-two-different-voices">VoiceOver and
+VoiceVista use two different voices</h2>
+<p>VoiceOver reads buttons, switches, headings, and other items on the
+screen. VoiceVista separately speaks location callouts such as road
+names, nearby places, and directions to a beacon.</p>
+<ul>
+<li>Changing <strong>Voice Settings</strong> in VoiceVista changes
+VoiceVista callouts. It does not change the VoiceOver voice or VoiceOver
+speaking rate.</li>
+<li>To change VoiceOver itself, use the iPhone <strong>Settings</strong>
+app, then <strong>Accessibility</strong>, then
+<strong>VoiceOver</strong>.</li>
+<li>VoiceVista may briefly wait for VoiceOver to finish before playing a
+settings preview. This prevents the two voices from speaking over each
+other.</li>
+</ul>
+<h2 id="voiceover-gestures-used-in-this-guide">VoiceOver gestures used
+in this guide</h2>
+<ul>
+<li>Move to the next item: swipe right with one finger.</li>
+<li>Move to the previous item: swipe left with one finger.</li>
+<li>Activate the focused item: double-tap with one finger anywhere on
+the screen.</li>
+<li>Read whether a switch is on or off: pause after VoiceOver reads the
+switch. Double-tap to change it.</li>
+<li>Adjust a slider: focus the slider, then swipe up or down with one
+finger. VoiceOver announces the new value. Wait briefly to hear
+VoiceVista's audio preview.</li>
+<li>Choose from a menu: double-tap the setting, swipe right through the
+choices, and double-tap the desired choice.</li>
+<li>Go back one screen: find and double-tap the <strong>Back</strong>
+button near the upper-left corner. A VoiceOver two-finger scrub also
+performs Back in most screens.</li>
+<li>Jump through a long screen: use the VoiceOver rotor to select
+<strong>Headings</strong>, then swipe up or down. Section headings such
+as “POI Sensing Ranges” make the settings easier to navigate.</li>
+</ul>
+<p>Settings take effect as soon as they are changed. There is no Save
+button.</p>
+<h2 id="open-voicevista-settings">Open VoiceVista Settings</h2>
+<ol type="1">
+<li>Open VoiceVista.</li>
+<li>Move through the tab bar until VoiceOver says <strong>Settings,
+tab</strong>. You can swipe right repeatedly or explore near the
+bottom-right of the screen.</li>
+<li>Double-tap <strong>Settings</strong>.</li>
+<li>Swipe right through the settings. VoiceOver announces each setting's
+name, current value, and control type.</li>
+</ol>
+<p>The first control is <strong>Allow Automatic Callouts</strong>. The
+remaining customization screens are under the
+<strong>Preference</strong> heading.</p>
+<h2 id="allow-automatic-callouts">Allow Automatic Callouts</h2>
+<p>When <strong>Allow Automatic Callouts</strong> is on, VoiceVista
+automatically announces relevant surroundings as you move. These can
+include POIs, roads, intersections, house numbers, and GPS information,
+depending on the other settings in this guide.</p>
+<p>When it is off, unsolicited surroundings callouts stop.
+User-requested information, route guidance, and an active beacon can
+still produce audio. Turn it off when you need a quieter experience, and
+turn it on when you want continuous environmental awareness.</p>
+<h2 id="poi-settings">POI Settings</h2>
+<p>Open <strong>Settings</strong>, then <strong>POI Settings</strong>. A
+POI is a point of interest, such as a shop, bus stop, crossing,
+entrance, or other mapped feature.</p>
+<h3 id="choose-which-pois-are-announced">Choose which POIs are
+announced</h3>
+<p>Open <strong>Walking Scenario</strong>, <strong>Driving
+Scenario</strong>, or <strong>Exploring Scenario</strong>, then turn
+each supercategory on or off.</p>
+<ul>
+<li><strong>Walking Scenario</strong> controls automatic POI callouts
+while walking.</li>
+<li><strong>Driving Scenario</strong> controls automatic POI callouts
+while in a vehicle.</li>
+<li><strong>Exploring Scenario</strong> controls results from commands
+such as “What's around me?” and “What's ahead?” It also has
+<strong>Enter and Exit Sound Effects</strong>.</li>
+</ul>
+<p>The available supercategories are <strong>Places</strong>,
+<strong>Landmarks</strong>, <strong>Bus Stops</strong>,
+<strong>Information Points</strong>, <strong>Mobility
+Facilities</strong>, <strong>Safety Spots</strong>,
+<strong>Objects</strong>, and <strong>Pedestrian Crossings</strong>.
+Turning a category off reduces clutter but can hide useful mapped
+features in that category. For example, keeping Mobility Facilities and
+Pedestrian Crossings on can prioritize mobility-related information,
+while turning Places off can reduce announcements about businesses.</p>
+<p>Use <strong>Supercategory Definitions</strong> on the POI Settings
+screen when you want VoiceVista's detailed explanation of what belongs
+to each category.</p>
+<h3 id="change-what-each-poi-callout-contains">Change what each POI
+callout contains</h3>
+<ul>
+<li><strong>Distance and Direction to the POI</strong> adds where the
+POI is relative to you. Turn it off for shorter callouts; leave it on
+when spatial context is important.</li>
+<li><strong>Category of the POI</strong> adds the POI category. Turn it
+off for less speech; leave it on when the name alone may be
+ambiguous.</li>
+</ul>
+<h3 id="change-poi-sensing-ranges">Change POI Sensing Ranges</h3>
+<p>Under <strong>POI Sensing Ranges</strong>, choose a range from 10,
+20, 30, 40, or 50 metres, or the equivalent in the selected units, for
+each supercategory.</p>
+<p>A larger range announces that type of POI sooner and can produce more
+callouts. A smaller range limits announcements to nearby items. In
+driving mode, VoiceVista multiplies these ranges by six so that
+information arrives earlier at vehicle speed.</p>
+<h3 id="change-poi-voice-and-sounds">Change POI voice and sounds</h3>
+<ul>
+<li><strong>Voice Settings</strong> changes the VoiceVista voice,
+volume, and speaking rates. See “Voice Settings” below.</li>
+<li><strong>POI Sound Settings</strong> changes the non-speech cue
+volume. Each category and <strong>Markers</strong> has its own switch.
+Turning a category's sound off keeps its spoken POI text but removes its
+identifying sound.</li>
+<li><strong>Sound Effects List</strong> lets you listen to and learn the
+available cues.</li>
+</ul>
+<h2 id="beacon-settings">Beacon Settings</h2>
+<p>Open <strong>Settings</strong>, then <strong>Beacon
+Settings</strong>. A beacon is directional audio or haptic feedback that
+points toward a selected destination.</p>
+<ul>
+<li><strong>Distance and direction to the beacon</strong> adds spoken
+distance and direction information.</li>
+<li><strong>Spatial sound from the direction of beacon</strong> enables
+the directional beacon effect. Headphones give the clearest left-right
+spatial information.</li>
+<li><strong>Melodies when arrived and departing</strong> plays start and
+end cues. Turn it off for a quieter transition.</li>
+</ul>
+<h3 id="beacon-sensing-ranges">Beacon Sensing Ranges</h3>
+<ul>
+<li><strong>Auto-Unmute</strong>: a newly started beacon begins muted
+and becomes audible after you enter this range. A larger range starts
+beacon audio farther from the destination; a smaller range keeps it
+quiet until you are closer.</li>
+<li><strong>Auto-Mute</strong>: the beacon becomes quiet again when you
+enter this near-destination range. A larger value silences it sooner; a
+smaller value keeps it active closer to the destination.</li>
+</ul>
+<p>Auto-Unmute choices are 10,000, 800, 400, 200, or 100 metres.
+Auto-Mute choices are 5, 10, 15, 20, or 25 metres. VoiceOver announces
+values in the unit style selected under General Settings.</p>
+<h3 id="beacon-central-sound-angle">Beacon Central Sound Angle</h3>
+<p><strong>Angle</strong> controls the centered zone when you point
+toward the beacon. Choices are 5, 10, 15, 20, or 25 degrees. A smaller
+angle requires more precise alignment. A larger angle makes the sound
+appear centered across a wider range of headings.</p>
+<h3 id="beacon-volume-and-style">Beacon volume and style</h3>
+<p>Double-tap <strong>Beacon Sound Settings</strong>.</p>
+<ol type="1">
+<li>Focus <strong>Beacon volume</strong> and swipe up or down to adjust
+it. VoiceVista plays a delayed preview while VoiceOver is running.</li>
+<li>Swipe through <strong>Beacon Audio Styles</strong>. Double-tap a
+style to select it and hear a demonstration. VoiceOver identifies the
+selected style as checked.</li>
+<li>On supported iPhones, <strong>Haptic Wand</strong> and
+<strong>Haptic Pulse</strong> are available under <strong>Beacon Haptic
+Styles</strong>. Haptic feedback works only while the phone is unlocked
+and VoiceVista is open.</li>
+</ol>
+<p>Audio styles include Original, Current, Flare, Shimmer, Tactile,
+Ping, Drop, Signal, and Mallet variants. Slower variants pulse less
+frequently and may be less busy, but provide fewer directional
+updates.</p>
+<h2 id="route-settings">Route Settings</h2>
+<p>Open <strong>Settings</strong>, then <strong>Route
+Settings</strong>.</p>
+<p><strong>Waypoint Switching Distance</strong> controls how close you
+must be to a route waypoint before guidance advances to the next one.
+Choices are 10, 15, 20, 25, or 30 metres.</p>
+<p>A larger distance advances sooner and can help when GPS positions
+wander or a waypoint is hard to reach exactly. A smaller distance
+requires a closer approach and can be more precise, but guidance may
+remain on the current waypoint longer.</p>
+<h2 id="navigation-settings">Navigation Settings</h2>
+<p>Open <strong>Settings</strong>, then <strong>Navigation
+Settings</strong>. These settings concern calculated turn-by-turn
+navigation, which is different from switching between waypoints in a
+saved route.</p>
+<ul>
+<li><strong>Announce hint when approaching turnpoints</strong> enables
+advance turn instructions.</li>
+<li><strong>Turnpoint Hint Distance</strong> controls how early the
+instruction is spoken. Choices are 40, 45, 50, 55, or 60 metres. Use a
+larger value for more preparation time and a smaller value for later
+prompts.</li>
+<li><strong>Default Transport Type</strong> can be <strong>Ask Every
+Time</strong>, <strong>Walking</strong>, <strong>Automobile</strong>, or
+<strong>Any</strong>. This changes how routes are calculated. Ask Every
+Time is useful if your mode changes often.</li>
+<li>On supported iOS versions, <strong>Avoid Tolls</strong> and
+<strong>Avoid Highways</strong> influence route calculation. These
+preferences may produce a longer route and depend on the map provider's
+data.</li>
+</ul>
+<h2 id="road-information-settings">Road Information Settings</h2>
+<p>Open <strong>Settings</strong>, then <strong>Road Information
+Settings</strong>.</p>
+<h3 id="intersection-options">Intersection Options</h3>
+<ul>
+<li><strong>Allow Intersection Callouts</strong> enables automatic
+intersection announcements.</li>
+<li><strong>Include Unnamed Roads</strong> includes mapped roads without
+names. This can provide more complete information but also more
+speech.</li>
+<li><strong>Enqueue If Other Callouts Active</strong> waits behind an
+active callout. When it is off, an intersection callout can interrupt
+what VoiceVista is currently saying. Turn it on for complete, orderly
+speech; turn it off when intersection timing is more important.</li>
+</ul>
+<h3 id="road-name-options">Road Name Options</h3>
+<ul>
+<li><strong>Allow Road Name Callouts</strong> enables periodic road-name
+announcements.</li>
+<li><strong>Verbose Mode</strong> allows the same road name to be
+repeated after an intersection. Turn it off to reduce repetition.</li>
+</ul>
+<h3 id="road-name-sensing-interval">Road Name Sensing Interval</h3>
+<p><strong>Distance Interval</strong> choices are 1, 3, 9, 27, or 81
+metres. A smaller interval checks and calls out road information more
+often, creates more speech, and can significantly increase battery use.
+In driving mode, the interval is multiplied by six.</p>
+<h2 id="house-number-settings">House Number Settings</h2>
+<p>Open <strong>Settings</strong>, then <strong>House Number
+Settings</strong>.</p>
+<ul>
+<li><strong>Allow House Number Callouts</strong> enables house-number
+announcements in walking and driving modes.</li>
+<li><strong>Digit By Digit</strong> reads a number as separate digits.
+For example, 123 may be spoken as “one two three” instead of “one
+hundred twenty-three.” This may make unfamiliar addresses easier to
+verify.</li>
+<li><strong>Distance Interval</strong> choices are 10, 30, 90, 270, or
+810 metres. A smaller interval can provide more frequent house-number
+information; a larger interval reduces callouts. Driving mode multiplies
+the interval by six.</li>
+</ul>
+<h2 id="gps-information-settings">GPS Information Settings</h2>
+<p>Open <strong>Settings</strong>, then <strong>GPS Information
+Settings</strong>.</p>
+<ul>
+<li><strong>Allow GPS Information Callouts</strong> enables periodic GPS
+reports in walking and driving modes.</li>
+<li><strong>GPS Speed</strong>, <strong>GPS Altitude</strong>,
+<strong>GPS Latitude and longitude</strong>, and <strong>GPS
+Accuracy</strong> each add that field to the report. Enable only what
+you need to keep reports short.</li>
+<li><strong>Distance Interval</strong> choices are 50, 100, 200, 400, or
+800 metres. A smaller value reports more often. Driving mode multiplies
+the distance by six.</li>
+<li><strong>Accuracy Threshold</strong> determines when VoiceVista warns
+that location accuracy is poor. Lower numbers demand a more accurate GPS
+fix and can cause more warnings. A very large threshold effectively
+suppresses most warnings.</li>
+</ul>
+<p>GPS data can be inaccurate, especially indoors, near tall buildings,
+or when the sky is obstructed. Treat coordinates, speed, altitude, and
+accuracy as estimates.</p>
+<h2 id="general-settings">General Settings</h2>
+<p>Open <strong>Settings</strong>, then <strong>General
+Settings</strong>.</p>
+<h3 id="language">Language</h3>
+<p>Double-tapping <strong>Language</strong> opens VoiceVista's page in
+the iPhone Settings app. Use the app language control there, if
+available. Return to VoiceVista after choosing the language. This
+changes VoiceVista's interface and localized callout text; it does not
+change the VoiceOver language.</p>
+<h3 id="style-settings">Style Settings</h3>
+<ul>
+<li><strong>Units of Measure</strong> selects metric or imperial values.
+It changes spoken and displayed distances throughout VoiceVista.</li>
+<li><strong>Direction Style</strong> controls how callouts describe
+direction: <strong>None</strong>, <strong>Absolute Direction</strong>
+such as north or southwest, <strong>Relative Direction</strong> such as
+left or behind, <strong>Clock Position</strong>, or <strong>Degrees
+Direction</strong>. Choose the system that is easiest for you to
+interpret while moving. None creates shorter callouts but removes verbal
+direction details.</li>
+<li><strong>External Maps App</strong> selects <strong>Apple
+Maps</strong> or <strong>Google Maps</strong> when opening a location
+outside VoiceVista. Google Maps must be installed to use it
+successfully.</li>
+</ul>
+<h3 id="sensing-settings">Sensing Settings</h3>
+<ul>
+<li><strong>Close By Threshold</strong> choices are 1 through 5 metres.
+It defines how near something must be before VoiceVista treats it as
+close by. A larger value applies “close by” sooner.</li>
+<li><strong>Sensing Interval</strong> choices are 1, 3, 5, 7, or 9
+seconds. A shorter interval refreshes surroundings more often but can
+significantly increase battery use. A longer interval saves work and may
+delay updates.</li>
+</ul>
+<h3 id="voice-settings">Voice Settings</h3>
+<p>Open <strong>Voices and Sounds</strong>, then <strong>Voice
+Settings</strong>.</p>
+<ol type="1">
+<li>Focus <strong>Voice volume</strong>, <strong>On foot speaking
+rate</strong>, or <strong>In vehicle speaking rate</strong>.</li>
+<li>Swipe up to increase the focused value or down to decrease it.</li>
+<li>Stop swiping and wait about two seconds. VoiceVista plays a sample
+after VoiceOver finishes speaking.</li>
+<li>Swipe to a voice name. VoiceOver also announces its language or
+region.</li>
+<li>Double-tap the voice. VoiceVista selects it and plays a preview; the
+selected voice receives a checkmark.</li>
+</ol>
+<p>On-foot and in-vehicle rates are separate because faster travel can
+require faster delivery. Avoid a rate that makes important details hard
+to understand.</p>
+<p>While this screen is open, VoiceVista temporarily silences automatic
+callouts and an active audio beacon so previews are clear. They resume
+when you leave the screen. If VoiceVista offers an enhanced voice, it
+explains that higher-quality voices can be downloaded from
+<strong>iPhone Settings</strong>, <strong>Accessibility</strong>,
+<strong>Spoken Content</strong>.</p>
+<h3 id="other-sound-controls">Other sound controls</h3>
+<ul>
+<li><strong>Beacon Sound Settings</strong> selects beacon volume and
+style as described earlier.</li>
+<li><strong>POI Sound Settings</strong> controls the volume and category
+switches for non-speech cues. This is independent of VoiceVista voice
+volume and iPhone VoiceOver volume.</li>
+</ul>
+<h3 id="head-tracking-headphones">Head Tracking Headphones</h3>
+<p>Double-tap <strong>Apple AirPods</strong> to start the
+supported-headphones connection and calibration flow. Pair the
+headphones in iPhone Bluetooth settings first. VoiceVista asks you to
+face a test beacon so it can use head direction instead of requiring the
+phone to point forward.</p>
+<p>After successful setup, the headphone button can mute or unmute the
+beacon with one click, call out your location with two clicks, and
+repeat the last callout with three clicks. Available behavior depends on
+the headphone model and connection.</p>
+<h3 id="advanced-settings">Advanced Settings</h3>
+<p><strong>Hide Hint Footers</strong> removes explanatory text at the
+bottom of many screens. It shortens VoiceOver navigation and reduces
+repetition, but removes useful descriptions such as battery warnings and
+setting impacts. Leave it off until you are comfortable with
+VoiceVista.</p>
+<h2 id="shortcuts-settings">Shortcuts Settings</h2>
+<p>Open <strong>Settings</strong>, then <strong>Shortcuts
+Settings</strong>.</p>
+<h3 id="siri-shortcuts">Siri Shortcuts</h3>
+<p>Open <strong>Siri Shortcuts</strong>, move through the available
+VoiceVista actions, and double-tap <strong>Add Shortcut</strong>. Added
+actions can be invoked by voice even when VoiceVista is not already
+running. Existing shortcuts offer <strong>Change or Remove</strong>.</p>
+<h3 id="shake-motion-response">Shake Motion Response</h3>
+<p>Choose <strong>None</strong>, <strong>What's My Location?</strong>,
+or <strong>Repeat Last Callout</strong>. A response provides quick
+access without finding a screen control, but accidental shakes may
+trigger speech.</p>
+<h3 id="media-controls">Media controls</h3>
+<p><strong>Enable Media Controls</strong> lets VoiceVista respond to
+headphone and lock-screen playback controls:</p>
+<ul>
+<li>Play or Pause: mute current callouts and toggle beacon audio when a
+beacon is set.</li>
+<li>Next: announce “What's My Location?”</li>
+<li>Previous: repeat the last callout.</li>
+<li>Skip Forward: turn automatic callouts on or off.</li>
+<li>Skip Backward: announce “What's Around Me?”</li>
+</ul>
+<p>When media controls are enabled, VoiceVista cannot mix with podcasts,
+music, or other media. Starting another media app pauses VoiceVista
+audio until you return to VoiceVista. The switch is unavailable during
+active route guidance. Leave media controls off if listening to other
+audio at the same time is more important.</p>
+<h2 id="suggested-starting-profiles">Suggested starting profiles</h2>
+<p>These are starting points, not safety recommendations. Test changes
+somewhere familiar and quiet.</p>
+<h3 id="less-speech-while-walking">Less speech while walking</h3>
+<ol type="1">
+<li>Keep <strong>Allow Automatic Callouts</strong> on.</li>
+<li>In <strong>Walking Scenario</strong>, keep only the POI categories
+most useful to you.</li>
+<li>Turn off <strong>Category of the POI</strong> if names are usually
+clear.</li>
+<li>Use smaller POI ranges.</li>
+<li>Turn <strong>Verbose Mode</strong> off and increase the road-name
+and house-number intervals.</li>
+<li>Leave intersection callouts enabled if they are useful for
+orientation.</li>
+</ol>
+<h3 id="earlier-information-in-a-vehicle">Earlier information in a
+vehicle</h3>
+<ol type="1">
+<li>Set the in-vehicle speaking rate to a comfortable, slightly faster
+value.</li>
+<li>Enable only high-value categories in <strong>Driving
+Scenario</strong>.</li>
+<li>Increase <strong>Turnpoint Hint Distance</strong> for earlier
+preparation.</li>
+<li>Set <strong>Default Transport Type</strong> to Automobile if that is
+your usual mode.</li>
+</ol>
+<h3 id="strong-beacon-guidance">Strong beacon guidance</h3>
+<ol type="1">
+<li>Turn on spatial beacon sound and spoken distance and direction.</li>
+<li>Use stereo or supported head-tracking headphones.</li>
+<li>Choose a clearly distinguishable beacon style and comfortable
+volume.</li>
+<li>Select an Auto-Unmute range that starts guidance early enough for
+the trip.</li>
+<li>Use a smaller central sound angle only if you want precise
+directional alignment.</li>
+</ol>
+<h2 id="if-a-change-does-not-sound-right">If a change does not sound
+right</h2>
+<ul>
+<li>Confirm whether you changed VoiceVista speech or VoiceOver speech;
+they are independent.</li>
+<li>Check <strong>Allow Automatic Callouts</strong> on the main Settings
+screen.</li>
+<li>Check the relevant scenario and POI category switches.</li>
+<li>If POI text is present but its cue is missing, check <strong>POI
+Sound Settings</strong>.</li>
+<li>If the beacon is silent, it may still be outside the Auto-Unmute
+range, inside the Auto-Mute range, manually muted, or have spatial sound
+turned off.</li>
+<li>If VoiceVista becomes quiet while music is playing, check
+<strong>Enable Media Controls</strong>.</li>
+<li>If a selected voice disappeared, it may have been removed from iOS.
+Return to <strong>Voice Settings</strong> and select an installed
+voice.</li>
+<li>Use <strong>Settings</strong>, then <strong>Troubleshooting</strong>
+for location and sensor diagnostics, and <strong>Map Service
+Status</strong> to check VoiceVista's data services.</li>
+</ul>
+<p>Change one setting at a time and try it in a familiar place. This
+makes its effect easier to identify and makes it simple to reverse if it
+does not suit you.</p>
+</body>
+</html>

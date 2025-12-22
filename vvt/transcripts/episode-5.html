@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>episode-5</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<p>Welcome back.</p>
+<p>So far—</p>
+<p>we’ve explored surroundings.</p>
+<p>The beacon.</p>
+<p>Markers.</p>
+<p>And routes.</p>
+<p>Today—</p>
+<p>we’re going to make VoiceVista easier to use in everyday life.</p>
+<p>This episode is about headphones.</p>
+<p>Media controls.</p>
+<p>And saving battery.</p>
+<p>Let’s begin with headphones.</p>
+<p>You do not need headphones to use VoiceVista.</p>
+<p>But many users find that headphones make the experience more
+comfortable—</p>
+<p>and more immersive.</p>
+<p>VoiceVista supports wired headphones.</p>
+<p>Bluetooth headphones.</p>
+<p>And compatible AirPods.</p>
+<p>When using compatible AirPods—</p>
+<p>VoiceVista can use head tracking.</p>
+<p>This means the app can understand—</p>
+<p>which direction your head is facing.</p>
+<p>That can make spatial audio feel more natural.</p>
+<p>And it means—</p>
+<p>you no longer need to actively hold the phone—</p>
+<p>to keep directional information accurate.</p>
+<p>If you want to connect supported headphones—</p>
+<p>open Settings.</p>
+<p>Go to General Settings.</p>
+<p>Then open Head Tracking Headphones.</p>
+<p>Before connecting—</p>
+<p>make sure your headphones are already paired—</p>
+<p>inside the iPhone Bluetooth settings.</p>
+<p>Now—</p>
+<p>let’s talk about media controls.</p>
+<p>This is one of the most convenient features—</p>
+<p>once it becomes part of your routine.</p>
+<p>If your headphones support Apple’s media controls—</p>
+<p>you can control VoiceVista—</p>
+<p>without touching your phone.</p>
+<p>Different headphones have different buttons.</p>
+<p>But the most common actions are these.</p>
+<p>Play—</p>
+<p>or pause.</p>
+<p>This silences current audio.</p>
+<p>And if a beacon is active—</p>
+<p>toggles the beacon sound.</p>
+<p>Next.</p>
+<p>Calls out—</p>
+<p>What’s My Location.</p>
+<p>Previous.</p>
+<p>Repeats the last callout.</p>
+<p>Skip Forward.</p>
+<p>Turns automatic callouts—</p>
+<p>on or off.</p>
+<p>Skip Backward.</p>
+<p>Triggers—</p>
+<p>What’s Around Me.</p>
+<p>Imagine walking with headphones.</p>
+<p>Without unlocking your phone—</p>
+<p>you repeat a callout.</p>
+<p>Check your location.</p>
+<p>Mute the beacon.</p>
+<p>And continue walking.</p>
+<p>Once learned—</p>
+<p>this can become surprisingly natural.</p>
+<p>Now—</p>
+<p>let’s talk about battery.</p>
+<p>VoiceVista uses location services.</p>
+<p>Like any map app—</p>
+<p>battery usage depends on how you use it.</p>
+<p>One of the biggest factors—</p>
+<p>is screen time.</p>
+<p>If you are listening—</p>
+<p>instead of interacting—</p>
+<p>lock your screen whenever possible.</p>
+<p>VoiceVista also includes Sleep Mode.</p>
+<p>When enabled—</p>
+<p>VoiceVista stops using location services—</p>
+<p>and network activity—</p>
+<p>until you wake it again.</p>
+<p>There is also Snooze Mode.</p>
+<p>This puts VoiceVista into a low power state—</p>
+<p>until you leave your current location.</p>
+<p>Think of Sleep—</p>
+<p>as fully resting.</p>
+<p>And Snooze—</p>
+<p>as resting—</p>
+<p>but staying ready.</p>
+<p>One final tip.</p>
+<p>Don’t feel like you must hear everything.</p>
+<p>Mute the beacon when you don’t need it.</p>
+<p>Turn callouts off if you want quiet.</p>
+<p>Use VoiceVista in a way—</p>
+<p>that supports your attention—</p>
+<p>not competes with it.</p>
+<p>Over the last five episodes—</p>
+<p>you’ve learned the foundations of VoiceVista.</p>
+<p>Exploration.</p>
+<p>Awareness.</p>
+<p>Destinations.</p>
+<p>Markers.</p>
+<p>And everyday usage.</p>
+<p>The best way to continue learning—</p>
+<p>is simple.</p>
+<p>Go outside.</p>
+<p>Put on your headphones.</p>
+<p>And explore.</p>
+<p>Thanks for listening.</p>
+<p>See you next time.</p>
+</body>
+</html>
