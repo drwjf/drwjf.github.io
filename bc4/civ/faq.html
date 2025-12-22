@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8 />
+    <meta name=viewport content="width=device-width,initial-scale=1"/>
+    <meta name=title content="BC4000"/>
+    <meta name=description content=""/>
+    <meta name=keywords content="Jianfeng Wu, Sid Meier, Civilization, FreeCiv, BC4000"/>
+    <meta name=author content="Jianfeng Wu"/>
+</head>
+
+<title>BC4000</title>
+<body style="font: -apple-system-body; margin: 20px;">
+    
+    <h2>
+        Frequently Asked Questions
+    </h2>
+    <p>
+    <ul>
+        <li>
+            <a href=#why_01>Why my irrigated grassland produces only 2 food?</a>
+        </li>
+        <li>
+            <a href=#why_02>Why can't I attack another player's units?</a>
+        </li>
+        <li>
+            <a href=#why_03>Why can't I move through enemy territory?</a>
+        </li>
+        <li>
+            <a href=#why_04>Why a lot of my cities disorder simultaneously and suddenly?</a>
+        </li>
+        <li>
+            <a href=#how_01>How do I declare war on another player?</a>
+        </li>
+        <li>
+            <a href=#how_02>How do I do diplomatic meetings?</a>
+        </li>
+        <li>
+            <a href=#how_03>How do I build land over sea or transform ocean to land?</a>
+        </li>
+        <li>
+            <a href=#how_04>How to conquer a city on a 1x1 island?</a>
+        </li>
+        <li>
+            <a href=#how_05>How to convert a disorder city to peace?</a>
+        </li>
+        <li>
+            <a href=#how_06>How to change citizens' profession?</a>
+        </li>
+    </ul>
+    
+    <h3 id='why_01'>
+        Why my irrigated grassland produces only 2 food?
+    </h3>
+    Your government is probably despotism, which has a -1 output whenever a tile produces more than 2 units of food/production/trade. You should change your government to get rid of this penalty.
+    
+    <h3 id='why_02'>
+        Why can't I attack another player's units?
+    </h3>
+    You have to declare war first. You start out at war with all players; at lower difficulty levels, AI players offer you a cease-fire treaty upon first contact, which if accepted has to be broken before you can attack the player's units or cities.
+    
+    <h3 id='why_03'>
+        Why can't I move through enemy territory?
+    </h3>
+    Because of `zones of control` game rule, the game prevents player moving freely in zones controlled (or partially controlled) by enemy forces. But you can infiltrate enemy zones by first moving in a Diplomat (or some other unit which ignores ZOC), and then moving regular units onto the square now occupied by the Diplomat. By repeating this process (and optionally leaving some units behind to keep squares occupied), you can make a path through enemy territory.
+    
+    <h3 id='why_04'>
+        Why a lot of my cities disorder simultaneously and suddenly?
+    </h3>
+    In small empires, the fifth citizen in each city is the first unhappy one. As you gain more cities, this limit actually decreases, to simulate the difficulty of imposing order upon a large empire. Thus, you may find that founding or conquering a city triggers widespread disorder across your empire. Another possible cause of mass disorder is if you lose a city with important wonders (like Michelangelo's Chapel, JS Bach's Cathedral or Cure for Cancer). Go to Tax Rates and increment luxury by 10% until you restore order in all or most of your cities. You might need luxury at 20% to 40% of your economy.
+    
+    <h3 id='how_01'>
+        How do I declare war on another player?
+    </h3>
+    Go to the `World` / `Diplomacy Relationships`, select the nation, then choose `Cancel Treaty`. This drops you from "cease fire", "armistice", or "peace" into "war". If you've already signed a permanent "alliance" treaty with the player, you will have to cancel treaties several times to get to "war".
+    
+    <h3 id='how_02'>
+        How do I do diplomatic meetings?
+    </h3>
+    Go to the `World` / `Diplomacy Relationships`, select a nation, then choose `Meet`. But remember that you have to either have contact with the nation or an embassy established in one of their cities.
+    
+    <h3 id='how_03'>
+        How do I build land over sea or transform ocean to land?
+    </h3>
+    You can do that by placing engineer units on a transport and going to the ocean tile you want to build land on (this must be in a land corner). Tap the transport to display a list of the transported engineers and activate them. Then give them the order of transforming this tile to swamp. This will take a very long time though, so you'd better try with 6 engineers at a time. There must be 3 adjacent land tiles to the ocean tile you are transforming.
+    
+    <h3 id='how_04'>
+        How to conquer a city on a 1x1 island?
+    </h3>
+    Research 'amphibious warfare', build a marine, and get them. Alternatively research 'combined arms' and either move a helicopter or airdrop a paratroopers unit there. If you can't build marines yet, but you do have engineers, and other land is close-by, you can also build a land-bridge to the island (i.e. transform the ocean).
+    
+    <h3 id='how_05'>
+        How to convert a disorder city to peace?
+    </h3>
+    <ul>
+        <li>
+            Make sure you have sufficient happiness providing buildings in your cities (Temples, Courthouse, Amphitheater, Cathedrals, Colosseums, Marketplace, Bank, Stock Exchange, Police Station) and preferably also some happiness boosting wonders ( Oracle, Hanging Gardens, Great Library, Marco Polo's Embassy, Michelangelo's Chapel, Shakespeare's Theatre, J.S. Bach's Cathedral, Women's Suffrage, and the Cure for Cancer).
+        </li>
+        <li>
+            Turn city workers to entertainers as needed. An entertainer produces two luxury points for their city.
+        </li>
+        <li>
+            Under Despotism/Monarchy/Communism governments, each military unit in a city, up to a maximum of 3, will keep one unhappy citizen content.
+        </li>
+        <li>
+            Under representative governments, citizens become unhappy when their city is supporting military units which have been deployed into an "aggressive" stance. So make sure you don't unnecessarily have military units outside your borders.
+        </li>
+        <li>
+            Divert some of your tax to luxuries. For every two luxury points a city produces, one content worker is made happy, or if there are no content workers left, one unhappy worker becomes content. But be careful, it impacts your total national income.
+        </li>
+    </ul>
+    
+    <h3 id='how_06'>
+        How to change citizens' profession?
+    </h3>
+    To change the profession of a citizen:
+    <ol>
+        <li>
+            Open city dialog by tapping the city tile or select the city from 'City Control'. There is a map in the left top corner, it shows the 21 tiles which are considered within the "radius" of the city. Each tile shows the terrain of the square, with any modifications such as roads and irrigation, just as shown on the main map. The central tile is the city itself; The three small numbers "2 1 1" below it show how much the tile is producing in food, production, and trade, respectively. Note other tiles also have the three numbers, showing where the city's one citizen is working, and how much it is getting from its work.
+        </li>
+        <li>
+            Tap the center tile will adjust all citizens' profession to generate most foods automatically. If a unit of citizen works on a non-central tile, tapping the tile will take the citizen out of the fields entirely to become entertainers. If no citizen works on the tile, and there is at least one entertainer in the city, tapping the tile will make the entertainer go back to work again.
+        </li>
+        <li>
+            And you can switch entertainers to scientists or taxmen if you like. Tap the citizens roles row under the map, (such as 2 🥰4🙂3🧝‍♀️), the right part of city dialog will be changed to roles view, then you can tap 🧝‍♀️ there to switch role.
+        </li>
+    </ol>
+</body>
+</html>
