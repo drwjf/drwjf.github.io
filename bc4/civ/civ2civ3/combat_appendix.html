@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8 />
+    <meta name=viewport content="width=device-width,initial-scale=1"/>
+    <meta name=title content="BC4000"/>
+    <meta name=description content=""/>
+    <meta name=keywords content="Sid Meier, Civilization, iOS, BC4000, Jianfeng Wu"/>
+    <meta name=author content="Jianfeng Wu"/>
+</head>
+
+<title>BC4000</title>
+<body style="font: -apple-system-body; margin: 20px;">
+    
+    <h1 id='combat'>
+        Combat Appendix
+    </h1>
+    <h2>
+        Basics
+    </h2>
+    
+    <p>
+    A unit cannot enter a tile occupied by an enemy unit. If ordered to do so, it will attack instead, locking the two units in combat until one is destroyed. An attack usually costs the aggressor one movement point, but results in no actual motion - the surviving unit remains where it was when the combat started. Bombers spend all of their remaining movement points when they attack, which gives fighters a chance to intercept them.
+    
+    <p>
+    Some restrictions upon warfare are rather obvious - units must have a nonzero attack strength to attack, while defenders with zero defense strength lose immediately. There are also limits upon which units can attack which others. Land units can only attack other land units. Ships can attack not only other ships, but any land units adjacent to them (submarines are an exception and cannot attack land units). Helicopters can attack land and sea units and can be attacked by any kind of unit (land, sea, or air). Bombers and missiles can attack anything on land or sea, and though their targets will defend themselves from attack, they cannot attack in return. Only fighters can attack every kind of unit.
+    
+    <p>
+    Aircraft in cities and air bases are on the ground, and only in this case, can be attacked by land. Ships in port are similarly vulnerable. The Marines unit can attack land targets from aboard ship; other land units must disembark and wait one turn before engaging enemy units (unless the ship first docks at port inside a native or allied city.)
+    
+    <p>
+    There are two other actions related to combat. A unit ordered to sentry remains in place indefinitely and no longer asks for orders each turn. Sentry units can not only be reactivated manually (by selecting them), but activate automatically should an enemy unit come into view. Land units can additionally be ordered to fortify, which means they spend one movement point preparing to be attacked; once fortified they enjoy the same advantage as land units within an unwalled city. A unit whose movement points are exhausted cannot fortify - it must have one movement point left at the end of a turn to begin the next turn fortified.
+    
+    <p>
+    Spies in combat. Spies can also harm enemy units by doing sabotage.
+    
+    <h2>
+        Combat Mechanics
+    </h2>
+    
+    <p>
+    Each unit begins combat with one or more hit points, which are the amount of damage it can sustain. Combat consists of successive rounds of violence between the units, which cannot be interrupted and ceases only when one unit is reduced to zero hit points and dies. In each round, only one unit succeeds in wounding the other. The damage a unit inflicts with each blow is called its firepower.
+    
+    <p>
+    Which unit inflicts damage on any given round of combat is random. The attacker has a chance proportional to his attack strength, while the defender's chance is proportional to his defense strength. For example, archers (attack stength 3) attacking a phalanx (defense strength 2) will have a 3/5 chance of inflicting damage each round, with the phalanx having the remaining 2/5 chance.
+    
+    <p>
+    Tired attack. Units attacking with less than one full movement point get penalized because of their tiredness. Only a fraction of their normal attack strength equivalent to their remaining movement is considered. If they have 2/3 movement points, they will attack with 2/3 strength. If they have 1/3 movement points, they will attack with 1/3 strength.
+    
+    <p>
+    Besides "tired attack", there are many factors which affect unit strength, which are summarized in the table below:
+    
+    <h2>
+        Combat Strength Modifications
+    </h2>
+    
+    <p>veteran level; terrrain defense multipler; river defense multipler; SAM attery agaian aircraft (except helicopter); SDI defense against missile; city walls against land unit or helicopter (except howitzer); Land unit in fortress; Land unit fortified or in city.
+    
+    <p>
+    These factors are combined: Each factor that qualifies as true is multiplied into the final bonus. Thus, a city built on a hill with a river that has city walls is very hard to conquer. Note that fortified units receive no extra bonus in a city: being in a city already gives them a "free fortify bonus."
+    
+    <p>
+    There are also combinations of units and circumstances that result in very specific adjustments to combat:
+    
+    <p>
+    Pikemen defends horsemen, chariot, knights, elephants, crusaders, dragoons; AEGIS Cruiser attacked by an aircraft, missile or helicopter; Fighter attacks a helicopter; Ship attacked while inside city; Ship attacks land unit.
+    
+    <h2>
+        Promotions and Healing
+    </h2>
+    
+    <p>
+    Green units have a 50% percent chance of becoming veterans each time they survive combat (33% for hardened and 20% for elite), which gives them greater strength in all future engagements.
+    
+    <p>
+    Units remain damaged after losing hit points in combat, and will enter subsequent engagements with this disadvantage. Damaged land and sea units also begin each turn with fewer movement points than normal, in proportion to what fraction of their total hit points remain. To regain hit points they must spend turns neither moving nor attacking. Resting in the open restores one hit point; spending a turn fortified restores two; in a fortress they regain one-quarter of their original hit points; and in a city they regain a full third of their original points.
+    
+    <p>
+    Resting unmoved; Fortified; In a city; In a fortress; Land unit in city with Barracks; Sea unit in city with Port Facility; Air unit in city with Airport.
+    
+    <ul>
+        <li>
+            A fortified unit gets +10% for resting unmoved and +10% for being fortified, for a total of +20%.
+        </li>
+        <li>
+            If you sentry a damaged unit, it will become active and request new orders after its hit points are fully restored.
+        </li>
+    </ul>
+    
+    <p>
+    You may enhance the effects of a city upon your units with several different buildings:
+    <p>Barracks, Barracks II, Barracks III, Port Facility, Airport
+    
+    <h2>
+        Stack kill, Cities and Forts
+    </h2>
+    <p>
+    When several units on the same tile are attacked, the unit most capable of defense protects the entire tile. More precisely, for all defenders on the field which can defend against the attacker winning chance is calculated to the precision of 0.001%; if top result is similar for several units, unit cost is taken into account (forth goes the cheaper one), and if even then there is uncertainity, the units are rated by (defense strength)x(rounds it is able to lose)x(firepower).
+    
+    <p>
+    If the defenders are within a city or fortress, the loss of that defender leaves the other units intact; but outside of such fortification, loss of the defender results in the loss of every unit in the tile (can be turned off by 'killstack' server option but in most rulesets it is an uncommon practice). For that reason, if a Leader unit presents in the game, he always goes the last to defend a city but in open field will defend weaker units. Less surprising is that when a ship carrying other units is involved in combat (as either attacker or defender), only the ship participates in the engagement and its occupants are lost if the ship goes down.
+    
+    <p>
+    Defeating a unit inside a city without walls kills one citizen if the attacker is a land unit. Once the last defender has fallen you may enter the city and claim it as your own with either a land unit or helicopter; ships and aircraft can assault cities but not take them. In the process of the capturing the city loses 1 population which destroys city of size 1. Upon the capture of a city from another civilization, each building has a one-fifth chance of being destroyed, and the victor may discover a technology held by the vanquished.
+    
+    <p>
+    Building a fortress requires the construction advance. To begin construction, move settlers, workers, or engineers to the location at which you desire a fort and give them the build fortress order. The work will require only three settler-turns. A fortress can stand anywhere outside of a city.
+    
+    There are several buildings which enhance the strength of units which are attacked while inside the city:
+    
+    <p>City Walls, Coastal Defense, SDI Defense, SAM Battery
+    </table>
+    
+    
+    <h2>
+        Nuclear Combat
+    </h2>
+    
+    <p>
+    Nuclear missiles do not engage in combat like other units - they either strike within range of an SDI Defense and are harmlessly destroyed, or detonate and blast the entire 3x3 area centered on the unit or city they attack. Within the blast area all units are destroyed, cities lose half their population, and each land tile has a one-half chance of becoming polluted with fallout.
+    
+    <p>
+    Just as excessive pollution across the world can trigger global warming, fallout raises the chances of nuclear winter with the opposite effect - rather than coastlines becoming jungles and swamp, terrain begins changing into desert and tundra. Settlers, workers, and engineers must be given the clean fallout command to dispose of nuclear waste, which costs three settler-turns per tile.
+    
+    <h2>
+        Bombardment
+    </h2>
+    <p>
+    Bombardment is a special combat action accessible for some units under certain conditions. Rules of bombardment:
+    
+    <ul>
+        <li>
+            The bombarder must have nonzero bombard_rate (also, obviously, nonzero attack).Attack of Bombers, Stealth Bombers and Helicopters have bombardment attack against land units (helicopters have normal attack against sea units).
+        </li>
+        <li>
+            All units and/or city on the bombarded tile must belong to players at war with bombarder's owner.
+        </li>
+        <li>
+            target tile is a land tile.
+        </li>
+        <li>
+            the bombarder is not transported.
+        </li>
+        <li>
+            target tile has at least one unit on it (can't bombard an empty city).
+        </li>
+        <li>
+            The bombarder loses no hp.
+        </li>
+        <li>
+            The bombarder loses all movement points.
+        </li>
+        <li>
+            Each of the units on the bombarded tile is bombarded and may take damage.
+        </li>
+        <li>
+            For each bombarded unit, combat with bombarder happens with all usual effects and bonuses but for attacker's bombard_rate rounds (i.e. maximal possible damage to a single defender is attacker's bombard_rate*firepower).
+        </li>
+        <li>
+            No bombarded unit is killed by bombardment (will always have at least 1hp left).
+        </li>
+        <li>
+            If a city is bombarded and attacks of the bombarder kill citizens in it, it loses 1 population, but only over 1 (i.e. a city can't be destroyed by bombardment).
+        </li>
+        <li>
+            A bombardment may cause an incident (i.e. provide casus belli for a future war).
+        </li>
+    </ul>
+    
+    
+    <h2>
+        Capturing
+    </h2>
+    <p>
+    This action makes enemy units with the flag "Capturable" yours when performed to them by your adjacent unit with the flag "Capturer". All units on a tile must be capturable; if the tile is a city center, the captured units bounce around. Action doesn't succeed if it would result in you having more then one unique unit. Successful capture takes single capturer's move point.
+    
+</body>
+</html>
