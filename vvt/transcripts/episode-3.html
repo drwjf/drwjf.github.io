@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>episode-3</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<p>Welcome back.</p>
+<p>Today—</p>
+<p>we’re talking about one of VoiceVista’s most recognizable
+features.</p>
+<p>The beacon.</p>
+<p>If there is one feature people remember after trying VoiceVista—</p>
+<p>it’s usually this one.</p>
+<p>The easiest way to think about the beacon is this.</p>
+<p>It is a lighthouse for your ears.</p>
+<p>Choose a destination.</p>
+<p>Start a beacon.</p>
+<p>VoiceVista begins playing a sound—</p>
+<p>from the direction of that destination.</p>
+<p>But there is something important to understand.</p>
+<p>The beacon does not tell you where to walk.</p>
+<p>It does not tell you when to cross.</p>
+<p>It does not choose your route.</p>
+<p>Instead—</p>
+<p>it answers one simple question.</p>
+<p>Where is my destination—</p>
+<p>relative to me?</p>
+<p>Imagine your destination is northeast.</p>
+<p>As you walk—</p>
+<p>the beacon remains anchored in that direction.</p>
+<p>If you turn—</p>
+<p>the sound moves.</p>
+<p>If you change course—</p>
+<p>the sound changes.</p>
+<p>Over time—</p>
+<p>this helps you stay connected to your destination—</p>
+<p>without constantly checking a screen.</p>
+<p>Now let’s talk about the ring.</p>
+<p>When you point more directly toward your destination—</p>
+<p>you may hear a higher pitched confirmation sound.</p>
+<p>Think of this as refinement.</p>
+<p>Not instruction.</p>
+<p>The ring is not saying—</p>
+<p>walk this way.</p>
+<p>It is simply helping you confirm direction.</p>
+<p>Try this exercise.</p>
+<p>Choose a nearby destination.</p>
+<p>Set a beacon.</p>
+<p>Stand still.</p>
+<p>Slowly rotate.</p>
+<p>Listen for changes.</p>
+<p>Now begin walking.</p>
+<p>Notice how the relationship between you—</p>
+<p>and the destination—</p>
+<p>changes over time.</p>
+<p>One question new users often ask is—</p>
+<p>why does the beacon sometimes become quieter?</p>
+<p>VoiceVista needs confidence about which direction you are facing.</p>
+<p>If the phone is in your pocket—</p>
+<p>and you stop moving—</p>
+<p>that information becomes less certain.</p>
+<p>So the beacon becomes quieter.</p>
+<p>Usually—</p>
+<p>the solution is simple.</p>
+<p>Start walking again.</p>
+<p>Or—</p>
+<p>hold the phone flat.</p>
+<p>Screen toward the sky.</p>
+<p>Top of the phone facing forward.</p>
+<p>Another useful technique—</p>
+<p>you do not need to leave the beacon active all the time.</p>
+<p>Many experienced users mute the rhythmic beacon—</p>
+<p>during familiar sections of a route.</p>
+<p>Then turn it back on—</p>
+<p>when they want more precise awareness.</p>
+<p>You can place a beacon on many kinds of locations.</p>
+<p>Businesses.</p>
+<p>Addresses.</p>
+<p>Intersections.</p>
+<p>Places.</p>
+<p>And saved markers.</p>
+<p>Here’s a fun experiment.</p>
+<p>Set a beacon on your home.</p>
+<p>Walk around the block.</p>
+<p>Notice how the sound shifts—</p>
+<p>as your position changes.</p>
+<p>You may discover new ways—</p>
+<p>of understanding your neighborhood.</p>
+<p>Remember—</p>
+<p>the beacon isn’t trying to lead you.</p>
+<p>It’s helping you stay connected—</p>
+<p>to where you want to go.</p>
+<p>Next time—</p>
+<p>we’ll learn how markers and routes—</p>
+<p>can turn individual journeys—</p>
+<p>into something you can save—</p>
+<p>and reuse.</p>
+<p>Thanks for listening.</p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "berrybelts-launch",
+      "apps": ["*"],
+      "kind": "app",
+      "title": "New Game: Berrybelts",
+      "subtitle": "Build conveyor factories and automate production.",
+      "buttonTitle": "View on App Store",
+      "url": "https://apps.apple.com/app/id6780234785",
+      "startDate": "2026-06-01",
+      "endDate": "2026-12-31",
+      "priority": 100
+    },
+    {
+      "id": "m3player-update",
+      "apps": ["com.wjf.tcp"],
+      "kind": "news",
+      "title": "M3Player Updated",
+      "subtitle": "Added a Recently Watched feature to revisit streams.",
+      "priority": 10
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>episode-9</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<p>Welcome back.</p>
+<p>By now—</p>
+<p>you’ve learned how VoiceVista helps you understand the world around
+you.</p>
+<p>You’ve explored your surroundings.</p>
+<p>Used the beacon.</p>
+<p>Created markers.</p>
+<p>Built routes.</p>
+<p>And learned how to understand intersection callouts.</p>
+<p>Today—</p>
+<p>we’re going to answer another common question.</p>
+<p>Can I use VoiceVista together—</p>
+<p>with another navigation app?</p>
+<p>The answer is—</p>
+<p>absolutely.</p>
+<p>In fact—</p>
+<p>that’s exactly how many experienced users travel.</p>
+<p>It’s important to understand—</p>
+<p>that VoiceVista—</p>
+<p>and a turn-by-turn navigation app—</p>
+<p>do different jobs.</p>
+<p>A navigation app tells you—</p>
+<p>where to turn.</p>
+<p>VoiceVista tells you—</p>
+<p>what is around you.</p>
+<p>Think of it this way.</p>
+<p>One app answers the question—</p>
+<p>How do I get there?</p>
+<p>The other answers—</p>
+<p>Where am I—</p>
+<p>right now?</p>
+<p>Imagine—</p>
+<p>you’re walking to a restaurant.</p>
+<p>Your navigation app says—</p>
+<p>Turn left—</p>
+<p>in one hundred feet.</p>
+<p>At the same time—</p>
+<p>VoiceVista tells you—</p>
+<p>there’s a park on your right.</p>
+<p>A café behind you.</p>
+<p>And an intersection ahead.</p>
+<p>Together—</p>
+<p>those pieces of information—</p>
+<p>create a much richer picture—</p>
+<p>of your surroundings.</p>
+<p>Here’s a simple way to use both apps.</p>
+<p>First—</p>
+<p>start navigation—</p>
+<p>in your favorite navigation app.</p>
+<p>Next—</p>
+<p>open VoiceVista.</p>
+<p>Search for the same destination.</p>
+<p>Then—</p>
+<p>start a beacon.</p>
+<p>Now—</p>
+<p>both apps are working together.</p>
+<p>Your navigation app—</p>
+<p>provides directions.</p>
+<p>VoiceVista—</p>
+<p>provides awareness.</p>
+<p>Don’t worry—</p>
+<p>if both apps speak at different times.</p>
+<p>After a little practice—</p>
+<p>you’ll naturally learn—</p>
+<p>which information—</p>
+<p>is most important—</p>
+<p>at any particular moment.</p>
+<p>Sometimes—</p>
+<p>you may already know the route.</p>
+<p>You don’t need—</p>
+<p>turn-by-turn directions.</p>
+<p>But you still want—</p>
+<p>to know how close you are—</p>
+<p>to your destination.</p>
+<p>In that situation—</p>
+<p>you can simply use—</p>
+<p>the VoiceVista beacon.</p>
+<p>Or—</p>
+<p>mute the rhythmic beacon—</p>
+<p>and receive distance updates—</p>
+<p>as you walk.</p>
+<p>VoiceVista also works well—</p>
+<p>when exploring unfamiliar neighborhoods.</p>
+<p>Instead of focusing only—</p>
+<p>on reaching the destination—</p>
+<p>you begin noticing—</p>
+<p>the places—</p>
+<p>streets—</p>
+<p>and landmarks—</p>
+<p>along the journey.</p>
+<p>Over time—</p>
+<p>those places become familiar.</p>
+<p>Your confidence grows.</p>
+<p>And eventually—</p>
+<p>you may find—</p>
+<p>you need less guidance—</p>
+<p>than before.</p>
+<p>Remember—</p>
+<p>VoiceVista is not trying—</p>
+<p>to replace—</p>
+<p>your navigation app.</p>
+<p>It’s adding another layer—</p>
+<p>of awareness—</p>
+<p>through sound.</p>
+<p>Together—</p>
+<p>they help you travel—</p>
+<p>with both—</p>
+<p>direction—</p>
+<p>and understanding.</p>
+<p>In the next episode—</p>
+<p>we’ll explore—</p>
+<p>what happens—</p>
+<p>when you’re offline—</p>
+<p>how VoiceVista behaves—</p>
+<p>without an internet connection—</p>
+<p>and how to keep using it—</p>
+<p>with confidence.</p>
+<p>Thanks for listening.</p>
+</body>
+</html>
