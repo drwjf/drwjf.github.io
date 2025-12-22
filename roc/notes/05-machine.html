@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>05-machine</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="machine-generation-creating-dynamic-dungeon-encounters">Machine
+Generation: Creating Dynamic Dungeon Encounters</h1>
+<p>One of the features that makes certain roguelikes feel alive is the
+presence of <strong>structured dungeon encounters</strong> rather than
+purely random rooms. These special constructions are often called
+<strong>machines</strong>.</p>
+<p>Machines are small procedural structures that combine terrain, items,
+monsters, and traps into meaningful scenarios. Instead of simply
+scattering content randomly, the game creates <strong>coherent
+situations</strong> that challenge the player in interesting ways.</p>
+<p>Games like Brogue are well known for using machine generation to
+produce memorable dungeon moments.</p>
+<hr />
+<h1 id="what-is-a-machine">What Is a Machine?</h1>
+<p>A machine is essentially a <strong>procedural mini-event</strong>
+embedded inside the dungeon.</p>
+<p>Unlike simple room decoration, machines follow a specific template
+that defines how several elements interact.</p>
+<p>For example, a machine might include:</p>
+<ul>
+<li>a locked chamber</li>
+<li>a guarding monster</li>
+<li>a treasure item</li>
+<li>traps protecting the entrance</li>
+</ul>
+<p>Together, these elements form a small gameplay puzzle.</p>
+<p>Machines make the dungeon feel <strong>designed</strong>, even though
+everything is still generated procedurally.</p>
+<hr />
+<h1 id="why-machines-are-important">Why Machines Are Important</h1>
+<p>Without machines, dungeon generation can feel repetitive. Random
+placement alone often produces rooms that lack purpose.</p>
+<p>Machines solve this problem by introducing <strong>structured
+encounters</strong>.</p>
+<p>They create situations such as:</p>
+<ul>
+<li>guarded treasure rooms</li>
+<li>trap corridors</li>
+<li>ritual altars</li>
+<li>monster nests</li>
+<li>puzzle-like chambers</li>
+</ul>
+<p>Because each machine combines multiple systems, the player must think
+tactically about how to approach the encounter.</p>
+<hr />
+<h1 id="machine-templates">Machine Templates</h1>
+<p>Each machine type is defined by a <strong>template</strong>
+describing what should appear and how it should be arranged.</p>
+<p>A template might specify:</p>
+<ul>
+<li>terrain types</li>
+<li>feature placement rules</li>
+<li>monsters to spawn</li>
+<li>items to place</li>
+<li>minimum dungeon depth</li>
+</ul>
+<p>For example, a simplified template could describe a treasure
+vault:</p>
+<pre><code>Room center:
+    treasure chest
+
+Entrance:
+    locked door
+
+Guard:
+    strong monster nearby</code></pre>
+<p>The exact layout may vary, but the general structure remains
+recognizable.</p>
+<hr />
+<h1 id="procedural-placement">Procedural Placement</h1>
+<p>When generating a dungeon level, the game evaluates which machines
+are allowed to appear.</p>
+<p>Typical conditions include:</p>
+<ul>
+<li>dungeon depth</li>
+<li>terrain availability</li>
+<li>random probability</li>
+<li>existing dungeon layout</li>
+</ul>
+<p>If conditions are satisfied, the generator attempts to place the
+machine inside the level.</p>
+<p>Placement may involve:</p>
+<ul>
+<li>carving terrain</li>
+<li>adding walls or doors</li>
+<li>spawning monsters</li>
+<li>placing items</li>
+</ul>
+<p>Because these steps modify the map, the generator must ensure the
+machine fits naturally into the dungeon.</p>
+<hr />
+<h1 id="integrating-with-the-environment">Integrating with the
+Environment</h1>
+<p>Machines should feel like part of the dungeon rather than artificial
+structures.</p>
+<p>To achieve this, the generator respects several constraints:</p>
+<ul>
+<li>avoid blocking critical paths</li>
+<li>avoid overlapping with other machines</li>
+<li>maintain dungeon connectivity</li>
+</ul>
+<p>This ensures that the dungeon remains playable while still containing
+interesting encounters.</p>
+<hr />
+<h1 id="emergent-complexity">Emergent Complexity</h1>
+<p>The real strength of machines comes from how they interact with other
+game systems.</p>
+<p>For example:</p>
+<ul>
+<li>fire traps may ignite nearby gas</li>
+<li>monsters guarding treasure may chase the player into other
+rooms</li>
+<li>environmental hazards may interact with items</li>
+</ul>
+<p>Because roguelikes rely heavily on emergent mechanics, machines often
+produce unexpected situations.</p>
+<p>The player might turn a dangerous machine encounter into an advantage
+by using clever tactics.</p>
+<hr />
+<h1 id="swift-implementation-strategy">Swift Implementation
+Strategy</h1>
+<p>In the Swift reimplementation, machines are implemented as structured
+data rather than scattered procedural logic.</p>
+<p>Each machine template describes:</p>
+<ul>
+<li>required terrain</li>
+<li>features to place</li>
+<li>monster groups</li>
+<li>item placement rules</li>
+</ul>
+<p>Conceptually, a machine definition might look like this:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> MachineTemplate <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">terrain</span><span class="op">:</span> TileType</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">features</span><span class="op">:</span> <span class="op">[</span>DungeonFeature<span class="op">]</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">monsters</span><span class="op">:</span> <span class="op">[</span>CreatureType<span class="op">]</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">items</span><span class="op">:</span> <span class="op">[</span>ItemType<span class="op">]</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>This approach allows the generation system to treat machines as
+modular building blocks.</p>
+<hr />
+<h1 id="depth-scaling">Depth Scaling</h1>
+<p>Machines also evolve as the player descends deeper into the
+dungeon.</p>
+<p>Later levels may include:</p>
+<ul>
+<li>stronger monsters</li>
+<li>more dangerous traps</li>
+<li>larger machine structures</li>
+<li>more valuable rewards</li>
+</ul>
+<p>By tying machine selection to dungeon depth, the generator ensures
+that encounters remain appropriate to the player’s progression.</p>
+<hr />
+<h1 id="keeping-generation-flexible">Keeping Generation Flexible</h1>
+<p>One challenge with machine systems is preventing them from becoming
+predictable.</p>
+<p>To maintain variety, the generator introduces several random
+elements:</p>
+<ul>
+<li>variable layouts</li>
+<li>randomized monster placement</li>
+<li>alternate feature combinations</li>
+<li>probabilistic machine selection</li>
+</ul>
+<p>This ensures that even familiar machines can produce different
+scenarios each time they appear.</p>
+<hr />
+<h1 id="rebuilding-the-system-in-swift">Rebuilding the System in
+Swift</h1>
+<p>The machine generation system was reimplemented entirely during the
+engine rebuild.</p>
+<p>Instead of relying on tightly coupled procedural code, the Swift
+implementation treats machines as <strong>data-driven
+structures</strong>.</p>
+<p>This makes the system:</p>
+<ul>
+<li>easier to extend</li>
+<li>easier to debug</li>
+<li>easier to tune</li>
+</ul>
+<p>New machine types can be added simply by defining new templates
+rather than modifying the core generator.</p>
+<hr />
+<h1 id="final-thoughts">Final Thoughts</h1>
+<p>Machine generation is one of the systems that gives roguelikes their
+memorable moments. By combining terrain, monsters, and items into
+structured encounters, the dungeon becomes more than just a collection
+of random rooms.</p>
+<p>Each machine introduces a small story: a guarded vault, a trap-filled
+chamber, or a monster-infested nest.</p>
+<p>Rebuilding this system in Swift ensures that the new engine can
+generate these dynamic encounters while maintaining a clean and flexible
+architecture.</p>
+<hr />
+<p>⬅️ <a href="04-scent.html">Previous</a> | 🏠 <a
+href="../index.html">Index</a> | <a
+href="06-deterministic.html">Next</a> ➡️</p>
+<hr />
+</body>
+</html>

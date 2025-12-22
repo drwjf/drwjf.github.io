@@ -1,0 +1,20 @@
+{
+    "appclips": {
+        "apps": ["4UP6DAXD8L.com.wjf.tcp.Clip"]
+    },
+    "applinks": {
+        "details": [{
+            "appIDs": ["4UP6DAXD8L.com.wjf.vvt"],
+            "components": [{
+                    "#": "no_universal_links",
+                    "exclude": true,
+                    "comment": "Matches any URL with a fragment that equals no_universal_links and instructs the system not to open it as a universal link."
+                },
+                {
+                    "/": "/v1/sharemarker/*",
+                    "comment": "Matches any URL with a path that starts with /sharemarker/."
+                }
+            ]
+        }]
+    }
+}

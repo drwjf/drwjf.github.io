@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>buildings</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="buildings">Buildings</h1>
+<h2 id="hub">Hub</h2>
+<p>The Hub is the central structure of the world and the destination of
+all production. Every factory ultimately exists to supply the Hub with
+the required items needed to progress.</p>
+<p>The Hub contains sixteen input ports and one signal output. The
+signal output continuously displays the current delivery objective,
+allowing nearby systems to react automatically to changing goals. The
+Hub cannot be placed, moved, copied, or removed. When a new world is
+created, it appears at the center of the map and serves as the permanent
+heart of the factory.</p>
+<p>The Hub displays the current delivery progress and the requested item
+directly above it, making production goals visible at a glance. Detailed
+progression information, such as the current level and objectives, is
+shown in the top bar of the screen.</p>
+<p>To advance through the game, the requested items must be delivered
+into any of the Hub’s sixteen input ports. Completing deliveries unlocks
+new technologies, enables stronger upgrades, and grants access to more
+advanced buildings and production possibilities.</p>
+<p>Although the Hub accepts deliveries through many inputs
+simultaneously, its total throughput is still limited. As production
+grows larger, efficient delivery becomes increasingly important. Players
+often expand their logistics network using Balancers to merge multiple
+transport lines into fewer high-capacity routes, allowing more factories
+to feed the Hub at once. Storages can also be placed near the Hub to
+buffer overflow, smooth production spikes, and temporarily store excess
+output before final delivery.</p>
+<p>The Hub is more than a building. It is the center of expansion,
+automation, and progression.</p>
+<hr />
+<h2 id="harvester">Harvester</h2>
+<p>The Harvester is a building used to collect fruit items and flower
+pigments from resource fields. It is available from the beginning of the
+game and serves as the foundation of every production chain.</p>
+<p>Harvesters can only output directly onto belts, so multiple
+Harvesters often need to be combined using Balancers to efficiently
+transport harvested resources. Because of their fixed output direction
+and spacing, fully utilizing every resource field may require careful
+planning.</p>
+<p>The Harvester operates at a base speed exactly one fifth of the base
+belt throughput. As a result, five Harvesters operating at the same
+upgrade tier can continuously fill one belt.</p>
+<p>Harvesters only produce output when placed on valid resource tiles
+containing fruit items or flower pigments. If placed on an empty tile,
+they remain idle and generate nothing.</p>
+<p>As the first step of automation, the Harvester transforms natural
+resources into a steady flow of materials for processing, mixing, and
+delivery.</p>
+<hr />
+<h2 id="belt">Belt</h2>
+<p>The Belt is the primary transportation building used to move
+harvested items between production buildings. It is available from the
+beginning of the game and forms the foundation of every automated
+factory.</p>
+<p>Belts automatically connect to nearby buildings and other belts,
+creating smooth transport paths and turning corners when necessary.
+Connections prioritize buildings whenever multiple routing options are
+available. When placing belts, their direction follows the drag gesture.
+Additional placement controls allow rotating their orientation. Unlike
+most buildings, belts remain selected after placement, making it easy to
+draw continuous transport lines across large areas.</p>
+<p>When a belt changes direction to connect with nearby structures, it
+forms a curved transport segment automatically. These turns adapt
+dynamically and will return to their original direction if surrounding
+connections are removed.</p>
+<p>Belts move items continuously from one machine to the next. If a
+transport line ends without a valid destination, items stop at the end
+and gradually create congestion that can slow or block upstream
+production. Efficient factories avoid dead ends and maintain steady flow
+across the entire network.</p>
+<p>Although simple to use, belts become increasingly important as
+production grows. Designing clean transport routes, balancing
+throughput, and minimizing congestion are key parts of building an
+efficient factory.</p>
+<hr />
+<h2 id="underground-belt">Underground Belt</h2>
+<p>The Underground Belt is a transportation building used to move items
+beneath buildings and transport lines for a limited distance. It allows
+production paths to cross without interrupting existing layouts and is
+essential for building compact and efficient factories.</p>
+<p>Underground Belts always work in pairs: an Entry receives items from
+the surface and an Exit returns them back onto the transport network.
+Items travel invisibly between the two ends while preserving their
+original flow and order.</p>
+<p>Two tiers of Underground Belt are available. Tier I supports short
+underground transport for compact layouts, while Tier II extends the
+maximum tunneling distance and enables larger factory designs with fewer
+interruptions.</p>
+<p>When placing Underground Belts, the game automatically attempts to
+create a valid Entry–Exit pair whenever possible. Potential connections
+are previewed before placement, making long transport routes easier to
+plan and construct.</p>
+<p>Underground Belts do not teleport items. Instead, items continue
+moving through a hidden transport path underground and maintain the same
+throughput behavior as regular belts.</p>
+<p>Although Underground Belts do not increase transportation speed, they
+greatly improve factory organization by reducing congestion, allowing
+transport lines to cross cleanly, and keeping production layouts compact
+and easy to expand.</p>
+<hr />
+<h2 id="balancer">Balancer</h2>
+<p>The Balancer is a multifunctional transportation building used to
+merge, split, and evenly distribute item flow across belts. Depending on
+how it is connected, it can act as a Merger, Splitter, or Distributor,
+making it one of the most flexible logistics tools in the factory.</p>
+<p>A Balancer has two input ports and two output ports. Items entering
+the building are automatically routed across available outputs to
+maintain an even distribution whenever possible. This allows production
+lines to remain balanced and prevents individual belts from becoming
+overloaded while others remain underutilized.</p>
+<p>When used as a Merger, the Balancer combines multiple transport lines
+into fewer high-capacity outputs. When used as a Splitter, it divides a
+single stream into multiple directions. When both inputs and outputs are
+active, the Balancer continuously redistributes items to maintain stable
+flow across the network.</p>
+<p>If one output becomes blocked or unavailable, the Balancer
+automatically redirects items to the remaining open path whenever
+possible, helping factories continue operating under changing
+conditions.</p>
+<p>Because both inputs are processed with equal priority, the Balancer
+is especially useful for mixing production sources, consolidating
+transport lines, and maintaining efficient throughput in large automated
+factories.</p>
+<h3 id="compact-merger">Compact Merger</h3>
+<p>The Compact Merger is a compact transportation building used to
+combine multiple transport lines into a single output while occupying
+minimal space. Unlike the Balancer, which supports full distribution
+behavior, the Compact Merger focuses on simple and efficient line
+consolidation.</p>
+<p>The Compact Merger accepts items from two input directions and
+forwards all incoming flow into one output. Its compact 1×1 size makes
+it especially useful in dense factory layouts where space efficiency is
+more important than advanced balancing behavior.</p>
+<p>When items arrive from both inputs simultaneously, the Compact Merger
+automatically determines which item proceeds first and continues
+accepting incoming flow without interrupting transport. This allows
+multiple production lines to be merged into a continuous stream.</p>
+<h3 id="compact-splitter">Compact Splitter</h3>
+<p>The Compact Splitter performs the opposite function. It accepts items
+from a single input and distributes them across two outputs. Items are
+routed alternately whenever possible to maintain even distribution and
+stable throughput.</p>
+<p>If one output becomes unavailable, the Compact Splitter automatically
+redirects items toward the remaining open path to prevent unnecessary
+congestion.</p>
+<p>Compact Mergers and Compact Splitters are ideal for building dense
+transportation networks, reducing routing complexity, and creating
+efficient factory layouts with minimal footprint.</p>
+<hr />
+<h2 id="storage">Storage</h2>
+<p>The Storage is a logistics building used to temporarily hold and
+manage large quantities of items. It can store up to 5,000 units of a
+single item type, making it useful for buffering production, absorbing
+overflow, and stabilizing large factory networks.</p>
+<p>Each Storage unit accepts one item type at a time. Once an item is
+stored, additional inputs must match the stored type until the Storage
+becomes empty again. This allows Storage to act as a reserve supply,
+preventing valuable production from being wasted and helping factories
+continue operating during temporary demand changes.</p>
+<p>Storage also supports intelligent item routing. When empty, incoming
+items are normally forwarded through the primary output path. If the
+Storage contains buffered items or the primary route becomes
+unavailable, output behavior automatically adapts to maintain flow. This
+makes Storage useful as an overflow controller and enables advanced
+factory layouts that react dynamically to changing production
+conditions.</p>
+<p>In addition to transporting items, Storage provides wire signals for
+automation. One signal indicates whether the Storage has reached maximum
+capacity, while another reports the item currently being stored. These
+outputs allow processors and logistics systems to monitor inventory
+levels and build responsive production networks.</p>
+<p>Although simple to place, Storage becomes increasingly valuable in
+larger factories where buffering, overflow control, and stable
+throughput are essential for efficient automation.</p>
+<hr />
+<h2 id="cutter">Cutter</h2>
+<p>The Cutter is a processing building used to divide an item into two
+separate halves. It splits the incoming item vertically, producing two
+independent outputs that can be transported and processed
+individually.</p>
+<p>After cutting, the left portion continues to the primary output,
+while the right portion is delivered through the secondary output. This
+allows complex items to be separated into smaller components for
+advanced production chains and layered designs.</p>
+<p>The cutting direction is fixed and remains consistent regardless of
+the building’s placement orientation, ensuring predictable results
+across different factory layouts. For visual clarity, the cutting
+operation is most intuitive when the Cutter faces upward.</p>
+<p>Any empty layers created during the cutting process are automatically
+removed from the resulting items, keeping outputs compact and
+eliminating unnecessary empty structure.</p>
+<p>The Cutter is a key tool for producing partial items, creating
+layered combinations, and building more advanced item designs.</p>
+<hr />
+<h2 id="trash">Trash</h2>
+<p>The Trash is a utility building used to permanently remove unwanted
+items from the factory. It accepts inputs from all sides and immediately
+destroys anything delivered into it.</p>
+<p>Trash plays an important role in maintaining efficient production
+lines. It can be used to dispose of excess output, remove incorrect
+items, clear blocked transport routes, and prevent production systems
+from becoming congested.</p>
+<p>Because the Trash processes items instantly and has effectively
+unlimited disposal capacity, it can safely handle overflow from
+high-throughput factories without creating bottlenecks.</p>
+<p>Trash is especially useful when working with split production lines,
+automated routing, and processing buildings that generate unused
+outputs. By removing unnecessary items, factories remain clean, stable,
+and efficient.</p>
+<p>Although simple in function, the Trash is an essential logistics tool
+for controlling flow and keeping large production networks operating
+smoothly.</p>
+<hr />
+<h2 id="rotator">Rotator</h2>
+<p>The Rotator is a processing building used to rotate items around
+their center while preserving their structure, layers, and composition.
+Rotation changes the orientation of an item without modifying its
+contents, making it an essential tool for advanced production and item
+design.</p>
+<p>Three Rotator variants are available: Clockwise 90°, Counterclockwise
+90°, and Half Turn 180°. Each variant rotates the entire item as a
+whole, including every layer and all four sections simultaneously.</p>
+<p>The Clockwise Rotator turns items 90 degrees to the right and outputs
+the rotated result for further processing.</p>
+<p>The Counterclockwise Rotator turns items 90 degrees to the left.
+Functionally, it produces the same result as passing an item through
+three Clockwise Rotators in sequence.</p>
+<p>The Half Turn Rotator rotates items by 180 degrees, flipping their
+orientation completely while preserving all structure and layers. This
+produces the same result as using two 90-degree rotations in
+succession.</p>
+<p>Because rotation affects the entire item consistently, the Rotator is
+widely used to align components, prepare layered combinations, and
+create more complex production patterns.</p>
+<hr />
+<h2 id="painter">Painter</h2>
+<p>The Painter is a processing building used to apply flower pigments to
+items. It is one of the core buildings for creating advanced products
+and becomes increasingly important as production chains grow in
+complexity.</p>
+<p>Painting replaces the color of an item while preserving its structure
+and layers. Different Painter variants provide increasingly flexible
+ways to apply color and enable more sophisticated designs.</p>
+<h3 id="painter-1">Painter</h3>
+<p>The standard Painter applies a single input pigment to the entire
+item. Every visible section and layer of the incoming item receives the
+selected color, producing a fully recolored result.</p>
+<p>Because painting affects the entire item at once, more complex
+multi-colored designs require combining additional processing steps such
+as cutting, rotating, stacking, and recoloring individual components
+before recombining them.</p>
+<p>The standard Painter is the only Painter variant that includes a
+mirrored version, allowing pigment and item inputs to be arranged from
+either side for more flexible factory layouts.</p>
+<h3 id="double-painter">Double Painter</h3>
+<p>The Double Painter extends the standard design by allowing one
+pigment source to color two items simultaneously.</p>
+<p>Both incoming items are painted using the same flower pigment and
+then combined into a shared output flow. The two item inputs may contain
+different items, but the selected color is applied consistently across
+all layers and sections.</p>
+<p>By coloring multiple items with a single pigment source, the Double
+Painter improves pigment efficiency and increases throughput for large
+production systems.</p>
+<h3 id="quad-painter">Quad Painter</h3>
+<p>The Quad Painter is the most advanced painting variant and enables
+independent coloring of each of the four sections of an item.</p>
+<p>Instead of applying one color globally, the Quad Painter accepts
+multiple pigment inputs and allows different sections of the same item
+to receive different colors. Coloring affects all layers belonging to
+each section while preserving the original structure.</p>
+<p>The Quad Painter also supports wire-controlled painting. Each pigment
+input can be enabled or disabled through logic signals, allowing
+factories to dynamically decide which sections should receive color.
+Disabled sections preserve their original appearance and consume no
+pigment.</p>
+<p>This level of control makes the Quad Painter essential for creating
+detailed multi-colored designs and building fully automated high-level
+production systems.</p>
+<hr />
+<h2 id="color-mixer">Color Mixer</h2>
+<p>The Color Mixer is a processing building used to combine flower
+pigments and create new colors. By blending two different input
+pigments, it produces a single output pigment that can be used in later
+coloring operations.</p>
+<p>The Color Mixer follows additive blending rules, allowing primary
+pigments to be combined into more advanced hybrid colors. Different
+pigment combinations produce different results, creating a progression
+from basic flower colors into richer and more complex varieties.</p>
+<p>When mixing, the machine preserves compatible pigment relationships.
+If a hybrid pigment is combined with one of its original component
+pigments, the resulting output remains the same hybrid color instead of
+changing further.</p>
+<p>The Color Mixer is an important part of advanced production chains,
+since many items require colors that cannot be harvested directly and
+must first be created through blending.</p>
+<p>For quick reference, the Color Mixer icon includes a visual guide
+showing how pigments combine, making it easier to design coloring
+systems without memorizing every recipe.</p>
+<hr />
+<h2 id="stacker">Stacker</h2>
+<p>The Stacker is a processing building used to combine multiple items
+into more complex structures. Depending on the arrangement of the
+inputs, it can either join items side by side or stack them into layered
+compositions.</p>
+<p>When two compatible items can fit together without overlapping, the
+Stacker merges them into a single connected item. Otherwise, the right
+input is placed above the left input, forming a layered structure.
+Stacking preserves the structure and color of both inputs and allows
+increasingly sophisticated designs to be created.</p>
+<p>Items can contain up to four total layers. If stacking would create
+additional layers beyond this limit, the excess layers are removed
+automatically.</p>
+<p>The Stacker is the primary tool for creating multi-layer items and
+becomes essential once production advances beyond simple single-layer
+designs. By combining processed pieces, factories can transform basic
+harvested items into larger and more detailed creations.</p>
+<p>The Stacker also enables partial items to become useful building
+materials. Items produced through cutting can be recombined with other
+pieces to restore complete structures or create entirely new
+layouts.</p>
+<p>Because of its ability to assemble, layer, and reconstruct items, the
+Stacker is one of the most important buildings for advanced production
+and large-scale automation.</p>
+<hr />
+<h2 id="belt-reader">Belt Reader</h2>
+<p>The Belt Reader is an information and automation building used to
+monitor the flow of items on a transport line. It can be placed directly
+onto a belt to observe item movement without interrupting
+transportation.</p>
+<p>The Belt Reader measures throughput by calculating the average number
+of items passing through over a recent time window, providing a stable
+reading instead of reacting instantly to short fluctuations. This makes
+it useful for evaluating factory performance and detecting production
+bottlenecks.</p>
+<p>In addition to throughput statistics, the Belt Reader provides wire
+outputs for automation. It can output a presence signal indicating
+whether items are currently flowing through the belt, and it can also
+report the item currently being transported.</p>
+<p>These signals allow processors and logic systems to react to factory
+conditions, enabling automatic routing, production control, overflow
+handling, and responsive logistics networks.</p>
+<p>The Belt Reader is especially valuable in advanced factories where
+monitoring and automation become just as important as transportation
+itself.</p>
+<hr />
+<h2 id="lever">Lever</h2>
+<p>The Lever is a dual-layer control building used to manually generate
+a boolean signal for automation systems. It can be switched between ON
+and OFF states, outputting either an active signal 1 or an inactive
+signal 0.</p>
+<p>The Lever provides direct control over wire networks and allows
+players to enable, disable, or redirect automated behavior without
+modifying the factory layout.</p>
+<p>Because its state is controlled manually, the Lever is useful for
+testing production lines, activating alternate transport paths,
+controlling processing chains, and creating interactive logic
+systems.</p>
+<p>Simple yet powerful, the Lever serves as a basic input device for
+building flexible and responsive automation networks.</p>
+<hr />
+<h2 id="filter">Filter</h2>
+<p>The Filter is a logic-controlled transportation building used to
+route items based on a wire signal. By changing its control input, the
+Filter can dynamically redirect production flow and enable automated
+decision making.</p>
+<p>When receiving a boolean signal, the Filter acts as a directional
+gate. A signal of 0 sends all incoming items to the left output, while a
+signal of 1 sends all items to the front output.</p>
+<p>When receiving an item signal, the Filter compares each incoming item
+against the provided reference. Items that match exactly are sent to the
+front output, while non-matching items are redirected to the side
+output.</p>
+<p>If no wire signal is present, the Filter pauses operation and will
+not route items until a valid control signal becomes available. Logic
+systems can be used to guarantee a continuous signal and prevent
+interruptions.</p>
+<p>The Filter is an essential automation tool for sorting, conditional
+routing, overflow control, and building adaptive production
+networks.</p>
+<hr />
+<h2 id="display">Display</h2>
+<p>The Display is a visualization building used to show wire signals
+directly inside the factory. It converts wire information into visible
+output, making it easier to inspect automation systems and understand
+what signals are currently being transmitted.</p>
+<p>The Display receives a wire input and presents the current signal on
+the normal layer without affecting item transportation or production
+flow. It is primarily used for debugging, monitoring, and building
+interactive factory layouts.</p>
+<p>Different signal types produce different visual results:</p>
+<ul>
+<li>Boolean 0: The Display remains inactive and shows nothing.</li>
+<li>Boolean 1: The Display becomes fully illuminated.</li>
+<li>Color signal: The Display shows the corresponding flower
+pigment.</li>
+<li>Item signal: The Display renders the received item.</li>
+</ul>
+<p>If the signal is empty or represents an uncolored value, the Display
+remains unchanged.</p>
+<p>Because it makes invisible wire information visible, the Display is
+especially useful for testing logic circuits, monitoring automated
+systems, and understanding complex production networks.</p>
+<hr />
+<h2 id="wire">Wire</h2>
+<p>The Wire is the foundation of the automation system and is used to
+transmit signals between logic and control buildings. Unlike normal
+transportation buildings, wires operate on the Wires Layer, allowing
+signal networks to coexist independently from item transportation.</p>
+<p>Wires carry information rather than items and enable factories to
+react dynamically to changing conditions. Supported signal types include
+boolean signals, flower pigment signals, and item signals.</p>
+<p>Two independent wire variants are available, allowing multiple
+automation networks to run side by side without interfering with each
+other. Wires automatically connect to adjacent wires of the same type
+while remaining isolated from the other network.</p>
+<p>When connected to a signal source, the entire connected wire network
+carries that value. Signals can originate from buildings such as Levers,
+logic gates, Belt Readers, Displays, Filters, Virtual Processors, and
+other automation components.</p>
+<p>If multiple incompatible signals are introduced into the same wire
+network simultaneously, a conflict occurs and the affected network
+enters an error state until the conflict is resolved.</p>
+<p>Signals carried through wires can be visualized using Displays and
+other compatible buildings, making it easier to inspect, debug, and
+control complex factory automation.</p>
+<p>The Wire transforms a factory from a simple transportation network
+into a responsive automated system.</p>
+<hr />
+<h2 id="wire-tunnel">Wire Tunnel</h2>
+<p>The Wire Tunnel is an automation building used to allow two wire
+networks to cross without connecting or interfering with each other. It
+enables compact signal routing and keeps automation layouts clean and
+organized.</p>
+<p>Signals entering one side of the Wire Tunnel travel directly to the
+opposite side while remaining isolated from signals traveling through
+the perpendicular direction. This allows two independent wire paths to
+pass through the same location without forming a shared network.</p>
+<p>Wire Tunnels preserve both the signal type and the identity of each
+wire network. Signals continue flowing normally and only connect to
+compatible wires after leaving the tunnel.</p>
+<p>Because wire networks often become increasingly complex as factories
+expand, Wire Tunnels are essential for reducing clutter, simplifying
+signal routing, and building scalable automation systems.</p>
+<p>The Wire Tunnel allows automation networks to cross cleanly without
+sacrificing readability or control.</p>
+<hr />
+<h2 id="logic-gates">Logic Gates</h2>
+<p>Logic Gates are automation buildings used to process wire signals and
+produce new outputs based on logical rules. They operate on boolean
+evaluation, where active signals are considered truthy and inactive or
+empty signals are considered false.</p>
+<h3 id="and-gate">AND Gate</h3>
+<p>The AND Gate outputs an active signal 1 only when both inputs are
+truthy. If either input is inactive, the output remains inactive.</p>
+<p>By connecting a NOT Gate to the output, the behavior becomes a NAND
+Gate.</p>
+<h3 id="or-gate">OR Gate</h3>
+<p>The OR Gate outputs an active signal 1 whenever at least one input is
+truthy. The output remains inactive only if both inputs are
+inactive.</p>
+<p>By connecting a NOT Gate to the output, the behavior becomes a NOR
+Gate.</p>
+<h3 id="not-gate">NOT Gate</h3>
+<p>The NOT Gate inverts the state of its input. If the input is inactive
+or empty, it outputs an active signal 1. If the input contains any
+truthy value—including items, flower pigments, or boolean signals—it
+outputs an inactive signal 0.</p>
+<p>The NOT Gate is commonly used to reverse conditions and build more
+advanced logic systems.</p>
+<h3 id="xor-gate">XOR Gate</h3>
+<p>The XOR Gate outputs an active signal 1 only when exactly one input
+is truthy. If both inputs share the same state, the output remains
+inactive.</p>
+<p>By connecting a NOT Gate to the output, the behavior becomes an XNOR
+Gate.</p>
+<p>Logic Gates form the foundation of advanced automation and enable
+conditional routing, production control, and responsive factory
+behavior.</p>
+<hr />
+<h2 id="comparator">Comparator</h2>
+<p>The Comparator is an automation building used to compare two wire
+signals and determine whether they are identical. It evaluates both
+inputs and outputs a boolean result based on exact equality.</p>
+<p>If the two input signals match exactly, the Comparator outputs an
+active signal 1. If the signals differ, it outputs an inactive signal
+0.</p>
+<p>The Comparator supports comparison of all supported signal types,
+including boolean signals, flower pigment signals, and item signals.
+Matching requires complete equality—signals must represent the same
+value to produce a positive result.</p>
+<p>If either input does not contain a signal, the Comparator forwards
+the empty state instead of producing a boolean output. Logic systems can
+be used to ensure valid inputs when continuous operation is
+required.</p>
+<p>The Comparator is especially useful for conditional routing,
+automation control, item detection, and building responsive factory
+systems that react to specific conditions.</p>
+<hr />
+<h2 id="transistor">Transistor</h2>
+<p>The Transistor is an automation building used to conditionally
+forward wire signals. It acts as a controllable signal gate, allowing
+one signal to pass only when another signal enables it.</p>
+<p>The Transistor receives two inputs: a control input and a signal
+input. When the control input contains a truthy value—such as an item
+signal, a flower pigment signal, or an active boolean signal 1—the
+Transistor forwards the signal input to its output unchanged. If the
+control input is inactive or empty, no signal is produced.</p>
+<p>Unlike Logic Gates, which evaluate conditions and generate boolean
+outputs, the Transistor preserves the original contents of the forwarded
+signal. This means item signals remain item signals, pigment signals
+remain pigment signals, and boolean values remain unchanged.</p>
+<p>Because it forwards complete signal values rather than only true or
+false states, the Transistor is especially useful for conditional
+routing, selective activation, and building automation systems that
+respond while preserving signal details.</p>
+<p>Transistors are also valuable for converting boolean decisions back
+into item or pigment signals. This allows factories to create more
+expressive automation networks and makes signal flow easier to
+understand and debug.</p>
+<p>A mirrored variant is also available, allowing the control input to
+be received from the opposite side for greater layout flexibility.</p>
+<hr />
+<h2 id="constant-signal">Constant Signal</h2>
+<p>The Constant Signal is an automation building used to generate a
+fixed wire signal continuously. Unlike other signal sources that react
+to factory activity, the Constant Signal always outputs the same value
+until it is changed.</p>
+<p>The emitted signal can represent an item, a flower pigment, or a
+boolean value, allowing it to serve as a stable reference for automation
+systems.</p>
+<p>Constant Signals are commonly used to provide configuration values,
+define routing conditions, enable or disable production paths, and
+create predictable logic behavior across a factory.</p>
+<p>Because the output never changes automatically, Constant Signals are
+especially useful for testing automation, building repeatable control
+systems, and supplying reference inputs for Comparators, Filters,
+Processors, and other wire-based components.</p>
+<p>The Constant Signal acts as a permanent source of information and
+forms a basic building block for advanced automation networks.</p>
+<hr />
+<h2 id="virtual-processor">Virtual Processor</h2>
+<p>Virtual Processors are advanced automation buildings that operate
+entirely on the Wires Layer. Instead of processing physical items, they
+simulate production operations directly on item signals and output the
+resulting virtual items through wires.</p>
+<p>Virtual Processors make it possible to analyze, transform, and
+construct item designs without consuming resources or building full
+production lines. They are especially useful for interpreting Hub
+requests, experimenting with layouts, and breaking complex targets into
+smaller production steps.</p>
+<p>Because Virtual Processors operate only on signals, no
+transportation, storage, or disposal is required. Intermediate results
+exist only within the automation network and can be freely analyzed or
+discarded.</p>
+<h3 id="virtual-cutter">Virtual Cutter</h3>
+<p>The Virtual Cutter simulates the Cutter operation on an item signal
+and outputs the resulting separated parts as virtual items. This allows
+production plans to be broken into smaller components without generating
+physical outputs.</p>
+<p>Unused outputs do not need to be disposed of and can simply terminate
+within the analysis network.</p>
+<h3 id="virtual-rotator">Virtual Rotator</h3>
+<p>The Virtual Rotator simulates rotating an item by 90 degrees
+clockwise and outputs the transformed virtual result. Multiple rotations
+can be chained together to explore different arrangements and
+construction paths.</p>
+<h3 id="virtual-stacker">Virtual Stacker</h3>
+<p>The Virtual Stacker simulates the Stacker operation. It combines
+input items by either joining compatible parts or stacking one structure
+above another, producing a virtual assembled result.</p>
+<h3 id="virtual-painter">Virtual Painter</h3>
+<p>The Virtual Painter simulates applying flower pigments to an item. It
+recolors the incoming virtual item and outputs the fully painted result
+without consuming physical pigments.</p>
+<h3 id="virtual-unstacker">Virtual Unstacker</h3>
+<p>The Virtual Unstacker performs the reverse operation of the Stacker.
+It separates the uppermost layer from the remaining structure, allowing
+complex designs to be analyzed and reconstructed layer by layer.</p>
+<p>Virtual Processors transform the wire network from a control system
+into a complete virtual design environment for planning and
+automation.</p>
+<hr />
+<h2 id="analyzer">Analyzer</h2>
+<p>The Analyzer is an automation building used to inspect an item signal
+and extract information from its structure. It analyzes the incoming
+item and outputs separate signals that can be used by other wire-based
+systems.</p>
+<p>The Analyzer reads the lowest layer of the input item and examines
+its top-right section. It then separates the detected information into
+two outputs: the item type is emitted from the left output, while the
+flower pigment is emitted from the right output.</p>
+<p>By converting item data into wire signals, the Analyzer allows
+factories to react dynamically to item composition and enables advanced
+automation logic.</p>
+<p>The Analyzer is especially useful for item recognition, conditional
+routing, automated decision making, and building systems that process
+items differently depending on their structure or pigment.</p>
+<p>Combined with Filters, Comparators, Virtual Processors, and other
+wire components, the Analyzer becomes a powerful tool for creating
+intelligent and adaptive factories.</p>
+</body>
+</html>

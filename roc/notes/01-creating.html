@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>01-creating</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<hr />
+<h1
+id="creating-brogue-like-in-swift-bringing-a-classic-roguelike-to-ios">Creating
+Brogue-like in Swift: Bringing a Classic Roguelike to iOS</h1>
+<p>Classic roguelikes have always fascinated me. Among them, <a
+href="https://en.wikipedia.org/wiki/Brogue_(video_game)">Brogue</a>
+stands out for its elegant design: simple controls, deep emergent
+gameplay, and beautifully readable ASCII graphics.</p>
+<p>However, the original Brogue codebase is written in C and designed
+primarily for desktop environments. I wanted to explore what it would
+look like if the game were <strong>rebuilt from the ground up in
+Swift</strong>, optimized for <strong>touchscreens and modern iOS
+devices</strong>.</p>
+<p>This project is <strong>not</strong> a direct port. Instead, it is a
+<strong>full reimplementation</strong>, preserving the spirit of Brogue
+while modernizing its architecture.</p>
+<hr />
+<h1 id="why-reimplementation-instead-of-port">Why Reimplementation
+Instead of Port?</h1>
+<p>Porting C code to iOS is possible, but it often results in:</p>
+<ul>
+<li>difficult maintenance</li>
+<li>platform-specific hacks</li>
+<li>poor integration with modern APIs</li>
+</ul>
+<p>A reimplementation allows:</p>
+<ul>
+<li>clean architecture</li>
+<li>Swift type safety</li>
+<li>easier future expansion</li>
+<li>native iOS performance</li>
+<li><strong>relicense the new code under a more permissive
+license</strong></li>
+</ul>
+<p>The goal was to keep <strong>gameplay behavior LIKE where it
+matters</strong>, while modernizing everything else.</p>
+<hr />
+<h1 id="goals-of-the-project">Goals of the Project</h1>
+<p>The reimplementation focuses on several principles:</p>
+<h3 id="1-preserve-gameplay">1. Preserve Gameplay</h3>
+<p>The core mechanics remain faithful:</p>
+<ul>
+<li>procedural dungeon generation</li>
+<li>tactical turn-based combat</li>
+<li>emergent item interactions</li>
+<li>deterministic seeds</li>
+</ul>
+<p>The design philosophy of Brogue—<strong>simple rules producing
+complex outcomes</strong>—remains intact.</p>
+<hr />
+<h3 id="2-modern-architecture">2. Modern Architecture</h3>
+<p>The original codebase is heavily procedural. In Swift, the game is
+organized into clear modules:</p>
+<p>Core systems include:</p>
+<ul>
+<li>GameState</li>
+<li>Map / Tile system</li>
+<li>Creature system</li>
+<li>Item system</li>
+<li>Combat engine</li>
+<li>Dungeon generation</li>
+<li>Pathfinding and field-of-view</li>
+</ul>
+<p>Swift’s enums, structs, and OptionSets make these systems
+significantly safer and clearer.</p>
+<p>Example:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> CreatureType<span class="op">:</span> <span class="dt">Codable</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">monsterName</span><span class="op">:</span> String</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">maxHP</span><span class="op">:</span> Int</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">defense</span><span class="op">:</span> Int</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">accuracy</span><span class="op">:</span> Int</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">damage</span><span class="op">:</span> RandomRange</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Compared to the original C structs, Swift models provide:</p>
+<ul>
+<li>strong typing</li>
+<li>safer memory management</li>
+<li>easier serialization</li>
+</ul>
+<hr />
+<h1 id="rebuilding-the-grid-system">Rebuilding the Grid System</h1>
+<p>Brogue’s dungeon operates on a <strong>grid of tiles</strong>.</p>
+<p>In the Swift reimplementation, the map uses a generic grid
+structure:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Grid2D<span class="op">&lt;</span><span class="dt">Element</span><span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="va">cols</span><span class="op">:</span> Int</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="va">rows</span><span class="op">:</span> Int</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">data</span><span class="op">:</span> <span class="op">[</span>Element<span class="op">]</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    subscript<span class="op">(</span>x<span class="op">:</span> Int<span class="op">,</span> y<span class="op">:</span> Int<span class="op">)</span> <span class="op">-&gt;</span> Element <span class="op">{</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">get</span> <span class="op">{</span> data<span class="op">[</span>x <span class="op">*</span> rows <span class="op">+</span> y<span class="op">]</span> <span class="op">}</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">set</span> <span class="op">{</span> data<span class="op">[</span>x <span class="op">*</span> rows <span class="op">+</span> y<span class="op">]</span> <span class="op">=</span> newValue <span class="op">}</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>This abstraction allows:</p>
+<ul>
+<li>tile maps</li>
+<li>scent maps</li>
+<li>pathfinding maps</li>
+<li>lighting maps</li>
+</ul>
+<p>to all share the same efficient storage.</p>
+<hr />
+<h1 id="deterministic-randomness">Deterministic Randomness</h1>
+<p>Roguelikes rely on deterministic RNG to ensure reproducibility.</p>
+<p>The Swift version uses a custom RNG implementation.</p>
+<p>This guarantees:</p>
+<ul>
+<li>identical dungeon generation for a given seed</li>
+<li>reproducible bug reports</li>
+<li>deterministic level generation</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">/// Core PCG32 output (32-bit).</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">mutating</span> <span class="kw">func</span> <span class="fu">nextUInt32</span><span class="op">()</span> -&gt; <span class="fu">UInt32</span> <span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">let</span> <span class="va">old</span> <span class="op">=</span> state</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">// LCG step</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        state <span class="op">=</span> old <span class="op">&amp;*</span> <span class="dv">6364136223846793005</span> <span class="op">&amp;+</span> inc</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Output function XSH RR</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">let</span> <span class="va">xorshifted</span> <span class="op">=</span> UInt32<span class="op">(</span>truncatingIfNeeded<span class="op">:</span> <span class="op">((</span>old <span class="op">&gt;&gt;</span> <span class="dv">18</span><span class="op">)</span> <span class="op">^</span> old<span class="op">)</span> <span class="op">&gt;&gt;</span> <span class="dv">27</span><span class="op">)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">let</span> <span class="va">rot</span> <span class="op">=</span> UInt32<span class="op">(</span>truncatingIfNeeded<span class="op">:</span> old <span class="op">&gt;&gt;</span> <span class="dv">59</span><span class="op">)</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> <span class="op">(</span>xorshifted <span class="op">&gt;&gt;</span> rot<span class="op">)</span> <span class="op">|</span> <span class="op">(</span>xorshifted <span class="op">&lt;&lt;</span> <span class="op">((</span><span class="dv">0</span> <span class="op">&amp;-</span> rot<span class="op">)</span> <span class="op">&amp;</span> <span class="dv">31</span><span class="op">))</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<hr />
+<h1 id="dungeon-generation">Dungeon Generation</h1>
+<p>One of Brogue’s most elegant systems is its dungeon generation
+pipeline.</p>
+<p>Each level goes through several stages:</p>
+<ol type="1">
+<li>layout generation</li>
+<li>terrain carving</li>
+<li>room connection</li>
+<li>feature placement</li>
+<li>item spawning</li>
+<li>monster spawning</li>
+</ol>
+<p>The reimplementation keeps this pipeline but modularizes it so each
+stage is easier to test and tweak.</p>
+<hr />
+<h1 id="combat-and-emergent-gameplay">Combat and Emergent Gameplay</h1>
+<p>Combat in Brogue is intentionally simple:</p>
+<ul>
+<li>attack accuracy</li>
+<li>defense</li>
+<li>damage</li>
+</ul>
+<p>Yet the interaction between:</p>
+<ul>
+<li>terrain</li>
+<li>items</li>
+<li>monsters</li>
+<li>environmental hazards</li>
+</ul>
+<p>creates deep tactical gameplay.</p>
+<p>The reimplementation preserves these interactions while cleaning up
+the combat engine.</p>
+<hr />
+<h1 id="touch-friendly-controls">Touch-Friendly Controls</h1>
+<p>A major goal of the reimplementation is making the game
+<strong>comfortable on a phone screen</strong>.</p>
+<p>Key design choices include:</p>
+<ul>
+<li>gesture-based movement</li>
+<li>simplified inventory interaction</li>
+<li>minimal UI overlays</li>
+</ul>
+<p>Classic roguelikes were designed for keyboards. The Swift version is
+designed for <strong>touch first</strong>.</p>
+<hr />
+<h1 id="performance-considerations">Performance Considerations</h1>
+<p>Although Swift is high-level, performance is still critical.</p>
+<p>Several strategies help keep the game fast:</p>
+<ul>
+<li>value types for game data</li>
+<li>contiguous memory storage for grids</li>
+<li>minimal heap allocation</li>
+<li>avoiding dynamic dispatch in hot loops</li>
+</ul>
+<p>The result runs smoothly even on older iPhones.</p>
+<hr />
+<h1 id="asset-and-rendering-pipeline">Asset and Rendering Pipeline</h1>
+<p>Instead of ASCII characters, the iOS version uses <strong>minimal
+pixel tiles</strong> designed for readability.</p>
+<p>Each tile is rendered on a <strong>96×96 canvas</strong>, optimized
+for small screens.</p>
+<p>This keeps the spirit of the original game while improving visual
+clarity.</p>
+<hr />
+<h1 id="challenges-during-the-reimplementation">Challenges During the
+Reimplementation</h1>
+<p>Several parts of the original codebase required special
+attention:</p>
+<h3 id="dungeon-feature-system">Dungeon Feature System</h3>
+<p>Brogue uses a complex feature system for traps, gas, fire, and
+environmental effects. Implementing these systems required careful
+restructuring to avoid deeply nested procedural code.</p>
+<hr />
+<h3 id="monster-ai">Monster AI</h3>
+<p>Monster behavior combines:</p>
+<ul>
+<li>pathfinding</li>
+<li>scent tracking</li>
+<li>tactical evaluation</li>
+</ul>
+<p>Implementing this logic while preserving gameplay behavior required
+extensive testing.</p>
+<hr />
+<h3 id="emergent-item-interactions">Emergent Item Interactions</h3>
+<p>Many interesting interactions arise from combinations like:</p>
+<ul>
+<li>fire + gas</li>
+<li>lightning + water</li>
+<li>acid + equipment</li>
+</ul>
+<p>These behaviors had to be preserved exactly to maintain the game’s
+identity.</p>
+<hr />
+<h1 id="why-swift-works-well-for-roguelikes">Why Swift Works Well for
+Roguelikes</h1>
+<p>Swift turned out to be an excellent language for this project.</p>
+<p>Advantages include:</p>
+<ul>
+<li>strong enums</li>
+<li>expressive structs</li>
+<li>safe memory model</li>
+<li>powerful generics</li>
+</ul>
+<p>These features make game logic easier to reason about compared to
+C.</p>
+<hr />
+<h1 id="current-status">Current Status</h1>
+<p>The reimplementation now includes:</p>
+<ul>
+<li>full dungeon generation</li>
+<li>monster AI</li>
+<li>combat system</li>
+<li>item mechanics</li>
+<li>deterministic seeds</li>
+<li>touch-friendly UI</li>
+</ul>
+<p>The game plays like classic Brogue, but runs natively on iOS.</p>
+<hr />
+<h1 id="final-thoughts">Final Thoughts</h1>
+<p>Reimplementing a classic game engine is a large project, but it
+provides an opportunity to deeply understand the original design.</p>
+<p>Brogue remains one of the most elegant roguelikes ever created, and
+rebuilding it in Swift has been both challenging and rewarding.</p>
+<p>The goal of this project is not to replace the original, but to
+explore how a timeless design can evolve on modern platforms.</p>
+<hr />
+<p>If you're interested in roguelikes, procedural generation, or Swift
+game development, I hope this project inspires you to experiment with
+your own engine.</p>
+<hr />
+<p>🏠 <a href="../index.html">Index</a> | <a
+href="02-dijkstra.html">Next</a> ➡️</p>
+<hr />
+</body>
+</html>

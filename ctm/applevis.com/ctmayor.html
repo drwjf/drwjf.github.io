@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ctmayor</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<div class="site-main" role="main">
+
+<div class="region region--content-above grid-full layout--pass--content-medium">
+
+<div id="block-applevis-page-title"
+class="block block-core block-page-title-block">
+
+<h1 id="ctmayor---city-simulation">CTMayor - City Simulation</h1>
+</div>
+
+</div>
+
+<div id="content"
+class="region region--content grid-full layout--pass--content-medium">
+
+<div id="block-applevis-content"
+class="block block-system block-system-main-block">
+
+<div class="block__content">
+
+<div>
+
+</div>
+
+<div class="node__content">
+
+<div class="field field--name-field-authoring-info field--type-viewfield field--label-hidden">
+
+<div class="field__item field__item-label-hidden">
+
+<div class="views-element-container">
+
+<div class="view view-node-author-block view-id-node_author_block view-display-id-block_1 js-view-dom-id-ffefb0d6fa5c5c7e58fc0e898ecb9ce6052faf4793f308e977cafa948d11683d">
+
+<div class="view-content">
+
+<div class="views-row">
+
+<div class="views-field views-field-created">
+
+<p><span class="field-content">Submitted by
+<a href="/users/13617" hreflang="en">DMNagel</a>, 26 January, 2022
+</span></p>
+</div>
+
+<div class="views-field views-field-user-picture">
+
+<div class="field-content">
+
+</div>
+
+</div>
+
+<div class="views-field views-field-changed">
+
+<p><span class="field-content">Last updated on 26 January, 2022
+</span></p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="field field--name-taxonomy-vocabulary-1 field--type-entity-reference field--label-inline clearfix">
+
+<div class="field__label">
+
+<p>Category</p>
+</div>
+
+<div class="field__item">
+
+<p><a href="/ios-ipados-app-directory/games" hreflang="en">Games</a></p>
+</div>
+
+</div>
+
+<div class="text-content clearfix field field--name-body field--type-text-with-summary field--label-above">
+
+<h3 id="description-of-app">Description of App</h3>
+<div class="field__item">
+
+<p>Start the CTMayor APP and take control. You are the Mayor and City
+Planner with complete authority. Be the undisputed ruler of a
+sophisticated real-time City Simulation. Create your own dream city from
+the ground up. The city may be a bustling megalopolis, lots of people,
+lots of cars, tall buildings: high-energy, high density living. Or it
+may be a small rural community, or a linked group of small communities
+providing slow-paced country living.</p>
+<p>Also there are some scenarios prepared for you. Become the master of
+existing cities such as San Francisco, Hamburg and Bern, to solve
+horrible planning issues or rescue citizens from a natural disaster. If
+one strategy doesn't work, try another. There are a million stories in
+each city, and you write them.</p>
+<p>Like a real mayor, focus on planning, layouting, budgeting and
+disaster rescuing, you do not need to do microtransactions like
+maintaining houses or factories, AI citizens manage zones
+themselves.</p>
+<p>The simuation strategy logic and user interactive concept are
+inspired by the classic SimCity game from Will Wright. Most graphics,
+music, map and text materials come from public domain licensed by
+Creative Commons License or General Public License.</p>
+</div>
+
+</div>
+
+<div class="field field--name-field-version field--type-string field--label-above">
+
+<h3 id="version">Version</h3>
+<div class="field__item">
+
+<p>1.1.0</p>
+</div>
+
+</div>
+
+<div class="field field--name-field-cost field--type-list-string field--label-above">
+
+<h3 id="free-or-paid">Free or Paid</h3>
+<div class="field__item">
+
+<p>Free</p>
+</div>
+
+</div>
+
+<div class="field field--name-field-apple-watch-support field--type-list-string field--label-above">
+
+<h3 id="apple-watch-support">Apple Watch Support</h3>
+<div class="field__item">
+
+<p>Not Known</p>
+</div>
+
+</div>
+
+<div class="field field--name-field-device-used field--type-list-string field--label-above">
+
+<h3 id="devices-app-was-tested-on">Device(s) App Was Tested On</h3>
+<div class="field__items">
+
+<div class="field__item">
+
+<p>iPhone</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="field field--name-field-ios-version field--type-string field--label-above">
+
+<h3 id="ios-version">iOS Version</h3>
+<div class="field__item">
+
+<p>15.2.1</p>
+</div>
+
+</div>
+
+<div class="text-content clearfix field field--name-field-comments field--type-text-long field--label-above">
+
+<h3 id="accessibility-comments">Accessibility Comments</h3>
+<div class="field__item">
+
+<p>Everything seems to be 100% labelled.</p>
+</div>
+
+</div>
+
+<div class="field field--name-field-voiceover field--type-list-string field--label-above">
+
+<h3 id="voiceover-performance">VoiceOver Performance</h3>
+<div class="field__item">
+
+<p>VoiceOver reads all page elements.</p>
+</div>
+
+</div>
+
+<div class="field field--name-field-labelling field--type-list-string field--label-above">
+
+<h3 id="button-labeling">Button Labeling</h3>
+<div class="field__item">
+
+<p>All buttons are clearly labeled.</p>
+</div>
+
+</div>
+
+<div class="field field--name-field-usability field--type-list-string field--label-above">
+
+<h3 id="usability">Usability</h3>
+<div class="field__item">
+
+<p>The app is fully accessible with VoiceOver and is easy to navigate
+and use.</p>
+</div>
+
+</div>
+
+<div class="field field--name-field-link2 field--type-link field--label-above">
+
+<h3 id="app-store-link">App Store Link</h3>
+<div class="field__item">
+
+<p><a
+href="https://apps.apple.com/za/app/ctmayor-city-simulation/id1533354734">https://apps.apple.com/za/app/ctmayor-city-simulation/id1533354734</a></p>
+</div>
+
+</div>
+
+<div class="field field--name-field-recommendations field--type-viewfield field--label-hidden">
+
+<div class="field__item field__item-label-hidden">
+
+<div class="views-element-container">
+
+<div class="view view-recommendations-count view-id-recommendations_count view-display-id-block_1 js-view-dom-id-22d8ed814e16054c7e664e76257658d07d0780b6d70a69fafb8199bb7a3fdc36">
+
+<div class="view-content">
+
+<div class="views-row">
+
+<div class="views-field views-field-count">
+
+<p><span class="field-content"></span></p>
+<h3 id="recommendations">Recommendations</h3>
+<p>4 people have recommended this app</p>
+</div>
+
+<div class="views-field views-field-last-updated">
+
+<p><span class="field-content">Most recently recommended by Ornella
+<em>2 years 5 months</em> ago</span></p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<h2 id="options">Options</h2>
+<ul>
+<li></li>
+</ul>
+</div>
+
+<div class="section comments" drupal-selector="comments">
+
+<h2 id="comments">Comments</h2>
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132394comment-132394-classpermalink">&lt;a
+href="/comment/132394#comment-132394" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;Fun game</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1643429978"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By Tristo on Friday, January 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>This is a fun game. Does anyone know how to increase population?</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132395comment-132395-classpermalink">&lt;a
+href="/comment/132395#comment-132395" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;Increasing population</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1643432060"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By DMNagel on Friday, January 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>Population will increase at the end of each year. Build enough
+residential zones, commercial and industrial zones for them to work on.
+Also, make sure to lay roads or railways from residential zones to
+workplaces. Finally, make sure that you have a power plant either
+standing right next to a zone to power it up or if it's not standing
+directly next to the zone, build power lines from the plant to the zone.
+If you have many zones touching one another, you can use one power plant
+to power them all. It takes a few turns for all zones to power up. Good
+luck.</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132435comment-132435-classpermalink">&lt;a
+href="/comment/132435#comment-132435" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;loving it</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1643554676"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By Sabrina on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>I found it a little dull without music or sounds but that can be
+toggled in the settings. I am getting hang of it a lot. Is there water
+on each slot? I seem to have built something on one slot but I don't see
+what was there.</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132468comment-132468-classpermalink">&lt;a
+href="/comment/132468#comment-132468" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;Maps are randomly generated.</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1643613600"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By DMNagel on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>Every time you start a new game, new maps will be generated
+automatically. Hopefully in the future, we will be able to edit our own
+maps.</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132469comment-132469-classpermalink">&lt;a
+href="/comment/132469#comment-132469" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;I sometimes get maps with…</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1643614505"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By Tristo on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>I sometimes get maps with only water</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132470comment-132470-classpermalink">&lt;a
+href="/comment/132470#comment-132470" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;That's why I suggested</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1643615619"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By DMNagel on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>That's why I suggested that we are allowed to build our own maps, as
+clear land is often hard to find on computer generated maps. The
+developer said that it's sound like a good idea, so hopefully he will
+actually implement it.</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132489comment-132489-classpermalink">&lt;a
+href="/comment/132489#comment-132489" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;I need some help, please.</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1643661356"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By DrummerGuy on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>Hello, guys. I need some help starting to build a place. Every time I
+touch something in the map, I get a message saying that this land needs
+to be bulldozed first. How do I go about to do that?<br />
+Thank you in advance for your help.</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132501comment-132501-classpermalink">&lt;a
+href="/comment/132501#comment-132501" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;DrummerGuy</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1643689145"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By DMNagel on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>Note that you can't build anything on water, except for roads which
+will serve as bridges. That being said, you need to find clear land.
+Also, keep in mind that most buildings and zones needs a 3 x 3 square of
+clear space. You can for example, build zones over trees, at the cost of
+reducing The land value, however police stations can also help to
+increase it.</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132517comment-132517-classpermalink">&lt;a
+href="/comment/132517#comment-132517" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;really?</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1643732939"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By Sabrina on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>I got another map with only water. Well I guess I will just have to
+create more until I actually get something useful.</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132523comment-132523-classpermalink">&lt;a
+href="/comment/132523#comment-132523" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;I feel like I'm just moving randomly
+in the game.</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1643750001"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By DrummerGuy on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>Honestly, right now I just feel like I'm moving without knowing what
+to do.<br />
+For some reason it's not very clear to me whenever you make a
+move.<br />
+I guess I will figure it out eventually.<br />
+I hope so.</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132537comment-132537-classpermalink">&lt;a
+href="/comment/132537#comment-132537" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;DrummerGuy</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1643805751"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By DMNagel on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>When you make a move on a clear piece of land, the word clear will be
+replaced by the word residential, police station, fire station, Road or
+whatever you decided to put there at that specific position. You can
+build as many things you like during one turn, provided you have enough
+cash for it. However, in order to simulate events and activities, you
+will need to turn up. A great example is power plants. Building a power
+plant right next to a zone Will not power the zone immediately. You need
+to turn up at least two times for the zone itself to become powered. The
+first turn will power up the plant itself, while the second turn will
+power up the zone. For as long as you have clear land, you can build how
+and what ever you like, however there are a few guidelines to keep in
+mind. Each zone obviously takes up 3 x 3 space in a square. Zones must
+touch each other if you wish to power multiple zones without power
+lines. If your zones are scattered, you will need to lay power lines
+between the power plant and the zone itself. You can also lay powerlines
+from a powered zone to an unpowered zone. I hope this will help
+somewhat. My biggest issue is not the gameplay, but rather the maps that
+are generated automatically with each new game. I often find that there
+is just not enough clear land for me to build on and many times, such a
+hindrance can really interfere with my vision of how I want my city to
+look like. Hopefully, we will be able to build our own maps soon.</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132607comment-132607-classpermalink">&lt;a
+href="/comment/132607#comment-132607" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;I'm gonna cry</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1644020582"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By Karina Velazquez on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>Hi. As a former simtower lover I'm gonna cry with the discovery of
+this game.<br />
+I'm on my first game, but it says I have 1 residential which means
+somewhere inside this map there is a land or something similar, but is
+there a way to move to the exact tile where that residential is? I find
+weird to move tile by tile through 1000 tiles-long map</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132608comment-132608-classpermalink">&lt;a
+href="/comment/132608#comment-132608" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;Not sure</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1644035308"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By DMNagel on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>There is currently no way to locate specific things quickly, at least
+not that I know of.</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132690comment-132690-classpermalink">&lt;a
+href="/comment/132690#comment-132690" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;Some questions</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1644263861"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By Karina Velazquez on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>Hi, I find easier to play on iPad with a keyboard, it is easier to
+navegate through the map.</p>
+<p>Also I have some questions that are not clear to me.</p>
+<p>1.- How do you turn up zones withouth electricity? I always have the
+center tile of a zone without electricity no matter if I put a
+electricity zone beside the rescidential zone or whatever zone.</p>
+<p>2.- Is it a way to hurry up the time of the game? Under settings I
+find that there is a way to adjust the animation but I don’t understand
+if it is just a visual setting or if it has something to do with the
+time of the game. I find borring that time passes eternal in this game
+so that things start to happen.</p>
+<p>3.- When I use the bulldoser sometimes I find that if I use it in one
+rescidential tile it demolishes all the zone, but now on my ipad I use
+it on a industrial zone and it just demolishes one tile at the time, am
+I wrong or some times it demolishes the whole zone and some times tile
+by tile?<br />
+4.- are you still motivated by the game after some days of usage or do
+you think as me that the game needs more action?</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132698comment-132698-classpermalink">&lt;a
+href="/comment/132698#comment-132698" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;Powering zones</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1644276907"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By DMNagel on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>When you put a power plant next to the zone, the zone will power up
+after two turns. The game no longer works in real time. It is now turn
+based so we can keep up with the speed. Sometimes, the bulldozer
+destroys only part of a zone, so make sure to bulldoze all tiles. I
+guess action will depend on difficulty level, city size and
+activity.</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132720comment-132720-classpermalink">&lt;a
+href="/comment/132720#comment-132720" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;what do you mean by two
+turns?</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1644337724"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By Karina Velazquez on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>hi, thanks for the answers. Could you please explain what do you mean
+by 2 turns? each movement counts as a turn? and how long it takes to
+move one year forward? I'm still stocked in January 1900.</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132723comment-132723-classpermalink">&lt;a
+href="/comment/132723#comment-132723" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;Making a turn</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1644341618"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By DMNagel on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>You have to double tap on the planning done button in order to make a
+turn to the next month. Building things doesn't make turns. Everything
+is at a standstill until you decide to make turns. Making turns is
+equivalent to simulating activities. You can build as many things as you
+like in just one turn, but once you are satisfied with the things you've
+built, it is time to watch the action. Just double tap on the planning
+button and wait for your zones to power up and for population to grow.
+Population will increase after each year.</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132749comment-132749-classpermalink">&lt;a
+href="/comment/132749#comment-132749" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;the population</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1644409706"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By Martin Krefta on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>You often said, after a year the population grows, but after how much
+planning do I have to click to really get it? Once planning is complete,
+it jumps to the next month, but how many times do I have to click? And
+by 2 turns he means clicking on planning completed twice below, so two
+days, so to speak, two months.</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132759comment-132759-classpermalink">&lt;a
+href="/comment/132759#comment-132759" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;12 turns?</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1644429037"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By DMNagel on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>12 turns should do it, provided the following conditions are met.
+Make sure you have enough residential, commercial and industrial zones.
+Also, make sure that there is enough road or railways between
+residential and workplaces. Finally, when clicking the planning done
+button, make sure to close any pop-ups that may occur first before
+continuing. So in short, 12 turns should do it. Like I said, you can
+plan as much as you like before using the planning done button, as long
+as you have enough cash for it.</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+<div class="comment__title">
+
+<h3 id="a-hrefcomment132764comment-132764-classpermalink">&lt;a
+href="/comment/132764#comment-132764" class="permalink"</h3>
+<p>rel="bookmark" hreflang="en"&gt;I could have figured that out</a></p>
+</div>
+
+<p><span class="hidden" comment-timestamp="1644442539"></span></p>
+<div class="comment__text-wrapper">
+
+<p>By Martin Krefta on Monday, February 28, 2022 - 02:29</p>
+<div class="comment__picture-wrapper">
+
+<div class="comment__picture">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="comment__title comment__content">
+
+<div class="text-content field field--name-comment-body field--type-text-long field--label-hidden field__item comment__text-content">
+
+<p>I could have imagined that, one year equals twelve months equals
+twelve clicks on planning complete. Thank you very much! I think the
+game is really super cool, it really reminds me of SimCity! The only
+thing that needs to be done are the VoiceOver suggestions that I emailed
+you. As I said, it's your choice if you accept it. Still nice</p>
+</div>
+
+<ul>
+<li></li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</body>
+</html>

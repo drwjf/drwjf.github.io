@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>planets</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="planets">Planets</h1>
+<p>Each star system has (up to) one single colonizable planet. The
+planetary environments that can be encountered are:</p>
+<ul>
+<li>Terran planets are earth-like and can support the largest number of
+colonists.</li>
+<li>Jungle planets are young, undeveloped worlds reminiscent of the Age
+of Dinosaurs on earth.</li>
+<li>Ocean planets have very few land masses and are almost completely
+covered by water.</li>
+<li>Arid planets have only about one-quarter of their surface covered by
+water.</li>
+<li>Steppe planets have rugged terrains that are difficult to clear for
+a colony.</li>
+<li>Desert planets have very scarce water supplies and are plagued by
+violent dust storms.</li>
+<li>Minimal planets can barely support life with an oxygen-poor
+atmosphere and little water.</li>
+<li>Barren planets have no surface water supplies and little to no
+atmosphere.</li>
+<li>Tundra planets are basically huge balls of ice with sub-zero
+temperatures year-round.</li>
+<li>Dead planets have no water supplies or atmospheres whatsoever.</li>
+<li>Inferno planets are similar to Venus with excruciatingly hot
+environments.</li>
+<li>Toxic planets have corrosive atmospheres which destroy most types of
+equipment.</li>
+<li>Radiated planets are constantly bombarded by solar radiation.</li>
+</ul>
+<p>Terraforming allows you to gradually improve a colonized planet's
+environment. In addition, planets can have special modifiers:</p>
+<ul>
+<li>Mineral Poor planets lack sufficient amounts of the heavy metals
+necessary for construction. Ship production, missile base construction,
+and new factory construction are halved. However, ecology and research
+are unaffected.</li>
+<li>Ultra Poor planets are the same as mineral poor planets, but
+production is reduced to one-third.</li>
+<li>Artifact planets have relics and devices left by ancient races. Your
+scouts may discover new technology there. Research spending at artifact
+colonies is also twice as effective.</li>
+<li>Mineral Rich planets have abundant supplies of heavy metals.
+Starship production, missile base production, and new factory
+construction are all doubled on mineral rich planets. Ecology and
+technology research is unaffected.</li>
+<li>Ultra Rich planets are the same as mineral rich planets except that
+production is tripled.</li>
+<li>Hostile planets have harsh environments that halve the normal
+population growth rate and require advanced technology to even land
+on.</li>
+<li>Fertile planets are easier to colonize than normal. Population
+growth is 1.5 times normal.</li>
+<li>Gaia planets are ecological paradises. Population growth is twice
+normal rate.</li>
+</ul>
+</body>
+</html>

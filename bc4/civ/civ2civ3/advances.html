@@ -1,0 +1,2314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>advances</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="science-advances">Science Advances</h1>
+<h2 id="overview">Overview</h2>
+<p>Research into technology is a necessity for improving the ability of
+your civilization to develop new military units and city
+improvements.</p>
+<p>There are a few ways to gain advances from other civilizations: you
+will sometimes discover enemy technology when you capture a city; your
+agents can steal advances; wonders can provide you with technology; and
+another player might grant technology in the terms of a pact. But
+otherwise advances must be discovered through the efforts of your own
+people.</p>
+<p>Most technology progress comes from trade (see the Trade section)
+and, from scientist specialists. While it is possible to change which
+advance you are currently researching, by default all progress is lost
+by doing so.</p>
+<p>While the majority of the resulting research output ("bulbs") usually
+goes toward advancing technology; the quantity required for technology
+upkeep increases with the total research cost of all advances known to
+you. The state of advancement at which you start paying this upkeep may
+depend on factors such as your government type. If research output drops
+below that required for upkeep, your civilization will forget an
+advance, requiring it to be researched again.</p>
+<p>Technological advances can render units, city improvements, and
+wonders obsolete. While obsolete units merely become impossible for you
+to make -- leaving the ones you have already made intact -- obsolete
+improvements are immediately sold, and obsolete wonders lose their
+effect. See the relevant sections for more information.</p>
+<h2 id="advanced-flight">Advanced Flight</h2>
+<p>To research Advanced Flight, you need to research 15 other
+technologies first. The whole project will require 17880 bulbs to
+complete. This number may vary depending on what other players
+research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Enables movement of nuclear units.</p>
+<ul>
+<li>Allows to build Bomber.</li>
+<li>Allows to build Carrier.</li>
+<li>Allows to build AWACS.</li>
+<li>Allows to research:<br />
+    → Rocketry<br />
+        → Space Flight<br />
+            → Superconductors</li>
+<li>Requires knowledges:<br />
+    → Flight<br />
+    → Electronics<br />
+        → Radio<br />
+    → Steel<br />
+    → Tactics<br />
+        → Machine Tools</li>
+</ul>
+<h2 id="alphabet">Alphabet</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Diplomat.</li>
+<li>Allows to research:<br />
+    → Code of Laws<br />
+        → Literacy<br />
+            → Invention<br />
+            → Philosophy<br />
+            → The Republic<br />
+        → Monarchy<br />
+            → Feudalism<br />
+        → The Republic<br />
+            → Banking<br />
+    → Map Making<br />
+        → Seafaring<br />
+            → Magnetism<br />
+    → Mathematics<br />
+        → Astronomy<br />
+            → Magnetism<br />
+            → Monotheism<br />
+        → Metallurgy<br />
+            → Conscription<br />
+            → Electricity<br />
+            → Railroad<br />
+        → University<br />
+            → Chemistry<br />
+            → Economics<br />
+            → Theory of Gravity<br />
+    → Writing<br />
+        → Literacy<br />
+            → Invention<br />
+            → Philosophy<br />
+            → The Republic\</li>
+</ul>
+<h2 id="amphibious-warfare">Amphibious Warfare</h2>
+<p>To research Amphibious Warfare, you need to research 6 other
+technologies first. The whole project will require 5550 bulbs to
+complete. This number may vary depending on what other players
+research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Port Facility (with Oceanic terrain).</li>
+<li>Allows to build Marines.</li>
+<li>Requires knowledges:<br />
+    → Electricity<br />
+    → Steam Engine<br />
+        → Engineering<br />
+    → Conscription<br />
+    → Leadership<br />
+        → Tactics</li>
+</ul>
+<h2 id="astronomy">Astronomy</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Increases units' vision when in fortresses.</p>
+<ul>
+<li>Allows to build Copernicus' Observatory.</li>
+<li>Allows to research:<br />
+    → Magnetism<br />
+        → Physics<br />
+            → Navigation<br />
+            → Theory of Gravity<br />
+    → Monotheism<br />
+        → Theology<br />
+            → Communism</li>
+<li>Requires knowledges:<br />
+    → Ceremonial Burial<br />
+        → Mysticism<br />
+    → Alphabet<br />
+    → Masonry<br />
+        → Mathematics</li>
+</ul>
+<h2 id="atomic-theory">Atomic Theory</h2>
+<p>To research Atomic Theory, you need to research 1 other technology
+first. The whole project will require 2160 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to research:<br />
+    → Nuclear Fission<br />
+        → Nuclear Power<br />
+            → Laser</li>
+<li>Requires knowledges:<br />
+    → University<br />
+    → Medicine<br />
+        → Chemistry<br />
+    → Sanitation<br />
+    → Electricity<br />
+        → Refrigeration</li>
+</ul>
+<h2 id="automobile">Automobile</h2>
+<p>To research Automobile, you need to research 5 other technologies
+first. The whole project will require 7410 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Super Highways.</li>
+<li>Allows to research:<br />
+    → Mass Production<br />
+        → Nuclear Fission<br />
+            → Nuclear Power<br />
+        → Plastics<br />
+        → Recycling<br />
+    → Mobile Warfare<br />
+        → Labor Union<br />
+        → Robotics<br />
+            → Plastics</li>
+<li>Requires knowledges:<br />
+    → Refining<br />
+    → Engineering<br />
+        → Combustion<br />
+    → Engineering<br />
+    → Industrialization<br />
+        → Steel</li>
+</ul>
+<h2 id="banking">Banking</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Bank (with Marketplace).</li>
+<li>Allows to research:<br />
+    → Democracy<br />
+        → Conscription<br />
+            → Tactics<br />
+    → Economics<br />
+        → The Corporation<br />
+            → Electronics<br />
+            → Mass Production<br />
+    → Industrialization<br />
+        → Communism<br />
+            → Labor Union<br />
+        → Refining<br />
+            → Combustion<br />
+        → Steel<br />
+            → Automobile<br />
+            → Machine Tools<br />
+        → The Corporation<br />
+            → Electronics<br />
+            → Mass Production</li>
+<li>Requires knowledges:<br />
+    → Currency<br />
+    → Pottery<br />
+        → Trade<br />
+    → Code of Laws<br />
+    → Literacy<br />
+        → The Republic</li>
+</ul>
+<h2 id="bridge-building">Bridge Building</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Allows roads to be built on river tiles.</p>
+<ul>
+<li>Allows to research:<br />
+    → Invention<br />
+        → Democracy<br />
+            → Conscription<br />
+        → Gunpowder<br />
+            → Explosives<br />
+            → Leadership<br />
+            → Metallurgy<br />
+        → Navigation<br />
+            → Steam Engine<br />
+    → Sanitation<br />
+        → Recycling<br />
+        → Refrigeration<br />
+            → Atomic Theory</li>
+<li>Requires knowledges:<br />
+    → Horseback Riding<br />
+        → The Wheel<br />
+    → Masonry<br />
+    → Iron Working<br />
+        → Construction</li>
+</ul>
+<h2 id="bronze-working">Bronze Working</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Colossus.</li>
+<li>Allows to build Phalanx.</li>
+<li>Allows to research:<br />
+    → Currency<br />
+        → Trade<br />
+            → Banking<br />
+            → Medicine<br />
+    → Iron Working<br />
+        → Construction<br />
+            → Bridge Building<br />
+        → Feudalism<br />
+            → Chivalry<br />
+            → Gunpowder\</li>
+</ul>
+<h2 id="ceremonial-burial">Ceremonial Burial</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Temple.</li>
+<li>Allows to build Mausoleum of Mausolos.</li>
+<li>Allows to research:<br />
+    → Monarchy<br />
+        → Feudalism<br />
+            → Chivalry<br />
+            → Gunpowder<br />
+    → Mysticism<br />
+        → Astronomy<br />
+            → Magnetism<br />
+            → Monotheism<br />
+        → Philosophy<br />
+            → Medicine<br />
+            → Theology<br />
+            → University<br />
+    → Polytheism<br />
+        → Monotheism<br />
+            → Theology\</li>
+</ul>
+<h2 id="chemistry">Chemistry</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to research:<br />
+    → Atomic Theory<br />
+        → Nuclear Fission<br />
+            → Nuclear Power<br />
+    → Explosives<br />
+        → Refining<br />
+            → Combustion<br />
+    → Steam Engine<br />
+        → Engineering<br />
+            → Combustion<br />
+            → Steel<br />
+        → Railroad<br />
+            → Industrialization</li>
+<li>Requires knowledges:<br />
+    → Mathematics<br />
+    → Philosophy<br />
+        → University<br />
+    → Philosophy<br />
+    → Trade<br />
+        → Medicine</li>
+</ul>
+<h2 id="chivalry">Chivalry</h2>
+<p>To research Chivalry, it would need 300 bulbs. This number may vary
+depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build King Richard's Crusade.</li>
+<li>Allows to build Knights.</li>
+<li>Allows to research:<br />
+    → Leadership<br />
+        → Tactics<br />
+            → Flight<br />
+            → Machine Tools</li>
+<li>Requires knowledges:<br />
+    → Iron Working<br />
+    → Monarchy<br />
+        → Feudalism<br />
+        → Horseback Riding</li>
+</ul>
+<h2 id="code-of-laws">Code of Laws</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Courthouse.</li>
+<li>Allows to research:<br />
+    → Literacy<br />
+        → Invention<br />
+            → Democracy<br />
+            → Gunpowder<br />
+            → Navigation<br />
+        → Philosophy<br />
+            → Medicine<br />
+            → Theology<br />
+            → University<br />
+        → The Republic<br />
+            → Banking<br />
+    → Monarchy<br />
+        → Feudalism<br />
+            → Chivalry<br />
+            → Gunpowder<br />
+    → The Republic<br />
+        → Banking<br />
+            → Democracy<br />
+            → Economics<br />
+            → Industrialization</li>
+<li>Requires knowledges:<br />
+        → Alphabet</li>
+</ul>
+<h2 id="combined-arms">Combined Arms</h2>
+<p>To research Combined Arms, you need to research 18 other technologies
+first. The whole project will require 22650 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Paratroopers.</li>
+<li>Allows to build Helicopter.</li>
+<li>Requires knowledges:<br />
+    → Automobile<br />
+    → Machine Tools<br />
+        → Mobile Warfare<br />
+    → Radio<br />
+    → Machine Tools<br />
+        → Advanced Flight</li>
+</ul>
+<h2 id="combustion">Combustion</h2>
+<p>To research Combustion, you need to research 3 other technologies
+first. The whole project will require 4770 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Submarine.</li>
+<li>Allows to research:<br />
+    → Automobile<br />
+        → Mass Production<br />
+            → Nuclear Fission<br />
+            → Plastics<br />
+            → Recycling<br />
+        → Mobile Warfare<br />
+            → Labor Union<br />
+            → Robotics<br />
+    → Flight<br />
+        → Radio<br />
+            → Advanced Flight<br />
+            → Computers<br />
+    → Miniaturization<br />
+        → Computers<br />
+            → Laser<br />
+            → Robotics<br />
+            → Space Flight<br />
+        → Nuclear Power<br />
+            → Laser<br />
+        → Rocketry<br />
+            → Space Flight</li>
+<li>Requires knowledges:<br />
+    → Explosives<br />
+    → Industrialization<br />
+        → Refining<br />
+    → Electricity<br />
+    → Steam Engine<br />
+        → Engineering</li>
+</ul>
+<h2 id="communism">Communism</h2>
+<p>To research Communism, you need to research 3 other technologies
+first. The whole project will require 3090 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Reduces the effect of Cathedrals.</p>
+<ul>
+<li>Allows government form Communism.</li>
+<li>Allows to build Police Station.</li>
+<li>Allows to build United Nations.</li>
+<li>Allows to research:<br />
+    → Labor Union</li>
+<li>Requires knowledges:<br />
+    → Philosophy<br />
+    → Monotheism<br />
+        → Theology<br />
+    → Railroad<br />
+    → Banking<br />
+        → Industrialization</li>
+</ul>
+<h2 id="computers">Computers</h2>
+<p>To research Computers, you need to research 14 other technologies
+first. The whole project will require 16590 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Research Lab (with University).</li>
+<li>Allows to build Internet (with Research Lab).</li>
+<li>Allows to research:<br />
+    → Laser<br />
+        → Superconductors<br />
+    → Robotics<br />
+        → Plastics<br />
+    → Space Flight<br />
+        → Superconductors</li>
+<li>Requires knowledges:<br />
+    → Combustion<br />
+    → Electronics<br />
+        → Miniaturization<br />
+    → Flight<br />
+    → Electronics<br />
+        → Radio</li>
+</ul>
+<h2 id="conscription">Conscription</h2>
+<p>To research Conscription, you need to research 1 other technology
+first. The whole project will require 1350 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Women's Suffrage.</li>
+<li>Allows to build Riflemen.</li>
+<li>Allows to research:<br />
+    → Tactics<br />
+        → Flight<br />
+            → Radio<br />
+        → Machine Tools<br />
+            → Advanced Flight<br />
+            → Mobile Warfare</li>
+<li>Requires knowledges:<br />
+    → Banking<br />
+    → Invention<br />
+        → Democracy<br />
+    → Gunpowder<br />
+    → Mathematics<br />
+        → Metallurgy</li>
+</ul>
+<h2 id="construction">Construction</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Allows Settlers, Migrants, Workers and Engineers to build forts and
+fortresses.</p>
+<ul>
+<li>Allows to build Aqueduct (absent River and Lake).</li>
+<li>Allows to build Amphitheater.</li>
+<li>Allows to build Great Wall.</li>
+<li>Allows to research:<br />
+    → Bridge Building<br />
+        → Invention<br />
+            → Democracy<br />
+            → Gunpowder<br />
+            → Navigation<br />
+        → Sanitation<br />
+            → Recycling<br />
+            → Refrigeration</li>
+<li>Requires knowledges:<br />
+        → Masonry<br />
+    → Bronze Working<br />
+    → Warrior Code<br />
+        → Iron Working</li>
+</ul>
+<h2 id="currency">Currency</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Marketplace.</li>
+<li>Allows to research:<br />
+    → Trade<br />
+        → Banking<br />
+            → Democracy<br />
+            → Economics<br />
+            → Industrialization<br />
+        → Medicine<br />
+            → Chemistry<br />
+            → Sanitation</li>
+<li>Requires knowledges:<br />
+        → Bronze Working</li>
+</ul>
+<h2 id="democracy">Democracy</h2>
+<p>To research Democracy, it would need 570 bulbs. This number may vary
+depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows government form Democracy.</li>
+<li>Allows to build Statue of Liberty.</li>
+<li>Allows to research:<br />
+    → Conscription<br />
+        → Tactics<br />
+            → Flight<br />
+            → Machine Tools</li>
+<li>Requires knowledges:<br />
+    → Trade<br />
+    → The Republic<br />
+        → Banking<br />
+    → Bridge Building<br />
+    → Literacy<br />
+        → Invention</li>
+</ul>
+<h2 id="economics">Economics</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows government form Federation.</li>
+<li>Allows to build Stock Exchange (with Bank).</li>
+<li>Allows to build A.Smith's Trading Co. (with Stock Exchange).</li>
+<li>Allows to research:<br />
+    → The Corporation<br />
+        → Electronics<br />
+            → Miniaturization<br />
+            → Radio<br />
+        → Mass Production<br />
+            → Nuclear Fission<br />
+            → Plastics<br />
+            → Recycling</li>
+<li>Requires knowledges:<br />
+    → Trade<br />
+    → The Republic<br />
+        → Banking<br />
+    → Mathematics<br />
+    → Philosophy<br />
+        → University</li>
+</ul>
+<h2 id="electricity">Electricity</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Allows irrigation without an adjacent water source, improves the
+effect of Amphitheaters, and increases city vision radius.</p>
+<ul>
+<li>Allows to research:<br />
+    → Electronics<br />
+        → Miniaturization<br />
+            → Computers<br />
+            → Nuclear Power<br />
+            → Rocketry<br />
+        → Radio<br />
+            → Advanced Flight<br />
+            → Computers<br />
+    → Engineering<br />
+        → Combustion<br />
+            → Automobile<br />
+            → Flight<br />
+            → Miniaturization<br />
+        → Steel<br />
+            → Automobile<br />
+            → Machine Tools<br />
+    → Refrigeration<br />
+        → Atomic Theory<br />
+            → Nuclear Fission</li>
+<li>Requires knowledges:<br />
+    → Gunpowder<br />
+    → Mathematics<br />
+        → Metallurgy<br />
+    → Physics<br />
+    → University<br />
+        → Theory of Gravity</li>
+</ul>
+<h2 id="electronics">Electronics</h2>
+<p>To research Electronics, you need to research 2 other technologies
+first. The whole project will require 3630 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Hydro Plant (with Factory and River).</li>
+<li>Allows to build Hoover Dam (with River and Factory).</li>
+<li>Allows to research:<br />
+    → Miniaturization<br />
+        → Computers<br />
+            → Laser<br />
+            → Robotics<br />
+            → Space Flight<br />
+        → Nuclear Power<br />
+            → Laser<br />
+        → Rocketry<br />
+            → Space Flight<br />
+    → Radio<br />
+        → Advanced Flight<br />
+            → Rocketry<br />
+        → Computers<br />
+            → Laser<br />
+            → Robotics<br />
+            → Space Flight</li>
+<li>Requires knowledges:<br />
+    → Economics<br />
+    → Industrialization<br />
+        → The Corporation<br />
+    → Metallurgy<br />
+    → Theory of Gravity<br />
+        → Electricity</li>
+</ul>
+<h2 id="engineering">Engineering</h2>
+<p>To research Engineering, it would need 1110 bulbs. This number may
+vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Destroyer.</li>
+<li>Allows to build Transport.</li>
+<li>Allows to research:<br />
+    → Combustion<br />
+        → Automobile<br />
+            → Mass Production<br />
+            → Mobile Warfare<br />
+        → Flight<br />
+            → Radio<br />
+        → Miniaturization<br />
+            → Computers<br />
+            → Nuclear Power<br />
+            → Rocketry<br />
+    → Steel<br />
+        → Automobile<br />
+            → Mass Production<br />
+            → Mobile Warfare<br />
+        → Machine Tools<br />
+            → Advanced Flight<br />
+            → Mobile Warfare</li>
+<li>Requires knowledges:<br />
+    → Metallurgy<br />
+    → Theory of Gravity<br />
+        → Electricity<br />
+    → Chemistry<br />
+    → Navigation<br />
+        → Steam Engine</li>
+</ul>
+<h2 id="environmentalism">Environmentalism</h2>
+<p>To research Environmentalism, you need to research 23 other
+technologies first. The whole project will require 30960 bulbs to
+complete. This number may vary depending on what other players
+research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Solar Plant (with Factory).</li>
+<li>Allows to build Space Module (with Factory, Library, University, and
+Research Lab).</li>
+<li>Requires knowledges:<br />
+    → Mass Production<br />
+    → Sanitation<br />
+        → Recycling<br />
+    → Computers<br />
+    → Rocketry<br />
+        → Space Flight</li>
+</ul>
+<h2 id="espionage">Espionage</h2>
+<p>To research Espionage, you need to research 5 other technologies
+first. The whole project will require 4980 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Spy.</li>
+<li>Requires knowledges:<br />
+    → Theology<br />
+    → Industrialization<br />
+        → Communism<br />
+    → Banking<br />
+    → Invention<br />
+        → Democracy</li>
+</ul>
+<h2 id="explosives">Explosives</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Engineers.</li>
+<li>Allows to research:<br />
+    → Refining<br />
+        → Combustion<br />
+            → Automobile<br />
+            → Flight<br />
+            → Miniaturization</li>
+<li>Requires knowledges:<br />
+    → Invention<br />
+    → Feudalism<br />
+        → Gunpowder<br />
+    → University<br />
+    → Medicine<br />
+        → Chemistry</li>
+</ul>
+<h2 id="feudalism">Feudalism</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Sun Tzu's War Academy.</li>
+<li>Allows to build Pikemen.</li>
+<li>Allows to research:<br />
+    → Chivalry<br />
+        → Leadership<br />
+            → Tactics<br />
+    → Gunpowder<br />
+        → Explosives<br />
+            → Refining<br />
+        → Leadership<br />
+            → Tactics<br />
+        → Metallurgy<br />
+            → Conscription<br />
+            → Electricity<br />
+            → Railroad</li>
+<li>Requires knowledges:<br />
+    → Bronze Working<br />
+    → Warrior Code<br />
+        → Iron Working<br />
+    → Ceremonial Burial<br />
+    → Code of Laws<br />
+        → Monarchy</li>
+</ul>
+<h2 id="flight">Flight</h2>
+<p>To research Flight, you need to research 9 other technologies first.
+The whole project will require 9360 bulbs to complete. This number may
+vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Fighter.</li>
+<li>Allows to research:<br />
+    → Radio<br />
+        → Advanced Flight<br />
+            → Rocketry<br />
+        → Computers<br />
+            → Laser<br />
+            → Robotics<br />
+            → Space Flight</li>
+<li>Requires knowledges:<br />
+    → Refining<br />
+    → Engineering<br />
+        → Combustion<br />
+    → Conscription<br />
+    → Leadership<br />
+        → Tactics</li>
+</ul>
+<h2 id="fusion-power">Fusion Power</h2>
+<p>To research Fusion Power, you need to research 33 other technologies
+first. The whole project will require 44520 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Makes it possible for Engineers to transform terrains.</p>
+<ul>
+<li>Requires knowledges:<br />
+    → Space Flight<br />
+    → Laser<br />
+        → Superconductors<br />
+    → Communism<br />
+    → Mobile Warfare<br />
+        → Labor Union</li>
+</ul>
+<h2 id="genetic-engineering">Genetic Engineering</h2>
+<p>To research Genetic Engineering, you need to research 3 other
+technologies first. The whole project will require 4740 bulbs to
+complete. This number may vary depending on what other players
+research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Cure For Cancer.</li>
+<li>Requires knowledges:<br />
+    → Sanitation<br />
+    → Electricity<br />
+        → Refrigeration<br />
+    → Economics<br />
+    → Industrialization<br />
+        → The Corporation</li>
+</ul>
+<h2 id="guerilla-warfare">Guerilla Warfare</h2>
+<p>To research Guerilla Warfare, you need to research 9 other
+technologies first. The whole project will require 7620 bulbs to
+complete. This number may vary depending on what other players
+research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Partisan.</li>
+<li>Allows to build Fanatics.</li>
+<li>Requires knowledges:<br />
+    → Theology<br />
+    → Industrialization<br />
+        → Communism<br />
+    → Conscription<br />
+    → Leadership<br />
+        → Tactics</li>
+</ul>
+<h2 id="gunpowder">Gunpowder</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Barracks II.</li>
+<li>Allows to build Musketeers.</li>
+<li>Allows to research:<br />
+    → Explosives<br />
+        → Refining<br />
+            → Combustion<br />
+    → Leadership<br />
+        → Tactics<br />
+            → Flight<br />
+            → Machine Tools<br />
+    → Metallurgy<br />
+        → Conscription<br />
+            → Tactics<br />
+        → Electricity<br />
+            → Electronics<br />
+            → Engineering<br />
+            → Refrigeration<br />
+        → Railroad<br />
+            → Industrialization</li>
+<li>Requires knowledges:<br />
+    → Bridge Building<br />
+    → Literacy<br />
+        → Invention<br />
+    → Iron Working<br />
+    → Monarchy<br />
+        → Feudalism</li>
+</ul>
+<h2 id="horseback-riding">Horseback Riding</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Horsemen.</li>
+<li>Allows to research:<br />
+    → Chivalry<br />
+        → Leadership<br />
+            → Tactics<br />
+    → Polytheism<br />
+        → Monotheism<br />
+            → Theology<br />
+    → The Wheel<br />
+        → Bridge Building<br />
+            → Invention<br />
+            → Sanitation<br />
+        → Physics<br />
+            → Navigation<br />
+            → Theory of Gravity\</li>
+</ul>
+<h2 id="industrialization">Industrialization</h2>
+<p>To research Industrialization, it would need 1140 bulbs. This number
+may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Factory.</li>
+<li>Allows to research:<br />
+    → Communism<br />
+        → Labor Union<br />
+    → Refining<br />
+        → Combustion<br />
+            → Automobile<br />
+            → Flight<br />
+            → Miniaturization<br />
+    → Steel<br />
+        → Automobile<br />
+            → Mass Production<br />
+            → Mobile Warfare<br />
+        → Machine Tools<br />
+            → Advanced Flight<br />
+            → Mobile Warfare<br />
+    → The Corporation<br />
+        → Electronics<br />
+            → Miniaturization<br />
+            → Radio<br />
+        → Mass Production<br />
+            → Nuclear Fission<br />
+            → Plastics<br />
+            → Recycling</li>
+<li>Requires knowledges:<br />
+    → Steam Engine<br />
+    → Metallurgy<br />
+        → Railroad<br />
+    → Trade<br />
+    → The Republic<br />
+        → Banking</li>
+</ul>
+<h2 id="invention">Invention</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Halves the upgrade cost of your units.</p>
+<ul>
+<li>Allows to build Leonardo's Workshop.</li>
+<li>Allows to research:<br />
+    → Democracy<br />
+        → Conscription<br />
+            → Tactics<br />
+    → Gunpowder<br />
+        → Explosives<br />
+            → Refining<br />
+        → Leadership<br />
+            → Tactics<br />
+        → Metallurgy<br />
+            → Conscription<br />
+            → Electricity<br />
+            → Railroad<br />
+    → Navigation<br />
+        → Steam Engine<br />
+            → Engineering<br />
+            → Railroad</li>
+<li>Requires knowledges:<br />
+    → The Wheel<br />
+    → Construction<br />
+        → Bridge Building<br />
+    → Writing<br />
+    → Code of Laws<br />
+        → Literacy</li>
+</ul>
+<h2 id="iron-working">Iron Working</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Legion.</li>
+<li>Allows to research:<br />
+    → Construction<br />
+        → Bridge Building<br />
+            → Invention<br />
+            → Sanitation<br />
+    → Feudalism<br />
+        → Chivalry<br />
+            → Leadership<br />
+        → Gunpowder<br />
+            → Explosives<br />
+            → Leadership<br />
+            → Metallurgy</li>
+<li>Requires knowledges:<br />
+        → Bronze Working<br />
+        → Warrior Code</li>
+</ul>
+<h2 id="labor-union">Labor Union</h2>
+<p>To research Labor Union, you need to research 16 other technologies
+first. The whole project will require 17220 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Mech. Inf..</li>
+<li>Requires knowledges:<br />
+    → Theology<br />
+    → Industrialization<br />
+        → Communism<br />
+    → Automobile<br />
+    → Machine Tools<br />
+        → Mobile Warfare</li>
+</ul>
+<h2 id="laser">Laser</h2>
+<p>To research Laser, you need to research 22 other technologies first.
+The whole project will require 28080 bulbs to complete. This number may
+vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build SDI Defense.</li>
+<li>Allows to research:<br />
+    → Superconductors</li>
+<li>Requires knowledges:<br />
+    → Miniaturization<br />
+    → Radio<br />
+        → Computers<br />
+    → Nuclear Fission<br />
+    → Miniaturization<br />
+        → Nuclear Power</li>
+</ul>
+<h2 id="leadership">Leadership</h2>
+<p>To research Leadership, you need to research 1 other technology
+first. The whole project will require 870 bulbs to complete. This number
+may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Dragoons.</li>
+<li>Allows to research:<br />
+    → Tactics<br />
+        → Flight<br />
+            → Radio<br />
+        → Machine Tools<br />
+            → Advanced Flight<br />
+            → Mobile Warfare</li>
+<li>Requires knowledges:<br />
+    → Feudalism<br />
+    → Horseback Riding<br />
+        → Chivalry<br />
+    → Invention<br />
+    → Feudalism<br />
+        → Gunpowder</li>
+</ul>
+<h2 id="literacy">Literacy</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Great Library (with Library).</li>
+<li>Allows to research:<br />
+    → Invention<br />
+        → Democracy<br />
+            → Conscription<br />
+        → Gunpowder<br />
+            → Explosives<br />
+            → Leadership<br />
+            → Metallurgy<br />
+        → Navigation<br />
+            → Steam Engine<br />
+    → Philosophy<br />
+        → Medicine<br />
+            → Chemistry<br />
+            → Sanitation<br />
+        → Theology<br />
+            → Communism<br />
+        → University<br />
+            → Chemistry<br />
+            → Economics<br />
+            → Theory of Gravity<br />
+    → The Republic<br />
+        → Banking<br />
+            → Democracy<br />
+            → Economics<br />
+            → Industrialization</li>
+<li>Requires knowledges:<br />
+    → Alphabet<br />
+        → Writing<br />
+    → Alphabet<br />
+        → Code of Laws</li>
+</ul>
+<h2 id="machine-tools">Machine Tools</h2>
+<p>To research Machine Tools, you need to research 8 other technologies
+first. The whole project will require 8040 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Artillery.</li>
+<li>Allows to research:<br />
+    → Advanced Flight<br />
+        → Rocketry<br />
+            → Space Flight<br />
+    → Mobile Warfare<br />
+        → Labor Union<br />
+        → Robotics<br />
+            → Plastics</li>
+<li>Requires knowledges:<br />
+    → Engineering<br />
+    → Industrialization<br />
+        → Steel<br />
+    → Conscription<br />
+    → Leadership<br />
+        → Tactics</li>
+</ul>
+<h2 id="magnetism">Magnetism</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Magellan's Expedition (with 'Sea' terrain).</li>
+<li>Allows to build Caravel.</li>
+<li>Allows to research:<br />
+    → Physics<br />
+        → Navigation<br />
+            → Steam Engine<br />
+        → Theory of Gravity<br />
+            → Electricity</li>
+<li>Requires knowledges:<br />
+    → Pottery<br />
+    → Map Making<br />
+        → Seafaring<br />
+    → Mysticism<br />
+    → Mathematics<br />
+        → Astronomy</li>
+</ul>
+<h2 id="map-making">Map Making</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Lighthouse (with 'Sea' terrain).</li>
+<li>Allows to build Trireme.</li>
+<li>Allows to research:<br />
+    → Seafaring<br />
+        → Magnetism<br />
+            → Physics</li>
+<li>Requires knowledges:<br />
+        → Alphabet</li>
+</ul>
+<h2 id="masonry">Masonry</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build City Walls.</li>
+<li>Allows to build Pyramids.</li>
+<li>Allows to research:<br />
+    → Construction<br />
+        → Bridge Building<br />
+            → Invention<br />
+            → Sanitation<br />
+    → Mathematics<br />
+        → Astronomy<br />
+            → Magnetism<br />
+            → Monotheism<br />
+        → Metallurgy<br />
+            → Conscription<br />
+            → Electricity<br />
+            → Railroad<br />
+        → University<br />
+            → Chemistry<br />
+            → Economics<br />
+            → Theory of Gravity\</li>
+</ul>
+<h2 id="mass-production">Mass Production</h2>
+<p>To research Mass Production, you need to research 7 other
+technologies first. The whole project will require 10080 bulbs to
+complete. This number may vary depending on what other players
+research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Mass Transit.</li>
+<li>Allows to build Battleship.</li>
+<li>Allows to research:<br />
+    → Nuclear Fission<br />
+        → Nuclear Power<br />
+            → Laser<br />
+    → Plastics<br />
+    → Recycling</li>
+<li>Requires knowledges:<br />
+    → Combustion<br />
+    → Steel<br />
+        → Automobile<br />
+    → Economics<br />
+    → Industrialization<br />
+        → The Corporation</li>
+</ul>
+<h2 id="mathematics">Mathematics</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Catapult.</li>
+<li>Allows to research:<br />
+    → Astronomy<br />
+        → Magnetism<br />
+            → Physics<br />
+        → Monotheism<br />
+            → Theology<br />
+    → Metallurgy<br />
+        → Conscription<br />
+            → Tactics<br />
+        → Electricity<br />
+            → Electronics<br />
+            → Engineering<br />
+            → Refrigeration<br />
+        → Railroad<br />
+            → Industrialization<br />
+    → University<br />
+        → Chemistry<br />
+            → Atomic Theory<br />
+            → Explosives<br />
+            → Steam Engine<br />
+        → Economics<br />
+            → The Corporation<br />
+        → Theory of Gravity<br />
+            → Electricity</li>
+<li>Requires knowledges:<br />
+        → Alphabet<br />
+        → Masonry</li>
+</ul>
+<h2 id="medicine">Medicine</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Reduces the risk of plague in your cities by 30% of the base chance
+(this is additive with the benefits of any buildings).</p>
+<ul>
+<li>Allows to research:<br />
+    → Chemistry<br />
+        → Atomic Theory<br />
+            → Nuclear Fission<br />
+        → Explosives<br />
+            → Refining<br />
+        → Steam Engine<br />
+            → Engineering<br />
+            → Railroad<br />
+    → Sanitation<br />
+        → Recycling<br />
+        → Refrigeration<br />
+            → Atomic Theory</li>
+<li>Requires knowledges:<br />
+    → Mysticism<br />
+    → Literacy<br />
+        → Philosophy<br />
+    → Currency<br />
+    → Pottery<br />
+        → Trade</li>
+</ul>
+<h2 id="metallurgy">Metallurgy</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Cannon.</li>
+<li>Allows to research:<br />
+    → Conscription<br />
+        → Tactics<br />
+            → Flight<br />
+            → Machine Tools<br />
+    → Electricity<br />
+        → Electronics<br />
+            → Miniaturization<br />
+            → Radio<br />
+        → Engineering<br />
+            → Combustion<br />
+            → Steel<br />
+        → Refrigeration<br />
+            → Atomic Theory<br />
+    → Railroad<br />
+        → Industrialization<br />
+            → Communism<br />
+            → Refining<br />
+            → Steel<br />
+            → The Corporation</li>
+<li>Requires knowledges:<br />
+    → Invention<br />
+    → Feudalism<br />
+        → Gunpowder<br />
+    → Alphabet<br />
+    → Masonry<br />
+        → Mathematics</li>
+</ul>
+<h2 id="miniaturization">Miniaturization</h2>
+<p>To research Miniaturization, you need to research 6 other
+technologies first. The whole project will require 8700 bulbs to
+complete. This number may vary depending on what other players
+research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Allows Settlers, Migrants, Workers, Engineers, and Transports to
+build oil platforms on Deep Ocean, required to get the bonus from
+Offshore Platforms.</p>
+<ul>
+<li>Allows to build Offshore Platform (with Oceanic terrain).</li>
+<li>Allows to research:<br />
+    → Computers<br />
+        → Laser<br />
+            → Superconductors<br />
+        → Robotics<br />
+            → Plastics<br />
+        → Space Flight<br />
+            → Superconductors<br />
+    → Nuclear Power<br />
+        → Laser<br />
+            → Superconductors<br />
+    → Rocketry<br />
+        → Space Flight<br />
+            → Superconductors</li>
+<li>Requires knowledges:<br />
+    → Refining<br />
+    → Engineering<br />
+        → Combustion<br />
+    → The Corporation<br />
+    → Electricity<br />
+        → Electronics</li>
+</ul>
+<h2 id="mobile-warfare">Mobile Warfare</h2>
+<p>To research Mobile Warfare, you need to research 12 other
+technologies first. The whole project will require 13530 bulbs to
+complete. This number may vary depending on what other players
+research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Barracks III.</li>
+<li>Allows to build Armor.</li>
+<li>Allows to research:<br />
+    → Labor Union<br />
+    → Robotics<br />
+        → Plastics</li>
+<li>Requires knowledges:<br />
+    → Combustion<br />
+    → Steel<br />
+        → Automobile<br />
+    → Steel<br />
+    → Tactics<br />
+        → Machine Tools</li>
+</ul>
+<h2 id="monarchy">Monarchy</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows government form Monarchy.</li>
+<li>Allows to research:<br />
+    → Feudalism<br />
+        → Chivalry<br />
+            → Leadership<br />
+        → Gunpowder<br />
+            → Explosives<br />
+            → Leadership<br />
+            → Metallurgy</li>
+<li>Requires knowledges:<br />
+        → Ceremonial Burial<br />
+    → Alphabet<br />
+        → Code of Laws</li>
+</ul>
+<h2 id="monotheism">Monotheism</h2>
+<p>To research Monotheism, it would need 270 bulbs. This number may vary
+depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Cathedral (with Temple).</li>
+<li>Allows to build Michelangelo's Chapel (with Cathedral).</li>
+<li>Allows to build Crusaders.</li>
+<li>Allows to research:<br />
+    → Theology<br />
+        → Communism<br />
+            → Labor Union</li>
+<li>Requires knowledges:<br />
+    → Mysticism<br />
+    → Mathematics<br />
+        → Astronomy<br />
+    → Horseback Riding<br />
+    → Ceremonial Burial<br />
+        → Polytheism</li>
+</ul>
+<h2 id="mysticism">Mysticism</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Improves the effect of Temples.</p>
+<ul>
+<li>Allows to build Temple of Artemis (with Temple).</li>
+<li>Allows to research:<br />
+    → Astronomy<br />
+        → Magnetism<br />
+            → Physics<br />
+        → Monotheism<br />
+            → Theology<br />
+    → Philosophy<br />
+        → Medicine<br />
+            → Chemistry<br />
+            → Sanitation<br />
+        → Theology<br />
+            → Communism<br />
+        → University<br />
+            → Chemistry<br />
+            → Economics<br />
+            → Theory of Gravity</li>
+<li>Requires knowledges:<br />
+        → Ceremonial Burial</li>
+</ul>
+<h2 id="navigation">Navigation</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Coastal Defense (with Oceanic terrain).</li>
+<li>Allows to build Galleon.</li>
+<li>Allows to build Frigate.</li>
+<li>Allows to research:<br />
+    → Steam Engine<br />
+        → Engineering<br />
+            → Combustion<br />
+            → Steel<br />
+        → Railroad<br />
+            → Industrialization</li>
+<li>Requires knowledges:<br />
+    → Bridge Building<br />
+    → Literacy<br />
+        → Invention<br />
+    → The Wheel<br />
+    → Magnetism<br />
+        → Physics</li>
+</ul>
+<h2 id="nuclear-fission">Nuclear Fission</h2>
+<p>To research Nuclear Fission, you need to research 10 other
+technologies first. The whole project will require 13830 bulbs to
+complete. This number may vary depending on what other players
+research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Manhattan Project.</li>
+<li>Allows to build Nuclear.</li>
+<li>Allows to research:<br />
+    → Nuclear Power<br />
+        → Laser<br />
+            → Superconductors</li>
+<li>Requires knowledges:<br />
+    → Automobile<br />
+    → The Corporation<br />
+        → Mass Production<br />
+    → Chemistry<br />
+    → Refrigeration<br />
+        → Atomic Theory</li>
+</ul>
+<h2 id="nuclear-power">Nuclear Power</h2>
+<p>To research Nuclear Power, you need to research 13 other technologies
+first. The whole project will require 18240 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Gives sea units one extra move.</p>
+<ul>
+<li>Allows to build Nuclear Plant (with Factory).</li>
+<li>Allows to research:<br />
+    → Laser<br />
+        → Superconductors</li>
+<li>Requires knowledges:<br />
+    → Mass Production<br />
+    → Atomic Theory<br />
+        → Nuclear Fission<br />
+    → Combustion<br />
+    → Electronics<br />
+        → Miniaturization</li>
+</ul>
+<h2 id="philosophy">Philosophy</h2>
+<ul>
+<li>The first player to learn Philosophy gets an immediate research
+advance.</li>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to research:<br />
+    → Medicine<br />
+        → Chemistry<br />
+            → Atomic Theory<br />
+            → Explosives<br />
+            → Steam Engine<br />
+        → Sanitation<br />
+            → Recycling<br />
+            → Refrigeration<br />
+    → Theology<br />
+        → Communism<br />
+            → Labor Union<br />
+    → University<br />
+        → Chemistry<br />
+            → Atomic Theory<br />
+            → Explosives<br />
+            → Steam Engine<br />
+        → Economics<br />
+            → The Corporation<br />
+        → Theory of Gravity<br />
+            → Electricity</li>
+<li>Requires knowledges:<br />
+    → Ceremonial Burial<br />
+        → Mysticism<br />
+    → Writing<br />
+    → Code of Laws<br />
+        → Literacy</li>
+</ul>
+<h2 id="physics">Physics</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to research:<br />
+    → Navigation<br />
+        → Steam Engine<br />
+            → Engineering<br />
+            → Railroad<br />
+    → Theory of Gravity<br />
+        → Electricity<br />
+            → Electronics<br />
+            → Engineering<br />
+            → Refrigeration</li>
+<li>Requires knowledges:<br />
+    → Horseback Riding<br />
+        → The Wheel<br />
+    → Seafaring<br />
+    → Astronomy<br />
+        → Magnetism</li>
+</ul>
+<h2 id="plastics">Plastics</h2>
+<p>To research Plastics, you need to research 21 other technologies
+first. The whole project will require 27450 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Mfg. Plant (with Factory).</li>
+<li>Requires knowledges:<br />
+    → Automobile<br />
+    → The Corporation<br />
+        → Mass Production<br />
+    → Mobile Warfare<br />
+    → Computers<br />
+        → Robotics</li>
+</ul>
+<h2 id="polytheism">Polytheism</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Statue of Zeus.</li>
+<li>Allows to build Elephants.</li>
+<li>Allows to research:<br />
+    → Monotheism<br />
+        → Theology<br />
+            → Communism</li>
+<li>Requires knowledges:<br />
+        → Horseback Riding<br />
+        → Ceremonial Burial</li>
+</ul>
+<h2 id="pottery">Pottery</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Granary.</li>
+<li>Allows to build Hanging Gardens.</li>
+<li>Allows to build Migrants.</li>
+<li>Allows to research:<br />
+    → Seafaring<br />
+        → Magnetism<br />
+            → Physics<br />
+    → Trade<br />
+        → Banking<br />
+            → Democracy<br />
+            → Economics<br />
+            → Industrialization<br />
+        → Medicine<br />
+            → Chemistry<br />
+            → Sanitation\</li>
+</ul>
+<h2 id="radio">Radio</h2>
+<p>To research Radio, you need to research 12 other technologies first.
+The whole project will require 13470 bulbs to complete. This number may
+vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Allows Workers and Engineers to build airstrips, airbases and
+buoys.</p>
+<ul>
+<li>Allows to build Airport.</li>
+<li>Allows to research:<br />
+    → Advanced Flight<br />
+        → Rocketry<br />
+            → Space Flight<br />
+    → Computers<br />
+        → Laser<br />
+            → Superconductors<br />
+        → Robotics<br />
+            → Plastics<br />
+        → Space Flight<br />
+            → Superconductors</li>
+<li>Requires knowledges:<br />
+    → Combustion<br />
+    → Tactics<br />
+        → Flight<br />
+    → The Corporation<br />
+    → Electricity<br />
+        → Electronics</li>
+</ul>
+<h2 id="railroad">Railroad</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Allows Settlers, Migrants, Workers and Engineers to upgrade roads to
+railroads.</p>
+<p>For Despotism or Tribal governments, cancels the penalty to worked
+tiles with output greater than 2 (as if all your cities were always
+celebrating).</p>
+<ul>
+<li>Allows to build Eiffel Tower.</li>
+<li>Allows to research:<br />
+    → Industrialization<br />
+        → Communism<br />
+            → Labor Union<br />
+        → Refining<br />
+            → Combustion<br />
+        → Steel<br />
+            → Automobile<br />
+            → Machine Tools<br />
+        → The Corporation<br />
+            → Electronics<br />
+            → Mass Production</li>
+<li>Requires knowledges:<br />
+    → Chemistry<br />
+    → Navigation<br />
+        → Steam Engine<br />
+    → Gunpowder<br />
+    → Mathematics<br />
+        → Metallurgy</li>
+</ul>
+<h2 id="recycling">Recycling</h2>
+<p>To research Recycling, you need to research 8 other technologies
+first. The whole project will require 11610 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Recycling Center.</li>
+<li>Requires knowledges:<br />
+    → Automobile<br />
+    → The Corporation<br />
+        → Mass Production<br />
+    → Bridge Building<br />
+    → Medicine<br />
+        → Sanitation</li>
+</ul>
+<h2 id="refining">Refining</h2>
+<p>To research Refining, you need to research 1 other technology first.
+The whole project will require 2340 bulbs to complete. This number may
+vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Allows Settlers, Migrants, Workers and Engineers to upgrade mines to
+oil wells on Desert and Glacier tiles, for an extra production
+point.</p>
+<ul>
+<li>Allows to build Power Plant (with Factory).</li>
+<li>Allows to research:<br />
+    → Combustion<br />
+        → Automobile<br />
+            → Mass Production<br />
+            → Mobile Warfare<br />
+        → Flight<br />
+            → Radio<br />
+        → Miniaturization<br />
+            → Computers<br />
+            → Nuclear Power<br />
+            → Rocketry</li>
+<li>Requires knowledges:<br />
+    → Gunpowder<br />
+    → Chemistry<br />
+        → Explosives<br />
+    → Railroad<br />
+    → Banking<br />
+        → Industrialization</li>
+</ul>
+<h2 id="refrigeration">Refrigeration</h2>
+<p>To research Refrigeration, it would need 1050 bulbs. This number may
+vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Allows Settlers, Migrants, Workers and Engineers to upgrade
+irrigation systems to farmland.</p>
+<ul>
+<li>Allows to build Supermarket.</li>
+<li>Allows to research:<br />
+    → Atomic Theory<br />
+        → Nuclear Fission<br />
+            → Nuclear Power</li>
+<li>Requires knowledges:<br />
+    → Bridge Building<br />
+    → Medicine<br />
+        → Sanitation<br />
+    → Metallurgy<br />
+    → Theory of Gravity<br />
+        → Electricity</li>
+</ul>
+<h2 id="robotics">Robotics</h2>
+<p>To research Robotics, you need to research 19 other technologies
+first. The whole project will require 24090 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Howitzer.</li>
+<li>Allows to research:<br />
+    → Plastics</li>
+<li>Requires knowledges:<br />
+    → Automobile<br />
+    → Machine Tools<br />
+        → Mobile Warfare<br />
+    → Miniaturization<br />
+    → Radio<br />
+        → Computers</li>
+</ul>
+<h2 id="rocketry">Rocketry</h2>
+<p>To research Rocketry, you need to research 17 other technologies
+first. The whole project will require 21090 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Doubles movement of nuclear units.</p>
+<ul>
+<li>Allows to build SAM Battery.</li>
+<li>Allows to build AEGIS Cruiser.</li>
+<li>Allows to build Cruise Missile.</li>
+<li>Allows to research:<br />
+    → Space Flight<br />
+        → Superconductors</li>
+<li>Requires knowledges:<br />
+    → Radio<br />
+    → Machine Tools<br />
+        → Advanced Flight<br />
+    → Combustion<br />
+    → Electronics<br />
+        → Miniaturization</li>
+</ul>
+<h2 id="sanitation">Sanitation</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Sewer System (with Size 9).</li>
+<li>Allows to build Shakespeare's Theater.</li>
+<li>Allows to research:<br />
+    → Recycling<br />
+    → Refrigeration<br />
+        → Atomic Theory<br />
+            → Nuclear Fission</li>
+<li>Requires knowledges:<br />
+    → The Wheel<br />
+    → Construction<br />
+        → Bridge Building<br />
+    → Philosophy<br />
+    → Trade<br />
+        → Medicine</li>
+</ul>
+<h2 id="seafaring">Seafaring</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Harbor (with 'Sea' terrain).</li>
+<li>Allows to build Explorer.</li>
+<li>Allows to research:<br />
+    → Magnetism<br />
+        → Physics<br />
+            → Navigation<br />
+            → Theory of Gravity</li>
+<li>Requires knowledges:<br />
+        → Pottery<br />
+    → Alphabet<br />
+        → Map Making</li>
+</ul>
+<h2 id="space-flight">Space Flight</h2>
+<p>To research Space Flight, you need to research 19 other technologies
+first. The whole project will require 24600 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Space Structural (with Factory, Library, University,
+and Research Lab).</li>
+<li>Allows to build Apollo Program.</li>
+<li>Allows to research:<br />
+    → Superconductors</li>
+<li>Requires knowledges:<br />
+    → Miniaturization<br />
+    → Radio<br />
+        → Computers<br />
+    → Advanced Flight<br />
+    → Miniaturization<br />
+        → Rocketry</li>
+</ul>
+<h2 id="stealth">Stealth</h2>
+<p>To research Stealth, you need to research 25 other technologies
+first. The whole project will require 34770 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Stealth Fighter.</li>
+<li>Allows to build Stealth Bomber.</li>
+<li>Requires knowledges:<br />
+    → Mass Production<br />
+    → Robotics<br />
+        → Plastics<br />
+    → Computers<br />
+    → Rocketry<br />
+        → Space Flight</li>
+</ul>
+<h2 id="steam-engine">Steam Engine</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Darwin's Voyage.</li>
+<li>Allows to build Ironclad.</li>
+<li>Allows to research:<br />
+    → Engineering<br />
+        → Combustion<br />
+            → Automobile<br />
+            → Flight<br />
+            → Miniaturization<br />
+        → Steel<br />
+            → Automobile<br />
+            → Machine Tools<br />
+    → Railroad<br />
+        → Industrialization<br />
+            → Communism<br />
+            → Refining<br />
+            → Steel<br />
+            → The Corporation</li>
+<li>Requires knowledges:<br />
+    → University<br />
+    → Medicine<br />
+        → Chemistry<br />
+    → Invention<br />
+    → Physics<br />
+        → Navigation</li>
+</ul>
+<h2 id="steel">Steel</h2>
+<p>To research Steel, you need to research 2 other technologies first.
+The whole project will require 3510 bulbs to complete. This number may
+vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Cruiser.</li>
+<li>Allows to research:<br />
+    → Automobile<br />
+        → Mass Production<br />
+            → Nuclear Fission<br />
+            → Plastics<br />
+            → Recycling<br />
+        → Mobile Warfare<br />
+            → Labor Union<br />
+            → Robotics<br />
+    → Machine Tools<br />
+        → Advanced Flight<br />
+            → Rocketry<br />
+        → Mobile Warfare<br />
+            → Labor Union<br />
+            → Robotics</li>
+<li>Requires knowledges:<br />
+    → Electricity<br />
+    → Steam Engine<br />
+        → Engineering<br />
+    → Railroad<br />
+    → Banking<br />
+        → Industrialization</li>
+</ul>
+<h2 id="superconductors">Superconductors</h2>
+<p>To research Superconductors, you need to research 27 other
+technologies first. The whole project will require 36930 bulbs to
+complete. This number may vary depending on what other players
+research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Allows Settlers, Migrants, Workers and Engineers to upgrade railroads
+with maglev.</p>
+<ul>
+<li>Allows to build Space Component (with Factory, Library, University,
+and Research Lab).</li>
+<li>Requires knowledges:<br />
+    → Computers<br />
+    → Rocketry<br />
+        → Space Flight<br />
+    → Computers<br />
+    → Nuclear Power<br />
+        → Laser</li>
+</ul>
+<h2 id="tactics">Tactics</h2>
+<p>To research Tactics, you need to research 4 other technologies first.
+The whole project will require 3090 bulbs to complete. This number may
+vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Alpine Troops.</li>
+<li>Allows to build Cavalry.</li>
+<li>Allows to research:<br />
+    → Flight<br />
+        → Radio<br />
+            → Advanced Flight<br />
+            → Computers<br />
+    → Machine Tools<br />
+        → Advanced Flight<br />
+            → Rocketry<br />
+        → Mobile Warfare<br />
+            → Labor Union<br />
+            → Robotics</li>
+<li>Requires knowledges:<br />
+    → Democracy<br />
+    → Metallurgy<br />
+        → Conscription<br />
+    → Chivalry<br />
+    → Gunpowder<br />
+        → Leadership</li>
+</ul>
+<h2 id="the-corporation">The Corporation</h2>
+<p>To research The Corporation, you need to research 1 other technology
+first. The whole project will require 2340 bulbs to complete. This
+number may vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Halves the corruption of trade related to distance from the capital
+(or eliminates it for Federation governments).</p>
+<ul>
+<li>Allows to build Freight.</li>
+<li>Allows to research:<br />
+    → Electronics<br />
+        → Miniaturization<br />
+            → Computers<br />
+            → Nuclear Power<br />
+            → Rocketry<br />
+        → Radio<br />
+            → Advanced Flight<br />
+            → Computers<br />
+    → Mass Production<br />
+        → Nuclear Fission<br />
+            → Nuclear Power<br />
+        → Plastics<br />
+        → Recycling</li>
+<li>Requires knowledges:<br />
+    → Banking<br />
+    → University<br />
+        → Economics<br />
+    → Railroad<br />
+    → Banking<br />
+        → Industrialization</li>
+</ul>
+<h2 id="the-republic">The Republic</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows government form Republic.</li>
+<li>Allows to research:<br />
+    → Banking<br />
+        → Democracy<br />
+            → Conscription<br />
+        → Economics<br />
+            → The Corporation<br />
+        → Industrialization<br />
+            → Communism<br />
+            → Refining<br />
+            → Steel<br />
+            → The Corporation</li>
+<li>Requires knowledges:<br />
+    → Alphabet<br />
+        → Code of Laws<br />
+    → Writing<br />
+    → Code of Laws<br />
+        → Literacy</li>
+</ul>
+<h2 id="the-wheel">The Wheel</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Chariot.</li>
+<li>Allows to research:<br />
+    → Bridge Building<br />
+        → Invention<br />
+            → Democracy<br />
+            → Gunpowder<br />
+            → Navigation<br />
+        → Sanitation<br />
+            → Recycling<br />
+            → Refrigeration<br />
+    → Physics<br />
+        → Navigation<br />
+            → Steam Engine<br />
+        → Theory of Gravity<br />
+            → Electricity</li>
+<li>Requires knowledges:<br />
+        → Horseback Riding</li>
+</ul>
+<h2 id="theology">Theology</h2>
+<p>To research Theology, you need to research 1 other technology first.
+The whole project will require 690 bulbs to complete. This number may
+vary depending on what other players research.</p>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Improves the effect of Cathedrals.</p>
+<ul>
+<li>Allows government form Fundamentalism.</li>
+<li>Allows to build Ecclesiastical Palace.</li>
+<li>Allows to build J.S. Bach's Cathedral.</li>
+<li>Allows to research:<br />
+    → Communism<br />
+        → Labor Union</li>
+<li>Requires knowledges:<br />
+    → Mysticism<br />
+    → Literacy<br />
+        → Philosophy<br />
+    → Astronomy<br />
+    → Polytheism<br />
+        → Monotheism</li>
+</ul>
+<h2 id="theory-of-gravity">Theory of Gravity</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Isaac Newton's College (with University).</li>
+<li>Allows to research:<br />
+    → Electricity<br />
+        → Electronics<br />
+            → Miniaturization<br />
+            → Radio<br />
+        → Engineering<br />
+            → Combustion<br />
+            → Steel<br />
+        → Refrigeration<br />
+            → Atomic Theory</li>
+<li>Requires knowledges:<br />
+    → The Wheel<br />
+    → Magnetism<br />
+        → Physics<br />
+    → Mathematics<br />
+    → Philosophy<br />
+        → University</li>
+</ul>
+<h2 id="trade">Trade</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+</ul>
+<p>Halves the waste of production related to distance from the
+capital.</p>
+<ul>
+<li>Allows to build Marco Polo's Embassy.</li>
+<li>Allows to build Caravan.</li>
+<li>Allows to research:<br />
+    → Banking<br />
+        → Democracy<br />
+            → Conscription<br />
+        → Economics<br />
+            → The Corporation<br />
+        → Industrialization<br />
+            → Communism<br />
+            → Refining<br />
+            → Steel<br />
+            → The Corporation<br />
+    → Medicine<br />
+        → Chemistry<br />
+            → Atomic Theory<br />
+            → Explosives<br />
+            → Steam Engine<br />
+        → Sanitation<br />
+            → Recycling<br />
+            → Refrigeration</li>
+<li>Requires knowledges:<br />
+    → Bronze Working<br />
+        → Currency<br />
+        → Pottery</li>
+</ul>
+<h2 id="university">University</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build University (with Library).</li>
+<li>Allows to research:<br />
+    → Chemistry<br />
+        → Atomic Theory<br />
+            → Nuclear Fission<br />
+        → Explosives<br />
+            → Refining<br />
+        → Steam Engine<br />
+            → Engineering<br />
+            → Railroad<br />
+    → Economics<br />
+        → The Corporation<br />
+            → Electronics<br />
+            → Mass Production<br />
+    → Theory of Gravity<br />
+        → Electricity<br />
+            → Electronics<br />
+            → Engineering<br />
+            → Refrigeration</li>
+<li>Requires knowledges:<br />
+    → Alphabet<br />
+    → Masonry<br />
+        → Mathematics<br />
+    → Mysticism<br />
+    → Literacy<br />
+        → Philosophy</li>
+</ul>
+<h2 id="warrior-code">Warrior Code</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Archers.</li>
+<li>Allows to research:<br />
+    → Iron Working<br />
+        → Construction<br />
+            → Bridge Building<br />
+        → Feudalism<br />
+            → Chivalry<br />
+            → Gunpowder\</li>
+</ul>
+<h2 id="writing">Writing</h2>
+<ul>
+<li>To preserve this technology for our nation some bulbs are needed
+each turn.</li>
+<li>Allows to build Library.</li>
+<li>Allows to research:<br />
+    → Literacy<br />
+        → Invention<br />
+            → Democracy<br />
+            → Gunpowder<br />
+            → Navigation<br />
+        → Philosophy<br />
+            → Medicine<br />
+            → Theology<br />
+            → University<br />
+        → The Republic<br />
+            → Banking</li>
+<li>Requires knowledges:<br />
+        → Alphabet</li>
+</ul>
+</body>
+</html>

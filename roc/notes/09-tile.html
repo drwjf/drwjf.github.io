@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>09-tile</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="why-9696-tiles-work-well-for-mobile-roguelike-maps">Why 96×96
+Tiles Work Well for Mobile Roguelike Maps</h1>
+<p>When adapting a roguelike for mobile devices, one important design
+choice is the <strong>tile resolution</strong>. Traditional roguelikes
+often use very small tiles or ASCII characters, which work well on
+desktop terminals but can become difficult to read on modern phone
+screens.</p>
+<p>In the Swift reimplementation of the roguelike engine inspired by
+Brogue, the dungeon uses <strong>96×96 pixel tiles</strong>. This size
+turned out to be a good balance between readability, performance, and
+visual clarity on mobile devices.</p>
+<hr />
+<h1 id="the-challenge-of-mobile-screens">The Challenge of Mobile
+Screens</h1>
+<p>Classic roguelikes were designed around text grids such as
+<strong>80×25 characters</strong>. Each tile was essentially a single
+character cell, and the terminal handled rendering.</p>
+<p>On a phone, things are very different:</p>
+<ul>
+<li>the screen is high resolution</li>
+<li>the player interacts by touch rather than keyboard</li>
+<li>tiles must remain readable at different zoom levels</li>
+</ul>
+<p>If tiles are too small, players cannot clearly distinguish monsters,
+terrain, and items. If tiles are too large, the player cannot see enough
+of the dungeon at once.</p>
+<p>Choosing the right tile size is therefore crucial.</p>
+<hr />
+<h1 id="why-96-pixels">Why 96 Pixels?</h1>
+<p>After experimenting with several sizes, <strong>96×96 pixels</strong>
+proved to be a practical choice.</p>
+<h3 id="good-readability">Good Readability</h3>
+<p>At this size, important details remain visible even on small
+screens.</p>
+<p>Players can quickly distinguish:</p>
+<ul>
+<li>monsters</li>
+<li>terrain features</li>
+<li>items</li>
+<li>hazards</li>
+</ul>
+<p>Clear silhouettes are especially important in roguelikes where
+tactical decisions depend on recognizing objects instantly.</p>
+<hr />
+<h3 id="works-well-with-retina-displays">Works Well With Retina
+Displays</h3>
+<p>Modern iPhones use high-density displays. A 96×96 tile aligns nicely
+with common scaling factors used in iOS asset pipelines.</p>
+<p>For example:</p>
+<ul>
+<li>logical tile: 32×32</li>
+<li>rendered tile (@3×): 96×96</li>
+</ul>
+<p>This approach allows clean scaling without blurry textures.</p>
+<hr />
+<h3 id="balanced-map-visibility">Balanced Map Visibility</h3>
+<p>A 96×96 tile allows a reasonable portion of the dungeon to remain
+visible while still keeping individual tiles readable.</p>
+<p>Because the game supports <strong>zooming and panning</strong>,
+players can adjust the view as needed.</p>
+<p>At normal zoom levels, the player sees a comfortable tactical area
+around the character.</p>
+<hr />
+<h1 id="designed-for-touch-interaction">Designed for Touch
+Interaction</h1>
+<p>Another reason for choosing larger tiles is <strong>touch
+precision</strong>.</p>
+<p>With small tiles, accurately selecting a specific grid cell becomes
+difficult.</p>
+<p>A 96×96 tile provides enough space for reliable touch targeting. This
+makes actions like:</p>
+<ul>
+<li>moving</li>
+<li>selecting enemies</li>
+<li>examining tiles</li>
+</ul>
+<p>much easier for players.</p>
+<hr />
+<h1 id="pixel-art-advantages">Pixel Art Advantages</h1>
+<p>Larger tiles also work well with the <strong>clean pixel-art
+style</strong> used by many roguelikes.</p>
+<p>Rather than relying on heavy detail or complex shading, each tile
+focuses on:</p>
+<ul>
+<li>strong silhouettes</li>
+<li>limited color palettes</li>
+<li>clear visual contrast</li>
+</ul>
+<p>This keeps the dungeon readable even when zoomed out.</p>
+<hr />
+<h1 id="performance-considerations">Performance Considerations</h1>
+<p>Although larger tiles use more pixels, performance remains excellent
+because roguelike maps contain relatively few objects compared to modern
+3D games.</p>
+<p>Most tiles are static terrain, and rendering them is inexpensive for
+modern mobile GPUs.</p>
+<p>Using a consistent tile size also simplifies the rendering
+pipeline.</p>
+<hr />
+<h1 id="flexible-camera-system">Flexible Camera System</h1>
+<p>Because the engine supports:</p>
+<ul>
+<li>zooming</li>
+<li>panning</li>
+<li>variable view scales</li>
+</ul>
+<p>the tile size does not lock the player into a single view.</p>
+<p>Players can zoom out to see more of the dungeon or zoom in to inspect
+specific areas.</p>
+<p>The 96×96 tile resolution provides enough visual information to
+support both perspectives.</p>
+<hr />
+<h1 id="final-thoughts">Final Thoughts</h1>
+<p>Choosing the right tile size is a surprisingly important design
+decision for mobile roguelikes.</p>
+<p>By using <strong>96×96 pixel tiles</strong>, the Swift
+reimplementation achieves a balance between:</p>
+<ul>
+<li>visual clarity</li>
+<li>touch usability</li>
+<li>performance</li>
+<li>scalable rendering</li>
+</ul>
+<p>This size allows dungeon maps to remain readable and responsive while
+supporting modern mobile features such as zooming and panning.</p>
+<p>The result is a dungeon that feels comfortable to explore on a
+touchscreen while preserving the tactical clarity that roguelikes depend
+on.</p>
+<hr />
+<p>⬅️ <a href="08-touch.html">Previous</a> | 🏠 <a
+href="../index.html">Index</a> | <a href="10-zoomable.html">Next</a>
+➡️</p>
+<hr />
+</body>
+</html>

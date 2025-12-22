@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>terrain_extras</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="terrain-extras">Terrain Extras</h1>
+<h2 id="irrigation">Irrigation</h2>
+<p>Building an irrigation system on a suitable tile causes it to produce
+some extra food each turn. Most tiles yield one extra food; a desert
+with a river will yield two, if it is not already benefiting from an
+oasis.</p>
+<p>Without knowledge of Electricity, irrigation requires a nearby source
+of water: an ocean, lake, or river tile, or another tile with an
+irrigation system, must share an edge (not just a corner) with the
+target tile. However, once irrigated, land remains so even if the water
+source is removed. Once Electricity is known, any suitable tile may be
+irrigated without a water source.</p>
+<p>Building irrigation on a tile with a mine or oil well will destroy
+it.</p>
+<p>City center tiles get their terrain's irrigation bonus automatically,
+if there is no conflicting mine or oil well on the tile; however, this
+does not make cities count as a water source for further irrigation.
+Irrigation can be built on the city tile simply to allow building
+further irrigation elsewhere, but will not give the tile any further
+bonus.</p>
+<p>Build by issuing an 'irrigate' order.</p>
+<p>Can be pillaged by units (takes 1 turn).</p>
+<h2 id="mine">Mine</h2>
+<p>Mines can be built on some types of terrain, which increases the
+number of production points produced by that tile. Hills and Mountains
+get an extra 2 production points per tile; other terrains get 1 extra
+production point.</p>
+<p>Building a mine on an irrigated tile will destroy the irrigation.</p>
+<p>Build by issuing a 'mine' order.</p>
+<p>Can be pillaged by units (takes 1 turn).</p>
+<h2 id="oil-well">Oil Well</h2>
+<p>Once Refining is known, mines on Desert and Glacier tiles can be
+upgraded to oil wells for an extra production point.</p>
+<p>Build by issuing a 'mine' order.<br />
+Requirements to build:</p>
+<ul>
+<li>Requires knowledge of the technology Refining.</li>
+<li>Requires Mine on the tile.</li>
+</ul>
+<p>Can be pillaged by units (takes 1 turn).</p>
+<h2 id="oil-platform">Oil Platform</h2>
+<p>Oil platforms allow cities with Offshore Platforms to get an extra
+production point from Deep Ocean tiles.</p>
+<p>Oil platforms can be built by Workers and similar units on board
+ships, or directly by Transport units.</p>
+<p>Build by issuing a 'mine' order.<br />
+Requirements to build:</p>
+<ul>
+<li>Requires knowledge of the technology Miniaturization.</li>
+<li>Requires Deep Ocean on the tile.</li>
+</ul>
+<p>Can be pillaged by units (takes 1 turn).</p>
+<h2 id="pollution">Pollution</h2>
+<p>Pollution appears on tiles around cities with high production or
+population, or when a Mfg. Plant suffers an industrial accident. It
+halves all output from its tile, and contributes to the risk of global
+warming.</p>
+<p>The pollution can only be cleared by dispatching Workers, Migrants,
+Settlers, Engineers, or a Transport with the "clean pollution"
+order.</p>
+<p>Pollution from production is likely to start becoming important as
+your civilization becomes more industrialized, giving you buildings such
+as Factory and Power Plant which boost production. Replacing a Power
+Plant with cleaner forms of energy -- a Hydro Plant / Hoover Dam,
+Nuclear Plant, or Solar Plant -- will reduce pollution from production,
+as will a Recycling Center.</p>
+<p>The city's population starts adding to pollution with the Factory,
+Super Highways, Offshore Platform, and Mfg. Plant buildings; each
+building causes the population to add more to pollution. A Mass Transit
+will counteract the pollution from two buildings in a city, and the
+Eiffel Tower wonder will counteract the pollution from one building in
+all the owner's cities.</p>
+<p>The contribution of these factors can be seen in the city dialog;
+once it exceeds a threshold, the excess is the percent chance of
+pollution appearing each turn.</p>
+<p>When an unused tile becomes polluted, there is the temptation to
+avoid the effort of cleaning it; but the spread of pollution has far
+more terrible results than the immediate economic impact -- every
+polluted tile increases the chance of global warming. Each time global
+warming advances, the entire world loses coastal land to the sea and to
+jungles and swamps, and inland tiles are lost to desert. This tends to
+devastate cities and leads to global impoverishment.</p>
+<p>The risk of global warming is cumulative; the longer polluted tiles
+are left uncleaned, the higher the risk becomes, and the risk can linger
+for some time even after all pollution has been cleaned. If a long time
+passes with an elevated risk of warming, its effects will be all the
+more severe when it does occur.</p>
+<p>May randomly appear around polluting city.</p>
+<p>Can be cleaned by units (takes 3 turns).</p>
+<h2 id="minor-tribe-village">Minor Tribe Village</h2>
+<p>Villages (also called "huts") are primitive communities spread across
+the world at the beginning of the game. Any land unit can enter a
+village, making the village disappear and deliver a random response. If
+the village proves hostile, it could produce barbarians or the unit
+entering may simply be destroyed. If they are friendly, the player could
+receive gold, a new technology, a military unit (occasionally a settler;
+and sometimes a unit that the player cannot yet create), or even a new
+city.</p>
+<p>Later in the game, helicopters may also enter villages, but
+overflight by other aircraft will cause the villagers to take fright and
+disband.</p>
+<p>Placed by map generator.<br />
+Requires Land terrain on the tile.</p>
+<h2 id="farmland">Farmland</h2>
+<p>Once Refrigeration is known, irrigation systems can be upgraded to
+farmland by irrigating them a second time; if the city working the tile
+has a Supermarket, a farmland tile provides 50% more food. (Hence,
+farmland is only useful on tiles which with irrigation yield 2 or more
+food.)</p>
+<p>Farmland on a tile prevents any trade bonus from Super Highways.</p>
+<p>Like irrigation, farmland is incompatible with mines and oil
+wells.</p>
+<p>Build by issuing an 'irrigate' order.<br />
+Requirements to build:</p>
+<ul>
+<li>Requires knowledge of the technology Refrigeration.</li>
+<li>Requires Irrigation on the tile.</li>
+</ul>
+<p>Can be pillaged by units (takes 1 turn).</p>
+<h2 id="fallout">Fallout</h2>
+<p>Nuclear fallout can appear on tiles when a Nuclear unit is detonated,
+or when a city's Nuclear Plant has an accident. It halves all output
+from its tile.</p>
+<p>Every tile with nuclear fallout also increases the risk of global
+nuclear winter. If nuclear winter occurs, land across the globe changes
+into desert, tundra, and ice, and lakes and oceans freeze.</p>
+<p>Settlers, Workers, Migrants, Engineers, and Transport units can all
+clean up nuclear fallout.</p>
+<p>May randomly appear around nuclear blast.</p>
+<p>Can be cleaned by units (takes 3 turns).</p>
+<h2 id="fort">Fort</h2>
+<p>Forts are rapidly-built fortifications providing some defense (+50%)
+against land units and boats. A fort is also necessary to start building
+a fortress.</p>
+<p>Build by issuing a 'Build Fort/Fortress/Buoy' order.<br />
+Requirements to build:</p>
+<ul>
+<li>Requires knowledge of the technology Construction.</li>
+<li>Requires Land terrain on the tile.</li>
+<li>Requires Settlers or similar units.</li>
+</ul>
+<p>Can be pillaged by units (takes 1 turn).</p>
+<ul>
+<li>Native to Land, Small Land, Big Land, and Merchant units.</li>
+<li>Such units can move onto this tile even if it would not normally be
+suitable terrain.</li>
+<li>Diplomatic units get a 25% defense bonus in diplomatic fights.\</li>
+</ul>
+<h2 id="fortress">Fortress</h2>
+<p>Fortresses are more permanent forts; construction on them can only
+begin once the underlying fort is complete. Forts on River tiles cannot
+be upgraded to Fortresses.</p>
+<p>Compared to a fort, units in a fortress receive extra defense (+50%)
+against all units (in total, their defense against land units and boats
+is doubled), and do not count as aggressive if near a friendly city. Any
+kind of land unit remaining in a fortress for a whole turn without
+moving recovers a quarter of its hit points.</p>
+<p>With Astronomy, fortresses gain watchtowers from which units can see
+further afield.</p>
+<p>Build by issuing a 'Build Fort/Fortress/Buoy' order.<br />
+Requirements to build:</p>
+<ul>
+<li>Requires Fort on the tile.</li>
+<li>Requires knowledge of the technology Construction.</li>
+<li>Requires Land terrain on the tile.</li>
+<li>Requires Settlers or similar units.</li>
+<li>Prevented by River on the tile.</li>
+</ul>
+<p>Can be pillaged by units (takes 1 turn).</p>
+<ul>
+<li>Native to Land, Small Land, Big Land, and Merchant units.</li>
+<li>Such units can move onto this tile even if it would not normally be
+suitable terrain.</li>
+<li>Such units situated here are not considered aggressive if this tile
+is within 3 tiles of a friendly city.</li>
+<li>Diplomatic units get a 25% defense bonus in diplomatic fights.\</li>
+</ul>
+<h2 id="airstrip">Airstrip</h2>
+<p>Airstrips are rapidly-built runways allowing air units to land,
+refuel, and recover outside cities; an aircraft remaining on an airstrip
+for a whole turn without moving recovers a tenth of its hit points (that
+is, the same amount it loses each turn while airborne). However, air
+units on an airstrip are vulnerable to attack by land units.</p>
+<p>Any units on an airstrip receive extra defense (+50%) against enemy
+aircraft.</p>
+<p>An airstrip is necessary to start building an airbase.</p>
+<p>Build by issuing a 'Build Airstrip/Airbase' order.<br />
+Requirements to build:</p>
+<ul>
+<li>Requires knowledge of the technology Radio.</li>
+<li>Requires Land terrain on the tile.</li>
+<li>Requires Workers or Engineers.</li>
+</ul>
+<p>Can be pillaged by units (takes 1 turn).</p>
+<ul>
+<li>Native to Missile, Helicopter, and Air units.</li>
+<li>Units can paradrop from this tile.\</li>
+</ul>
+<h2 id="airbase">Airbase</h2>
+<p>Airbases are more permanent airstrips; construction on them can only
+begin once the underlying airstrip is complete. Airstrips on River tiles
+cannot be upgraded to Airbases.</p>
+<p>Compared to an airstrip, units in an airbase receive extra defense
+(+50%) against all units (in total, their defense against air units and
+missiles is doubled), do not count as aggressive if near a friendly
+city, and can see further afield. Also, air units recover more hit
+points (a third per turn, the same as in a city without an Airport).</p>
+<p>Build by issuing a 'Build Airstrip/Airbase' order.<br />
+Requirements to build:</p>
+<ul>
+<li>Requires Airstrip on the tile.</li>
+<li>Requires knowledge of the technology Radio.</li>
+<li>Requires Land terrain on the tile.</li>
+<li>Requires Workers or Engineers.</li>
+<li>Prevented by River on the tile.</li>
+</ul>
+<p>Can be pillaged by units (takes 1 turn).</p>
+<ul>
+<li>Native to Missile, Helicopter, and Air units.</li>
+<li>Such units situated here are not considered aggressive if this tile
+is within 3 tiles of a friendly city.</li>
+<li>Units can paradrop from this tile.\</li>
+</ul>
+<h2 id="buoy">Buoy</h2>
+<p>Buoys may be built in the ocean (by units on a sea-going vessel) to
+allow their owner to see the surrounding tiles.</p>
+<p>Build by issuing a 'Build Fort/Fortress/Buoy' order.<br />
+Requirements to build:</p>
+<ul>
+<li>Requires knowledge of the technology Radio.</li>
+<li>Requires Oceanic terrain on the tile.</li>
+<li>Requires Workers or Engineers.</li>
+</ul>
+<p>Can be pillaged by units (takes 1 turn).</p>
+<ul>
+<li>Grants permanent vision of an area around the tile to its
+owner.\</li>
+</ul>
+<h2 id="ruins">Ruins</h2>
+<p>Ruins mark the former site of a city that was destroyed or abandoned.
+They have no effect on gameplay.</p>
+<p>Requires Land terrain on the tile.</p>
+<p>Can be pillaged by units (takes 1 turn).</p>
+<h2 id="road">Road</h2>
+<p>Roads allow your land units to move more quickly, and allow wheeled
+Big Land units such as Chariots and Catapults to travel through
+otherwise difficult terrain (Mountains, Jungle, and Swamp).</p>
+<p>On some terrains, roads also provide a trade bonus.</p>
+<p>Building roads on river tiles requires knowledge of Bridge Building.
+City center tiles automatically get roads (even on a river tile).</p>
+<p>Build by issuing a 'road' order.<br />
+Requirements to build:</p>
+<ul>
+<li>Requires Settlers or similar units.</li>
+<li>Requires Land terrain on the tile.</li>
+</ul>
+<p>Can be pillaged by units (takes 1 turn).</p>
+<ul>
+<li>Can be traveled by Land, Small Land, Big Land, and Merchant
+units.</li>
+<li>Such units can move onto this tile even if it would not normally be
+suitable terrain.</li>
+<li>Movement changes to 1/3 Movement Point, if along Road.</li>
+</ul>
+<p>Time to build and output bonus depends on terrain:</p>
+<p>Terrain Time Bonus F/P/T<br />
+----------------------------------<br />
+Glacier 4 -<br />
+Desert 2 0/0/+1<br />
+Forest 4 -<br />
+Grassland 2 0/0/+1<br />
+Hills 4 -<br />
+Jungle 4 -<br />
+Mountains 6 -<br />
+Plains 2 0/0/+1<br />
+Swamp 4 -<br />
+Tundra 2 0/0/+1\</p>
+<h2 id="railroad">Railroad</h2>
+<p>Once you learn the Railroad technology, you may upgrade your roads to
+railroads. Units travel considerably faster along railroads than along
+roads.</p>
+<p>A railroad also increases any shield resources produced by a tile. A
+tile whose road is upgraded to a railroad retains any trade bonus from
+the road as well.</p>
+<p>City center tiles with roads are automatically upgraded to railroads
+when you learn the Railroad technology.</p>
+<p>Build by issuing a 'road' order.<br />
+Requirements to build:</p>
+<ul>
+<li>Requires knowledge of the technology Railroad.</li>
+<li>Requires Road on the tile.</li>
+<li>Requires Settlers or similar units.</li>
+<li>Requires Land terrain on the tile.</li>
+</ul>
+<p>Can be pillaged by units (takes 1 turn).</p>
+<ul>
+<li>Can be traveled by Land, Small Land, Big Land, and Merchant
+units.</li>
+<li>Such units can move onto this tile even if it would not normally be
+suitable terrain.</li>
+<li>Movement changes to 1/6 Movement Point, if along Railroad.\</li>
+</ul>
+<h2 id="maglev">Maglev</h2>
+<p>With sufficient technology, you may build magnetic levitation systems
+along your railroad routes. Land and Small Land units expend no movement
+points when riding a maglev; you may ride indefinitely. (As may your
+enemies!)</p>
+<p>Your regular railroads are still used to carry heavy Big Land and
+Merchant units for which the maglev system is unsuitable, and they
+continue to provide production and trade bonuses.</p>
+<p>City center tiles with railroads are automatically upgraded to maglev
+when you learn about Superconductors.</p>
+<p>Build by issuing a 'road' order.<br />
+Requirements to build:</p>
+<ul>
+<li>Requires knowledge of the technology Superconductors.</li>
+<li>Requires Railroad on the tile.</li>
+<li>Requires Settlers or similar units.</li>
+<li>Requires Land terrain on the tile.</li>
+</ul>
+<p>Can be pillaged by units (takes 1 turn).</p>
+<ul>
+<li>Can be traveled by Land and Small Land units.</li>
+<li>Such units can move onto this tile even if it would not normally be
+suitable terrain.</li>
+<li>Allows infinite movement.\</li>
+</ul>
+<h2 id="river">River</h2>
+<p>Any land terrain type may have a River on it. A River adds 1 trade to
+the resources produced by that tile. It also increases a tile's defense
+factor by 25%.</p>
+<p>Land units may move along rivers for faster travel (but not
+diagonally). Triremes may also travel up rivers (although later boats
+cannot).</p>
+<p>Roads and railroads can only be built on River tiles if your
+civilization has learned Bridge Building technology. Fortresses and
+Airbases cannot be built on River tiles.</p>
+<p>Cities built on or next to rivers incur a small risk of flooding,
+which will destroy stored food.</p>
+<p>Placed by map generator.</p>
+<p>Prevents to build Aqueduct.<br />
+Allows to build Aqueduct, River (absent Lake).<br />
+Allows to build Hydro Plant (with Electronics and Factory).<br />
+Allows to build Hoover Dam (with Electronics and Factory).</p>
+<ul>
+<li>Can be traveled by Land, Small Land, Merchant, and Trireme
+units.</li>
+<li>Such units can move onto this tile even if it would not normally be
+suitable terrain.</li>
+<li>Such units get a 25% defense bonus on this tile.</li>
+<li>Movement changes to 1/3 Movement Point, if along River.\</li>
+</ul>
+</body>
+</html>

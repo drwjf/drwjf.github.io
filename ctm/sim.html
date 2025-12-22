@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>sim</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h2 id="overview">Overview</h2>
+<p>Micropolis is based on the original SimCity from Electronic Arts /
+Maxis, and designed and written by Will Wright. It is available for X
+Window System on Unix workstations.</p>
+<p>I really like Micropolis, but it is not easy to play it by iPhone in
+the mobile computing age because of its original design. So I tried to
+created an iOS application 'CTMayor' to recall happy hours of the
+original SimCity.</p>
+<p>I wrote fresh code on iOS platform to remake the original SimCity
+logic and user interactive concept. Most graphics, music, map and text
+materials come from public domain licensed by Creative Commons License
+or General Public License. The core data structure design is inspired by
+the Micropolis heavily.</p>
+<h2 id="goals">Goals</h2>
+<p>Whether you take over an existing city or build your own, you are the
+Mayor and City Planner with complete authority.</p>
+<p>Your city is populated by AI Citizens. Like their human counterparts,
+they build houses, condos, churches, stores and factories. And, also
+like humans, they complain about things like taxes, mayors, and city
+planners. If they get unhappy, they move out; you collect fewer taxes,
+the city deteriorates.</p>
+<p><br />
+You can pick 'the city' and other scenarios when you start a new
+game.</p>
+<ul>
+<li>The city</li>
+</ul>
+<ul>
+<li><p>You can design, manage and maintain the city of your dreams from
+the beginning.</p></li>
+<li><p>Your ideal place to live may be a bustling megalopolis, lots of
+people, lots of cars, tall buildings: high-energy, high density living.
+Or it may be a small rural community, or a linked group of small
+communities providing slow-paced country living.</p></li>
+<li><p>As long as your city can provide places for people to live, work,
+shop and play, it will attract residents. And as long as traffic,
+pollution, overcrowding, crime or taxes don't drive them away, your city
+will live.</p></li>
+</ul>
+<ul>
+<li>Scenarios</li>
+</ul>
+<ul>
+<li><p>Each Scenario is a city which is either the victim of horrible
+planning or about to be the victim of a natural disaster. After you load
+in a Scenario, you will have a limited amount of time to correct or
+repair the problems.</p></li>
+<li><p>If one strategy doesn't work, try another. There are a million
+stories in each city, and you write them.</p></li>
+</ul>
+<h2 id="rules">Rules</h2>
+<p>The Rules are based on city planning and management, including:</p>
+<ul>
+<li><p>Human Factors: Residential space and amenities, availability of
+jobs, and quality of life.</p></li>
+<li><p>Economic Factors: Land value, industrial and commercial space,
+unemployment, internal and external markets, electric power, taxation,
+and funding for city services.</p></li>
+<li><p>Survival Factors: Strategies for dealing with disasters, crime,
+and pollution.</p></li>
+<li><p>Political Factors: Public opinion, zoning, and keeping residents
+and businesses satisfied with your city and your performance.</p></li>
+</ul>
+<h2 id="strategy">Strategy</h2>
+<p>While every game is different, there's a basic strategy which most
+players follow, especially at the start of the game.</p>
+<ul>
+<li><p>Plan: Mapping systems give physical and demographic overviews of
+the entire city.</p></li>
+<li><p>Layout: Design living and working areas, road and transit
+systems, and recreational areas.</p></li>
+<li><p>Zone: Set zoning boundaries for parks, residential, commercial
+and industrial areas.</p></li>
+<li><p>Build: Place roads, rails, airports, seaports, fire and police
+stations, sports stadiums, and power plants.</p></li>
+<li><p>Bulldoze: Clear forests for city growth, build landfill along
+waterways, clear and re-zone developed areas.</p></li>
+<li><p>Manage: Using the mapping and graphing systems, gather up-to-date
+information on traffic density, population trends, power grid status,
+pollution, crime, land value, police and fire department efficiency, and
+cash flow. Set the tax rate and funding levels for city
+services.</p></li>
+</ul>
+<p>But the most important strategy of all is practice. Test your plans
+and ideas as you watch the city grow or shrink through the immigration
+and emigration of industrious AI Citizens. Citizens will move in and
+build homes, hospitals, churches, stores and factories in the zones you
+provide, or move out in search of jobs or a better life elsewhere. The
+success of the city is based on the quality of the city you design and
+manage.</p>
+<h2 id="tactics">Tactics</h2>
+<p>The main points to keep in mind while growing a city are:</p>
+<ul>
+<li><p>Grow slowly. Watch your money.</p></li>
+<li><p>All zones must be powered to develop.</p></li>
+<li><p>Zones must be developed to generate tax money.</p></li>
+<li><p>Roads or rails must provide access to and from each zone for it
+to fully develop.</p></li>
+<li><p>There is a yearly maintenance cost for each section of road,
+rail, bridge and tunnel. This can add up. Don't build too many roads and
+rails and generate high maintenance costs before your city can generate
+enough tax revenues to support them.</p></li>
+<li><p>Extra power plants and redundant power lines are expensive, but
+can keep zones from losing power during a disaster or emergency and
+deteriorating.</p></li>
+<li><p>Rails can carry much more traffic than roads. While building and
+zoning an area that you predict will generate heavy traffic, install
+rails instead of roads in the early stages of development.</p></li>
+<li><p>If you get a lot of heavy traffic warnings, replace roads with
+rails. You can build an entirely roadless city, even if you're not a
+train spotter!</p></li>
+<li><p>Grouping zones together, four of five in a row touching each
+other, can eliminate a lot of power line segments.</p></li>
+<li><p>Airports, seaports and stadiums won't help a small city grow --
+so save your money until the city gets larger. The Sims will tell you
+when they need these things.</p></li>
+<li><p>Place zones, roads, etc. carefully -- they cannot be moved, and
+you will have to pay to bulldoze them and rebuild.</p></li>
+<li><p>As a rule of thumb, the number of residential zones should be
+approximately equal to the sum of commercial and industrial zones. When
+your city is small, you will need more industrial zones than commercial,
+and when your city gets larger, you will need more commercial zones than
+industrial.</p></li>
+<li><p>Separate the residential areas from the industrial
+areas.</p></li>
+<li><p>Keep in mind that proximity to downtown raises property values.
+The simulator defines the downtown areas as 'the center of mass of the
+population density.' It calculates the average geographical center of
+the population.</p></li>
+<li><p>A bigger, more populous city is not necessarily better. Having a
+self-supporting, profitable city with pleasant surroundings is better
+than a huge city that is always broke and has no forest or
+shoreline.</p></li>
+<li><p>Use the various maps and graphs to plan city growth, locate
+problems, and track your progress. Look for areas that need police and
+fire coverage as you go, so you don't have to go back and bulldoze
+developed zones to make room for police and fire stations.</p></li>
+<li><p>Save your city to disk before trying any major new policy so you
+can go back if your plan doesn't work.</p></li>
+<li><p>Check the Evaluation Page often. The citizens will let you know
+how you are doing. Also the statistics can be useful; if your population
+is shrinking, don't go zoning new areas that may never develop. Look for
+problems in the existing zoned areas, and spend your time and money
+solving them.</p></li>
+</ul>
+<h2 id="terrains">Terrains</h2>
+<p>There are three types of terrain: Open Land, Trees, and Water.</p>
+<p>Open Land is where you can zone and build. It is shown as brown with
+dark brown speckles.</p>
+<p>Trees and Forests are shown as green, with dark green speckles. You
+cannot zone or build on trees. You may bulldoze trees and forests to
+turn them into clear land. While some bulldozing is necessary, clearing
+away too much green area will result in lower property values.</p>
+<p>Water is shown as blue, with dark blue speckles. You cannot zone or
+build on water. You must bulldoze coastlines to create landfills before
+you can build or zone there</p>
+<h2 id="tools">Tools</h2>
+<ul>
+<li>Bulldozer</li>
+</ul>
+<ul>
+<li><p>Clears trees and forests, creates landfill along the water, and
+levels developed, existing zones and clears rubble caused by
+disasters.</p></li>
+<li><p>It costs $1 for each square tile bulldozed. Knocking down a 3x3
+zone costs $9 since it's made up of nine tiles. You're automatically
+charged $1 for each non-empty tile that you Auto Bulldoze natural
+terrain, power lines and rubble.</p></li>
+</ul>
+<ul>
+<li>Road</li>
+</ul>
+<ul>
+<li><p>Connect developed areas. Intersections and turns are
+automatically created. Be careful -- if you accidentally lay a road in
+the wrong place, you will have to pay for bulldozing and
+rebuilding.</p></li>
+<li><p>Laying roads across water creates a bridge. Bridges can only be
+built in a straight line -- no curves, turns or intersections.
+Shorelines must be bulldozed prior to building a bridge.</p></li>
+<li><p>Roadways are maintained by the transit budget, and wear out if
+there is a lack of funding. The amount of yearly funding requested by
+the transportation department is $1 for each section of road, $4 for
+each section of bridge.</p></li>
+<li><p>It costs $10 to lay one section of road and $50 to lay one
+section of bridge.</p></li>
+</ul>
+<ul>
+<li>Power Lines</li>
+</ul>
+<ul>
+<li><p>Carry power from power plants to zoned land and between zones.
+All developed land needs power to function. Power is conducted through
+adjacent zones. Unpowered zones display the flashing lightning bolt
+symbol. There is a delay between the time you connect power to a zone
+and when the flashing symbol disappears. The delay grows longer as the
+city grows larger.</p></li>
+<li><p>Power lines cannot cross zoned land. They can be built over
+trees, shrubbery, and shoreline only after bulldozing.</p></li>
+<li><p>Junctions and corners are automatically created. Power lines
+across water must be horizontal or vertical -- no turn, curves or
+intersections. Power lines consume some power due to transmission
+inefficiencies.</p></li>
+<li><p>It costs $5 to lay one section of power line on land, $25 on
+water.</p></li>
+</ul>
+<ul>
+<li>Transit Lines</li>
+</ul>
+<ul>
+<li><p>Create a railway system for intra-city mass transit. Place tracks
+in heavy traffic areas to help alleviate congestion.</p></li>
+<li><p>Intersections and turns are created automatically. Tracks laid
+under rivers will appear as dashed lines. These are underwater tunnels,
+and must be vertical or horizontal -- no turns, curves or
+intersections.</p></li>
+<li><p>Transit lines are maintained by the transit budget. The level of
+funding affects the efficiency of the system. The amount of yearly
+funding requested by the transportation department is $4 for each
+section of rail, and $10 for each section of tunnel.</p></li>
+<li><p>It costs $20 per section of track laid on land, $100 per section
+under water.</p></li>
+</ul>
+<ul>
+<li>Parks</li>
+</ul>
+<ul>
+<li><p>Can be placed on clear land. Parks, like forests and water, raise
+the land value of surrounding zones. Parks can be bulldozed as fire
+breaks or reserve space for later mass transit expansion.</p></li>
+<li><p>It costs $10 to zone one park.</p></li>
+</ul>
+<ul>
+<li>Residential Zones</li>
+</ul>
+<ul>
+<li><p>Where the citizens live, build houses, apartments and community
+facilitieslike hospitals and churches.</p></li>
+<li><p>Most residential zones develop into one of four classes: lower,
+middle, upper, and high. They can range in population density from
+single-family homes to high-rise apartments and condominiums. Some
+residential zones will automatically develop into churches and
+hospitals.</p></li>
+<li><p>Factors influencing residential value and growth are pollution,
+traffic density, population density, surrounding terrain, roadway
+access, parks and utilities.</p></li>
+<li><p>It costs $100 to zone one plot of land as residential.</p></li>
+</ul>
+<ul>
+<li>Commercial Zones</li>
+</ul>
+<ul>
+<li><p>Used for many things, including retail stores, office buildings,
+parking garages and gas stations.</p></li>
+<li><p>There are four values for commercial property, and five levels of
+growth, from the small general store to tall skyscrapers. Factors
+influencing the value and growth of commercial areas include internal
+markets, pollution, traffic density, residential access, labor supply,
+airports, crime rates, transit access and utilities.</p></li>
+<li><p>It costs $100 to zone one plot of land as commercial.</p></li>
+</ul>
+<ul>
+<li>Industrial Zones</li>
+</ul>
+<ul>
+<li><p>For heavy manufacturing and industrial services. There are four
+levels of industrial growth, from small pumping stations and warehouses
+to large factories.</p></li>
+<li><p>Factors influencing industrial growth are external markets,
+seaports, transit access, residential access, labor supply and
+utilities.</p></li>
+<li><p>It costs $100 to zone one plot of land as industrial.</p></li>
+</ul>
+<ul>
+<li>Police Departments</li>
+</ul>
+<ul>
+<li><p>Lower the crime rate in the surrounding area.</p></li>
+<li><p>This in turn raises property values. Place these in high-density
+crime areas, as defined by your Crime Rate Map. The efficiency of a
+station depends on the level of police department funding and transit
+access.</p></li>
+<li><p>It costs $500 to build a police station. Full yearly maintenance
+of each Police Station is $100.</p></li>
+</ul>
+<ul>
+<li>Fire Departments</li>
+</ul>
+<ul>
+<li><p>Make surrounding areas less susceptible to fires.</p></li>
+<li><p>When fires do occur, they are put out sooner and do less damage
+if a station is near. The effectiveness of fire containment depends on
+the level of fire department funding and transit access.</p></li>
+<li><p>It costs $500 to build a fire station. Full yearly maintenance of
+each fire station is $100.</p></li>
+</ul>
+<ul>
+<li>Stadiums</li>
+</ul>
+<ul>
+<li><p>Encourage residential growth, once a city has become fairly
+large. You may build a stadium in a smaller city without negative (or
+positive) effect. Stadiums indirectly generate a lot of revenue, but
+create a lot of traffic. Properly maintaining a stadium requires a good
+road and transit network.</p></li>
+<li><p>It costs $3000 to build a stadium.</p></li>
+</ul>
+<ul>
+<li>Power Plants</li>
+</ul>
+<ul>
+<li><p>Can be Coal or Nuclear.</p></li>
+<li><p>The nuclear plant is more powerful but carries a slight risk of
+meltdown. The coal plant is less expensive, but less powerful and it
+pollutes.</p></li>
+<li><p>All zoned land needs power to develop and grow. When developed
+land loses power, it will degenerate to an undeveloped zone unless power
+is restored. Connecting too many zones to a power plant causes
+brownouts.</p></li>
+<li><p>Coal power plants cost $3000 to build, and supply enough energy
+for about 50 zones. Nuclear power plants cost $5000 and supply
+electricity for about 150 zones.</p></li>
+</ul>
+<ul>
+<li>Seaports</li>
+</ul>
+<ul>
+<li><p>Increase the potential for industrial growth. They have little
+effect in a small city, but contribute a lot to industrialization in a
+large city.</p></li>
+<li><p>Seaports should be placed on a shoreline. The shoreline must be
+bulldozed prior to zoning a Seaport. Once the port is operational you
+may see ships in the water.</p></li>
+<li><p>It costs $5000 to zone land for use as a seaport.</p></li>
+</ul>
+<ul>
+<li>Airports</li>
+</ul>
+<ul>
+<li><p>Increase the growth potential of your commercial markets. Once a
+city starts getting large, commercial growth will level off without an
+airport. Airports are large and expensive and should not be built unless
+your city can afford one. Position airports to keep flight paths over
+water whenever possible, lessening the impact of air disasters.</p></li>
+<li><p>Once you build an airport you will see planes flying above your
+city to and from the airport. There is also a traffic helicopter that
+alerts you to heavy traffic areas.</p></li>
+<li><p>It costs $10,000 to zone land for use as an airport.</p></li>
+</ul>
+<ul>
+<li>Long press in the main map will show detail information of the
+pressed zone.</li>
+</ul>
+<h2 id="beginning">Beginning</h2>
+<p>To begin a city, we need: places for citizens to live, places for
+citizens to work, and power.</p>
+<p>Select the Residential tool, then scoll the map to find the terrain
+you want to build a residential zone. Tap in the map to place the first
+residential zone. The 'R' in the zone center indicates that it is a
+Residential Zone. The flashing lightning symbol means that the zone has
+no power. Place a few more Residential Zones next to the first one.</p>
+<p>Now decide where to position a Power Plant in your city. Select the
+Power Plant tool, a Coal or Nuclear plant. Place the Power Plant in some
+open space near your Residential Zones. If your Power Plant is not
+directly adjacent to a Residential Zone, you'll need to run a Power Line
+from your Power Plant to the Residential Zones.</p>
+<p>To do this, select the Power Line Tool. Then tap to lay Power Lines
+from your Power Plant to your Residential Zones. Adjacent Power Line
+sections will automatically connect to each other. Road and Rail lines
+connect in the same manner.</p>
+<p>In a moment, the flashing symbols in the Residential Zones will
+disappear, indicating that your zones have been powered. Any zones that
+are adjacent to a powered zone do not need separate Power Lines run to
+them. Soon you will see small houses start to appear. The citizens have
+started to move in!</p>
+<p>Once there are a few Residential Zones, where citizens can live, you
+need to make it possible for your new residents to find jobs. They can't
+all work at the power plant!</p>
+<p>Now you're ready for Commercial and Industrial areas; places for
+citizens to work, shop, and transact business. Select the Commercial
+tool and place a few Commercial Zones near your Residential ones. Then
+select the Industrial Icon and place some Industrial Zones. Connect all
+necessary Power Lines.</p>
+<p>Notice that as you select different Tool Icons, the icon's
+description and its associated cost will be displayed in the Tool Cost
+field near the lower left corner. The Current Funds field near the tool
+cost field displays your total funds available.</p>
+<p>Now select Road tool and add Roads from your Residential housing to
+the Commercial and Industrial areas to allow the citizens to commute to
+work. Road sections connect themselves like Power Line sections. Once
+you have Roads, traffic will be generated.</p>
+<h2 id="budget">Budget</h2>
+<p>When your first taxes are collected in a new city, and each year
+after, the Budget Adjusting Page will appear.</p>
+<p>You will be asked to set the funding levels for the fire, police, and
+transportation departments, and to set the property tax rate.</p>
+<p>You can raise and lower the tax rate and budget levels by dragging
+the sliders corresponding to each category.</p>
+<p>Tapping the year area in the status bar, you can view the final
+budget report of this year if it is ready, but you can not change
+property tax rate and the funding levels from the Budget Report
+Page.</p>
+<ul>
+<li>Tax Rate</li>
+</ul>
+<ul>
+<li><p>The maximum tax rate you can set is 20%.</p></li>
+<li><p>The minimum tax rate you can set is 0%.</p></li>
+<li><p>The optimum tax rate for fast growth is between 5%1$ and
+7%2$.</p></li>
+<li><p>To slow city growth without actually shrinking, set the tax rate
+to 8%1$ or 9%2$.</p></li>
+</ul>
+<ul>
+<li>Funding Levels</li>
+</ul>
+<ul>
+<li><p>The amount of yearly funding requested for the fire and police
+departments is $100 per station that you have placed. Until you actually
+build fire or police stations, you cannot fund them. You cannot allocate
+more than 100% of the requested funding for fire and police departments.
+Allocating less than the requested amount will decrease the effective
+coverage of the police or fire stations.</p></li>
+<li><p>The amount of yearly funding requested for the transportation
+department is $1 for each section of road, $4 for each section of bridge
+(roads over water), $4 for each section of rail, and $10 for each
+section of tunnel (underwater rails). You cannot allocate more than 100%
+of the requested funds.</p></li>
+<li><p>Transportation maintenance funding slightly below 100%1$ will
+cause slow, minor deterioration of the transit system -- an occasional
+pothole or bad track section. Funding between 90%2$ and 75%3$ will cause
+noticeable damage -- many sections of road and rail will be unusable.
+Funding below 75%4$ will cause rapid deterioration of your transit
+system.</p></li>
+</ul>
+<ul>
+<li>Cash Flow</li>
+</ul>
+<ul>
+<li>The cash flow is calculated as follows:</li>
+</ul>
+<p>CashFlow = TaxesCollected - TotalAllocatedFunds</p>
+<ul>
+<li>It will be a negative number if your yearly maintenance costs are
+greater than your yearly tax intake.</li>
+</ul>
+<h2 id="map">Map</h2>
+<p>Tapping the city name area in the status bar, the Map Page shows the
+entire area of your city.</p>
+<p>Try the different map views by selecting from the following types:
+Power grid, Population density, Traffic density, Pollution density,
+Crime rate, Fire protection, Police protection, Land value and Rate of
+growth.</p>
+<p>You will need this information to build and adjust conditions in your
+city. For example, you can pinpoint the areas with the highest crime to
+determine locations for new police stations.</p>
+<p>Tapping in the small map view will quit the map view mode, and scroll
+the main map to the location you tapped.</p>
+<p>The Map Page should be constantly referred to in all stages of city
+planning, building and managing.</p>
+<ul>
+<li>Before you build, use the map before beginning a new city to
+plan:</li>
+</ul>
+<ul>
+<li><p>Where you want your city center.</p></li>
+<li><p>Where you want the high-class waterfront residential
+areas.</p></li>
+<li><p>Where you will cross water with bridges, power lines and
+tunnels.</p></li>
+<li><p>Where to place power plants.</p></li>
+<li><p>Where to place large industrial sections away from the
+residential sections.</p></li>
+<li><p>The general layout of your city.</p></li>
+</ul>
+<ul>
+<li>During city growth:</li>
+</ul>
+<ul>
+<li><p>Use the map to guide your city's growth around forest areas, to
+preserve the trees and improve property values.</p></li>
+<li><p>Use the Traffic Density map to plan traffic control and
+expansion.</p></li>
+<li><p>Use the Pollution Map to detect problem areas, and disperse the
+industrial zones and/or replace roads with rails.</p></li>
+</ul>
+<ul>
+<li>During city maintenance:</li>
+</ul>
+<ul>
+<li><p>Use the Power Grid Map to locate zones that have lost
+power.</p></li>
+<li><p>Use the City Services Maps to evaluate the effective coverage of
+your police and fire departments.</p></li>
+<li><p>Use the Crime Rate Map to locate problem areas that need more
+police protection.</p></li>
+<li><p>Use the Pollution Map to locate problem areas.</p></li>
+<li><p>Use the Traffic Density Maps to determine where to replace roads
+with rails.</p></li>
+<li><p>Use the Land Value Map to locate depressed areas for improvement
+or replacement.</p></li>
+</ul>
+<h2 id="evaluation">Evaluation</h2>
+<p>Tapping the rating area in the status bar, you can view the public
+opinion and statistics of the city.</p>
+<p>Public Opinion is presented in poll form, rating your overall job as
+Mayor and listing what the public regards as the city's most pressing
+problems. You are advised to keep your residents happy or they might
+migrate away, and you will be left with a 'ghost town.'</p>
+<p>In general, if more than 55% of the populace thinks you are doing a
+good job, then you can feel secure of keeping your job.</p>
+<p>If 10% or less of the people think something is a problem, then it's
+not too bad.</p>
+<ul>
+<li>These are most of the problems that citizens complain about, and how
+to correct them:</li>
+</ul>
+<ul>
+<li><p>Traffic -- Replace dense sections of roads with rails.</p></li>
+<li><p>Crime -- Add police stations and/or raise property
+values.</p></li>
+<li><p>Pollution -- Replace roads with rails, disperse industrial
+zones.</p></li>
+<li><p>Housing Costs -- Zone more residences in low property value
+areas.</p></li>
+<li><p>Fires -- Build more fire departments.</p></li>
+<li><p>Taxes -- Lower taxes (if you can).</p></li>
+<li><p>Unemployment -- Zone more commercial and industrial
+areas.</p></li>
+</ul>
+<ul>
+<li>Statistics on Population, Net Migration, and Assessed Value are
+displayed, along with the city's Game Level and the Overall City Score.
+This data is calculated once a year at budget time.</li>
+</ul>
+<ul>
+<li><p>Population is the number of residents in your city.</p></li>
+<li><p>The Net Migration statistic provides a rating of the desirability
+of your city. If people are leaving in droves, then you know something
+is rotten.</p></li>
+<li><p>The Assessed Value is the combined value of all city-owned
+property: roads, rails, power plants, police and fire stations,
+airports, seaports, parks, etc. It does not include residential,
+commercial and industrial zones.</p></li>
+</ul>
+<ul>
+<li>The Categories are defined by population as follows:</li>
+</ul>
+<ul>
+<li><p>Village: 0 to 1,999</p></li>
+<li><p>Town: 2,000 to 9,999</p></li>
+<li><p>City: 10,000 to 49,999</p></li>
+<li><p>Capital: 50,000 to 99,999</p></li>
+<li><p>Metropolis: 100,000 to 499,999</p></li>
+<li><p>Megalopolis: 500,000 and above</p></li>
+</ul>
+<ul>
+<li>Overall City Score is a composite score based on the following
+factors (some positive, some negative):</li>
+</ul>
+<ul>
+<li><p>Major Factors: Crime, pollution, housing costs, taxes, traffic,
+unemployment, fire protection, unpowered zones, city growth
+rate.</p></li>
+<li><p>Minor Factors: Stadium needed (but not built), seaport needed
+(but not built), airport needed (but not built), road funding, police
+funding, fire department funding, and fires.</p></li>
+</ul>
+<p>A large population is not necessarily a sign of a successful city.
+Population size does not affect the overall city score, since low
+population could indicate a new or growing city.</p>
+<p>Since city growth rate does affect the overall city score, a city in
+which growth has been intentionally stopped for environmental or
+aesthetic reasons will have a slightly lower score.</p>
+<h2 id="history-graphs">History graphs</h2>
+<p>Tapping the RCI graph area in the status bar, additional information
+can be gained through the available Graphs.</p>
+<p>Unlike maps, which only show the current state of your city, the
+Graphs give you a record of the past so you can gauge trends and
+cycles.</p>
+<p>You can toggle between 10 year and 120 year graphs, by tapping the
+right top of the Graph page.</p>
+<p>The Graphs give information on many of the same factors as the maps,
+but show the information over time. Graphs are for locating trends in
+city life that won't be noticeable in a map. If you look at a map, for
+example the Crime Rate Map, a very slight rise in the crime rate will
+not be noticeable. But on the Crime Rate Graph, you would easily locate
+the upward trend in crime because you will be viewing the levels for a
+number of years at the same time.</p>
+<p>\</p>
+<ul>
+<li><p>The Residential Population Graph shows the total population in
+residential zones.</p></li>
+<li><p>The Commercial Population Graph shows the total population in
+commercial zones.</p></li>
+<li><p>The Industrial Population Graph shows the total population in
+industrial zones.</p></li>
+<li><p>The Cash Flow Graph shows your city's cash flow: money collected
+in taxes minus money it took to maintain your city. The center of the
+Cash Flow Graph represents a cash flow of zero. Do not build more
+infrastructure (roads, rails, police departments, fire stations) than
+you can support with tax revenues.</p></li>
+<li><p>The Crime Rate Graph shows the overall crime rate of the entire
+city.</p></li>
+<li><p>The Pollution Graph shows the overall average pollution reading
+of the entire city.</p></li>
+</ul>
+<h2 id="speed">Speed</h2>
+<p>Tapping the clock area in the status bar, you can adjust the game
+speed.</p>
+<ul>
+<li><p>Fast</p></li>
+<li><p>Normal</p></li>
+<li><p>Slow</p></li>
+<li><p>Pause</p></li>
+</ul>
+<h2 id="disaster">Disaster</h2>
+<p>Disasters will randomly occur as you play. At higher game levels the
+disasters will happen more often.</p>
+<ul>
+<li>Shipwreck</li>
+</ul>
+<ul>
+<li><p>Shipwrecks can occur once you have an operating seaport.</p></li>
+<li><p>They can cause fires where the ship crashes into a shore or
+bridge.</p></li>
+</ul>
+<ul>
+<li>Monster</li>
+</ul>
+<p>Monster Attacks are provoked by high levels of pollution.</p>
+<p>A monster destroys everything in its path, starts fires, and causes
+planes, helicopters, trains, and ships to crash.</p>
+<ul>
+<li>Fire</li>
+</ul>
+<ul>
+<li><p>Fires can start anywhere in the city.</p></li>
+<li><p>Fires spread fairly rapidly through forests and buildings,
+somewhat slower over roadways. Fire will not cross water or clear
+land.</p></li>
+<li><p>The effectiveness of the fire department (which can be viewed in
+the Map Page) is based on how close it is to the fire, its funding
+level, and its transit access. Fires inside this effective radius will
+be extinguished automatically.</p></li>
+<li><p>If you have no operational fire departments in the area you can
+try to control the fire yourself. Since fire will not spread across
+clear terrain, you can build fire breaks with the bulldozer. Just
+surround the fire with clear areas and it will stop spreading and
+eventually burn itself out. You cannot directly bulldoze a
+fire.</p></li>
+</ul>
+<ul>
+<li>Meltdown</li>
+</ul>
+<ul>
+<li><p>Meltdowns are only possible if you are using a nuclear power
+plant.</p></li>
+<li><p>If a meltdown occurs, your nuclear plant will explode into
+flames.</p></li>
+<li><p>The surrounding area will be unusable for the remainder of the
+simulation due to radioactive contamination.</p></li>
+</ul>
+<ul>
+<li>Tornado</li>
+</ul>
+<ul>
+<li><p>Tornados can occur anywhere on the map at any time.</p></li>
+<li><p>Very fast and unpredictable, they can appear and disappear at a
+moment's notice.</p></li>
+<li><p>Tornados destroy everything in their path, and can cause planes,
+helicopters, trains, and ships to crash.</p></li>
+</ul>
+<ul>
+<li>Earthquake</li>
+</ul>
+<ul>
+<li><p>Earthquakes are the most devastating disaster. This is a Major
+earthquake -- between 8.0 and 9.0 on the Richter Scale.</p></li>
+<li><p>It will destroy buildings and start fires.</p></li>
+<li><p>The initial damage will vary with the severity of the earthquake,
+and the eventual fire damage depends on your fire-control
+efforts.</p></li>
+<li><p>When it stops you will have to take charge and control the
+scattered fires. Use the bulldozer to contain the largest fires first
+and work your way down to the smaller ones.</p></li>
+</ul>
+</body>
+</html>

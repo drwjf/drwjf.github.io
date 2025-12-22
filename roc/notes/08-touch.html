@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>08-touch</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="designing-a-touch-interface-for-roguelikes">Designing a Touch
+Interface for Roguelikes</h1>
+<h3 id="gestures-vs-keyboard">Gestures vs Keyboard</h3>
+<p>Classic roguelikes were designed for keyboards. Movement, inventory,
+combat, and interaction were all controlled through keys and shortcuts.
+This worked well on desktop computers and terminal interfaces, but it
+creates challenges when adapting the genre to mobile devices.</p>
+<p>When reimplementing the roguelike engine in Swift for iOS, one major
+design goal was to create a <strong>touch-first interface</strong>
+rather than attempting to replicate a keyboard on the screen.</p>
+<p>Instead of translating every key command directly, the interface was
+redesigned around <strong>gestures and direct interaction</strong>.</p>
+<hr />
+<h1 id="the-problem-with-virtual-keyboards">The Problem With Virtual
+Keyboards</h1>
+<p>Many early mobile roguelike ports attempted to preserve the original
+keyboard controls by displaying virtual buttons.</p>
+<p>This approach has several drawbacks:</p>
+<ul>
+<li>too many buttons on a small screen</li>
+<li>slow interaction speed</li>
+<li>poor accessibility for new players</li>
+<li>UI clutter covering the dungeon map</li>
+</ul>
+<p>Traditional roguelikes may use dozens of commands. Replicating them
+on a phone display quickly becomes impractical.</p>
+<p>Rather than recreating the keyboard, the Swift reimplementation
+focuses on <strong>simplifying interaction</strong>.</p>
+<hr />
+<h1 id="movement-through-direct-touch">Movement Through Direct
+Touch</h1>
+<p>Movement is the most common action in a roguelike, so it must be
+extremely easy to perform.</p>
+<p>The touch interface allows the player to simply <strong>tap a
+tile</strong> to move toward it.</p>
+<p>The game then automatically handles:</p>
+<ul>
+<li>step-by-step movement</li>
+<li>pathfinding</li>
+<li>stopping when enemies appear</li>
+</ul>
+<p>This approach removes the need for directional keys while keeping
+movement intuitive.</p>
+<p>Players can focus on where they want to go rather than how to move
+there.</p>
+<hr />
+<h1 id="gesture-based-navigation">Gesture-Based Navigation</h1>
+<p>In addition to tapping tiles, the map supports several natural
+gestures.</p>
+<h3 id="drag-to-pan">Drag to Pan</h3>
+<p>Players can drag the dungeon map to examine nearby areas without
+moving their character.</p>
+<h3 id="pinch-to-zoom">Pinch to Zoom</h3>
+<p>Zooming allows players to adjust how much of the dungeon they see at
+once.</p>
+<p>This is especially useful because the dungeon levels are larger than
+a typical terminal screen.</p>
+<p>Together, these gestures allow players to explore the map comfortably
+without cluttering the screen with controls.</p>
+<hr />
+<h1 id="context-sensitive-actions">Context-Sensitive Actions</h1>
+<p>Instead of requiring separate commands for every action, the
+interface uses <strong>context-sensitive interactions</strong>.</p>
+<p>For example:</p>
+<ul>
+<li>tapping an enemy performs an attack</li>
+<li>tapping an item picks it up</li>
+<li>tapping stairs descends to the next level</li>
+</ul>
+<p>The game interprets the player's intent based on the tile that was
+selected.</p>
+<p>This reduces the number of explicit commands the player must
+remember.</p>
+<hr />
+<h1 id="handling-advanced-commands">Handling Advanced Commands</h1>
+<p>Some roguelike actions are less common but still important, such
+as:</p>
+<ul>
+<li>using items</li>
+<li>casting abilities</li>
+<li>examining tiles</li>
+</ul>
+<p>These actions are grouped into simple menus or contextual options
+rather than requiring dedicated buttons.</p>
+<p>This keeps the main interface focused on exploration and
+movement.</p>
+<hr />
+<h1 id="maintaining-tactical-precision">Maintaining Tactical
+Precision</h1>
+<p>One concern when replacing keyboard input is losing the precise
+control that roguelike players expect.</p>
+<p>To address this, the touch interface ensures that:</p>
+<ul>
+<li>individual tile selection is accurate</li>
+<li>movement paths are clearly displayed</li>
+<li>actions can be cancelled easily</li>
+</ul>
+<p>Players still maintain full control over positioning and
+decision-making.</p>
+<hr />
+<h1 id="supporting-large-maps">Supporting Large Maps</h1>
+<p>Unlike traditional terminal roguelikes, the iOS version is not
+limited to a fixed grid such as 80×25.</p>
+<p>The dungeon map can be larger, and players can zoom or pan to
+navigate it.</p>
+<p>This makes exploration feel more natural on mobile devices while
+still preserving the turn-based nature of the game.</p>
+<hr />
+<h1 id="balancing-simplicity-and-depth">Balancing Simplicity and
+Depth</h1>
+<p>A successful mobile roguelike interface must balance two competing
+goals:</p>
+<ul>
+<li><strong>simplicity for touch interaction</strong></li>
+<li><strong>depth for experienced players</strong></li>
+</ul>
+<p>The solution is to keep the most common actions extremely simple
+while still allowing advanced options through contextual menus.</p>
+<p>New players can learn the game quickly, while experienced players
+retain full control over tactical decisions.</p>
+<hr />
+<h1 id="reimagining-a-classic-interface">Reimagining a Classic
+Interface</h1>
+<p>Designing a touch interface for a roguelike is not about copying the
+keyboard controls of classic games. Instead, it requires rethinking how
+players interact with the dungeon.</p>
+<p>By embracing gestures such as tapping, dragging, and zooming, the
+Swift reimplementation creates an interface that feels natural on modern
+mobile devices while preserving the strategic depth that defines
+roguelikes.</p>
+<p>The result is a control scheme that remains faithful to the genre
+while adapting it for a completely different input model.</p>
+<hr />
+<p>⬅️ <a href="07-depth.html">Previous</a> | 🏠 <a
+href="../index.html">Index</a> | <a href="09-tile.html">Next</a> ➡️</p>
+<hr />
+</body>
+</html>

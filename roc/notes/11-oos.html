@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>11-oos</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="eliminating-event-replay-to-prevent-save-desync">Eliminating
+Event Replay to Prevent Save Desync</h1>
+<p>One of the oldest traditions in roguelike engines is using
+<strong>event replay</strong> to reconstruct game state. Instead of
+storing full snapshots of the game, the engine records a sequence of
+player inputs and random seed values, and “replays” them from the
+beginning to rebuild the current state.</p>
+<p>This approach has an elegance to it. It keeps save files small and
+ensures reproducibility—until it doesn’t.</p>
+<p>In the Swift reimplementation of my roguelike engine, I decided to
+<strong>abandon event replay entirely</strong>. Instead, the engine
+saves the <strong>entire game state snapshot directly</strong>. This
+shift eliminates one of the most frustrating problems in traditional
+roguelike development: <strong>save desynchronization</strong>.</p>
+<hr />
+<h3 id="the-hidden-cost-of-event-replay">The Hidden Cost of Event
+Replay</h3>
+<p>At a glance, event replay seems ideal:</p>
+<ul>
+<li>Save the initial state and every input.</li>
+<li>Replay those inputs to reach the current game state.</li>
+<li>Profit from determinism.</li>
+</ul>
+<p>But in practice, replay-based engines suffer from <strong>extremely
+brittle behavior</strong>, especially over time.</p>
+<h4 id="common-causes-of-desync">Common causes of desync:</h4>
+<ul>
+<li>An extra RNG call for rendering particles.</li>
+<li>A minor logic bug that causes an input to behave differently during
+replay.</li>
+<li>A platform-specific difference in floating point math.</li>
+<li>Refactoring code that slightly reorders game events.</li>
+</ul>
+<p>Any of these issues can cause the replay to diverge from the
+original, even though the inputs are technically the same.</p>
+<p>When this happens, saved games become <strong>unloadable</strong>,
+replays become inaccurate, and the player’s progress is lost.</p>
+<hr />
+<h3 id="debugging-replay-bugs-is-a-nightmare">Debugging Replay Bugs Is a
+Nightmare</h3>
+<p>Because replay-based engines don’t store full game state, debugging
+requires <strong>re-simulating every frame</strong> from the start of
+the game. There’s no way to directly inspect the exact moment of
+failure.</p>
+<p>This makes bug reproduction slow and error-prone—especially when the
+desync only occurs after 2,000 turns of play.</p>
+<hr />
+<h2 id="a-better-approach-full-game-state-snapshots">A Better Approach:
+Full Game State Snapshots</h2>
+<p>In the Swift reimplementation, I now save the <strong>entire
+serialized game state</strong> at each save point. No input history. No
+simulation replay.</p>
+<p>This is a major architectural change with several benefits:</p>
+<h3 id="1-perfect-save-accuracy">1. Perfect Save Accuracy</h3>
+<p>The save file contains exactly what the player was experiencing—no
+simulation, no divergence. What you save is what you load.</p>
+<h3 id="2-reliable-quicksaves-and-crash-recovery">2. Reliable Quicksaves
+and Crash Recovery</h3>
+<p>Because the snapshot is complete, you can safely save mid-turn,
+mid-action, or even mid-animation. This makes quicksave support on
+mobile much more robust.</p>
+<h3 id="3-easier-debugging">3. Easier Debugging</h3>
+<p>Bug reports now include a complete snapshot of the game state.
+Developers (or testers) can load that snapshot and immediately inspect
+what went wrong.</p>
+<p>No need to replay from the beginning and pray the bug reproduces.</p>
+<h3 id="4-safer-refactoring">4. Safer Refactoring</h3>
+<p>You can safely change how the game engine handles logic without
+worrying about invalidating every old replay file.</p>
+<p>As long as you maintain save format compatibility, the old games
+still load cleanly.</p>
+<hr />
+<h2 id="why-now">Why Now?</h2>
+<p>Historically, one reason developers avoided full game saves was
+<strong>file size</strong>. In a world of floppy disks and
+memory-constrained systems, storing 50KB per save was expensive.</p>
+<p>But modern mobile devices, even low-end ones, can easily store full
+snapshots in the range of <strong>50–500 KB</strong> without breaking a
+sweat.</p>
+<p>In return, you get:</p>
+<ul>
+<li>consistent saves</li>
+<li>forward-compatible design</li>
+<li>dramatically simpler serialization and deserialization logic</li>
+</ul>
+<hr />
+<h2 id="real-example-subtle-replay-drift">Real Example: Subtle Replay
+Drift</h2>
+<p>In an earlier test build, a simple change to monster rendering caused
+an extra RNG call for a cosmetic particle effect. This call didn't
+affect gameplay—but it altered the global RNG state.</p>
+<p>Because the replay system relied on perfect RNG determinism, this
+change caused <strong>entire save files to break</strong>. Monster AI
+moved differently. Damage rolls changed. The game became unplayable—all
+from a visual effect.</p>
+<p>That was the tipping point. No more input logs. No more seed
+juggling.</p>
+<hr />
+<h2 id="how-its-implemented-in-swift">How It's Implemented in Swift</h2>
+<p>The engine uses structured, strongly typed game state:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> GameState<span class="op">:</span> <span class="dt">Codable</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">dungeonLevels</span><span class="op">:</span> <span class="op">[</span>DungeonLevel<span class="op">]</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">player</span><span class="op">:</span> Creature</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">turnCounter</span><span class="op">:</span> Int</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">rngState</span><span class="op">:</span> RNGSnapshot</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>When saving, the state is serialized to disk (or iCloud). When
+loading, the game resumes instantly from exactly that moment.</p>
+<p>No rewinding. No replaying. Just play.</p>
+<hr />
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Replay-based engines are elegant in theory—but fragile in practice.
+In modern development environments, especially on mobile, it's more
+important to have <strong>reliable saves, quick debugging, and resilient
+architecture</strong>.</p>
+<p>By switching to full state snapshots, the Swift reimplementation
+avoids one of the most persistent and frustrating issues in classic
+roguelike engines: <strong>save desync</strong>. It’s one less thing for
+players—and developers—to worry about.</p>
+<p>And in a game where death is permanent, the save system shouldn’t be
+the thing that fails.</p>
+<hr />
+<p>⬅️ <a href="10-zoomable.html">Previous</a> | 🏠 <a
+href="../index.html">Index</a> | <a href="12-localization.html">Next</a>
+➡️</p>
+<hr />
+</body>
+</html>
